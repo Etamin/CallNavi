@@ -1,0 +1,1225 @@
+[
+    {
+      "id": "hot001",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check if there are any Deluxe rooms available from October 10th to October 15th?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkRoomAvailability"],
+        "parameters": [
+          {
+            "startDate": "2023-10-10",
+            "endDate": "2023-10-15",
+            "roomType": "Deluxe"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot002",
+      "question": [
+        {
+          "role": "user",
+          "content": "Do you have any luxury suites available for next weekend?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkRoomAvailability"],
+        "parameters": [
+          {
+            "startDate": "2023-09-30",
+            "endDate": "2023-10-02",
+            "roomType": "Luxury Suite"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot003",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to know if any standard rooms are available from November 5th to November 10th."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkRoomAvailability"],
+        "parameters": [
+          {
+            "startDate": "2023-11-05",
+            "endDate": "2023-11-10",
+            "roomType": "Standard"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot004",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you book a deluxe room for GUEST001 from September 15th to September 20th? Pre-pay by credit card for 1000 dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookRoom"],
+        "parameters": [
+          {
+            "guestID": "GUEST001",
+            "roomType": "Deluxe",
+            "startDate": "2023-09-15",
+            "endDate": "2023-09-20",
+            "paymentDetails": {
+              "method": "Credit Card",
+              "amount": 1000
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot005",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to reserve a standard room from October 1st to October 3rd for guest ID GUEST002. Pre-pay by debit card for 500 dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookRoom"],
+        "parameters": [
+          {
+            "guestID": "GUEST002",
+            "roomType": "Standard",
+            "startDate": "2023-10-01",
+            "endDate": "2023-10-03",
+            "paymentDetails": {
+              "method": "Debit Card",
+              "amount": 500
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot006",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please confirm my suite booking for guest ID GUEST003 from September 10th to September 12th. Pre-pay by Paypal for 1200 dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookRoom"],
+        "parameters": [
+          {
+            "guestID": "GUEST003",
+            "roomType": "Suite",
+            "startDate": "2023-09-10",
+            "endDate": "2023-09-12",
+            "paymentDetails": {
+              "method": "PayPal",
+              "amount": 1200
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot007",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the details of my booking with booking ID BOOKING123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBookingDetails"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot008",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to see my reservation details for booking ID BOOKING456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBookingDetails"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot009",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the status of booking ID BOOKING789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBookingDetails"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING789"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot010",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to cancel my booking for booking ID BOOKING001. The reason is a change of plans."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING001",
+            "cancellationReason": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot011",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please cancel booking ID BOOKING002 because my trip was rescheduled."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING002",
+            "cancellationReason": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot012",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to cancel my reservation, booking ID BOOKING003, because of a family emergency."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING003",
+            "cancellationReason": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot013",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update my booking with ID BOOKING004? I want to extend my stay by two days."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING004",
+            "updateData":"$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot014",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please update my booking with booking ID BOOKING005 and change my room to a suite."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING005",
+            "updateData": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot015",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to modify my booking, booking ID BOOKING006, and shorten my stay by one day."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateBooking"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING006",
+            "updateData": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot016",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the current status of room number 101?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomStatus"],
+        "parameters": [
+          {
+            "roomNumber": "101"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot017",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check if room 202 is occupied?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomStatus"],
+        "parameters": [
+          {
+            "roomNumber": "202"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot018",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to know the cleaning status of room 303."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomStatus"],
+        "parameters": [
+          {
+            "roomNumber": "303"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot019",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please check in guest ID GUEST004 for their room booking BOOKING007."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkInGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING007",
+            "guestID": "GUEST004"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot020",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to check in guest ID GUEST005 for booking ID BOOKING008."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkInGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING008",
+            "guestID": "GUEST005"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot021",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check in guest ID GUEST006 for their reservation BOOKING009?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkInGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING009",
+            "guestID": "GUEST006"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot022",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to check out guest ID GUEST007 booking BOOKING010 and settle the payment with Credit Card for 500 dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkOutGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING010",
+            "guestID": "GUEST007",
+            "paymentDetails": {
+              "method": "Credit Card",
+              "amount": 500
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot023",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check out guest ID GUEST008 for booking ID BOOKING011? Payment will make by debit card for 400 dollar."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkOutGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING011",
+            "guestID": "GUEST008",
+            "paymentDetails": {
+              "method": "Debit Card",
+              "amount": 400
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot024",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please check out guest ID GUEST009 and finalize the bill for booking ID BOOKING012. The final invoice is 300 dollars pay by cash."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkOutGuest"],
+        "parameters": [
+          {
+            "bookingID": "BOOKING012",
+            "guestID": "GUEST009",
+            "paymentDetails": {
+              "method": "Cash",
+              "amount": 300
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot025",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide information for guest ID GUEST010?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getGuestInfo"],
+        "parameters": [
+          {
+            "guestID": "GUEST010"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot026",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need the contact information for guest ID GUEST011."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getGuestInfo"],
+        "parameters": [
+          {
+            "guestID": "GUEST011"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot027",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check if guest ID GUEST012 is part of the loyalty program?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getGuestInfo"],
+        "parameters": [
+          {
+            "guestID": "GUEST012"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot028",
+      "question": [
+        {
+          "role": "user",
+          "content": "What types of rooms do you have available?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomTypes"],
+        "parameters": [{}]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot029",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me a list of available room types in the hotel?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomTypes"],
+        "parameters": [{}]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot030",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please provide descriptions of all the room types you have."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomTypes"],
+        "parameters": [{}]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot031",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the rates for a deluxe room from October 1st to October 5th?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomRates"],
+        "parameters": [
+          {
+            "roomType": "Deluxe",
+            "startDate": "2023-10-01",
+            "endDate": "2023-10-05"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot032",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the rate for a standard room from September 15th to September 17th?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomRates"],
+        "parameters": [
+          {
+            "roomType": "Standard",
+            "startDate": "2023-09-15",
+            "endDate": "2023-09-17"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot033",
+      "question": [
+        {
+          "role": "user",
+          "content": "How much is the nightly rate for a luxury suite from October 20th to October 25th?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomRates"],
+        "parameters": [
+          {
+            "roomType": "Luxury Suite",
+            "startDate": "2023-10-20",
+            "endDate": "2023-10-25"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I place a room service order a Pasta for room number 205? Guest ID is GUEST013."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addRoomServiceOrder"],
+        "parameters": [
+          {
+            "guestID": "GUEST013",
+            "roomNumber": "205",
+            "orderDetails": "Pasta"
+            }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot035",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please place a room service order for room 307 with pizza. Guest ID is GUEST014."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addRoomServiceOrder"],
+        "parameters": [
+          {
+            "guestID": "GUEST014",
+            "roomNumber": "307",
+            "orderDetails": "Pizza"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot036",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to check the details of my room service order with ID ORDER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomServiceOrder"],
+        "parameters": [
+          {
+            "orderID": "ORDER123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot037",
+      "question": [
+        {
+          "role": "user",
+          "content": "What is the status of my room service order ORDER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoomServiceOrder"],
+        "parameters": [
+          {
+            "orderID": "ORDER456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot038",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please update my room service order ORDER789 to add a dessert."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateRoomServiceOrder"],
+        "parameters": [
+          {
+            "orderID": "ORDER789",
+            "updateData": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot039",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my room service order ORDER999 because I changed my mind."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelRoomServiceOrder"],
+        "parameters": [
+          {
+            "orderID": "ORDER999",
+            "cancellationReason": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "hot040",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me if room 101 was cleaned recently?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHousekeepingStatus"],
+        "parameters": [
+          {
+            "roomNumber": "101"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+      {
+        "id": "hot041",
+        "question": [
+          {
+            "role": "user",
+            "content": "I want to check room availability for a deluxe room from October 10th to October 15th and then book it. My guest ID is GST19245 and I plan to do pre-pay by cash for 1000 dollars"
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkRoomAvailability", "bookRoom"],
+          "parameters": [
+            {"startDate": "2023-10-10", "endDate": "2023-10-15", "roomType": "Deluxe"},
+            {"guestID": "GST19245", "roomType": "Deluxe", "startDate": "2023-10-10", "endDate": "2023-10-15", "paymentDetails": {
+              "method": "Cash",
+              "amount": 500
+              }
+            }
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot042",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you get my booking details for booking ID B12345 and then cancel it?"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getBookingDetails", "cancelBooking"],
+          "parameters": [
+            {"bookingID": "B12345"},
+            {"bookingID": "B12345", "cancellationReason": "$$$"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot043",
+        "question": [
+          {
+            "role": "user",
+            "content": "Please update my guest information for new phone number 540329761 and then check my loyalty program points with ID HH930687."
+          }
+        ],
+        "ground_truth": {
+          "API": ["updateGuestInfo", "getLoyaltyProgramInfo"],
+          "parameters": [
+            {"guestID": "G67890", "updateData": "$$$"},
+            {"loyaltyProgramID": "HH930687"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot044",
+        "question": [
+          {
+            "role": "user",
+            "content": "I need to check in for booking ID B23456 and then order room service for a pizza. My guest ID is agb@abc.com."
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkInGuest", "addRoomServiceOrder"],
+          "parameters": [
+            {"bookingID": "B23456", "guestID": "agb@abc.com"},
+            {"guestID": "agb@abc.com", "roomNumber": "$$$", "orderDetails": "$$$"}
+          ]
+        },
+      "difficulty":"hard"
+      },
+      {
+        "id": "hot045",
+        "question": [
+          {
+            "role": "user",
+            "content": "Get the available amenities in the hotel and reserve the spa for me on 2024-12-12 21:00. My guest ID is agb@abc.com."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getAvailableAmenities", "reserveAmenity"],
+          "parameters": [
+            {},
+            {"guestID": "agb@abc.com", "amenityID": "$$$", "reservationDate": "2024-12-12", "reservationTime": "21:00"}
+          ]
+        },
+      "difficulty":"hard"
+      },
+      {
+        "id": "hot046",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you provide the room rates for a suite from November 1st to November 5th and then book it with my guest ID agb@abc.com? I will pre-pay by cash for 1000 dollars"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getRoomRates", "bookRoom"],
+          "parameters": [
+            {"roomType": "Suite", "startDate": "2023-11-01", "endDate": "2023-11-05"},
+            {"guestID": "agb@abc.com", "roomType": "Suite", "startDate": "2023-11-01", "endDate": "2023-11-05", "paymentDetails": {
+              "method": "Cash",
+              "amount": 1000
+            }}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot047",
+        "question": [
+          {
+            "role": "user",
+            "content": "I want to get my billing details for booking ID B34567 and process the payment with Credit Card for 500 dollars."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getBillingDetails", "processPayment"],
+          "parameters": [
+            {"bookingID": "B34567"},
+            {"bookingID": "B34567", "paymentDetails": {
+              "method": "Credit Card",
+              "amount": 500
+            }}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot048",
+        "question": [
+          {
+            "role": "user",
+            "content": "Retrieve the housekeeping status for room 101 and schedule cleaning for 2024-11-12, 14:00."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getHousekeepingStatus", "scheduleHousekeeping"],
+          "parameters": [
+            {"roomNumber": "101"},
+            {"roomNumber": "101", "cleaningDate": "2024-11-12", "cleaningTime": "14:00"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot049",
+        "question": [
+          {
+            "role": "user",
+            "content": "Get the special offers available and apply one to my booking ID B45678."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getSpecialOffers", "applySpecialOffer"],
+          "parameters": [
+            {},
+            {"bookingID": "B45678", "offerID": "$$$"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot050",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you get my guest preferences and update them to include a non-smoking room?"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getGuestPreferences", "updateGuestPreferences"],
+          "parameters": [
+            {"guestID": "G78901"},
+            {"guestID": "G78901", "preferences":  "$$$"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot051",
+        "question": [
+          {
+            "role": "user",
+            "content": "I need to check out from booking ID B56789 with my guest ID BF94572 with my credit card for 500 dollars invoice. Then get my payment history."
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkOutGuest", "getPaymentHistory"],
+          "parameters": [
+            {"bookingID": "B56789", "guestID": "BF94572", "paymentDetails":{
+              "method": "Credit Card",
+              "amount": 500
+            }},
+            {"guestID": "BF94572"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot052",
+        "question": [
+          {
+            "role": "user",
+            "content": "Please get the room status for room 202 and update its cleaning status to 'In Progress'."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getRoomStatus", "updateHousekeepingStatus"],
+          "parameters": [
+            {"roomNumber": "202"},
+            {"roomNumber": "202", "cleaningStatus": "In Progress"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot053",
+        "question": [
+          {
+            "role": "user",
+            "content": "Get the list of hotel events and register me for event ID E123 with my guest ID 432082."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getHotelEvents", "registerForHotelEvent"],
+          "parameters": [
+            {},
+            {"guestID": "432082", "eventID": "E123"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot054",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you retrieve the hotel policies and then book an conference event space for 2025-01-02 10:00 for me? My guest ID is YG352826"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getHotelPolicies", "bookEventSpace"],
+          "parameters": [
+            {},
+            {"guestID": "YG352826", "eventSpaceID": "$$$", "eventDate": "2025-01-02", "eventTime": "10:00", "eventDetails": "$$$"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot055",
+        "question": [
+          {
+            "role": "user",
+            "content": "I want to submit feedback about my stay problem of heating and then get the hotel's response."
+          }
+        ],
+        "ground_truth": {
+          "API": ["submitGuestFeedback", "getHotelFeedback"],
+          "parameters": [
+            {"guestID": "G89012", "feedbackDetails": "$$$"},
+            {}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot056",
+        "question": [
+          {
+            "role": "user",
+            "content": "Get the room inventory for room 303 and update it to include extra towels."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getRoomInventory", "updateRoomInventory"],
+          "parameters": [
+            {"roomNumber": "303"},
+            {"roomNumber": "303", "inventoryDetails": {"towels": "Extra"}}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot057",
+        "question": [
+          {
+            "role": "user",
+            "content": "Please provide the concierge services available and request airport pickup for me. My guest ID is BV52938"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getConciergeServices", "requestConciergeService"],
+          "parameters": [
+            {},
+            {"guestID": "BV52938", "serviceID": "$$$", "serviceDetails": "$$$"}
+          ]
+        },
+      "difficulty":"hard"
+      },
+      {
+        "id": "hot058",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you get the maintenance requests and create a new one from guest IC03217 for a leaky faucet in room 404?"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getMaintenanceRequests", "createMaintenanceRequest"],
+          "parameters": [
+            {},
+            {"roomNumber": "404", "issueDescription": "$$$", "requestedBy": "IC03217"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot059",
+        "question": [
+          {
+            "role": "user",
+            "content": "Retrieve the staff list and get the schedule for staff member S123."
+          }
+        ],
+        "ground_truth": {
+          "API": ["getStaffList", "getStaffSchedule"],
+          "parameters": [
+            {},
+            {"staffID": "S123"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot060",
+        "question": [
+          {
+            "role": "user",
+            "content": "I need to update the staff schedule for staff ID S456 with unavalible on Tuesday and then get their updated schedule."
+          }
+        ],
+        "ground_truth": {
+          "API": ["updateStaffSchedule", "getStaffSchedule"],
+          "parameters": [
+            {"staffID": "S456", "scheduleDetails": "$$$"},
+            {"staffID": "S456"}
+          ]
+        },
+        "difficulty":"medium"
+      },
+      {
+        "id": "hot061",
+        "question": [
+          {
+            "role": "user",
+            "content": "I want to check room availability for a standard room from December 20th to December 25th, then book it with my guest ID acid@abc.com, pre-pay by credit card for 500 dollars, and also reserve a table at the hotel restaurant."
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkRoomAvailability", "bookRoom", "reserveAmenity"],
+          "parameters": [
+            {"startDate": "2023-12-20", "endDate": "2023-12-25", "roomType": "Standard"},
+            {"guestID": "acid@abc.com", "roomType": "Standard", "startDate": "2023-12-20", "endDate": "2023-12-25", "paymentDetails": {
+              "method": "Credit Card",
+              "amount": 500
+            }},
+            {"guestID": "acid@abc.com", "amenityID": "Restaurant", "reservationDate": "2023-12-21", "reservationTime": "19:00"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot062",
+        "question": [
+          {
+            "role": "user",
+            "content": "I need to check in for booking ID B78901 with guest ID BF398572, order room service for a Pizza delivery on 19:00, and schedule housekeeping for 2025-01-02 10:00."
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkInGuest", "addRoomServiceOrder", "scheduleHousekeeping"],
+          "parameters": [
+            {"bookingID": "B78901", "guestID": "BF398572"},
+            {"guestID": "BF398572", "roomNumber": "$$$", "orderDetails": "Pizza", "deliveryTime": "19:00"},
+            {"roomNumber": "$$$", "cleaningDate": "2025-01-02", "cleaningTime": "10:00"}
+          ]
+        },
+      "difficulty":"hard"
+      },
+      {
+        "id": "hot063",
+        "question": [
+          {
+            "role": "user",
+            "content": "Can you retrieve my loyalty program info with ID 3096777, apply a special offer \"SAVE09\" to my booking ID B34567, and then get the updated billing details?"
+          }
+        ],
+        "ground_truth": {
+          "API": ["getLoyaltyProgramInfo", "applySpecialOffer", "getBillingDetails"],
+          "parameters": [
+            {"loyaltyProgramID": "3096777"},
+            {"bookingID": "B34567", "offerID": "SAVE09"},
+            {"bookingID": "B34567"}
+          ]
+        },
+      "difficulty":"medium"
+      },
+      {
+        "id": "hot064",
+        "question": [
+          {
+            "role": "user",
+            "content": "I need to check in for booking ID B01234 with guest ID BF398572 , request extra pillows via concierge service, and schedule housekeeping for an extra cleaning 2025-01-14 11:00."
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkInGuest", "getConciergeServices","requestConciergeService", "scheduleHousekeeping"],
+          "parameters": [
+            {"bookingID": "B01234", "guestID": "BF398572"},
+            {},
+            {"guestID": "BF398572", "serviceID": "$$$", "serviceDetails":"$$$"},
+            {"roomNumber": "$$$", "cleaningDate": "2025-01-14", "cleaningTime": "11:00"}
+          ]
+        },
+      "difficulty":"hard"
+      },
+      {
+        "id": "hot065",
+        "question": [
+          {
+            "role": "user",
+            "content": "I want to check room availability for a family suite from December 24th to December 28th, book it, pre-pay by Paypal for 1200 dollars, and register for the hotel's Christmas event. My guest ID is JV049257"
+          }
+        ],
+        "ground_truth": {
+          "API": ["checkRoomAvailability", "bookRoom", "getHotelEvents","registerForHotelEvent"],
+          "parameters": [
+            {"startDate": "2023-12-24", "endDate": "2023-12-28", "roomType": "Family Suite"},
+            {"guestID": "JV049257", "roomType": "Family Suite", "startDate": "2023-12-24", "endDate": "2023-12-28", "paymentDetails":{
+              "method": "Paypal",
+              "amount": 1200
+            } },
+            {},
+            {"guestID": "JV049257", "eventID": "$$$"}
+          ]
+        },
+      "difficulty":"hard"
+      }
+    ]
+    

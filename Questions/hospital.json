@@ -1,0 +1,858 @@
+[
+    {
+      "id": "hos001",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the patient information for patient ID 12345?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientInfo"],
+        "parameters": [
+          {
+            "patientId": "12345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos002",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need details about the patient with ID ABCD1234."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientInfo"],
+        "parameters": [
+          {
+            "patientId": "ABCD1234"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos003",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the date of birth for patient number 98765?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientInfo"],
+        "parameters": [
+          {
+            "patientId": "98765"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos004",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me details of appointment ID APPT123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAppointmentDetails"],
+        "parameters": [
+          {
+            "appointmentId": "APPT123"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos005",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need information about appointment number APPT456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAppointmentDetails"],
+        "parameters": [
+          {
+            "appointmentId": "APPT456"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos006",
+      "question": [
+        {
+          "role": "user",
+          "content": "What is the status of appointment ID APPT789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAppointmentDetails"],
+        "parameters": [
+          {
+            "appointmentId": "APPT789"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos007",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to book an appointment for patient(PATIENT001) with doctor ID DOC123 in Cardiology on 2023-10-15."
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookAppointment"],
+        "parameters": [
+          {
+            "patientId": "PATIENT001",
+            "doctorId": "DOC123",
+            "department": "Cardiology",
+            "appointmentDate": "2023-10-15"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos008",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you schedule an appointment for me(PATIENT002) with doctor ID DOC711 in neurology on 2024-09-25?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookAppointment"],
+        "parameters": [
+          {
+            "patientId": "PATIENT002",
+            "doctorId": "DOC711",
+            "department": "Neurology",
+            "appointmentDate": "2024-09-25"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos009",
+      "question": [
+        {
+          "role": "user",
+          "content": "I'd like to book an appointment for PATIENT003 with doctor ID DOC456 in pediatrics on November 1st 2023."
+        }
+      ],
+      "ground_truth": {
+        "API": ["bookAppointment"],
+        "parameters": [
+          {
+            "patientId": "PATIENT003",
+            "doctorId": "DOC456",
+            "department": "Pediatrics",
+            "appointmentDate": "2023-11-01"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos010",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to cancel my appointment with appointment ID APPT999."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelAppointment"],
+        "parameters": [
+          {
+            "appointmentId": "APPT999"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos011",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please cancel my scheduled appointment for appointment number APPT888."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelAppointment"],
+        "parameters": [
+          {
+            "appointmentId": "APPT888"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos012",
+      "question": [
+        {
+          "role": "user",
+          "content": "How can I cancel my appointment ID APPT777?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelAppointment"],
+        "parameters": [
+          {
+            "appointmentId": "APPT777"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos013",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide information about doctor ID DOC999?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDoctorInfo"],
+        "parameters": [
+          {
+            "doctorId": "DOC999"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos014",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need details about Dr. Johnson, doctor ID DOC888."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDoctorInfo"],
+        "parameters": [
+          {
+            "doctorId": "DOC888"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos015",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the specialization of doctor ID DOC777?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDoctorInfo"],
+        "parameters": [
+          {
+            "doctorId": "DOC777"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos016",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get me the medical history for patient ID 54321?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientMedicalHistory"],
+        "parameters": [
+          {
+            "patientId": "54321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos017",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need the medical records for patient ID EFGH5678."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientMedicalHistory"],
+        "parameters": [
+          {
+            "patientId": "EFGH5678"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos018",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please provide the medical history for patient number 67890."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPatientMedicalHistory"],
+        "parameters": [
+          {
+            "patientId": "67890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos019",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update the contact information for patient ID 24680. His phone number 555-1234, and address is 123 Main Street."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updatePatientInfo"],
+        "parameters": [
+          {
+            "patientId": "24680",
+            "patientInfo": {
+              "phone": "555-1234",
+              "address": "123 Main Street"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos020",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please update the insurance number INS1234567 for patient ID 13579."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updatePatientInfo"],
+        "parameters": [
+          {
+            "patientId": "13579",
+            "patientInfo": {
+              "insuranceNumber": "INS1234567"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos021",
+      "question": [
+        {
+          "role": "user",
+          "content": "How do I update the insurance number INS1232267 for patient ID 11223?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updatePatientInfo"],
+        "parameters": [
+          {
+            "patientId": "11223",
+            "patientInfo": {
+                "insuranceNumber": "INS1232267"
+              }
+            }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos022",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the billing info for patient ID 99887 and bill ID BILL001?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBillingInfo"],
+        "parameters": [
+          {
+            "patientId": "99887",
+            "billId": "BILL001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos023",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to see my bill details for bill number BILL002 and patient ID 77665."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBillingInfo"],
+        "parameters": [
+          {
+            "patientId": "77665",
+            "billId": "BILL002"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos024",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the payment status of bill ID BILL003 for patient 55443?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBillingInfo"],
+        "parameters": [
+          {
+            "patientId": "55443",
+            "billId": "BILL003"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos025",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to pay my bill 500.00 dollars with bill ID BILL004."
+        }
+      ],
+      "ground_truth": {
+        "API": ["payBill"],
+        "parameters": [
+          {
+            "billId": "BILL004",
+            "paymentAmount": "500.00"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos026",
+      "question": [
+        {
+          "role": "user",
+          "content": "How can I make a payment for my bill number BILL005 for 211.3 dollars?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["payBill"],
+        "parameters": [
+          {
+            "billId": "BILL005",
+            "paymentAmount": "211.3"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos027",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please process a 111.2 dollars payment for bill ID BILL006 using my insurance."
+        }
+      ],
+      "ground_truth": {
+        "API": ["payBill"],
+        "parameters": [
+          {
+            "billId": "BILL006",
+            "paymentAmount": "111.2"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos028",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide my insurance details for patient ID 12321?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInsuranceDetails"],
+        "parameters": [
+          {
+            "patientId": "12321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos029",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to know my coverage details for patient ID 54321."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInsuranceDetails"],
+        "parameters": [
+          {
+            "patientId": "54321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hos030",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's my insurance provider information for patient ID 67890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInsuranceDetails"],
+        "parameters": [
+          {
+            "patientId": "67890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+  {
+    "id": "hos031",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to update my insurance number to INS1065168 and then book an appointment on 2024-09-13 with cardiology doctor ID D67890, my patient ID is P12345."
+      }
+    ],
+    "ground_truth": {
+      "API": ["updatePatientInfo", "bookAppointment"],
+      "parameters": [
+        {"patientId": "P12345", "patientInfo": {"insuranceNumber": "INS1065168"}},
+        {"patientId": "P12345", "doctorId": "D67890", "department": "Cardiology", "appointmentDate": "2024-09-13"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos032",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you retrieve my lab test results for test ID T9876 and then schedule a follow-up appointment to doctor ID D01988 in Infectiology on 2024-10-04? My patient ID is P23456."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getLabTestResults", "bookAppointment"],
+      "parameters": [
+        {"patientId": "P23456", "testId": "T9876"},
+        {"patientId": "P23456", "doctorId": "D01988", "department": "Infectiology", "appointmentDate": "2024-10-04"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos033",
+    "question": [
+      {
+        "role": "user",
+        "content": "Please get my billing information for bill ID B1234 and help me pay it. My patient ID is P34567."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getBillingInfo", "payBill"],
+      "parameters": [
+        {"patientId": "P34567", "billId": "B1234"},
+        {"billId": "B1234", "paymentAmount": "$$$"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos034",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get my insurance details and book an appointment with a dermatologist doctor ID DM40188 on 2024-11-23."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getInsuranceDetails", "bookAppointment"],
+      "parameters": [
+        {"patientId": "P45678"},
+        {"patientId": "P45678", "doctorId": "DM40188", "department": "Dermatology", "appointmentDate": "2024-11-23"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos035",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to check my vaccination records and schedule a flu shot with immunization doctor ID IM51201 on 2024-12-02. My patient ID is P56789."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getVaccinationRecords", "bookAppointment"],
+      "parameters": [
+        {"patientId": "P56789"},
+        {"patientId": "P56789", "doctorId": "IM51201", "department": "Immunization", "appointmentDate": "2024-12-02"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos036",
+    "question": [
+      {
+        "role": "user",
+        "content": "Retrieve my medical history and then update my insurance information to new number INS973902. My patient ID is P67890."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getPatientMedicalHistory", "updatePatientInfo"],
+      "parameters": [
+        {"patientId": "P67890"},
+        {"patientId": "P67890", "patientInfo": {"insuranceNumber": "INS973902"}}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos037",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you get the schedule for Dr. Adams and book an appointment on 2024-12-15 for me(P78901)?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getDoctorIdFromName","getDoctorSchedule", "bookAppointment"],
+      "parameters": [
+        {"name":"Adams"},
+        {"doctorId": "$$$"},
+        {"patientId": "P78901", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2024-12-15"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos038",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to admit my father to the hospital and get his patient info. He needs go to cardiology department for CHD. His bed reserve ID is BE41 and patient ID is P89012."
+      }
+    ],
+    "ground_truth": {
+      "API": ["admitPatient", "getPatientInfo"],
+      "parameters": [
+        {"patientId": "P89012", "departmentId": "Cardiology", "bedId": "BE41", "admissionReason": "CHD"},
+        {"patientId": "P89012"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos039",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get the details of surgery S5678 performed on me and schedule a follow-up on 2024-12-11."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getSurgeryDetails", "bookAppointment"],
+      "parameters": [
+        {"surgeryId": "S5678"},
+        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2024-12-11"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos040",
+    "question": [
+      {
+        "role": "user",
+        "content": "I want to get my prescription details for prescription ID PR1234 and order a blood lab test."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getPrescriptionDetails", "orderLabTest"],
+      "parameters": [
+        {"prescriptionId": "PR1234"},
+        {"patientId": "$$$", "testType": "blood", "doctorId": "$$$"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos041",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you get the appointment details for appointment ID A5678 and reschedule it on 2025-01-09?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getAppointmentDetails", "cancelAppointment", "bookAppointment"],
+      "parameters": [
+        {"appointmentId": "A5678"},
+        {"appointmentId": "A5678"},
+        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2025-01-09"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos042",
+    "question": [
+      {
+        "role": "user",
+        "content": "Retrieve my insurance details and get billing info for bill ID B5678, my patient ID is P23456."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getInsuranceDetails", "getBillingInfo"],
+      "parameters": [
+        {"patientId": "P23456"},
+        {"patientId": "P23456", "billId": "B5678"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "hos043",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to get the doctor info for Dr. Lee and book an appointment on 2025-01-05, my patient ID is P34567."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getDoctorIdFromName","getDoctorInfo", "bookAppointment"],
+      "parameters": [
+        {"name":"Lee"},
+        {"doctorId": "$$$"},
+        {"patientId": "P34567", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2025-01-05"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "hos044",
+    "question": [
+      {
+        "role": "user",
+        "content": "Please discharge patient P56789 and provide the discharge summary."
+      }
+    ],
+    "ground_truth": {
+      "API": ["dischargePatient"],
+      "parameters": [
+        {"patientId": "P56789", "dischargeSummary": "$$$"}
+      ]
+    },
+      "difficulty": "easy"
+  },
+  {
+    "id": "hos045",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to pay my bill with bill ID B6789 for 98.5 dollars and then get an updated billing statement. My patient ID is P99986"
+      }
+    ],
+    "ground_truth": {
+      "API": ["payBill", "getBillingInfo"],
+      "parameters": [
+        {"billId": "B6789", "paymentAmount": "98.5"},
+        {"patientId": "P99986", "billId": "B6789"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "hos046",
+    "question": [
+      {
+        "role": "user",
+        "content": "Retrieve my lab test results for patient ID P67890 and test ID T1234, then get a prescription from ID PR32509."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getLabTestResults", "getPrescriptionDetails"],
+      "parameters": [
+        {"patientId": "P67890", "testId": "T1234"},
+        {"prescriptionId": "PR32509"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "hos047",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you get my patient info and then order a blood lab test for me? My doctor ID is TD21451."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getPatientInfo", "orderLabTest"],
+      "parameters": [
+        {"patientId": "P78901"},
+        {"patientId": "P78901", "testType": "blood", "doctorId": "TD21451"}
+      ]
+    },
+    "difficulty": "medium"
+  }
+]

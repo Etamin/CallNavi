@@ -1,0 +1,1333 @@
+[
+    {
+      "id": "log001",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the status of my shipment with tracking number TRACK123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTrackStatus"],
+        "parameters": [
+          {
+            "trackingNumber": "TRACK123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log002",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to create a new 5kg 10x8x6cm shipment from my address 114 8th Ave, New York to a recipient in 44 8th Ave, Los Angeles."
+        }
+      ],
+      "ground_truth": {
+        "API": ["createShipment"],
+        "parameters": [
+          {
+            "senderAddress": "114 8th Ave, New York",
+            "recipientAddress": "44 8th Ave, Los Angeles",
+            "packageDetails": {
+              "weight": 5,
+              "dimensions": {
+                "length": 10,
+                "width": 8,
+                "height": 6
+              }
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log003",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you calculate the shipping cost for a 6kg 12x10x8cm package going from Chicago to Miami?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["calculateShippingCost"],
+        "parameters": [
+          {
+            "packageDetails": {
+              "weight": 6,
+              "dimensions": {
+                "length": 12,
+                "width": 10,
+                "height": 8
+              }
+            },
+            "origin": "Chicago",
+            "destination": "Miami"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log004",
+      "question": [
+        {
+          "role": "user",
+          "content": "When can I expect my shipment with ID SHIP456 to arrive?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDeliveryEstimate"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log005",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to schedule a pickup for my shipment with ID SHIP789 on October 15th."
+        }
+      ],
+      "ground_truth": {
+        "API": ["schedulePickup"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP789",
+            "pickupDate": "2024-10-15",
+            "pickupLocation": "123 Main St, New York, NY"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log006",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I cancel my shipment with ID SHIP987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelShipment"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP987"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log007",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update the weight at 15kg and dimensions for 50x50x30cm of my shipment with ID SHIP123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateShipmentDetails"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP123",
+            "packageDetails": {
+              "weight": 45,
+              "dimensions": {
+                "length": 50,
+                "width": 50,
+                "height": 30
+              }
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log008",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the details of my shipment with ID SHIP456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentDetails"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log009",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the available shipping options for a 8kg 54x12x30cm package from San Francisco to Seattle?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShippingOptions"],
+        "parameters": [
+          {
+            "origin": "San Francisco",
+            "destination": "Seattle",
+            "packageDetails": {
+              "weight": 8,
+              "dimensions": {
+                "length": 54,
+                "width": 12,
+                "height": 30
+              }
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log010",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the available carriers for shipping from Dallas to Denver?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAvailableCarriers"],
+        "parameters": [
+          {
+            "origin": "Dallas",
+            "destination": "Denver"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log011",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you track multiple shipments with the following tracking numbers: TRACK001, TRACK002, and TRACK003?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["trackMultipleShipments"],
+        "parameters": [
+          {
+            "trackingNumbers": ["TRACK001", "TRACK002", "TRACK003"]
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log012",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you validate my address for shipment: 456 Elm St, Los Angeles, CA?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["validateAddress"],
+        "parameters": [
+          {
+            "address": {
+              "street": "456 Elm St",
+              "city": "Los Angeles",
+              "state": "CA",
+              "postalCode": "90001",
+              "country": "USA"
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log013",
+      "question": [
+        {
+          "role": "user",
+          "content": "Is service available from Boston to London for a package shipment?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getServiceAvailability"],
+        "parameters": [
+          {
+            "origin": "Boston",
+            "destination": "London"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log014",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide customs information for a shipment from New York to Paris?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomsInformation"],
+        "parameters": [
+          {
+            "origin": "New York",
+            "destination": "Paris"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log015",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you generate a shipping label for my shipment with ID SHIP789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["generateShippingLabel"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP789"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log016",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the available pickup locations in postal code 10001, USA?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPickupLocations"],
+        "parameters": [
+          {
+            "postalCode": "10001",
+            "countryCode": "USA"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log017",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to see the shipping history for my shipment with ID SHIP123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShippingHistory"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log018",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide me with the delivery status of my shipment with ID SHIP987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDeliveryStatus"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP987"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log019",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the cost breakdown for my shipment with ID SHIP654?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentCostBreakdown"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP654"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log020",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me the insurance options for my shipment with ID SHIP321?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentInsuranceOptions"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP321"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log021",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to add insurance to my shipment with ID SHIP123 using insurance option INS001."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addShipmentInsurance"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP123",
+            "insuranceOptionId": "INS001"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log022",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the weight of my shipment with ID SHIP987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentWeight"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP987"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log023",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you estimate the weight of an 1kg package with dimensions 15x10x8cm?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["estimatePackageWeight"],
+        "parameters": [
+          {
+            "packageDetails": {"weight": 1,
+              "dimensions": {
+                "length": 15,
+                "width": 10,
+                "height": 8
+              }
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log024",
+      "question": [
+        {
+          "role": "user",
+          "content": "What is the volume of my shipment with ID SHIP456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentVolume"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log025",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you estimate the volume of a 2kg package with dimensions 20x15x10cm?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["estimatePackageVolume"],
+        "parameters": [
+          {
+            "packageDetails": {"weight": 2, "dimensions":  {
+              "length": 20,
+              "width": 15,
+              "height": 10
+          }}
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log026",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to create 1 ton bulk shipments for my packages."
+        }
+      ],
+      "ground_truth": {
+        "API": ["createBulkShipment"],
+        "parameters": [
+          {
+            "shipmentsInfo": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log027",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the status of my bulk shipment with ID BULK123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBulkShipmentStatus"],
+        "parameters": [
+          {
+            "bulkShipmentId": "BULK123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log028",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you generate bulk shipping labels for bulk shipment ID BULK456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["generateBulkShippingLabels"],
+        "parameters": [
+          {
+            "bulkShipmentId": "BULK456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log029",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get details of the services provided by carrier with ID CARRIER001?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarrierServiceDetails"],
+        "parameters": [
+          {
+            "carrierId": "CARRIER001"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log030",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the transit times for shipping from Houston to London?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTransitTimes"],
+        "parameters": [
+          {
+            "origin": "Houston",
+            "destination": "London"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log031",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide proof of delivery for my shipment with ID SHIP123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDeliveryProof"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log032",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you request a signature upon delivery for my shipment with ID SHIP456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["requestSignatureOnDelivery"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP456"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log033",
+      "question": [
+        {
+          "role": "user",
+          "content": "What services are available for shipment from San Diego to Tokyo?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAvailableServices"],
+        "parameters": [
+          {}
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me the declared value of my shipment with ID SHIP789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentValue"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP789"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log035",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update the declared value of my shipment with ID SHIP321 to $5000."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateShipmentValue"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP321",
+            "value": 5000
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log036",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the export documentation for my shipment with ID SHIP654?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getExportDocumentation"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP654"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log037",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you submit the export declaration for my 1 electronics shipment valued 1000 dollars with ID SHIP789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["submitExportDeclaration"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP789",
+            "declarationDetails": {
+                  "description": "Electronics",
+                  "quantity": 1,
+                  "value": 1000
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log038",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the import documentation for my shipment with ID SHIP123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getImportDocumentation"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log039",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you submit the import declaration for my shipment with ID SHIP456? These are 20 clothing valued at 1500 dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["submitImportDeclaration"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP456",
+            "declarationDetails": {
+                  "description": "Clothing",
+                  "quantity": 20,
+                  "value": 1500
+            }
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log040",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the taxes for my shipment with ID SHIP789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentTaxes"],
+        "parameters": [
+          {
+            "shipmentId": "SHIP789"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "log041",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to ship a package from 133 5th Ave, New York to 19 Windsor Blvd, Los Angeles. Can you calculate the shipping cost and create the shipment for my 2kg 40x20x10cm package?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["calculateShippingCost", "createShipment"],
+        "parameters": [
+          {
+            "packageDetails": {"weight": 2, "dimensions":  {
+              "length": 40,
+              "width": 20,
+              "height": 10
+          }},
+            "origin": "New York",
+            "destination": "Los Angeles"
+          },
+          {
+            "senderAddress": "133 5th Ave, New York",
+            "recipientAddress": "19 Windsor Blvd, Los Angeles",
+            "packageDetails": {"weight": 2,
+            "dimensions": {
+              "length": 40,
+              "width": 20,
+              "height": 10
+          }}
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log042",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you track my shipment with tracking number TRK123456 and give me the delivery estimate which have same shipmentId?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTrackStatus", "getDeliveryEstimate"],
+        "parameters": [
+          {"trackingNumber": "TRK123456"},
+          {"shipmentId": "TRK123456"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log043",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to schedule a pickup on 2024-12-12 from 15 Lamar Street, Huston for my shipment SHP78910 and generate a shipping label."
+        }
+      ],
+      "ground_truth": {
+        "API": ["schedulePickup", "generateShippingLabel"],
+        "parameters": [
+          {"shipmentId": "SHP78910", "pickupDate": "2024-12-12", "pickupLocation": "15 Lamar Street, Huston"},
+          {"shipmentId": "SHP78910"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log044",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please validate this address 15 Lamar Street, Huston and then get available shipping options for a 2kg 40x10x10cm package from Chicago to Houston."
+        }
+      ],
+      "ground_truth": {
+        "API": ["validateAddress", "getShippingOptions"],
+        "parameters": [
+          {"address": "15 Lamar Street, Huston"},
+          {"origin": "Chicago", "destination": "Houston", "packageDetails": {"weight": 2,
+          "dimensions": {
+            "length": 40,
+            "width": 10,
+            "height": 10
+        }}}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log045",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check service availability between San Francisco and Tokyo and get customs information for the shipment? "
+        }
+      ],
+      "ground_truth": {
+        "API": ["getServiceAvailability", "getCustomsInformation"],
+        "parameters": [
+          {"origin": "San Francisco", "destination": "Tokyo"},
+          {"origin": "San Francisco", "destination": "Tokyo"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log046",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get the weight of 10x10x10cm shipment SHP12345 and then calculate the shipping cost form London to Tokyo."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentWeight", "calculateShippingCost"],
+        "parameters": [
+          {"shipmentId": "SHP12345"},
+          {"packageDetails": {"weight": "$$$",
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }},
+         "origin": "London", "destination": "Tokyo"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log047",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please get available carriers from Miami to Berlin and then get transit times."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAvailableCarriers", "getTransitTimes"],
+        "parameters": [
+          {"origin": "Miami", "destination": "Berlin"},
+          {"origin": "Miami", "destination": "Berlin"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log048",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update the shipment details as 1kg, 10x10x10cm for shipment SHP67890 and then get the updated shipment details?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateShipmentDetails", "getShipmentDetails"],
+        "parameters": [
+          {"shipmentId": "SHP67890", "packageDetails": {"weight": 1,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"shipmentId": "SHP67890"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log049",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to cancel shipment SHP11223 and then get a refund to my credit card."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelShipment", "convertShipmentCost"],
+        "parameters": [
+          {"shipmentId": "SHP11223"},
+          {"shipmentId": "SHP11223", "currencyTo": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log050",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the delivery status of shipment SHP33445 and then request a proof of delivery."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDeliveryStatus", "getDeliveryProof"],
+        "parameters": [
+          {"shipmentId": "SHP33445"},
+          {"shipmentId": "SHP33445"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log051",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please estimate the weight and volume of my 1kg 10x10x10cm package and then calculate the shipping cost from London to Berlin."
+        }
+      ],
+      "ground_truth": {
+        "API": ["estimatePackageWeight", "estimatePackageVolume", "calculateShippingCost"],
+        "parameters": [
+          {"packageDetails": {"weight": 1,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"packageDetails": {"weight": 1,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"packageDetails": {"weight": 1,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }, "origin": "London", "destination": "Berlin"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log052",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you create a bulk shipment from Sydney to Lonson with 600kg goods and then generate shipping labels for them?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["createBulkShipment", "generateBulkShippingLabels"],
+        "parameters": [
+          {"shipmentsInfo": "$$$"},
+          {"bulkShipmentId": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log053",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the shipment taxes for shipment SHP55667 and then convert the cost to Euros."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentTaxes", "convertShipmentCost"],
+        "parameters": [
+          {"shipmentId": "SHP55667"},
+          {"shipmentId": "SHP55667", "currencyTo": "EUR"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log054",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get warehouse locations and then check the inventory of warehouse WH123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getWarehouseLocations", "getWarehouseInventory"],
+        "parameters": [
+          {},
+          {"warehouseId": "WH123"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log055",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please transfer all inventory from warehouse WH123 to WH456 and then get the transfer status."
+        }
+      ],
+      "ground_truth": {
+        "API": ["transferInventory", "getWarehouseInventory"],
+        "parameters": [
+          {"fromWarehouseId": "WH123", "toWarehouseId": "WH456", "items": "$$$"},
+          {"warehouseId": "WH456"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log056",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get the shipping history for shipment SHP77889 and then get the delivery proof?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShippingHistory", "getDeliveryProof"],
+        "parameters": [
+          {"shipmentId": "SHP77889"},
+          {"shipmentId": "SHP77889"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log057",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get available insurance options for shipment SHP99001 and then add insurance."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShipmentInsuranceOptions", "addShipmentInsurance"],
+        "parameters": [
+          {"shipmentId": "SHP99001"},
+          {"shipmentId": "SHP99001", "insuranceOptionId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log058",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the customs information for a package from UK to Australia for a 1kg 10x10x10 package, and then submit the export declaration for shipment ID SH325223."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomsInformation", "submitExportDeclaration"],
+        "parameters": [
+          {"origin": "UK", "destination": "Australia"},
+          {"shipmentId": "SH325223", "declarationDetails": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log059",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get the fuel surcharge for shipment SHP22334 and then get a cost breakdown?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getFuelSurcharge", "getShipmentCostBreakdown"],
+        "parameters": [
+          {"shipmentId": "SHP22334"},
+          {"shipmentId": "SHP22334"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log060",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get available pickup locations near postal code 10001 and schedule a pickup for my shipment ID LU5289622S on 2024-12-15."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPickupLocations", "schedulePickup"],
+        "parameters": [
+          {"postalCode": "10001", "countryCode": "US"},
+          {"shipmentId": "LU5289622S", "pickupDate": "2024-12-15", "pickupLocation": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log061",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to ship a package. Can you create the shipment from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 1kg 10x10x10 package, schedule a pickup on 2024-09-21 from sender address, add insurance STANDARD, and generate the shipping label?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["createShipment", "schedulePickup", "addShipmentInsurance", "generateShippingLabel"],
+        "parameters": [
+          {"senderAddress": "15 Sudbury St, Boston", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": {"weight": 1,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"shipmentId": "$$$", "pickupDate": "2024-09-21", "pickupLocation": "15 Sudbury St, Boston"},
+          {"shipmentId": "$$$", "insuranceOptionId": "STANDARD"},
+          {"shipmentId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log062",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please provide me with shipping options from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 2kg 10x10x10 package, then create the shipment, schedule a pickup on 2024-09-21 from sender address, and let me know the tracking number."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShippingOptions", "createShipment", "schedulePickup", "getShipmentDetails"],
+        "parameters": [
+          {"origin": "Boston", "destination": "Seattle", "packageDetails": {"weight": 2,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"senderAddress": "15 Sudbury St, Boston", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": {"weight": 2,
+          "dimensions": {
+            "length": 10,
+            "width": 10,
+            "height": 10
+        }
+      }},
+          {"shipmentId": "$$$", "pickupDate": "2024-09-21", "pickupLocation": "$$$"},
+          {"shipmentId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log063",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to transfer inventory from warehouse WH001 to WH002, then check the inventory at WH002, and create shipments for the items."
+        }
+      ],
+      "ground_truth": {
+        "API": ["transferInventory", "getWarehouseInventory", "createBulkShipment"],
+        "parameters": [
+          {"fromWarehouseId": "WH001", "toWarehouseId": "WH002", "items": "$$$"},
+          {"warehouseId": "WH002"},
+          {"shipments": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "log064",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to ship a 4kg package (12x26x10) internationally from the 22 Lauder Ln, Dallas, Texas, USA to 12 Schießgartenstraße, Mainz, Germany. Can you create the shipment, provide customs information, help me submit the export declaration, and get the required export documentation?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["createShipment", "getCustomsInformation", "submitExportDeclaration", "getExportDocumentation"],
+        "parameters": [
+          {"senderAddress": "22 Lauder Ln, Dallas, Texas, USA", "recipientAddress": "12 Schießgartenstraße, Mainz, Germany", "packageDetails": {"weight": 4,
+          "dimensions": {
+            "length": 12,
+            "width": 26,
+            "height": 10
+        }
+      }},
+          {"origin": "USA", "destination": "Germany", "packageDetails": {"weight": 4,
+          "dimensions": {
+            "length": 12,
+            "width": 26,
+            "height": 10
+        }
+      }},
+          {"shipmentId": "$$$", "declarationDetails": "$$$"},
+          {"shipmentId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "log065",
+      "question": [
+        {
+          "role": "user",
+          "content": "I have a package but I'm not sure about its weight. Can you estimate the package weight based on dimensions 15cm * 26cm * 10cm, provide me with shipping options from Dallas to Seattle, calculate the shipping cost, and then create the shipment? My address is 22 Lauder Ln, Dallas, and the destination is 105 18th Ave, Seattle."
+        }
+      ],
+      "ground_truth": {
+        "API": ["estimatePackageWeight", "getShippingOptions", "calculateShippingCost", "createShipment"],
+        "parameters": [
+            {"dimensions": {
+              "length": 15,
+              "width": 26,
+              "height": 10
+          }},
+            {"origin": "Dallas", "destination": "Seattle", "packageDetails": {"weight": "$$$",
+            "dimensions": {
+              "length": 15,
+              "width": 26,
+              "height": 10
+          }
+        }},
+            {"packageDetails": {"weight": "$$$",
+            "dimensions": {
+              "length": 15,
+              "width": 26,
+              "height": 10
+          }
+        }, "origin": "Dallas", "destination": "Seattle"},
+            {"senderAddress": "22 Lauder Ln, Dallas", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": 
+              {"weight": "$$$",
+              "dimensions": {
+                "length": 15,
+                "width": 26,
+                "height": 10
+            }
+          }
+        }
+      ]
+      },
+      "difficulty":"hard"
+    }
+  ]
+  
+  

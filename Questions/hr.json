@@ -1,0 +1,645 @@
+[
+    {
+      "id": "hr001",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me the details of employee ID EMP001?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeInfo"],
+        "parameters": [
+          {
+            "employeeID": "EMP001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr002",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the department and position of employee ID EMP002?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeInfo"],
+        "parameters": [
+          {
+            "employeeID": "EMP002"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr003",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you create a new employment contract for employee ID EMP003? His title is 'Software Engineer', start from 2024-01-01 until 2026-12-31, salary is 60000."
+        }
+      ],
+      "ground_truth": {
+        "API": ["createEmploymentContract"],
+        "parameters": [
+          {
+            "employeeID": "EMP003",
+            "contractDetails": {
+              "startDate": "2024-01-01",
+              "endDate": "2026-12-31",
+              "salary": 60000,
+              "jobTitle": "Software Engineer"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr004",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to retrieve the employment contract details for contract ID CONTRACT001."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmploymentContract"],
+        "parameters": [
+          {
+            "contractID": "CONTRACT001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr005",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update the employment contract with contract ID CONTRACT002 to increase the salary to 65000?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateEmploymentContractSalary"],
+        "parameters": [
+          {
+            "contractID": "CONTRACT002",
+            "newSalary": 65000
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr006",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to terminate the employment contract end of October 2024 for contract ID CONTRACT003 with the reason 'Company downsizing.'"
+        }
+      ],
+      "ground_truth": {
+        "API": ["terminateEmploymentContract"],
+        "parameters": [
+          {
+            "contractID": "CONTRACT003",
+            "terminationDate": "2024-10-31",
+            "terminationReason": "Company downsizing"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr007",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the salary details for employee ID EMP004?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeSalaryDetails"],
+        "parameters": [
+          {
+            "employeeID": "EMP004"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr008",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please process the payroll for employee ID EMP005 for the month of September 2024."
+        }
+      ],
+      "ground_truth": {
+        "API": ["processPayroll"],
+        "parameters": [
+          {
+            "employeeID": "EMP005",
+            "payPeriod": "2024-09"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr009",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the payroll history for employee ID EMP006?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPayrollHistory"],
+        "parameters": [
+          {
+            "employeeID": "EMP006"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr010",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to update the salary to 5000 of employee ID EMP007."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateEmployeeSalary"],
+        "parameters": [
+          {
+            "employeeID": "EMP007",
+            "Salary": 5000
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr011",
+      "question": [
+        {
+          "role": "user",
+          "content": "How many days of annual leave does employee ID EMP008 have left?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeLeaveBalance"],
+        "parameters": [
+          {
+            "employeeID": "EMP008"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr012",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you apply for maternity leave for employee ID EMP009 from 2024 November 1st to 2025 January 31st?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["applyForLeave"],
+        "parameters": [
+          {
+            "employeeID": "EMP009",
+            "leaveType": "Maternity",
+            "startDate": "2024-11-01",
+            "endDate": "2025-01-31"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr013",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the status of the leave application with ID LEAVE001?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLeaveApplicationStatus"],
+        "parameters": [
+          {
+            "applicationID": "LEAVE001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr014",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update the start date of leave application ID LEAVE002 to 2024 December 1st and end date to 2024 December 15th."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateLeaveApplication"],
+        "parameters": [
+          {
+            "applicationID": "LEAVE002",
+            "updateData": {
+              "startDate": "2024-12-01",
+              "endDate":"2024-12-15"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr015",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me details on the benefits for employee ID EMP010?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeBenefits"],
+        "parameters": [
+          {
+            "employeeID": "EMP010"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr016",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to enroll employee ID EMP011 in the 'Health Insurance' benefit."
+        }
+      ],
+      "ground_truth": {
+        "API": ["enrollEmployeeInBenefit"],
+        "parameters": [
+          {
+            "employeeID": "EMP011",
+            "benefitType": "Health Insurance"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr017",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the performance review details for employee ID EMP012 for Q3-2024?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPerformanceReview"],
+        "parameters": [
+          {
+            "employeeID": "EMP012",
+            "reviewPeriod": "Q3-2024"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr018",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to submit a performance review for employee ID E67890. My ID is E84630, my overall rating of E67890 is A+, and I suggest more document writing."
+        }
+      ],
+      "ground_truth": {
+        "API": ["submitPerformanceReview"],
+        "parameters": [
+          {
+            "employeeID": "E67890",
+            "reviewer": "E84630",
+            "overallRating": "A+",
+            "comments": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr019",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the training records for employee ID EMP014?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTrainingRecords"],
+        "parameters": [
+          {
+            "employeeID": "EMP014"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr020",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to assign the 'LEADERSHIP001' training program to employee ID EMP015."
+        }
+      ],
+      "ground_truth": {
+        "API": ["assignTrainingProgram"],
+        "parameters": [
+          {
+            "employeeID": "EMP015",
+            "trainingProgramID": "LEADERSHIP001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr021",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update my salary to 80000 and then check my new salary."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateEmployeeSalary", "getEmployeeSalaryDetails"],
+        "parameters": [
+          {"employeeID": "E12345", "Salary": 80000},
+          {"employeeID": "E12345"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr022",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please retrieve my employment contract ID 12311 and then process payroll for 2023-10."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmploymentContract", "processPayroll"],
+        "parameters": [
+          {"contractID": "12311"},
+          {"employeeID": "$$$", "payPeriod": "2023-10"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "hr023",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get my leave balance and help me apply for annual leave from 2023-10-09 to 2023-10-13?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeLeaveBalance", "applyForLeave"],
+        "parameters": [
+          {"employeeID": "E23456"},
+          {"employeeID": "E23456", "leaveType": "Annual", "startDate": "2023-10-09", "endDate": "2023-10-13"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr024",
+      "question": [
+        {
+          "role": "user",
+          "content": "Retrieve my performance review for Q3-2023 with ID E34567 and assign me a new training program TP789."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPerformanceReview", "assignTrainingProgram"],
+        "parameters": [
+          {"employeeID": "E34567", "reviewPeriod": "Q3-2023"},
+          {"employeeID": "E34567", "trainingProgramID": "TP789"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr025",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get my benefits information with ID E45678 and enroll in the new 'Health Insurance' plan."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeBenefits", "enrollEmployeeInBenefit"],
+        "parameters": [
+          {"employeeID": "E45678"},
+          {"employeeID": "E45678", "benefitType": "Health Insurance"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr026",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide my attendance records for the last month and process my payroll?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeAttendance", "processPayroll"],
+        "parameters": [
+          {"employeeID": "E56789", "dateRange": {"startDate": "2023-09-01", "endDate": "2023-09-30"}},
+          {"employeeID": "E56789", "payPeriod": "2023-09"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr027",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please get my employment contract ID 11928 details and update my job title to 'Senior Developer'."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmploymentContract", "updateEmploymentContractTitle"],
+        "parameters": [
+          {"contractID": "11928"},
+          {"contractID": "11928", "newTitle": "Senior Developer"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr028",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to submit a performance review to E67890 and then check performance review Q2-2024. My ID is E84630, my overall rating of E67890 is A, and I suggest more involvement in code review."
+        }
+      ],
+      "ground_truth": {
+        "API": ["submitPerformanceReview", "getPerformanceReview"],
+        "parameters": [
+          {"employeeID": "E67890",
+          "reviewer": "E84630",
+          "overallRating": "A",
+          "comments": "$$$"},
+          {"employeeID": "E67890", "reviewPeriod": "Q2-2024"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr029",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get my leave application status for application ID LA123 and update dates from 2023-10-15 to 2023-10-20."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLeaveApplicationStatus", "updateLeaveApplication"],
+        "parameters": [
+          {"applicationID": "LA123"},
+          {"applicationID": "LA123", "updateData": {"startDate": "2023-10-15", "endDate": "2023-10-20"}}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr030",
+      "question": [
+        {
+          "role": "user",
+          "content": "Retrieve my employee training records with ID E78901 and assign me to the advanced leadership program TP456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTrainingRecords", "assignTrainingProgram"],
+        "parameters": [
+          {"employeeID": "E78901"},
+          {"employeeID": "E78901", "trainingProgramID": "TP456"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr031",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to terminate my employment contract ID 12351 because of personal reason and then get confirmation of termination."
+        }
+      ],
+      "ground_truth": {
+        "API": ["terminateEmploymentContract"],
+        "parameters": [
+          {"contractID": "12351", "terminationDate": "2023-10-31", "terminationReason": "$$$"}
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "hr032",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get my salary details with employee ID E89012 and then process my payroll for 2023-09?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeSalaryDetails", "processPayroll"],
+        "parameters": [
+          {"employeeID": "E89012"},
+          {"employeeID": "E89012", "payPeriod": "2023-09"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr033",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please retrieve my attendance records December 2023 with employee ID E89012 and apply for sick leave for 2024-01-13."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeAttendance", "applyForLeave"],
+        "parameters": [
+          {"employeeID": "E90123", "dateRange": {"startDate": "2023-12-01", "endDate": "2023-12-31"}},
+          {"employeeID": "E90123", "leaveType": "Sick", "startDate": "2024-01-13", "endDate": "2024-01-13"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get my benefits information and enroll me in the 'Retirement Plan'."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getEmployeeBenefits", "enrollEmployeeInBenefit"],
+        "parameters": [
+          {"employeeID": "E01234"},
+          {"employeeID": "E01234", "benefitType": "Retirement Plan"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "hr035",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update my employment contract ID 1371 with a new salary 90000 dollar and then get the updated contract details."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateEmploymentContract", "updateEmploymentContractSalary"],
+        "parameters": [
+          {"contractID": "1371", "newSalary": 90000},
+          {"contractID": "1371"}
+        ]
+      },
+      "difficulty": "medium"
+    }
+  ]
+  
+  

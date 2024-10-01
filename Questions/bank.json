@@ -1,0 +1,1343 @@
+[
+    {
+      "id": "ban01",
+      "question": [{"role": "user", "content": "Can you retrieve the account ID for account number 123456?"}],
+      "ground_truth": {
+        "API": ["getAccountID"],
+        "parameters": {"accountNumber": "123456"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban02",
+      "question": [{"role": "user", "content": "What is the balance for the account with ID 987654?"}],
+      "ground_truth": {
+        "API": ["getAccountBalance"],
+        "parameters": {"accountID": "987654"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban03",
+      "question": [{"role": "user", "content": "Can you retrieve the transaction history for account ID 123456 between 2024-01-01 and 2024-12-31?"}],
+      "ground_truth": {
+        "API": ["getTransactionHistory"],
+        "parameters": {"accountID": "123456", "startDate": "2024-01-01", "endDate": "2024-12-31"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban04",
+      "question": [{"role": "user", "content": "Can you initiate a transfer of 500 USD from account ID 123456 to account ID 654321?"}],
+      "ground_truth": {
+        "API": ["initiateTransfer"],
+        "parameters": {"fromAccountID": "123456", "toAccountID": "654321", "amount": "500", "currency": "USD"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban05",
+      "question": [{"role": "user", "content": "Can you check the status of the transfer with transfer ID T12345?"}],
+      "ground_truth": {
+        "API": ["getTransferStatus"],
+        "parameters": {"transferID": "T12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban06",
+      "question": [{"role": "user", "content": "I would like to cancel the transfer with transfer ID T54321."}],
+      "ground_truth": {
+        "API": ["cancelTransfer"],
+        "parameters": {"transferID": "T54321"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban07",
+      "question": [{"role": "user", "content": "Can you show me the details for account ID 987654?"}],
+      "ground_truth": {
+        "API": ["getAccountDetails"],
+        "parameters": {"accountID": "987654"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban08",
+      "question": [{"role": "user", "content": "I need to update the account details for account ID 123456."}],
+      "ground_truth": {
+        "API": ["updateAccountDetails"],
+        "parameters": {"accountID": "123456", "accountDetails": "$$$"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban09",
+      "question": [{"role": "user", "content": "Can you retrieve the details of the account holder for account ID 123456?"}],
+      "ground_truth": {
+        "API": ["getAccountHolderDetails"],
+        "parameters": {"accountID": "123456"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban010",
+      "question": [{"role": "user", "content": "I want to update the account holder details for account ID 654321."}],
+      "ground_truth": {
+        "API": ["updateAccountHolderDetails"],
+        "parameters": {"accountID": "654321", "holderDetails": {}}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban011",
+      "question": [{"role": "user", "content": "What accounts are available for customer ID C98765?"}],
+      "ground_truth": {
+        "API": ["getAvailableAccounts"],
+        "parameters": {"customerID": "C98765"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban012",
+      "question": [{"role": "user", "content": "Can you provide the details for loan ID L12345?"}],
+      "ground_truth": {
+        "API": ["getLoanDetails"],
+        "parameters": {"loanID": "L12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban013",
+      "question": [{"role": "user", "content": "I would like to apply for a personal loan of 10,000 USD for customer ID C98765."}],
+      "ground_truth": {
+        "API": ["applyForLoan"],
+        "parameters": {"customerID": "C98765", "loanAmount": "10000", "loanType": "personal"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban014",
+      "question": [{"role": "user", "content": "Can you check the status of loan application L12345?"}],
+      "ground_truth": {
+        "API": ["getLoanStatus"],
+        "parameters": {"loanID": "L12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban015",
+      "question": [{"role": "user", "content": "I would like to make a loan payment of 500 USD using credit card for loan ID L54321."}],
+      "ground_truth": {
+        "API": ["makeLoanPayment"],
+        "parameters": {"loanID": "L54321", "paymentAmount": "500", "paymentMethod": "creditCard"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban016",
+      "question": [{"role": "user", "content": "Can you retrieve the details for credit card ID CC12345?"}],
+      "ground_truth": {
+        "API": ["getCreditCardDetails"],
+        "parameters": {"creditCardNumber": "CC12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban017",
+      "question": [{"role": "user", "content": "Can you get the credit card statement for credit card ID CC98765 for the period January 2024?"}],
+      "ground_truth": {
+        "API": ["getCreditCardStatement"],
+        "parameters": {"creditCardNumber": "CC98765", "statementPeriod": "2024-01"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban018",
+      "question": [{"role": "user", "content": "I want to make a payment of 200 USD towards my credit card with ID CC54321."}],
+      "ground_truth": {
+        "API": ["makeCreditCardPayment"],
+        "parameters": {"creditCardNumber": "CC54321", "paymentAmount": "200", "paymentMethod": "$$$"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban019",
+      "question": [{"role": "user", "content": "Can you tell me the credit limit for credit card ID CC12345?"}],
+      "ground_truth": {
+        "API": ["getCreditLimit"],
+        "parameters": {"creditCardNumber": "CC12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban020",
+      "question": [{"role": "user", "content": "Can you request an increase in credit limit to 10,000 USD for credit card ID CC54321?"}],
+      "ground_truth": {
+        "API": ["increaseCreditLimit"],
+        "parameters": {"creditCardNumber": "CC54321", "newLimit": "10000"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban021",
+      "question": [{"role": "user", "content": "I lost my credit card with ID CC12345. Can you block it?"}],
+      "ground_truth": {
+        "API": ["blockCreditCard"],
+        "parameters": {"creditCardNumber": "CC12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban022",
+      "question": [{"role": "user", "content": "Can you unblock my credit card with ID CC54321?"}],
+      "ground_truth": {
+        "API": ["unblockCreditCard"],
+        "parameters": {"creditCardNumber": "CC54321"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban023",
+      "question": [{"role": "user", "content": "Can you retrieve the details for my fixed deposit account with ID FD12345?"}],
+      "ground_truth": {
+        "API": ["getFixedDepositDetails"],
+        "parameters": {"fixedDepositID": "FD12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban024",
+      "question": [{"role": "user", "content": "I would like to open a fixed deposit account with an amount of 10,000 USD for a term of 12 months, interest rate set to 2.5%."}],
+      "ground_truth": {
+        "API": ["openFixedDeposit"],
+        "parameters": {"accountID": "987654", "depositAmount": "10000", "termLength": "12", "interestRate": "2.5"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban025",
+      "question": [{"role": "user", "content": "Can you close my fixed deposit account with ID FD54321?"}],
+      "ground_truth": {
+        "API": ["closeFixedDeposit"],
+        "parameters": {"fixedDepositID": "FD54321"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban026",
+      "question": [{"role": "user", "content": "Can you show me the details for recurring deposit ID RD12345?"}],
+      "ground_truth": {
+        "API": ["getRecurringDepositDetails"],
+        "parameters": {"recurringDepositID": "RD12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban027",
+      "question": [{"role": "user", "content": "I want to open a recurring deposit with a monthly installment of 500 USD for a term of 12 months."}],
+      "ground_truth": {
+        "API": ["openRecurringDeposit"],
+        "parameters": {"accountID": "987654", "monthlyInstallment": "500", "termLength": "12"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban028",
+      "question": [{"role": "user", "content": "Can you close my recurring deposit account with ID RD54321?"}],
+      "ground_truth": {
+        "API": ["closeRecurringDeposit"],
+        "parameters": {"recurringDepositID": "RD54321"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban029",
+      "question": [{"role": "user", "content": "Can you retrieve the loan repayment schedule for loan ID L12345?"}],
+      "ground_truth": {
+        "API": ["getLoanRepaymentSchedule"],
+        "parameters": {"loanID": "L12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban030",
+      "question": [{"role": "user", "content": "Can you provide the investment portfolio details for customer ID C98765?"}],
+      "ground_truth": {
+        "API": ["getInvestmentPortfolio"],
+        "parameters": {"customerID": "C98765"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban031",
+      "question": [{"role": "user", "content": "Can you help me buy an investment with ID I12345 for an amount of 5,000 USD? My customer ID is C98765."}],
+      "ground_truth": {
+        "API": ["buyInvestment"],
+        "parameters": {"customerID": "C98765", "investmentID": "I12345", "amount": "5000"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban032",
+      "question": [{"role": "user", "content": "I would like to sell my investment with ID I54321 for an amount of 2,000 USD, my customer ID is C98765."}],
+      "ground_truth": {
+        "API": ["sellInvestment"],
+        "parameters": {"customerID": "C98765", "investmentID": "I54321", "amount": "2000"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban033",
+      "question": [{"role": "user", "content": "Can you show me the details of investment ID I12345?"}],
+      "ground_truth": {
+        "API": ["getInvestmentDetails"],
+        "parameters": {"investmentID": "I12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban034",
+      "question": [{"role": "user", "content": "Can you retrieve the details of insurance policy ID P12345?"}],
+      "ground_truth": {
+        "API": ["getInsurancePolicyDetails"],
+        "parameters": {"policyID": "P12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban035",
+      "question": [{"role": "user", "content": "I would like to apply for a new life insurance policy with a coverage amount of 100,000 USD."}],
+      "ground_truth": {
+        "API": ["applyForInsurance"],
+        "parameters": {"customerID": "C98765", "insuranceType": "life", "coverageAmount": "100000"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban036",
+      "question": [{"role": "user", "content": "Can you check the status of my insurance claim with ID CL12345?"}],
+      "ground_truth": {
+        "API": ["getInsuranceClaimStatus"],
+        "parameters": {"claimID": "CL12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban037",
+      "question": [{"role": "user", "content": "I need to file an insurance claim for policy ID P54321. Can you help?"}],
+      "ground_truth": {
+        "API": ["fileInsuranceClaim"],
+        "parameters": {"policyID": "P54321", "claimDetails": "$$$"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban038",
+      "question": [{"role": "user", "content": "I want to pay the insurance premium of 500 USD for policy ID P12345 with my creditCard 5111052024299232."}],
+      "ground_truth": {
+        "API": ["payInsurancePremium"],
+        "parameters": {"policyID": "P12345", "amount": "500", "paymentMethod": "creditCard:5111052024299232"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban039",
+      "question": [{"role": "user", "content": "Can you show me the details of mortgage ID M12345?"}],
+      "ground_truth": {
+        "API": ["getMortgageDetails"],
+        "parameters": {"mortgageID": "M12345"}
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ban040",
+      "question": [{"role": "user", "content": "Can you apply for a mortgage with a loan amount of 300,000 USD and property value of 400000 USD for customer ID C98765?"}],
+      "ground_truth": {
+        "API": ["applyForMortgage"],
+        "parameters": {"customerID": "C98765", "propertyValue": "400000", "loanAmount": "300000", "termLength": "30"}
+      },
+      "difficulty": "easy"
+    },
+  {
+    "id": "ban041",
+    "question": [{"role": "user", "content": "Can you retrieve the account balance for account number 123456 and show the recent transaction history for the past month?"}],
+    "ground_truth": {
+      "API": ["getAccountID", "getTransactionHistory"],
+      "parameters": [
+        {"accountNumber": "123456"},
+        {"accountID": "987654", "startDate": "2024-08-01", "endDate": "2024-08-31"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban042",
+    "question": [{"role": "user", "content": "Can you initiate a transfer of 1000 USD from account ID 123456 and check the status of the transfer afterward?"}],
+    "ground_truth": {
+      "API": ["initiateTransfer", "getTransferStatus"],
+      "parameters": [
+        {"fromAccountID": "123456", "toAccountID": "654321", "amount": "1000", "currency": "USD"},
+        {"transferID": "$$$"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "ban043",
+    "question": [{"role": "user", "content": "Can you retrieve the details of loan ID L12345 and make a payment of 500 USD toward it?"}],
+    "ground_truth": {
+      "API": ["getLoanDetails", "makeLoanPayment"],
+      "parameters": [
+        {"loanID": "L12345"},
+        {"loanID": "L12345", "paymentAmount": "500", "paymentMethod": "bankTransfer"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban044",
+    "question": [{"role": "user", "content": "Can you show me the details of my credit card with ID CC54321 and also show me the credit limit?"}],
+    "ground_truth": {
+      "API": ["getCreditCardDetails", "getCreditLimit"],
+      "parameters": [
+        {"creditCardNumber": "CC54321"},
+        {"creditCardNumber": "CC54321"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban045",
+    "question": [{"role": "user", "content": "I need to open a fixed deposit account for account ID 987654, with an amount of 5000 USD for 12 months, interest rate 2.5%, and check the details of the account after it's opened."}],
+    "ground_truth": {
+      "API": ["openFixedDeposit", "getFixedDepositDetails"],
+      "parameters": [
+        {"accountID": "987654", "depositAmount": "5000", "termLength": "12", "interestRate": "2.5"},
+        {"fixedDepositID": "$$$"}
+      ]
+    },
+      "difficulty": "hard"
+  },
+  {
+    "id": "ban046",
+    "question": [{"role": "user", "content": "Can you block my credit card with ID CC12345 and request a new card afterward?"}],
+    "ground_truth": {
+      "API": ["blockCreditCard", "orderNewATMCard"],
+      "parameters": [
+        {"creditCardNumber": "CC12345"},
+        {"accountID": "987654"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban047",
+    "question": [{"role": "user", "content": "Can you retrieve the account balance for account ID 987654 and the available overdraft limit for the same account?"}],
+    "ground_truth": {
+      "API": ["getAccountBalance", "getOverdraftLimit"],
+      "parameters": [
+        {"accountID": "987654"},
+        {"accountID": "987654"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban048",
+    "question": [{"role": "user", "content": "Can you provide the loan repayment schedule for loan ID L12345 and make a payment of 1000 USD towards it?"}],
+    "ground_truth": {
+      "API": ["getLoanRepaymentSchedule", "makeLoanPayment"],
+      "parameters": [
+        {"loanID": "L12345"},
+        {"loanID": "L12345", "paymentAmount": "1000", "paymentMethod": "bankTransfer"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban049",
+    "question": [{"role": "user", "content": "Can you provide the transaction history for account ID 987654 and retrieve the account details afterward?"}],
+    "ground_truth": {
+      "API": ["getTransactionHistory", "getAccountDetails"],
+      "parameters": [
+        {"accountID": "987654", "startDate": "2024-01-01", "endDate": "2024-12-31"},
+        {"accountID": "987654"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban050",
+    "question": [{"role": "user", "content": "Can you apply for a loan of 5000 USD for customer ID C12345 and retrieve the loan application status afterward?"}],
+    "ground_truth": {
+      "API": ["applyForLoan", "getLoanStatus"],
+      "parameters": [
+        {"customerID": "C12345", "loanAmount": "5000", "loanType": "personal"},
+        {"loanID": "L54321"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban051",
+    "question": [{"role": "user", "content": "Can you retrieve the investment portfolio for customer ID C12345 and help me buy an investment with ID I12345 for 2000 USD?"}],
+    "ground_truth": {
+      "API": ["getInvestmentPortfolio", "buyInvestment"],
+      "parameters": [
+        {"customerID": "C12345"},
+        {"customerID": "C12345", "investmentID": "I12345", "amount": "2000"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban052",
+    "question": [{"role": "user", "content": "Can you retrieve the credit card statement for credit card ID CC54321 for February 2024 and make a payment of 300 USD towards the same card?"}],
+    "ground_truth": {
+      "API": ["getCreditCardStatement", "makeCreditCardPayment"],
+      "parameters": [
+        {"creditCardNumber": "CC54321", "statementPeriod": "2024-02"},
+        {"creditCardNumber": "CC54321", "paymentAmount": "300", "paymentMethod": "bankTransfer"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban053",
+    "question": [{"role": "user", "content": "Can you retrieve the details of recurring deposit ID RD54321 and close the recurring deposit afterward?"}],
+    "ground_truth": {
+      "API": ["getRecurringDepositDetails", "closeRecurringDeposit"],
+      "parameters": [
+        {"recurringDepositID": "RD54321"},
+        {"recurringDepositID": "RD54321"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban054",
+    "question": [{"role": "user", "content": "Can you retrieve the mortgage details for mortgage ID M12345 and apply for an increase in my overdraft limit afterward? My account ID is 987654."}],
+    "ground_truth": {
+      "API": ["getMortgageDetails", "increaseOverdraftLimit"],
+      "parameters": [
+        {"mortgageID": "M12345"},
+        {"accountID": "987654", "newLimit": "5000"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+    "id": "ban055",
+    "question": [{"role": "user", "content": "Can you retrieve the credit limit for credit card number 4648594508297258 and request an increase in the limit to 10000 afterward?"}],
+    "ground_truth": {
+      "API": ["getCreditLimit", "increaseCreditLimit"],
+      "parameters": [
+        {"creditCardNumber": "4648594508297258"},
+        {"creditCardNumber": "4648594508297258", "newLimit": "10000"}
+      ]
+    },
+      "difficulty": "medium"
+  },
+  {
+      "id": "ban056",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the balance of my account number 123456789 and can you provide the transaction history for the Sep 2023?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getAccountBalance", "getTransactionHistory"],
+        "parameters": [
+          {"accountNumber": "123456789"},
+          {"accountID": "$$$"},
+          {"accountID": "$$$", "startDate": "2023-09-01", "endDate": "2023-09-30"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban057",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please wire-transfer $500 from my account number 32421516 to account number 21674312 and then check the transfer status."
+        }
+      ],
+      "ground_truth": {
+        "API": ["initiateTransfer", "getTransferStatus"],
+        "parameters": [
+          {"fromAccountID": "32421516", "toAccountID": "21674312", "amount": 500, "currency": "USD"},
+          {"transferID": "$$$"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban058",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the details of my loan ID LN987654 and make a payment of $1,000?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLoanDetails", "makeLoanPayment"],
+        "parameters": [
+          {"loanID": "LN987654"},
+          {"loanID": "LN987654", "paymentAmount": 1000, "paymentMethod": "BankTransfer"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban059",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get my credit card statement for card ID CC123456 for last month and then pay the due amount."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCreditCardStatement", "makeCreditCardPayment"],
+        "parameters": [
+          {"creditCardNumber": "CC123456", "statementPeriod": "2023-09"},
+          {"creditCardNumber": "CC123456", "paymentAmount": "$$$", "paymentMethod": "DebitAccount"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban060",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please get the details of my fixed deposit FD654321 and close it."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getFixedDepositDetails", "closeFixedDeposit"],
+        "parameters": [
+          {"fixedDepositID": "FD654321"},
+          {"fixedDepositID": "FD654321"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban061",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to open a new recurring deposit 500 dollar monthly for 12 months from my account number 123456789."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "openRecurringDeposit"],
+        "parameters": [
+          {"accountNumber": "123456789"},
+          {"accountID": "$$$", "monthlyInstallment": "500", "termLength": "12 months"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban062",
+      "question": [
+        {
+          "role": "user",
+          "content": "Check my investment portfolio and buy investment ID INV789012 for $5,000. my customer ID is SD32502"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInvestmentPortfolio", "buyInvestment"],
+        "parameters": [
+          {"customerID": "SD32502"},
+          {"customerID": "SD32502", "investmentID": "INV789012", "amount": 5000}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban063",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the details of my insurance policy IP456789 and file a claim."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInsurancePolicyDetails", "fileInsuranceClaim"],
+        "parameters": [
+          {"policyID": "IP456789"},
+          {"policyID": "IP456789", "claimDetails": "$$$"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban064",
+      "question": [
+        {
+          "role": "user",
+          "content": "Retrieve my mortgage details for mortgage ID MG123789 and provide the repayment schedule."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getMortgageDetails", "getMortgageRepaymentSchedule"],
+        "parameters": [
+          {"mortgageID": "MG123789"},
+          {"mortgageID": "MG123789"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban065",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get my overdraft limit for account number 987654321 and request an increase to $10,000?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getOverdraftLimit", "increaseOverdraftLimit"],
+        "parameters": [
+          {"accountNumber": "987654321"},
+          {"accountID": "$$$"},
+          {"accountID": "$$$", "newLimit": 10000}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban066",
+      "question": [
+        {
+          "role": "user",
+          "content": "Find the nearest branch to 'Baker Street' and get its operating hours."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNearestBranch", "getBranchHours"],
+        "parameters": [
+          {"location": "Baker Street"},
+          {"branchID": "$$$"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban067",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the exchange rates for GBP to USD and convert £1,000 to dollars."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCurrencyExchangeRates", "convertCurrency"],
+        "parameters": [
+          {"currencyPair": "GBP/USD"},
+          {"fromCurrency": "GBP", "toCurrency": "USD", "amount": 1000}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban068",
+      "question": [
+        {
+          "role": "user",
+          "content": "Report my ATM card linked to account ID 112233445 as lost and order a new one."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getATMCardList", "reportLostATMCard", "orderNewATMCard"],
+        "parameters": [
+          {"accountID": "112233445"},
+          {"accountID": "112233445", "cardID": "$$$"},
+          {"accountID": "112233445"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban069",
+      "question": [
+        {
+          "role": "user",
+          "content": "Retrieve details of wire transfer WT987654 and cancel it."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getWireTransferDetails", "cancelWireTransfer"],
+        "parameters": [
+          {"transferID": "WT987654"},
+          {"transferID": "WT987654"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban070",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get the details of my recurring payment RP654321 and then cancel it."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRecurringPaymentDetails", "cancelRecurringPayment"],
+        "parameters": [
+          {"recurringPaymentID": "RP654321"},
+          {"recurringPaymentID": "RP654321"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban071",
+      "question": [
+        {
+          "role": "user",
+          "content": "Check my account alerts for account number 123456789 and set a new alert for low balance less than 100."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getAccountAlerts", "setAccountAlert"],
+        "parameters": [
+          {"accountNumber": "123456789"},
+          {"accountID": "$$$"},
+          {"accountID": "$$$", "alertDetails": {"type": "LowBalance", "threshold": "100"}}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban072",
+      "question": [
+        {
+          "role": "user",
+          "content": "Retrieve my customer details and update my phone number to 124918110, my customer ID is VB23141."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomerDetails", "updateCustomerDetails"],
+        "parameters": [
+          {"customerID": "VB23141"},
+          {"customerID": "VB23141", "newDetails": {"phoneNumber": "124918110"}}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban073",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get my loan applications and apply for a new loan of $20,000. My customer ID is VB23141."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomerLoans", "applyForLoan"],
+        "parameters": [
+          {"customerID": "VB23141"},
+          {"customerID": "VB23141", "loanAmount": 20000, "loanType": "Home"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban074",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide my credit card details and increase the credit limit to $15,000? My customer ID is VB23141."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomerCreditCards", "increaseCreditLimit"],
+        "parameters": [
+          {"customerID": "VB23141"},
+          {"creditCardNumber": "$$$", "newLimit": 15000}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban075",
+      "question": [
+        {
+          "role": "user",
+          "content": "Get my insurance policies and apply for a new life insurance with $500,000 coverage, my customer ID is VB23141"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomerInsurancePolicies", "applyForInsurance"],
+        "parameters": [
+          {"customerID": "VB23141"},
+          {"customerID": "VB23141", "insuranceType": "Life", "coverageAmount": 500000}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "ban076",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to terminate my fixed term deposit, my name is Peter Parker."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountIDfromName", "getAccountBalance", "closeFixedDeposit"],
+        "parameters": [
+          { "name": "Peter Parker" },
+          { "accountID": "$$$" },
+          { "fixedDepositID": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban077",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to open a new 6 months fixed deposit account for all money in my account ID LB12110."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountBalance", "getInterestRates", "openFixedDeposit"],
+        "parameters": [
+          { "accountID": "LB12110" },
+          { "currency": "$$$", "termLength":"6 months"},
+          { "accountID": "LB12110", "depositAmount": "$$$", "termLength": "6 months", "interestRate": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban078",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want transfer 900 British Pound to GB21000001 account from my euro account, my name is Peter Parker."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountIDfromName", "getAccountBalance", "getCurrencyExchangeRates", "initiateWireTransfer", "getWireTransferDetails"],
+        "parameters": [
+          { "name": "Peter Parker" },
+          { "accountID": "$$$" },
+          { "currencyPair": "EUR/GBP" },
+          { "fromAccountID": "$$$", "toBankDetails": "GB21000001", "amount": "900", "currency": "GBP" },
+          { "transferID": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban079",
+      "question": [
+        {
+          "role": "user",
+          "content": "I cannot do payment with my credit card 4421310012415510, could you check it for me?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCreditCardDetails", "getCreditLimit", "getAccountDetails"],
+        "parameters": [
+          { "creditCardNumber": "4421310012415510" },
+          { "creditCardNumber": "4421310012415510" },
+          { "accountID": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban080",
+      "question": [
+        {
+          "role": "user",
+          "content": "I am concern some unusual transfer happens in August 2024, can you check these transactions for account ID LB12110?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTransactionHistory", "getTransferStatus", "getAccountDetails"],
+        "parameters": [
+          { "accountID": "LB12110", "startDate": "2024-08-01", "endDate": "2024-08-31" },
+          { "transferID": "$$$" },
+          { "accountID": "LB12110" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban081",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to travel to Japan, how many Japanese Yen I can spend with my credit card? my customer ID is 123155."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCustomerCreditCards", "getCreditCardDetails", "getCurrencyExchangeRates"],
+        "parameters": [
+          { "customerID": "123155" },
+          { "creditCardNumber": "$$$" },
+          { "currencyPair": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban082",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to apply a short term loan with my credit card record for 3000 euro, my account ID is 123155."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCreditCardList", "getCreditCardStatement", "applyForLoan"],
+        "parameters": [
+          { "accountID": "123155" },
+          { "creditCardNumber": "$$$", "statementPeriod": "$$$" },
+          { "customerID": "123155", "loanAmount": "3000", "loanType": "short term loan" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban083",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to invest 30000 euro from my account to portfolio if I have the balance, my customer ID is 123155."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getAccountBalance", "getInvestmentPortfolio", "buyInvestment"],
+        "parameters": [
+          { "customerID": "123155" },
+          { "accountID": "$$$" },
+          { "customerID": "123155" },
+          { "customerID": "123155", "investmentID": "$$$", "amount": "30000" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban084",
+      "question": [
+        {
+          "role": "user",
+          "content": "My card is lost, I want to make sure my account is safe and order a new card. my customer ID is 123155."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getTransactionHistory", "orderNewATMCard"],
+        "parameters": [
+          { "customerID": "123155" },
+          { "accountID": "$$$", "startDate": "$$$", "endDate": "$$$" },
+          { "accountID": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "ban085",
+      "question": [
+        {
+          "role": "user",
+          "content": "What is average spend in my account past first quarter 2024 exclude recurring payment? my account number is 123155."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountID", "getTransactionHistory", "getRecurringPaymentList"],
+        "parameters": [
+          { "customerID": "123155" },
+          { "accountID": "$$$", "startDate": "2024-01-01", "endDate": "2023-03-31" },
+          { "accountID": "$$$" }
+        ]
+      },
+      "difficulty": "hard"
+    },
+      {
+        "id": "ban086",
+        "question": [{"role": "user", "content": "Can you retrieve the repayment schedule for my mortgage with ID M67890?"}],
+        "ground_truth": {
+          "API": ["getMortgageRepaymentSchedule"],
+          "parameters": [{"mortgageID": "M67890"}]
+        },
+      "difficulty": "easy"
+      },
+      {
+        "id": "ban087",
+        "question": [{"role": "user", "content": "I want to make a mortgage payment of 1500 USD for mortgage ID M67890 using my checking account."}],
+        "ground_truth": {
+          "API": ["makeMortgagePayment"],
+          "parameters": [{"mortgageID": "M67890", "paymentAmount": 1500, "paymentMethod": "checkingAccount"}]
+        },
+      "difficulty": "easy"
+      },
+      {
+        "id": "ban088",
+        "question": [{"role": "user", "content": "What's the outstanding balance on my mortgage with ID M67890?"}],
+        "ground_truth": {
+          "API": ["getMortgageBalance"],
+          "parameters": [{"mortgageID": "M67890"}]
+        },
+      "difficulty": "easy"
+      },
+      {
+        "id": "ban089",
+        "question": [{"role": "user", "content": "Can you show me the overdraft details for my account with ID 123456?"}],
+        "ground_truth": {
+          "API": ["getOverdraftDetails"],
+          "parameters": [{"accountID": "123456"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban090",
+        "question": [{"role": "user", "content": "I'd like to apply for an overdraft limit of 5000 USD on my account ID 123456."}],
+        "ground_truth": {
+          "API": ["applyForOverdraft"],
+          "parameters": [{"accountID": "123456", "overdraftLimit": 5000}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban091",
+        "question": [{"role": "user", "content": "What is my current overdraft limit on account ID 123456?"}],
+        "ground_truth": {
+          "API": ["getOverdraftLimit"],
+          "parameters": [{"accountID": "123456"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban092",
+        "question": [{"role": "user", "content": "Can I increase my overdraft limit to 7000 USD on account ID 123456?"}],
+        "ground_truth": {
+          "API": ["increaseOverdraftLimit"],
+          "parameters": [{"accountID": "123456", "newLimit": 7000}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban093",
+        "question": [{"role": "user", "content": "Can you get my account statements for account ID 123456 from January 2023 to December 2023?"}],
+        "ground_truth": {
+          "API": ["getAccountStatements"],
+          "parameters": [{"accountID": "123456", "startDate": "2023-01-01", "endDate": "2023-12-31"}]
+        },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban094",
+        "question": [{"role": "user", "content": "I'd like to download my statement with ID S7890 in PDF format."}],
+        "ground_truth": {
+          "API": ["downloadStatement"],
+          "parameters": [{"statementID": "S7890", "format": "PDF"}]
+        },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban095",
+        "question": [{"role": "user", "content": "Can you provide me with details of branch ID B123?"}],
+        "ground_truth": {
+          "API": ["getBranchDetails"],
+          "parameters": [{"branchID": "B123"}]
+        },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban096",
+        "question": [{"role": "user", "content": "Where is the nearest branch to my location in New York City?"}],
+        "ground_truth": {
+          "API": ["getNearestBranch"],
+          "parameters": [{"location": "New York City"}]
+         },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban097",
+        "question": [{"role": "user", "content": "What are the operating hours for branch ID B123?"}],
+        "ground_truth": {
+          "API": ["getBranchHours"],
+          "parameters": [{"branchID": "B123"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban098",
+        "question": [{"role": "user", "content": "Can you give me details about the ATM with ID ATM456?"}],
+        "ground_truth": {
+          "API": ["getATMDetails"],
+          "parameters": [{"atmID": "ATM456"}]
+         },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban099",
+        "question": [{"role": "user", "content": "Where is the nearest ATM to my current location in Los Angeles?"}],
+        "ground_truth": {
+          "API": ["getNearestATM"],
+          "parameters": [{"location": "Los Angeles"}]
+         },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0100",
+        "question": [{"role": "user", "content": "Can you list my ATM cards linked to account ID 123456?"}],
+        "ground_truth": {
+          "API": ["getATMCardList"],
+          "parameters": [{"accountID": "123456"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0101",
+        "question": [{"role": "user", "content": "I lost my ATM card with account ID C234589 and my card number is 5514987678765424, can you report it?"}],
+        "ground_truth": {
+          "API": ["reportLostATMCard"],
+          "parameters": [{"accountID": "C234589", "cardID": "5514987678765424"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0102",
+        "question": [{"role": "user", "content": "I need to order a new ATM card for my account ID 123456."}],
+        "ground_truth": {
+          "API": ["orderNewATMCard"],
+          "parameters": [{"accountID": "123456"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0103",
+        "question": [{"role": "user", "content": "Please activate my new ATM card with ID CARD101 linked to account 123456."}],
+        "ground_truth": {
+          "API": ["activateATMCard"],
+          "parameters": [{"accountID": "123456", "cardID": "CARD101"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0104",
+        "question": [{"role": "user", "content": "I want to change the PIN for my ATM card CARD101 to a new PIN."}],
+        "ground_truth": {
+          "API": ["changeATMPIN"],
+          "parameters": [{"accountID": "$$$", "cardID": "CARD101", "newPIN": "$$$"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0105",
+        "question": [{"role": "user", "content": "What is the current exchange rate for USD to EUR?"}],
+        "ground_truth": {
+          "API": ["getCurrencyExchangeRates"],
+          "parameters": [{"currencyPair": "USD/EUR"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0106",
+        "question": [{"role": "user", "content": "What is the interest rate for a 12-month term deposit in USD?"}],
+        "ground_truth": {
+          "API": ["getInterestRates"],
+          "parameters": [{"currency": "USD", "termLength": 12}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0107",
+        "question": [{"role": "user", "content": "How much is 1000 USD in EUR?"}],
+        "ground_truth": {
+          "API": ["convertCurrency"],
+          "parameters": [{"fromCurrency": "USD", "toCurrency": "EUR", "amount": 1000}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0108",
+        "question": [{"role": "user", "content": "Can you provide details of my wire transfer with ID WT123?"}],
+        "ground_truth": {
+          "API": ["getWireTransferDetails"],
+          "parameters": [{"transferID": "WT123"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0109",
+        "question": [{"role": "user", "content": "I need to initiate a wire transfer of 5000 USD to an external bank account."}],
+        "ground_truth": {
+          "API": ["initiateWireTransfer"],
+          "parameters": [{"fromAccountID": "$$$", "toBankDetails": "$$$", "amount": 5000, "currency": "USD"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0110",
+        "question": [{"role": "user", "content": "What's the status of my wire transfer with ID WT456?"}],
+        "ground_truth": {
+          "API": ["getWireTransferStatus"],
+          "parameters": [{"transferID": "WT456"}]
+         },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0111",
+        "question": [{"role": "user", "content": "I want to cancel the wire transfer with ID WT789."}],
+        "ground_truth": {
+          "API": ["cancelWireTransfer"],
+          "parameters": [{"transferID": "WT789"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0112",
+        "question": [{"role": "user", "content": "Can you list all my recurring payments associated with account ID 123456?"}],
+        "ground_truth": {
+          "API": ["getRecurringPaymentList"],
+          "parameters": [{"accountID": "123456"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0113",
+        "question": [{"role": "user", "content": "Please provide details of my recurring payment with ID RP123."}],
+        "ground_truth": {
+          "API": ["getRecurringPaymentDetails"],
+          "parameters": [{"recurringPaymentID": "RP123"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0114",
+        "question": [{"role": "user", "content": "I want to set up a recurring payment of 100 USD every month to account ID 654321."}],
+        "ground_truth": {
+          "API": ["createRecurringPayment"],
+          "parameters": [{"fromAccountID": "$$$", "toAccountID": "654321", "amount": 100, "frequency": "monthly"}]
+          },
+        "difficulty": "easy"
+      },
+      {
+        "id": "ban0115",
+        "question": [{"role": "user", "content": "Can you update my recurring payment with ID RP123 to increase the amount to 150 USD?"}],
+        "ground_truth": {
+          "API": ["updateRecurringPayment"],
+          "parameters": [{"recurringPaymentID": "RP123", "newDetails": {"amount": 150}}]
+          },
+        "difficulty": "easy"
+      }
+    ]
+    
+
+
+  

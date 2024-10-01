@@ -1,0 +1,1037 @@
+[
+    {
+      "id": "sho001",
+      "question": [
+        {
+          "role": "user",
+          "content": "How much does item ITEM123 cost?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getItemPrice"],
+        "parameters": [
+          {
+            "itemId": "ITEM123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho002",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you process my payment of $50 using my VISA card ending in 1234? My card number is 4111111111111234, expiry date is 12/25, CVV is 123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["payByVISA"],
+        "parameters": [
+          {
+            "cardNumber": "4111111111111234",
+            "expiryDate": "12/25",
+            "cvv": "123",
+            "amount": 50
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho003",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to add 2 units of item ITEM456 to my cart."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addItemToCart"],
+        "parameters": [
+          {
+            "itemId": "ITEM456",
+            "quantity": 2
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho004",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you remove item ITEM789 from my cart?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["removeItemFromCart"],
+        "parameters": [
+          {
+            "itemId": "ITEM789"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho005",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's currently in my shopping cart?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCartItems"],
+        "parameters": []
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho006",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’m ready to check out. Please proceed with the order for user USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["checkout"],
+        "parameters": [
+          {
+            "userId": "USER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho007",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the status of my order ORDER123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getOrderStatus"],
+        "parameters": [
+          {
+            "orderId": "ORDER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho008",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my order ORDER789."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelOrder"],
+        "parameters": [
+          {
+            "orderId": "ORDER789"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho009",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I apply discount code SAVE10 to my order ORDER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["applyDiscountCode"],
+        "parameters": [
+          {
+            "orderId": "ORDER456",
+            "discountCode": "SAVE10"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho010",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the shipping options available for my order ORDER123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getShippingOptions"],
+        "parameters": [
+          {
+            "orderId": "ORDER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho011",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you select the 'Express' shipping option for my order ORDER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["selectShippingOption"],
+        "parameters": [
+          {
+            "orderId": "ORDER456",
+            "shippingOptionId": "Express"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho012",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update my profile information for user USER123? My name is John Doe, my email is john.doe@example.com."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateUserProfile"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "profileData": {
+              "name": "John Doe",
+              "email": "john.doe@example.com"
+            }
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho013",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide detailed information for item ITEM987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getItemDetails"],
+        "parameters": [
+          {
+            "itemId": "ITEM987"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho014",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to search for 'laptops'."
+        }
+      ],
+      "ground_truth": {
+        "API": ["searchItems"],
+        "parameters": [
+          {
+            "query": "laptops"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho015",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you recommend some items for user USER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRecommendations"],
+        "parameters": [
+          {
+            "userId": "USER456"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho016",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I see my order history as user USER123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getOrderHistory"],
+        "parameters": [
+          {
+            "userId": "USER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho017",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the items on my wishlist? My user ID is USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getWishlist"],
+        "parameters": [
+          {
+            "userId": "USER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho018",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you add item ITEM654 to my wishlist? My user ID is USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addItemToWishlist"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "itemId": "ITEM654"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho019",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please remove item ITEM123 from my wishlist with my user ID USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["removeItemFromWishlist"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "itemId": "ITEM123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho020",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are my notifications as user USER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNotifications"],
+        "parameters": [
+          {
+            "userId": "USER456"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho021",
+      "question": [
+        {
+          "role": "user",
+          "content": "Mark notification NOTIF123 as read for user USER456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["markNotificationAsRead"],
+        "parameters": [
+          {
+            "userId": "USER456",
+            "notificationId": "NOTIF123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho022",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to subscribe to the newsletter for user USER789 with email user@example.com."
+        }
+      ],
+      "ground_truth": {
+        "API": ["subscribeToNewsletter"],
+        "parameters": [
+          {
+            "userId": "USER789",
+            "email": "user@example.com"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho023",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please unsubscribe me from the newsletter for user USER123, my email is john.doe@example.com."
+        }
+      ],
+      "ground_truth": {
+        "API": ["unsubscribeFromNewsletter"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "email": "john.doe@example.com"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho024",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you track the status of my order ORDER456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["trackOrder"],
+        "parameters": [
+          {
+            "orderId": "ORDER456"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho025",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to request a return for order ORDER789 because of a damaged product."
+        }
+      ],
+      "ground_truth": {
+        "API": ["requestReturn"],
+        "parameters": [
+          {
+            "orderId": "ORDER789",
+            "reason": "$$$"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho026",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the status of my return request with ID RETURN123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getReturnStatus"],
+        "parameters": [
+          {
+            "returnRequestId": "RETURN123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho027",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to leave a review for item ITEM123 with a 5-star rating, my user ID is USER456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["submitReview"],
+        "parameters": [
+          {
+            "itemId": "ITEM123",
+            "userId": "USER456",
+            "rating": 5,
+            "review": "$$$"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho028",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the reviews for item ITEM789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getItemReviews"],
+        "parameters": [
+          {
+            "itemId": "ITEM789"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho029",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the most popular items right now?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPopularItems"],
+        "parameters": []
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho030",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the newest arrivals in the store?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNewArrivals"],
+        "parameters": []
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho031",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me a list of available categories?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCategories"],
+        "parameters": []
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho032",
+      "question": [
+        {
+          "role": "user",
+          "content": "What items are available in the electronics category?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCategoryItems"],
+        "parameters": [
+          {
+            "categoryId": "electronics"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho033",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me my favorite items? My user ID is USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getUserFavorites"],
+        "parameters": [
+          {
+            "userId": "USER123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please add item ITEM456 to my favorites, my user ID is USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["addItemToFavorites"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "itemId": "ITEM456"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho035",
+      "question": [
+        {
+          "role": "user",
+          "content": "Remove item ITEM789 from my favorites, my user ID is USER123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["removeItemFromFavorites"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "itemId": "ITEM789"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho036",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the store locations near me?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getStoreLocations"],
+        "parameters": []
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho037",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the operating hours for store STORE123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getStoreHours"],
+        "parameters": [
+          {
+            "storeId": "STORE123"
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho038",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you tell me about the return policy?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getReturnPolicy"],
+        "parameters": []
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "sho039",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to contact customer support for user USER123 with this issue: 'I received the wrong item.'"
+        }
+      ],
+      "ground_truth": {
+        "API": ["contactSupport"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "message": "I received the wrong item."
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho040",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update my payment method for user USER123 to a new VISA card? Card number 4421310012415510, expiry on 08/29, CVV is 899."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updatePaymentMethod"],
+        "parameters": [
+          {
+            "userId": "USER123",
+            "paymentMethod": {
+              "cardNumber": "4421310012415510",
+              "expiryDate": "08/29",
+              "cvv": "899"
+            }
+          }
+        ]
+      },
+        "difficulty":"easy"
+    },
+    {
+      "id": "sho041",
+      "question": [{"role": "user", "content": "Can you please add item with ID 'item123' to my cart with a quantity of 2, and then proceed to checkout? My user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["addItemToCart", "checkout"],
+        "parameters": [
+          {"itemId": "item123", "quantity": 2},
+          {"userId": "cc0019"}
+        ]
+      },
+        "difficulty":"medium"
+    },
+    {
+      "id": "sho042",
+      "question": [{"role": "user", "content": "I'd like to update my shipping address to 31 Baker Street, London. And then get shipping options for my most current order, my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["updateShippingAddress", "getOrderHistory", "getShippingOptions"],
+        "parameters": [
+          {"userId": "cc0019", "profileData": "31 Baker Street, London"},
+          {"userId": "cc0019"},
+          {"orderId": "$$$"}
+        ]
+      },
+        "difficulty":"hard"
+    },
+    {
+      "id": "sho043",
+      "question": [{"role": "user", "content": "Can you check the stock availability of item 'item456' and add it to my wishlist? My user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["getItemStock", "addItemToWishlist"],
+        "parameters": [
+          {"itemId": "item456"},
+          {"userId": "cc0019", "itemId": "item456"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho044",
+      "question": [{"role": "user", "content": "I need to get recommendations based on my profile and search for 'wireless headphones', my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["getRecommendations", "searchItems"],
+        "parameters": [
+          {"userId": "cc0019"},
+          {"query": "wireless headphones"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho045",
+      "question": [{"role": "user", "content": "Please apply the discount code 'SAVE20' to my order ID 0123105 and then proceed to pay for 130 dollars using my VISA card. Card number 4421310012415510, expiry on 08/29, CVV is 899."}],
+      "ground_truth": {
+        "API": ["applyDiscountCode", "payByVISA"],
+        "parameters": [
+          {"orderId": "0123105", "discountCode": "SAVE20"},
+          {"cardNumber": "4421310012415510", "expiryDate": "08/29", "cvv": "899", "amount": 130}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho046",
+      "question": [{"role": "user", "content": "I want to cancel my order 'order789' and get the status of the cancellation."}],
+      "ground_truth": {
+        "API": ["cancelOrder", "getOrderStatus"],
+        "parameters": [
+          {"orderId": "order789"},
+          {"orderId": "order789"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho047",
+      "question": [{"role": "user", "content": "Could you retrieve my order history and get details of order 'order123'? My user ID is cc0018."}],
+      "ground_truth": {
+        "API": ["getOrderHistory", "getOrderSummary"],
+        "parameters": [
+          {"userId": "cc0018"},
+          {"orderId": "order123"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho048",
+      "question": [{"role": "user", "content": "I'd like to redeem my gift card with code 'GIFT2021' on my current order, my user ID is cc0018."}],
+      "ground_truth": {
+        "API": ["getOrderHistory", "redeemGiftCard"],
+        "parameters": [
+          {"userId": "cc0018"},
+          {"orderId": "$$$", "giftCardCode": "GIFT2021"}
+        ]
+      },
+        "difficulty": "hard"
+    },
+    {
+      "id": "sho049",
+      "question": [{"role": "user", "content": "Please submit a review for item 'item789', I give it 5 stars and it was excellent, my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["submitReview"],
+        "parameters": [
+          {"itemId": "item789", "userId": "cc0019", "rating": 5, "review": "$$$"}
+        ]
+      },
+        "difficulty": "easy"
+    },
+    {
+      "id": "sho050",
+      "question": [{"role": "user", "content": "Can you check my loyalty points balance and then redeem 100 points on my most current order?, my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["getLoyaltyPoints", "getOrderHistory", "redeemLoyaltyPoints"],
+        "parameters": [
+          {"userId": "cc0019"},
+          {"userId": "cc0019"},
+          {"orderId": "$$$", "points": 100}
+        ]
+      },
+        "difficulty": "hard"
+    },
+    {
+      "id": "sho051",
+      "question": [{"role": "user", "content": "Please retrieve my saved payment methods and delete the one with ID '3412', my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["getPaymentMethods", "deletePaymentMethod"],
+        "parameters": [
+          {"userId": "cc0019"},
+          {"userId": "cc0019", "paymentMethodId": "3412"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho052",
+      "question": [{"role": "user", "content": "I'd like to get the invoice for my order 'order555' and request a copy."}],
+      "ground_truth": {
+        "API": ["getOrderInvoice", "requestOrderInvoice"],
+        "parameters": [
+          {"orderId": "order555"},
+          {"orderId": "order555"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho053",
+      "question": [{"role": "user", "content": "Check if item 'item888' is in stock and reserve it for me, my user ID is cc0019."}],
+      "ground_truth": {
+        "API": ["getItemStock", "reserveItem"],
+        "parameters": [
+          {"itemId": "item888"},
+          {"itemId": "item888", "userId": "cc0019"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho054",
+      "question": [{"role": "user", "content": "I need to get notifications and mark the one with ID 'notif123' as read, my user ID is cc0019"}],
+      "ground_truth": {
+        "API": ["getNotifications", "markNotificationAsRead"],
+        "parameters": [
+          {"userId": "cc0019"},
+          {"userId": "cc0019", "notificationId": "notif123"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho055",
+      "question": [{"role": "user", "content": "Please get my communication preferences and update them to opt out of newsletters, my user ID is cc0019"}],
+      "ground_truth": {
+        "API": ["getUserCommunicationPreferences", "updateUserCommunicationPreferences"],
+        "parameters": [
+          {"userId": "cc0019"},
+          {"userId": "cc0019", "preferences": "$$$"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho056",
+      "question": [{"role": "user", "content": "Can you retrieve available gift wrap options for my order 076985 and select the premium wrap?"}],
+      "ground_truth": {
+        "API": ["getAvailableGiftWrapOptions", "selectGiftWrapOption"],
+        "parameters": [
+          {"orderId": "076985"},
+          {"orderId": "076985", "giftWrapOptionId": "premium"}
+        ]
+      },
+        "difficulty": "medium"
+    },
+    {
+      "id": "sho057",
+      "question": [{"role": "user", "content": "I'd like to contact support about an issue of my TV and get the status of my support ticket, my user ID is cc0019"}],
+      "ground_truth": {
+        "API": ["contactSupport", "getSupportTicketStatus"],
+        "parameters": [
+          {"userId": "cc0019", "message": "$$$"},
+          {"ticketId": "$$$"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "sho058",
+      "question": [{"role": "user", "content": "Can you get the order summary for 'order101' and check the payment status?"}],
+      "ground_truth": {
+        "API": ["getOrderSummary", "getPaymentStatus"],
+        "parameters": [
+          {"orderId": "order101"},
+          {"orderId": "order101"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "sho059",
+      "question": [{"role": "user", "content": "I want to get the popular items and add 'item555' to my favorites. My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["getPopularItems", "addItemToFavorites"],
+        "parameters": [
+          {},
+          {"userId": "CC0001451", "itemId": "item555"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "sho060",
+      "question": [{"role": "user", "content": "Please get the store hours for store 'store999' and its location."}],
+      "ground_truth": {
+        "API": ["getStoreHours", "getStoreLocations"],
+        "parameters": [
+          {"storeId": "store999"},
+          {}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "sho061",
+      "question": [{"role": "user", "content": "I'm looking for smartphones, can you search for that, get details of the first item, add 1 to my cart, and proceed to checkout? My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["searchItems", "getItemDetails", "addItemToCart", "checkout"],
+        "parameters": [
+          {"query": "smartphones"},
+          {"itemId": "$$$"},
+          {"itemId": "$$$", "quantity": 1},
+          {"userId": "CC0001451"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "sho062",
+      "question": [{"role": "user", "content": "Please retrieve my order history, get the summary of order 'order234', get the invoice, and request a copy. My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["getOrderHistory", "getOrderSummary", "getOrderInvoice", "requestOrderInvoice"],
+        "parameters": [
+          {"userId": "CC0001451"},
+          {"orderId": "order234"},
+          {"orderId": "order234"},
+          {"orderId": "order234"}
+        ]
+      },
+      "difficulty": "medium"
+    },
+    {
+      "id": "sho063",
+      "question": [{"role": "user", "content": "Can you check my loyalty points balance, redeem 150 points on my most current order, and apply the discount code 'SPRINGSALE'? My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["getLoyaltyPoints", "getOrderHistory", "redeemLoyaltyPoints", "applyDiscountCode"],
+        "parameters": [
+          {"userId": "CC0001451"},
+          {"userId": "CC0001451"},
+          {"orderId": "$$$", "points": 150},
+          {"orderId": "$$$", "discountCode": "SPRINGSALE"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "sho064",
+      "question": [{"role": "user", "content": "Show me the popular items, add one top-1 item to my favorites and cart, and then proceed to checkout. My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["getPopularItems", "addItemToFavorites", "addItemToCart", "checkout"],
+        "parameters": [
+          {},
+          {"userId": "CC0001451", "itemId": "$$$"},
+          {"itemId": "$$$", "quantity": 1},
+          {"userId": "CC0001451"}
+        ]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "sho065",
+      "question": [{"role": "user", "content": "I'd like to review my communication preferences, update them to receive new promotions, subscribe to the newsletter with 123@abc.com, and get any available coupons. My customer ID is CC0001451."}],
+      "ground_truth": {
+        "API": ["getUserCommunicationPreferences", "updateUserCommunicationPreferences", "subscribeToNewsletter", "getAvailableCoupons"],
+        "parameters": [
+          {"userId": "CC0001451"},
+          {"userId": "CC0001451", "preferences": "$$$"},
+          {"userId": "CC0001451", "email": "123@abc.com"},
+          {"userId": "CC0001451"}
+        ]
+      },
+      "difficulty": "medium"
+    }
+  ]
+  

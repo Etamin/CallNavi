@@ -1,0 +1,1595 @@
+[
+    {
+      "id": "tel001",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the name associated with this phone number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNameFromNumber"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel002",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get the bill for my number 123-456-7890 for period 2024-07?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getBillForNumber"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "billingPeriod": "2024-07"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel003",
+      "question": [
+        {
+          "role": "user",
+          "content": "Show me the call history for my number from August 1st to August 31st 2024. My phone number is 123-456-7890"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCallHistory"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "startDate": "2024-08-01",
+            "endDate": "2024-08-31"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel004",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I see my text message history for August 2024? My phone number is 123-456-7890."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTextMessageHistory"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "startDate": "2024-09-14",
+            "endDate": "2024-09-21"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel005",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the data usage on my number 123-456-7890 for August 2024?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDataUsage"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "startDate": "2024-08-01",
+            "endDate": "2024-08-31"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel006",
+      "question": [
+        {
+          "role": "user",
+          "content": "Activate this SIM card 8901-2345 for my number 123-456-7890."
+        }
+      ],
+      "ground_truth": {
+        "API": ["activateSIMCard"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel007",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you deactivate my SIM card for phone number 889012345?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["deactivateSIMCard"],
+        "parameters": [
+          {
+            "phoneNumber": "889012345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel008",
+      "question": [
+        {
+          "role": "user",
+          "content": "What mobile plans are currently available?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAvailablePlans"],
+        "parameters": [{}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel009",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me more details about plan ID 1001?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPlanDetails"],
+        "parameters": [
+          {
+            "planId": "1001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel010",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to switch my number 123-456-7890 to plan ID 1002."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updatePlanForNumber"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "planId": "1002"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel011",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are my current voicemail settings for 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getVoicemailSettings"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel012",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you update my voicemail settings to turn off voicemail for number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateVoicemailSettings"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "voicemailSettings": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel013",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the status of my phone number 123-456-7890? Is it active?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNumberStatus"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel014",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to block this number 987-654-3210 from calling my number 123-456-7890."
+        }
+      ],
+      "ground_truth": {
+        "API": ["blockNumber"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "blockNumber": "987-654-3210"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel015",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please unblock the number 987-654-3210 from my phone number 123-456-7890."
+        }
+      ],
+      "ground_truth": {
+        "API": ["unblockNumber"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "unblockNumber": "987-654-3210"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel016",
+      "question": [
+        {
+          "role": "user",
+          "content": "Is roaming currently enabled on my number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getRoamingStatus"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel017",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you enable roaming on my phone number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateRoamingStatus"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "status": "enabled"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel018",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the international call rates for the UK?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getInternationalCallRates"],
+        "parameters": [
+          {
+            "countryCode": "UK"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel019",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you forward all calls from my number 123-456-7890 to 777-555-1234?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateCallForwarding"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "forwardingNumber": "777-555-1234",
+            "status": "enabled"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel020",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s my current call forwarding status for my number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCallForwardingStatus"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel021",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you retrieve the voicemail inovice for my number?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getVoicemailTranscripts"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel022",
+      "question": [
+        {
+          "role": "user",
+          "content": "Show me the account details for my account ID 78901."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAccountDetails"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel023",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update the account details for my account ID 78901."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateAccountDetails"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "accountDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel024",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the current network status?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getNetworkStatus"],
+        "parameters": [{}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel025",
+      "question": [
+        {
+          "role": "user",
+          "content": "Where’s the nearest cell tower to my location for my number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTowerLocation"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel026",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the signal strength on my phone number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getSignalStrength"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel027",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to report a network issue with my phone."
+        }
+      ],
+      "ground_truth": {
+        "API": ["reportNetworkIssue"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "issueDescription": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel028",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the status of my support ticket ID 12345?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getSupportTicketStatus"],
+        "parameters": [
+          {
+            "ticketId": "12345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel029",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you open a support ticket for my phone issue? I'm having trouble making calls."
+        }
+      ],
+      "ground_truth": {
+        "API": ["openSupportTicket"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "issueDescription": "Trouble making calls."
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel030",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to close my support ticket ID 12345."
+        }
+      ],
+      "ground_truth": {
+        "API": ["closeSupportTicket"],
+        "parameters": [
+          {
+            "ticketId": "12345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel031",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the payment history for my account from July to September?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPaymentHistory"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "startDate": "2024-07-01",
+            "endDate": "2024-09-30"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel032",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to make a payment of $50 for my account. Can you help?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["makePayment"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "amount": 50,
+            "paymentMethod": "VISA"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel033",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the status of my recent payment for account ID 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPaymentStatus"],
+        "parameters": [
+          {
+            "paymentId": "pay12345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you show me the available payment methods for my account?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPaymentMethods"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel035",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to add a new payment method to my account. How can I do that?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["addPaymentMethod"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "paymentMethodDetails": {
+              "type": "VISA",
+              "number": "1234-5678-9012-3456",
+              "expiryDate": "12/26"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel036",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you delete the old payment method from my account?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["deletePaymentMethod"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "paymentMethodId": "pm1234"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel037",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to update my billing address for account ID 78901."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateBillingAddress"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "addressDetails": {
+              "street": "456 New Avenue",
+              "city": "Los Angeles",
+              "zip": "90001"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel038",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check if auto-pay is enabled for my account?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getAutoPayStatus"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel039",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to enable auto-pay for my account."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateAutoPayStatus"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "status": "enabled"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel040",
+      "question": [
+        {
+          "role": "user",
+          "content": "How much data have I used so far this month?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDataPlanUsage"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel041",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you switch my data plan to plan ID 2001 with my number 123-456-7890?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateDataPlan"],
+        "parameters": [
+          {
+            "phoneNumber": "123-456-7890",
+            "dataPlanId": "2001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel042",
+      "question": [
+        {
+          "role": "user",
+          "content": "What are the details of the family plan on my account 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getFamilyPlanDetails"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel043",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you add a new member with phone number 987-654-3210 to my family account ID 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["addMemberToFamilyPlan"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "phoneNumber": "987-654-3210"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel044",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please remove the phone number 987-654-3210 from my family account ID 78901."
+        }
+      ],
+      "ground_truth": {
+        "API": ["removeMemberFromFamilyPlan"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "phoneNumber": "987-654-3210"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel045",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you compare my current plan 1001 with other available plans?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPlanComparison"],
+        "parameters": [
+          {
+            "currentPlanId": "1001"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel046",
+      "question": [
+        {
+          "role": "user",
+          "content": "Are there any discounts or promotions available for my account?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getDiscountsAndPromotions"],
+        "parameters": [{}]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "tel047",
+      "question": [
+        {
+          "role": "user",
+          "content": "I have a discount code 'DISCOUNT123', can you apply it to my account 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["applyDiscountCode"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "discountCode": "DISCOUNT123"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "tel048",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check my contract details for account ID 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getContractDetails"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "tel049",
+      "question": [
+        {
+          "role": "user",
+          "content": "I’d like to update my contract details with my accound ID 78901."
+        }
+      ],
+      "ground_truth": {
+        "API": ["updateContract"],
+        "parameters": [
+          {
+            "accountId": "78901",
+            "contractDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "tel050",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you terminate my contract for account ID 78901?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["terminateContract"],
+        "parameters": [
+          {
+            "accountId": "78901"
+          }
+        ]
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "tel051",
+      "question": [{"role": "user", "content": "I need to check my data usage August, 2024 and then update my data plan to have more data. My phone number is '6668415999'."}],
+      "ground_truth": {
+        "API": ["getDataUsage", "getAvailablePlans", "updateDataPlan"],
+        "parameters": [
+          {"phoneNumber": "6668415999", "startDate": "2024-08-01", "endDate": "2024-08-31"},
+          {},
+          {"phoneNumber": "6668415999", "dataPlanId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel052",
+      "question": [{"role": "user", "content": "Can you retrieve my call history from June 2024 and block a number that's been bothering me? My phone number is '6668415999'."}],
+      "ground_truth": {
+        "API": ["getCallHistory", "blockNumber"],
+        "parameters": [
+          {"phoneNumber": "6668415999", "startDate": "2023-06-01", "endDate": "2023-06-30"},
+          {"phoneNumber": "6668415999", "blockNumber": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel053",
+      "question": [{"role": "user", "content": "I'd like to get details of my current plan 'UL59' and see available plans for comparison."}],
+      "ground_truth": {
+        "API": ["getPlanDetails", "getAvailablePlans"],
+        "parameters": [
+          {"planId": "UL59"},
+          {}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel054",
+      "question": [{"role": "user", "content": "Please activate my new SIM card with my phone number '6668415999' and deactivate the old one."}],
+      "ground_truth": {
+        "API": ["deactivateSIMCard", "activateSIMCard"],
+        "parameters": [
+          {"phoneNumber": "6668415999"},
+          {"phoneNumber": "6668415999"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel055",
+      "question": [{"role": "user", "content": "I want to report a network issue I'm experiencing and get the status of the ticket, my phone number 7771416777."}],
+      "ground_truth": {
+        "API": ["reportNetworkIssue", "getSupportTicketStatus"],
+        "parameters": [
+          {"phoneNumber": "7771416777", "issueDescription": "$$$"},
+          {"ticketId": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel056",
+      "question": [{"role": "user", "content": "Can you retrieve my payment history for the January 2024, and update my billing address? My account ID is TR235211."}],
+      "ground_truth": {
+        "API": ["getPaymentHistory", "updateBillingAddress"],
+        "parameters": [
+          {"accountId": "TR235211", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {"accountId": "TR235211", "addressDetails": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel057",
+      "question": [{"role": "user", "content": "I'd like to check my voicemail settings and update them to enable voicemail for my phone number 7771416777."}],
+      "ground_truth": {
+        "API": ["getVoicemailSettings", "updateVoicemailSettings"],
+        "parameters": [
+          {"phoneNumber": "7771416777"},
+          {"phoneNumber": "7771416777", "voicemailSettings": "enable"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel058",
+      "question": [{"role": "user", "content": "Please get my current roaming status and enable international roaming with my phone number 7771416777."}],
+      "ground_truth": {
+        "API": ["getRoamingStatus", "enableInternationalRoaming"],
+        "parameters": [
+          {"phoneNumber": "7771416777"},
+          {"phoneNumber": "7771416777"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel059",
+      "question": [{"role": "user", "content": "Can you retrieve my account ID IV34258 details and update my auto-pay status to enabled?"}],
+      "ground_truth": {
+        "API": ["getAccountDetails", "updateAutoPayStatus"],
+        "parameters": [
+          {"accountId": "IV34258"},
+          {"accountId": "IV34258", "status": "enabled"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel060",
+      "question": [{"role": "user", "content": "I need to get the international call rates for country code '44' and add an international calling plan for my phone number 7771416777."}],
+      "ground_truth": {
+        "API": ["getInternationalCallRates", "updatePlanForNumber"],
+        "parameters": [
+          {"countryCode": "44"},
+          {"phoneNumber": "7771416777", "planId": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel061",
+      "question": [{"role": "user", "content": "Please retrieve my signal strength and the location of the nearest cell tower, my phone number 7771416777."}],
+      "ground_truth": {
+        "API": ["getSignalStrength", "getTowerLocation"],
+        "parameters": [
+          {"phoneNumber": "7771416777"},
+          {"phoneNumber": "7771416777"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel062",
+      "question": [{"role": "user", "content": "I'd like to make a payment of $50 for my account IV52395 using my saved payment method VISA and get the payment status."}],
+      "ground_truth": {
+        "API": ["makePayment", "getPaymentStatus"],
+        "parameters": [
+          {"accountId": "IV52395", "amount": 50, "paymentMethod": "VISA"},
+          {"paymentId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel063",
+      "question": [{"role": "user", "content": "Can you enable call forwarding to number '987654321' and check its status? My phone number 555-999-1512."}],
+      "ground_truth": {
+        "API": ["updateCallForwarding", "getCallForwardingStatus"],
+        "parameters": [
+          {"phoneNumber": "555-999-1512", "forwardingNumber": "987654321", "status": "enabled"},
+          {"phoneNumber": "555-999-1512"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel064",
+      "question": [{"role": "user", "content": "Please open a support ticket for me about slow internet speeds and provide me the ticket status, my phone number 555-999-1512."}],
+      "ground_truth": {
+        "API": ["openSupportTicket", "getSupportTicketStatus"],
+        "parameters": [
+          {"phoneNumber": "555-999-1512", "issueDescription": "$$$"},
+          {"ticketId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel065",
+      "question": [{"role": "user", "content": "I want to get my payment methods and add a new VISA card with my account ID CB052117."}],
+      "ground_truth": {
+        "API": ["getPaymentMethods", "addPaymentMethod"],
+        "parameters": [
+          {"accountId": "CB052117"},
+          {"accountId": "CB052117", "paymentMethodDetails": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel066",
+      "question": [{"role": "user", "content": "Could you get my device ID UGC25367 details and check if it's compatible with 5G?"}],
+      "ground_truth": {
+        "API": ["getDeviceDetails", "getDeviceCompatibility"],
+        "parameters": [
+          {"deviceId": "UGC25367"},
+          {"deviceId": "UGC25367", "networkType": "5G"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel067",
+      "question": [{"role": "user", "content": "I need to get my voicemail transcripts and then disable the voicemail with phone number '5556667777'"}],
+      "ground_truth": {
+        "API": ["getVoicemailTranscripts", "updateVoicemailSettings"],
+        "parameters": [
+          {"phoneNumber": "5556667777"},
+          {"phoneNumber": "5556667777", "voicemailSettings": "disable"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel068",
+      "question": [{"role": "user", "content": "Please get my family's plan details and add a new member with phone number '5556667777'."}],
+      "ground_truth": {
+        "API": ["getAccountIdFromNumber", "getFamilyPlanDetails", "addMemberToFamilyPlan"],
+        "parameters": [
+          {"phoneNumber": "5556667777"},
+          {"accountId": "$$$"},
+          {"accountId": "$$$", "phoneNumber": "5556667777"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel069",
+      "question": [{"role": "user", "content": "Can you retrieve any available discounts and apply the code 'SAVE20' to my account BV034620?"}],
+      "ground_truth": {
+        "API": ["getDiscountsAndPromotions", "applyDiscountCode"],
+        "parameters": [
+          {},
+          {"accountId": "BV034620", "discountCode": "SAVE20"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel070",
+      "question": [{"role": "user", "content": "I want to check my contract details and request an upgrade for my device, my account ID is BC199482"}],
+      "ground_truth": {
+        "API": ["getContractDetails", "requestDeviceUpgrade"],
+        "parameters": [
+          {"accountId": "BC199482"},
+          {"accountId": "BC199482", "deviceId": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel071",
+      "question": [{"role": "user", "content": "Please schedule a support appointment at the nearest center in zip code '12345' and get the appointment ID."}],
+      "ground_truth": {
+        "API": ["getSupportCenterLocation", "scheduleSupportAppointment"],
+        "parameters": [
+          {"zipCode": "12345"},
+          {"supportCenterId": "$$$", "appointmentDetails": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel072",
+      "question": [{"role": "user", "content": "Can you check for any network outages in my area with zip code '67890' and report an issue? My number is 528467188."}],
+      "ground_truth": {
+        "API": ["getOutageReports", "reportNetworkIssue"],
+        "parameters": [
+          {"zipCode": "67890"},
+          {"phoneNumber": "528467188", "issueDescription": "$$$"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel073",
+      "question": [{"role": "user", "content": "I need to get my device's warranty status and report it as stolen, my device ID is BHJE1HV5"}],
+      "ground_truth": {
+        "API": ["getWarrantyStatus", "reportStolenDevice"],
+        "parameters": [
+          {"deviceId": "BHJE1HV5"},
+          {"deviceId": "BHJE1HV5"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel074",
+      "question": [{"role": "user", "content": "Please retrieve my call recording status and enable it for my number, my number is 528467188."}],
+      "ground_truth": {
+        "API": ["getCallRecordingStatus", "enableCallRecording"],
+        "parameters": [
+          {"phoneNumber": "528467188"},
+          {"phoneNumber": "528467188"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel075",
+      "question": [{"role": "user", "content": "I'd like to check if my phone number is registered for 911 services and register it if not, my number is 528467188, address is 34 Irving Road, San Francisco."}],
+      "ground_truth": {
+        "API": ["get911RegistrationStatus", "registerFor911Service"],
+        "parameters": [
+          {"phoneNumber": "528467188"},
+          {"phoneNumber": "528467188", "addressDetails": "34 Irving Road, San Francisco"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel076",
+      "question": [{"role": "user", "content": "I need to check my data usage January 2024, get available data plans, update to a unlimited plan, and confirm my new data usage, my number is 528467188."}],
+      "ground_truth": {
+        "API": ["getDataUsage", "getAvailablePlans", "updateDataPlan", "getDataPlanUsage"],
+        "parameters": [
+          {"phoneNumber": "528467188", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {},
+          {"phoneNumber": "528467188", "dataPlanId": "$$$"},
+          {"phoneNumber": "528467188"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel077",
+      "question": [{"role": "user", "content": "Please retrieve my call history January 2024, block a number that's been bothering me, and then check my call barring status, my number is 528467188."}],
+      "ground_truth": {
+        "API": ["getCallHistory", "blockNumber", "getCallBarringStatus"],
+        "parameters": [
+          {"phoneNumber": "528467188", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {"phoneNumber": "528467188", "blockNumber": "$$$"},
+          {"phoneNumber": "528467188"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel078",
+      "question": [{"role": "user", "content": "I'd like to get my voicemail settings, enable call recording, and retrieve my voicemail transcripts. My number is 786345611"}],
+      "ground_truth": {
+        "API": ["getVoicemailSettings", "enableCallRecording", "getVoicemailTranscripts"],
+        "parameters": [
+          {"phoneNumber": "786345611"},
+          {"phoneNumber": "786345611"},
+          {"phoneNumber": "786345611"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel079",
+      "question": [{"role": "user", "content": "Can you get the international roaming rates for country code '49', enable my international roaming for number 333-444-7888, and update my roaming status?"}],
+      "ground_truth": {
+        "API": ["getInternationalRoamingRates", "enableInternationalRoaming", "updateRoamingStatus"],
+        "parameters": [
+          {"countryCode": "49"},
+          {"phoneNumber": "333-444-7888"},
+          {"phoneNumber": "333-444-7888", "status": "enabled"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel080",
+      "question": [{"role": "user", "content": "I'd like to get my account MV615150 details, apply a discount code 'SAVE50', and then make a VISA payment of $50."}],
+      "ground_truth": {
+        "API": ["getAccountDetails", "applyDiscountCode", "makePayment"],
+        "parameters": [
+          {"accountId": "MV615150"},
+          {"accountId": "MV615150", "discountCode": "SAVE50"},
+          {"accountId": "MV615150", "amount": 50, "paymentMethod": "VISA"}
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "tel081",
+      "question": [{"role": "user", "content": "Please retrieve my payment methods, delete an old one, add a new card 4865940131121553, and then make a payment of $100 with my VISA card, my account id is dso120871"}],
+      "ground_truth": {
+        "API": ["getPaymentMethods", "deletePaymentMethod", "addPaymentMethod", "makePayment"],
+        "parameters": [
+          {"accountId": "dso120871"},
+          {"accountId": "dso120871", "paymentMethodId": "$$$"},
+          {"accountId": "dso120871", "paymentMethodDetails": "4865940131121553"},
+          {"accountId": "dso120871", "amount": 100, "paymentMethod": "VISA"}
+        ]
+      },
+        "difficulty":"hard"
+    },
+    {
+      "id": "tel082",
+      "question": [{"role": "user", "content": "Can you check the availability of phone numbers in area code '415', reserve a number, activate a SIM card with it, and then get the number's status?"}],
+      "ground_truth": {
+        "API": ["getPhoneNumberAvailability", "reservePhoneNumber", "activateSIMCard", "getNumberStatus"],
+        "parameters": [
+          {"areaCode": "415"},
+          {"areaCode": "415"},
+          {"SIMCardNumber": "$$$", "phoneNumber": "$$$"},
+          {"phoneNumber": "$$$"}
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "tel083",
+      "question": [{"role": "user", "content": "I'd like to upgrade my data plan to the new unlimited plan, my number is 555-666-7777"}],
+      "ground_truth": {
+        "API": ["updateDataPlan"],
+        "parameters": [{"phoneNumber": "555-666-7777", "dataPlanId": "unlimited"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel084",
+      "question": [{"role": "user", "content": "Can you provide the details of my family plan? My accound ID is MV34511."}],
+      "ground_truth": {
+        "API": ["getFamilyPlanDetails"],
+        "parameters": [{"accountId": "MV34511"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel085",
+      "question": [{"role": "user", "content": "I want to add a new member with phone number 555-666-7777 to my family plan, my accound ID is MV34511."}],
+      "ground_truth": {
+        "API": ["addMemberToFamilyPlan"],
+        "parameters": [{"accountId": "MV34511", "phoneNumber": "555-666-7777"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel086",
+      "question": [{"role": "user", "content": "Please remove the phone number 555-666-7777 from my family plan."}],
+      "ground_truth": {
+        "API": ["getAccountIdFromNumber", "removeMemberFromFamilyPlan"],
+        "parameters": [{"phoneNumber":"555-666-7777"}, {"accountId": "$$$", "phoneNumber": "555-666-7777"}]
+      },
+      "difficulty": "hard"
+    },
+    {
+      "id": "tel087",
+      "question": [{"role": "user", "content": "How does my current plan UX50 compare to other available plans?"}],
+      "ground_truth": {
+        "API": ["getPlanComparison"],
+        "parameters": [{"currentPlanId": "UX50"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel088",
+      "question": [{"role": "user", "content": "Are there any current discounts or promotions I can take advantage of?"}],
+      "ground_truth": {
+        "API": ["getDiscountsAndPromotions"],
+        "parameters": [{}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel089",
+      "question": [{"role": "user", "content": "I'd like to apply the discount code SAVE20 to my account, my account id is MV32511."}],
+      "ground_truth": {
+        "API": ["applyDiscountCode"],
+        "parameters": [{"accountId": "MV32511", "discountCode": "SAVE20"}]
+      },
+        "difficulty": "easy"
+    },
+    {
+      "id": "tel090",
+      "question": [{"role": "user", "content": "Can you provide me with the details of my current contract? My account id is MV32511."}],
+      "ground_truth": {
+        "API": ["getContractDetails"],
+        "parameters": [{"accountId": "MV32511"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel091",
+      "question": [{"role": "user", "content": "I'd like to update my contract to include international calling, my account id is MV32511."}],
+      "ground_truth": {
+        "API": ["updateContract"],
+        "parameters": [{"accountId": "MV32511", "contractDetails": "$$$"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel092",
+      "question": [{"role": "user", "content": "I want to terminate my contract with immediate effect, my account id is MV32511."}],
+      "ground_truth": {
+        "API": ["terminateContract"],
+        "parameters": [{"accountId": "MV32511"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel093",
+      "question": [{"role": "user", "content": "Can you provide details about my device with ID DEV12345?"}],
+      "ground_truth": {
+        "API": ["getDeviceDetails"],
+        "parameters": [{"deviceId": "DEV12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel094",
+      "question": [{"role": "user", "content": "I'd like to update the settings on my device with ID DEV12345."}],
+      "ground_truth": {
+        "API": ["updateDeviceSettings"],
+        "parameters": [{"deviceId": "DEV12345", "settings": "$$$"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel095",
+      "question": [{"role": "user", "content": "Is my device with ID DEV12345 compatible with your 5G network?"}],
+      "ground_truth": {
+        "API": ["getDeviceCompatibility"],
+        "parameters": [{"deviceId": "DEV12345", "networkType": "5G"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel096",
+      "question": [{"role": "user", "content": "I lost my device with ID DEV12345. Can you help?"}],
+      "ground_truth": {
+        "API": ["reportLostDevice"],
+        "parameters": [{"deviceId": "DEV12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel097",
+      "question": [{"role": "user", "content": "My device with ID DEV12345 has been stolen. Please report it."}],
+      "ground_truth": {
+        "API": ["reportStolenDevice"],
+        "parameters": [{"deviceId": "DEV12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel098",
+      "question": [{"role": "user", "content": "What is the warranty status of my device with ID DEV12345?"}],
+      "ground_truth": {
+        "API": ["getWarrantyStatus"],
+        "parameters": [{"deviceId": "DEV12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel099",
+      "question": [{"role": "user", "content": "Am I eligible for a device upgrade? My account id is 32542, and my device id is ICT35218."}],
+      "ground_truth": {
+        "API": ["getUpgradeEligibility"],
+        "parameters": [{"accountId": "32542", "deviceId": "ICT35218"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel100",
+      "question": [{"role": "user", "content": "I'd like to request an upgrade for my device, my account id is 32542, and my device id is ICT35218."}],
+      "ground_truth": {
+        "API": ["requestDeviceUpgrade"],
+        "parameters": [{"accountId": "32542", "deviceId": "ICT35218"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel101",
+      "question": [{"role": "user", "content": "Where is the nearest support center to zip code 90210?"}],
+      "ground_truth": {
+        "API": ["getSupportCenterLocation"],
+        "parameters": [{"zipCode": "90210"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel102",
+      "question": [{"role": "user", "content": "I need to schedule an appointment at the support center 23."}],
+      "ground_truth": {
+        "API": ["scheduleSupportAppointment"],
+        "parameters": [{"supportCenterId": "23", "appointmentDetails": "$$$"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel103",
+      "question": [{"role": "user", "content": "I'd like to cancel my support appointment with ID APP12345."}],
+      "ground_truth": {
+        "API": ["cancelSupportAppointment"],
+        "parameters": [{"appointmentId": "APP12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel104",
+      "question": [{"role": "user", "content": "Are there any network outages in area code 12345?"}],
+      "ground_truth": {
+        "API": ["getOutageReports"],
+        "parameters": [{"zipCode": "12345"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel105",
+      "question": [{"role": "user", "content": "What are the international roaming rates for Germany?"}],
+      "ground_truth": {
+        "API": ["getInternationalRoamingRates"],
+        "parameters": [{"countryCode": "DE"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel106",
+      "question": [{"role": "user", "content": "Please enable international roaming on my phone number 787178111."}],
+      "ground_truth": {
+        "API": ["enableInternationalRoaming"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel107",
+      "question": [{"role": "user", "content": "I'd like to disable international roaming on my number 787178111."}],
+      "ground_truth": {
+        "API": ["disableInternationalRoaming"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel108",
+      "question": [{"role": "user", "content": "Is WiFi calling enabled on my phone number 787178111?"}],
+      "ground_truth": {
+        "API": ["getWiFiCallingStatus"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel109",
+      "question": [{"role": "user", "content": "Please enable WiFi calling on my phone 787178111."}],
+      "ground_truth": {
+        "API": ["enableWiFiCalling"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel110",
+      "question": [{"role": "user", "content": "I want to disable WiFi calling on my phone number 787178111."}],
+      "ground_truth": {
+        "API": ["disableWiFiCalling"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel111",
+      "question": [{"role": "user", "content": "Is VoLTE enabled on my number 787178111?"}],
+      "ground_truth": {
+        "API": ["getVoLTEStatus"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "tel112",
+      "question": [{"role": "user", "content": "Please enable VoLTE on my phone number 787178111"}],
+      "ground_truth": {
+        "API": ["enableVoLTE"],
+        "parameters": [{"phoneNumber": "787178111"}]
+      },
+      "difficulty": "easy"
+    }
+  ]
+  

@@ -1,0 +1,1253 @@
+[
+    {
+      "id": "ins001",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me a car insurance quote for my 2020 Toyota Camry? "
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarInsuranceQuote"],
+        "parameters": [
+          {
+            "carDetails": {
+              "make": "Toyota",
+              "model": "Camry",
+              "year": 2020
+            },
+            "driverAge": 35
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins002",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I purchase a car insurance policy using quote ID QUOTE001 with my card 5518918065659999?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchaseCarInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE001",
+            "paymentCard": "5518918065659999"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins003",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need details of my car insurance policy with policy ID POLICY123."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY123"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins004",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you renew my car insurance policy with policy ID POLICY456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewCarInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY456",
+            "renewalDetails": {
+              "newExpiryDate": "2025-12-31"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins005",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my car insurance policy with policy ID POLICY789."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelCarInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY789"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins006",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim for my car's windshield damage with my insurance policy with ID POLICY012. Accident happends on 2024-09-01."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileCarInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "POLICY012",
+            "claimDetails": {
+              "accidentDate": "2024-09-01",
+              "damageDetails": "$$$"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins007",
+      "question": [
+        {
+          "role": "user",
+          "content": "What’s the status of my car insurance claim with ID CLAIM123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "claimID": "CLAIM123"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins008",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get me a house insurance quote for my new home on 123 Elm Street, 2500 sqft?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHouseInsuranceQuote"],
+        "parameters": [
+          {
+            "location": "123 Elm Street",
+            "size": 2500
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins009",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I purchase a house insurance policy QUOTE987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchaseHouseInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE987"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins010",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me the details of my house insurance policy with policy ID POLICY345?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHouseInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins011",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you renew my house insurance policy with policy ID POLICY678?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewHouseInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY678",
+            "renewalDetails": {
+              "newExpiryDate": "2026-05-31"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins012",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my house insurance policy with policy ID POLICY910."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelHouseInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY910"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins013",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim roof damage for my house insurance policy with ID POLICY654."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileHouseInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "POLICY654",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins014",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the status of my house insurance claim with ID CLAIM456?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHouseInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "claimID": "CLAIM456"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins015",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I get a health insurance quote for a family of four? Our age are 35, 33, 8 and 5."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHealthInsuranceQuote"],
+        "parameters": [
+          {
+            "personalDetails": {
+              "familySize": 4,
+              "ages": [35, 33, 8, 5]
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins016",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to purchase health insurance using quote ID QUOTE321."
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchaseHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins017",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the details of my health insurance policy with policy ID POLICY789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY789"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins018",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you renew my health insurance policy with policy ID POLICY112?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY112",
+            "renewalDetails": {
+              "newExpiryDate": "2025-09-01"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins019",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my health insurance policy with policy ID POLICY345."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY345"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins020",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a health insurance claim with policy ID POLICY678 for a recent hospital stay. Hospital name is City Hospital and I received my invoice on 2024-03-10."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileHealthInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "POLICY678",
+            "claimDetails": {
+              "hospitalName": "City Hospital",
+              "invoiceDate": "2024-03-10"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins021",
+      "question": [
+        {
+          "role": "user",
+          "content": "What's the status of my health insurance claim with claim ID CLAIM987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHealthInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "claimID": "CLAIM987"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins022",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I get a quote for life insurance with a coverage of $500,000? I am 45 years old and I am a man."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLifeInsuranceQuote"],
+        "parameters": [
+          {
+            "personalDetails": {
+              "age": 45,
+              "gender": "M"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins023",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to purchase a life insurance policy using quote ID QUOTE543."
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchaseLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE543"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins024",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please provide the details of my life insurance policy with policy ID POLICY654."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY654"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins025",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you renew my life insurance policy with policy ID POLICY789?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY789",
+            "renewalDetails": {
+              "newExpiryDate": "2030-12-31"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins026",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my life insurance policy with policy ID POLICY321."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins027",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim for my life insurance policy with policy ID POLICY456, beneficiary name is John Doe."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileLifeInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "POLICY456",
+            "claimDetails": {
+              "beneficiaryName": "John Doe"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins028",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the status of my life insurance claim with claim ID CLAIM654?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLifeInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "claimID": "CLAIM654"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins029",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get me a quote for travel insurance for my vacation to France December 2024?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTravelInsuranceQuote"],
+        "parameters": [
+          {
+            "travelDetails": {
+              "destination": "France",
+              "tripStartDate": "2024-12-01",
+              "tripEndDate": "2024-12-31"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins030",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to purchase a travel insurance policy using quote ID QUOTE999."
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchaseTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE999"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins031",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the details of my travel insurance policy with policy ID POLICY123?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY123"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins032",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to renew my travel insurance policy with policy ID POLICY456."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY456",
+            "renewalDetails": {
+              "newExpiryDate": "2025-05-01"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins033",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my travel insurance policy with policy ID POLICY789."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY789"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins034",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can I file a claim for cancel flight in my travel insurance policy with policy ID POLICY321?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileTravelInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "POLICY321",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins035",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you check the status of my travel insurance claim with claim ID CLAIM888?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTravelInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "claimID": "CLAIM888"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins036",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me a quote for pet insurance for my 4 years old dog?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPetInsuranceQuote"],
+        "parameters": [
+          {
+              "species": "dog",
+              "age": 4
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins037",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to purchase a pet insurance policy using quote ID QUOTE543."
+        }
+      ],
+      "ground_truth": {
+        "API": ["purchasePetInsurancePolicy"],
+        "parameters": [
+          {
+            "quoteID": "QUOTE543"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins038",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide the details of my pet insurance policy with policy ID POLICY987?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPetInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY987"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins039",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to renew my pet insurance policy with policy ID POLICY654 until end of 2025."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewPetInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY654",
+            "renewalDetails": {
+              "newExpiryDate": "2025-12-31"
+            }
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins040",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to cancel my pet insurance policy with policy ID POLICY321."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelPetInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "POLICY321"
+          }
+        ]
+      },
+      "difficulty": "easy"
+    },
+    {
+      "id": "ins041",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need a quote for car insurance for my 2018 Toyota Camry, I am 51 years old, and then I'd like to purchase the policy."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarInsuranceQuote", "purchaseCarInsurancePolicy"],
+        "parameters": [
+          {
+            "carDetails": {"make": "Toyota", "model": "Camry", "year": 2018},
+            "driverAge": "51"
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins042",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get me a house insurance quote for my 3000 sqft house located on 21 Irvine Streed, and then help me purchase the policy?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHouseInsuranceQuote", "purchaseHouseInsurancePolicy"],
+        "parameters": [
+          {
+            "location": "21 Irvine Streed",
+            "size": "3000"
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins043",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to get a health insurance quote for myself, I am a 50 years old man, and then buy the policy."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHealthInsuranceQuote", "purchaseHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "personalDetails": {
+            "familySize": 1,
+            "ages": [50]
+            }
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins044",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please provide a life insurance quote for me, I am 41 years old man, and then help me purchase the policy."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLifeInsuranceQuote", "purchaseLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "personalDetails": {"age": "41", "gender": "M"}
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins045",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need a travel insurance quote for my trip to Europe from 2024-10-01 to 2025-01-05, and then I'd like to purchase the policy."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTravelInsuranceQuote", "purchaseTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "travelDetails": {
+              "destination": "Europe",
+              "tripStartDate": "2024-10-01",
+              "tripEndDate": "2025-01-05"}
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins046",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide a pet insurance quote for my 6 years old dog and then help me buy the policy?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPetInsuranceQuote", "purchasePetInsurancePolicy"],
+        "parameters": [
+          {
+            "species": "dog",
+              "age": 6
+          },
+          {
+            "quoteID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins047",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to renew my car insurance policy with ID P123456 until end of 2025, and then get the new policy details."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewCarInsurancePolicy", "getCarInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "P123456",
+            "renewalDetails":{"newExpiryDate":"2025-12-31"}
+          },
+          {
+            "policyID": "P123456"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins048",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim on my house insurance policy ID H654321 for roof broken, and then check the claim status."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileHouseInsuranceClaim", "getHouseInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "policyID": "H654321",
+            "claimDetails": "$$$"
+          },
+          {
+            "claimID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins049",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please renew my health insurance policy ID HI789012 until end of 2026, and then send me the new policy details."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewHealthInsurancePolicy", "getHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "HI789012",
+            "renewalDetails": {"newExpiryDate":"2026-12-31"}
+          },
+          {
+            "policyID": "HI789012"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins050",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to get a pet insurance quote for my 2 years old cat, then purchase the policy, and afterward file a claim for vaccination."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getPetInsuranceQuote", "purchasePetInsurancePolicy", "filePetInsuranceClaim"],
+        "parameters": [
+          {
+              "species": "cat",
+              "age": 2
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins051",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you provide me with a travel insurance quote for my trip to Japan in June 2025, purchase the policy, and then get the policy details?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getTravelInsuranceQuote", "purchaseTravelInsurancePolicy", "getTravelInsurancePolicy"],
+        "parameters": [
+          {
+            "travelDetails": {
+              "destination": "Japan",
+              "tripStartDate": "2025-06-01",
+              "tripEndDate": "2025-06-30"
+          }
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins052",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim on my life insurance policy ID LI987654 for disability, and then check the claim status."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileLifeInsuranceClaim", "getLifeInsuranceClaimStatus"],
+        "parameters": [
+          {
+            "policyID": "LI987654",
+            "claimDetails": "$$$"
+          },
+          {
+            "claimID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins053",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please get me a health insurance quote for myself, purchase the policy, and then file a claim of Covid-19. I am 25 years old."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHealthInsuranceQuote", "purchaseHealthInsurancePolicy", "fileHealthInsuranceClaim"],
+        "parameters": [
+          {
+            "personalDetails": {
+            "familySize": 1,
+            "ages": [25]
+            }
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins054",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you get me a car insurance quote for my 2024 Tesla Model 3, I am 42 years old, purchase the policy, and then provide the policy details?"
+        }
+      ],
+      "ground_truth": {
+        "API": ["getCarInsuranceQuote", "purchaseCarInsurancePolicy", "getCarInsurancePolicy"],
+        "parameters": [
+          {
+            "carDetails": {"make": "Tesla", "model": "Model 3", "year": "2024"},
+            "driverAge": "42"
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins055",
+      "question": [
+        {
+          "role": "user",
+          "content": "I want to get a house insurance quote for my new home in 22 Leason Road, 1200 sqft, purchase the policy, and then file a claim for pipe leaking."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getHouseInsuranceQuote", "purchaseHouseInsurancePolicy", "fileHouseInsuranceClaim"],
+        "parameters": [
+          {
+            "location": "22 Leason Road",
+            "size": "1200"
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins056",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please renew my travel insurance policy ID TI654321 until end of 2025, then get the policy details and file a claim for lost luggage."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewTravelInsurancePolicy", "getTravelInsurancePolicy", "fileTravelInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "TI654321",
+            "renewalDetails": {"newExpiryDate": "2025-12-31"}
+          },
+          {
+            "policyID": "TI654321"
+          },
+          {
+            "policyID": "TI654321",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins057",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to cancel my pet insurance policy ID PI987654, and then get a new quote for my 2 year old cat."
+        }
+      ],
+      "ground_truth": {
+        "API": ["cancelPetInsurancePolicy", "getPetInsuranceQuote"],
+        "parameters": [
+          {
+            "policyID": "PI987654"
+          },
+          {
+            "species": "cat",
+            "age": 2
+          }
+        ]
+      },
+      "difficulty":"medium"
+    },
+    {
+      "id": "ins058",
+      "question": [
+        {
+          "role": "user",
+          "content": "Can you give me a life insurance quote, purchase the policy, and then get the policy details? I am 35 years old female."
+        }
+      ],
+      "ground_truth": {
+        "API": ["getLifeInsuranceQuote", "purchaseLifeInsurancePolicy", "getLifeInsurancePolicy"],
+        "parameters": [
+          {
+            "personalDetails": {"age": 35, "gender": "F"}
+          },
+          {
+            "quoteID": "$$$"
+          },
+          {
+            "policyID": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins059",
+      "question": [
+        {
+          "role": "user",
+          "content": "I need to file a claim on my health insurance for policy ID HI123456, I got bone fracture, check the claim status, and then get the policy details."
+        }
+      ],
+      "ground_truth": {
+        "API": ["fileHealthInsuranceClaim", "getHealthInsuranceClaimStatus", "getHealthInsurancePolicy"],
+        "parameters": [
+          {
+            "policyID": "HI123456",
+            "claimDetails": "$$$"
+          },
+          {
+            "claimID": "$$$"
+          },
+          {
+            "policyID": "HI123456"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    },
+    {
+      "id": "ins060",
+      "question": [
+        {
+          "role": "user",
+          "content": "Please renew my house insurance policy ID H098765 to 31th/Dec/2025, get the new policy details, and then file a claim for broken pipe."
+        }
+      ],
+      "ground_truth": {
+        "API": ["renewHouseInsurancePolicy", "getHouseInsurancePolicy", "fileHouseInsuranceClaim"],
+        "parameters": [
+          {
+            "policyID": "H098765",
+            "renewalDetails": {
+              "newExpiryDate": "2025-12-31"
+            }
+          },
+          {
+            "policyID": "H098765"
+          },
+          {
+            "policyID": "H098765",
+            "claimDetails": "$$$"
+          }
+        ]
+      },
+      "difficulty":"hard"
+    }
+  ]
+  

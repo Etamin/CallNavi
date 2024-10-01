@@ -1,0 +1,969 @@
+[
+    {
+      "id": "avi01",
+      "question": [{"role": "user", "content": "Can you show me the flight schedule from JFK to LAX on 2024-09-20?"}],
+      "ground_truth": {
+        "API": ["getFlightSchedule"],
+        "parameters": {"origin": "JFK", "destination": "LAX", "date": "2024-09-20"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi02",
+      "question": [{"role": "user", "content": "What is the status of flight AA100 on 2024-09-20?"}],
+      "ground_truth": {
+        "API": ["getFlightStatus"],
+        "parameters": {"flightNumber": "AA100", "date": "2024-09-20"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi03",
+      "question": [{"role": "user", "content": "Can you help me book flight JL13 for a passenger named John Doe with my VISA card?"}],
+      "ground_truth": {
+        "API": ["bookFlight"],
+        "parameters": {"flightNumber": "JL13", "passengerName":  "John Doe", "paymentDetails": "VISA"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi04",
+      "question": [{"role": "user", "content": "I need to cancel my flight with booking ID BNR321."}],
+      "ground_truth": {
+        "API": ["cancelFlightBooking"],
+        "parameters": {"bookingId": "BNR321"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi05",
+      "question": [{"role": "user", "content": "Can you tell me the available seats for flight LH21?"}],
+      "ground_truth": {
+        "API": ["getAvailableSeats"],
+        "parameters": {"flightNumber": "LH21"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi06",
+      "question": [{"role": "user", "content": "I want to select seat 12A for my booking ID BNR321."}],
+      "ground_truth": {
+        "API": ["selectSeat"],
+        "parameters": {"bookingId": "BNR321", "seatNumber": "12A"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi07",
+      "question": [{"role": "user", "content": "Can you give me the passenger details for booking ID BNR321?"}],
+      "ground_truth": {
+        "API": ["getpassengerName"],
+        "parameters": {"bookingId": "9876"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi08",
+      "question": [{"role": "user", "content": "I need to update the passenger details for booking ID BNR321."}],
+      "ground_truth": {
+        "API": ["updatepassengerName"],
+        "parameters": {"bookingId": "BNR321", "passengerName": {"name": "Jane Doe"}}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi09",
+      "question": [{"role": "user", "content": "What is the baggage allowance for flight SG890 in economy class?"}],
+      "ground_truth": {
+        "API": ["getBaggageAllowance"],
+        "parameters": {"flightNumber": "SG890", "ticketClass": "economy"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi010",
+      "question": [{"role": "user", "content": "What is the status of my checked baggage with baggage ID BAG123?"}],
+      "ground_truth": {
+        "API": ["getBaggageStatus"],
+        "parameters": {"baggageId": "BAG123"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi011",
+      "question": [{"role": "user", "content": "Can I check in for my booking with booking ID BNR321?"}],
+      "ground_truth": {
+        "API": ["checkIn"],
+        "parameters": {"bookingId": "BNR321", "passengerId": "9876"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi012",
+      "question": [{"role": "user", "content": "Can you get me the boarding pass for check-in ID 65432?"}],
+      "ground_truth": {
+        "API": ["getBoardingPass"],
+        "parameters": {"checkInId": "65432"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi013",
+      "question": [{"role": "user", "content": "Can you give me the details of flight AF321?"}],
+      "ground_truth": {
+        "API": ["getFlightDetails"],
+        "parameters": {"flightNumber": "AF321"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi014",
+      "question": [{"role": "user", "content": "Can you search for flights from LAX to JFK on 2024-10-01 in business class?"}],
+      "ground_truth": {
+        "API": ["searchFlights"],
+        "parameters": {"origin": "LAX", "destination": "JFK", "date": "2024-10-01", "ticketClass": "business"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi015",
+      "question": [{"role": "user", "content": "Can you provide information about airline ID AL001?"}],
+      "ground_truth": {
+        "API": ["getAirlineInfo"],
+        "parameters": {"airlineId": "AL001"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi016",
+      "question": [{"role": "user", "content": "What is the information for airport with code JFK?"}],
+      "ground_truth": {
+        "API": ["getAirportInfo"],
+        "parameters": {"airportCode": "JFK"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi017",
+      "question": [{"role": "user", "content": "What are the lounge access details for my booking ID Y43F10?"}],
+      "ground_truth": {
+        "API": ["getLoungeAccess"],
+        "parameters": {"bookingId": "Y43F10"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi018",
+      "question": [{"role": "user", "content": "Can you check the frequent flyer miles balance for my ID FF123?"}],
+      "ground_truth": {
+        "API": ["getFrequentFlyerMiles"],
+        "parameters": {"frequentFlyerId": "FF123"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi019",
+      "question": [{"role": "user", "content": "I want to redeem my miles for reward ID RW5678."}],
+      "ground_truth": {
+        "API": ["redeemFrequentFlyerMiles"],
+        "parameters": {"frequentFlyerId": "FF123", "rewardId": "RW5678"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi020",
+      "question": [{"role": "user", "content": "What rewards are available for frequent flyer ID FF123?"}],
+      "ground_truth": {
+        "API": ["getAvailableRewards"],
+        "parameters": {"frequentFlyerId": "FF123"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi021",
+      "question": [{"role": "user", "content": "I need to update the flight preferences to no meal for booking ID RE4567."}],
+      "ground_truth": {
+        "API": ["updateFlightPreferences"],
+        "parameters": {"bookingId": "RE4567", "preferences": "$$$"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi022",
+      "question": [{"role": "user", "content": "Can you get me the price for flight BR34 in economy class?"}],
+      "ground_truth": {
+        "API": ["getFlightPrice"],
+        "parameters": {"flightNumber": "BR34", "ticketClass": "economy"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi023",
+      "question": [{"role": "user", "content": "Are there any flight offers from JFK to LAX?"}],
+      "ground_truth": {
+        "API": ["getFlightOffers"],
+        "parameters": {"origin": "JFK", "destination": "LAX"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi024",
+      "question": [{"role": "user", "content": "What are the available flight routes for airline ID AL002?"}],
+      "ground_truth": {
+        "API": ["getFlightRoutes"],
+        "parameters": {"airlineId": "AL002"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi025",
+      "question": [{"role": "user", "content": "Can you tell me the details of the aircraft for flight LX45?"}],
+      "ground_truth": {
+        "API": ["getAircraftDetails"],
+        "parameters": {"flightNumber": "LX45"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi026",
+      "question": [{"role": "user", "content": "Can I request a special vegan meal for my booking ID 54T321?"}],
+      "ground_truth": {
+        "API": ["requestSpecialMeal"],
+        "parameters": {"bookingId": "54T321", "mealType": "Vegan"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi027",
+      "question": [{"role": "user", "content": "Can you request wheelchair assistance for booking ID 76R5U3?"}],
+      "ground_truth": {
+        "API": ["requestWheelchairAssistance"],
+        "parameters": {"bookingId": "76R5U3"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi028",
+      "question": [{"role": "user", "content": "What are the visa requirements for a passenger traveling from JFK to LAX with US nationality?"}],
+      "ground_truth": {
+        "API": ["getVisaRequirements"],
+        "parameters": {"origin": "JFK", "destination": "LAX", "nationality": "US"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi029",
+      "question": [{"role": "user", "content": "Are there any travel advisories for traveling to London?"}],
+      "ground_truth": {
+        "API": ["getTravelAdvisories"],
+        "parameters": {"destination": "London"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi030",
+      "question": [{"role": "user", "content": "Can you give me the weather information for JFK airport?"}],
+      "ground_truth": {
+        "API": ["getWeatherInfo"],
+        "parameters": {"airportCode": "JFK"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi031",
+      "question": [{"role": "user", "content": "Can you check if there are any delays for flight AA123 on 2024-10-05?"}],
+      "ground_truth": {
+        "API": ["getFlightDelayInfo"],
+        "parameters": {"flightNumber": "AA123", "date": "2024-10-05"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi032",
+      "question": [{"role": "user", "content": "What is the cancellation policy for flight AF6?"}],
+      "ground_truth": {
+        "API": ["getFlightCancellationPolicy"],
+        "parameters": {"flightNumber": "AF6"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi033",
+      "question": [{"role": "user", "content": "Can you check the refund status for my canceled flight with booking ID Y12345?"}],
+      "ground_truth": {
+        "API": ["getFlightRefundStatus"],
+        "parameters": {"bookingId": "Y12345"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi034",
+      "question": [{"role": "user", "content": "What are the travel insurance options available for my booking ID JERF21?"}],
+      "ground_truth": {
+        "API": ["getTravelInsuranceOptions"],
+        "parameters": {"bookingId": "JERF21"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi035",
+      "question": [{"role": "user", "content": "Can I purchase travel insurance for my booking ID JERF21 with insurance option ID IN123?"}],
+      "ground_truth": {
+        "API": ["purchaseTravelInsurance"],
+        "parameters": {"bookingId": "JERF21", "insuranceOptionId": "IN123"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi036",
+      "question": [{"role": "user", "content": "What airport transfer options are available for my booking ID JERF21?"}],
+      "ground_truth": {
+        "API": ["getAirportTransferOptions"],
+        "parameters": {"bookingId": "JERF21"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi037",
+      "question": [{"role": "user", "content": "Can you book an airport transfer for my booking ID JERF21 with transfer option ID TR456?"}],
+      "ground_truth": {
+        "API": ["bookAirportTransfer"],
+        "parameters": {"bookingId": "JERF21", "transferOptionId": "TR456"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi038",
+      "question": [{"role": "user", "content": "What in-flight entertainment options are available on flight EY586?"}],
+      "ground_truth": {
+        "API": ["getInFlightEntertainment"],
+        "parameters": {"flightNumber": "EY586"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi039",
+      "question": [{"role": "user", "content": "Can you check the in-flight meal options available on flight EY586?"}],
+      "ground_truth": {
+        "API": ["getInFlightMealOptions"],
+        "parameters": {"flightNumber": "EY586"}
+      },
+      "difficulty":"easy"
+    },
+    {
+      "id": "avi040",
+      "question": [{"role": "user", "content": "Are there any connecting flights available from LAX to JFK on 2024-09-20?"}],
+      "ground_truth": {
+        "API": ["getConnectingFlights"],
+        "parameters": {"origin": "LAX", "destination": "JFK", "date": "2024-09-20"}
+      },
+      "difficulty":"easy"
+    },
+    {
+    "id": "avi041",
+    "question": [{"role": "user", "content": "Can you find a flight from JFK to LAX on 2024-10-05 and show me the available seats for one of the flights?"}],
+    "ground_truth": {
+      "API": ["searchFlights", "getAvailableSeats"],
+      "parameters": [
+        {"origin": "JFK", "destination": "LAX", "date": "2024-10-05", "ticketClass": "economy"},
+        {"flightNumber": "$$$"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi042",
+    "question": [{"role": "user", "content": "Can you get the flight details for flight 5678 and also tell me the baggage allowance for the same flight in business class?"}],
+    "ground_truth": {
+      "API": ["getFlightDetails", "getBaggageAllowance"],
+      "parameters": [
+        {"flightNumber": "5678"},
+        {"flightNumber": "5678", "ticketClass": "business"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi043",
+    "question": [{"role": "user", "content": "Can you retrieve my boarding pass and tell me the available upgrade options for my booking ID U54321?"}],
+    "ground_truth": {
+      "API": ["getBoardingPass", "getAvailableUpgrades"],
+      "parameters": [
+        {"checkInId": "65432"},
+        {"bookingId": "U54321"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi044",
+    "question": [{"role": "user", "content": "Can you find the available rewards for my frequent flyer ID FF123 and redeem my miles for a specific reward?"}],
+    "ground_truth": {
+      "API": ["getAvailableRewards", "redeemFrequentFlyerMiles"],
+      "parameters": [
+        {"frequentFlyerId": "FF123"},
+        {"frequentFlyerId": "FF123", "rewardId": "RW5678"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi045",
+    "question": [{"role": "user", "content": "Can you check the flight schedule from SFO to LAX on 2024-09-30 and show me the price for one of the flights in first class?"}],
+    "ground_truth": {
+      "API": ["getFlightSchedule", "getFlightPrice"],
+      "parameters": [
+        {"origin": "SFO", "destination": "LAX", "date": "2024-09-30"},
+        {"flightNumber": "$$$", "ticketClass": "first"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi046",
+    "question": [{"role": "user", "content": "Can you check if flight AA200 on 2024-11-01 is delayed, and also retrieve the cancellation policy for that flight?"}],
+    "ground_truth": {
+      "API": ["getFlightDelayInfo", "getFlightCancellationPolicy"],
+      "parameters": [
+        {"flightNumber": "AA200", "date": "2024-11-01"},
+        {"flightNumber": "AA200"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi047",
+    "question": [{"role": "user", "content": "Can you show me the flight offers from LAX to CDG and also retrieve the visa requirements for a US citizen traveling on this route?"}],
+    "ground_truth": {
+      "API": ["getFlightOffers", "getVisaRequirements"],
+      "parameters": [
+        {"origin": "LAX", "destination": "CDG"},
+        {"origin": "LAX", "destination": "CDG", "nationality": "US"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi048",
+    "question": [{"role": "user", "content": "Can you get the weather information for JFK airport and retrieve the available airport parking options there?"}],
+    "ground_truth": {
+      "API": ["getWeatherInfo", "getAirportParkingOptions"],
+      "parameters": [
+        {"airportCode": "JFK"},
+        {"airportCode": "JFK"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi049",
+    "question": [{"role": "user", "content": "Can you retrieve the in-flight meal options for flight AC101 and help me request a vegetarian meal for my booking ID 5A4321?"}],
+    "ground_truth": {
+      "API": ["getInFlightMealOptions", "requestSpecialMeal"],
+      "parameters": [
+        {"flightNumber": "AC101"},
+        {"bookingId": "5A4321", "mealType": "vegetarian"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi050",
+    "question": [{"role": "user", "content": "Can you get the available connecting flights from LAX to SFO on 2024-09-20 and check for wheelchair assistance options for booking ID 5U4321?"}],
+    "ground_truth": {
+      "API": ["getConnectingFlights", "requestWheelchairAssistance"],
+      "parameters": [
+        {"origin": "LAX", "destination": "SFO", "date": "2024-09-20"},
+        {"bookingId": "5U4321"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi051",
+    "question": [{"role": "user", "content": "Can you search for flights from SFO to LAX on 2024-10-15 and retrieve in-flight entertainment options for one of the flights?"}],
+    "ground_truth": {
+      "API": ["searchFlights", "getInFlightEntertainment"],
+      "parameters": [
+        {"origin": "SFO", "destination": "LAX", "date": "2024-10-15", "ticketClass": "economy"},
+        {"flightNumber": "$$$"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi052",
+    "question": [{"role": "user", "content": "Can you find out the available airport lounges at JFK and show me the available transfer options for booking ID 54Y321?"}],
+    "ground_truth": {
+      "API": ["getAirportLoungeLocations", "getAirportTransferOptions"],
+      "parameters": [
+        {"airportCode": "JFK"},
+        {"bookingId": "54Y321"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi053",
+    "question": [{"role": "user", "content": "Can you check the frequent flyer miles balance for ID FF123 and help me redeem them for reward ID RW5678?"}],
+    "ground_truth": {
+      "API": ["getFrequentFlyerMiles", "redeemFrequentFlyerMiles"],
+      "parameters": [
+        {"frequentFlyerId": "FF123"},
+        {"frequentFlyerId": "FF123", "rewardId": "RW5678"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi054",
+    "question": [{"role": "user", "content": "Can you show me the flight details of flight AC512 and check the refund status for my canceled booking ID 98H765?"}],
+    "ground_truth": {
+      "API": ["getFlightDetails", "getFlightRefundStatus"],
+      "parameters": [
+        {"flightNumber": "AC512"},
+        {"bookingId": "98H765"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi055",
+    "question": [{"role": "user", "content": "Can you search for flights from JFK to LHR on 2024-12-25 and retrieve information about the airline operating one of the flights?"}],
+    "ground_truth": {
+      "API": ["searchFlights", "getAirlineInfo"],
+      "parameters": [
+        {"origin": "JFK", "destination": "LHR", "date": "2024-12-25", "ticketClass": "business"},
+        {"airlineId": "$$$"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi056",
+    "question": [
+      {
+        "role": "user",
+        "content": "What's the flight schedule from JFK to LAX on December 15th, and can you book a flight for me with my American Express card? My name is Sam Jackson."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightSchedule", "bookFlight"],
+      "parameters": [
+        {"origin": "JFK", "destination": "LAX", "date": "2023-12-15"},
+        {"flightNumber": "$$$", "passengerName": "Jackson", "paymentDetails": "AMEX"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi057",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you check the status of flight AA123 on November 20th and provide the delay information?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightStatus", "getFlightDelayInfo"],
+      "parameters": [
+        {"flightNumber": "AA123", "date": "2023-11-20"},
+        {"flightNumber": "AA123", "date": "2023-11-20"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi058",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to find available seats on flight FL456 and select seat 12A for my booking TSI886."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getAvailableSeats", "selectSeat"],
+      "parameters": [
+        {"flightNumber": "FL456"},
+        {"bookingId": "TSI886", "seatNumber": "12A"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi059",
+    "question": [
+      {
+        "role": "user",
+        "content": "Please update my passenger name to Sam Jackson for booking BK789I and then retrieve the updated details."
+      }
+    ],
+    "ground_truth": {
+      "API": ["updatepassengerName", "getpassengerName"],
+      "parameters": [
+        {"bookingId": "BK789I", "passengerName": "Sam Jackson"},
+        {"bookingId": "BK789I"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi060",
+    "question": [
+      {
+        "role": "user",
+        "content": "What's the baggage allowance for flight FL123 in economy class?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getBaggageAllowance"],
+      "parameters": [
+        {"flightNumber": "FL123", "ticketClass": "Economy"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi061",
+    "question": [
+      {
+        "role": "user",
+        "content": "I want to check in for booking BK456 with my passport B594672 and get my boarding pass."
+      }
+    ],
+    "ground_truth": {
+      "API": ["checkIn", "getBoardingPass"],
+      "parameters": [
+        {"bookingId": "BK456", "passengerId": "B594672"},
+        {"checkInId": "$$$"}
+      ]
+    },
+      "difficulty":"hard"
+  },
+  {
+    "id": "avi062",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you search for flights from SFO to ORD on December 1st in business class?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["searchFlights"],
+      "parameters": [
+        {"origin": "SFO", "destination": "ORD", "date": "2023-12-01", "ticketClass": "Business"}
+      ]
+    },
+      "difficulty":"easy"
+  },
+  {
+    "id": "avi063",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get the flight details for flight ID FL789 and then provide the aircraft details."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightDetails", "getAircraftDetails"],
+      "parameters": [
+        {"flightNumber": "FL789"},
+        {"flightNumber": "FL789"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi064",
+    "question": [
+      {
+        "role": "user",
+        "content": "What are the visa requirements for traveling from USA to Japan for a US citizen?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getVisaRequirements"],
+      "parameters": [
+        {"origin": "USA", "destination": "Japan", "nationality": "US"}
+      ]
+    },
+      "difficulty":"easy"
+  },
+  {
+    "id": "avi065",
+    "question": [
+      {
+        "role": "user",
+        "content": "Please get the travel advisories for France and the weather information for Paris CDG airport."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getTravelAdvisories", "getWeatherInfo"],
+      "parameters": [
+        {"destination": "France"},
+        {"airportCode": "CDG"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi066",
+    "question": [
+      {
+        "role": "user",
+        "content": "I want to request a Halal meal for booking BK321 and check if it's confirmed."
+      }
+    ],
+    "ground_truth": {
+      "API": ["requestSpecialMeal", "getpassengerName"],
+      "parameters": [
+        {"bookingId": "BK321", "mealType": "Halal"},
+        {"bookingId": "BK321"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi067",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get the flight price for flight FL654 in first class and then book it with my JCB card. My name is Wilson Smith"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightPrice", "bookFlight"],
+      "parameters": [
+        {"flightNumber": "FL654", "ticketClass": "First"},
+        {"flightNumber": "FL654", "passengerName": "Wilson Smith", "paymentDetails": "JCB"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi068",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you get available rewards for my frequent flyer ID FF12345 and redeem miles for reward RD678?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getAvailableRewards", "redeemFrequentFlyerMiles"],
+      "parameters": [
+        {"frequentFlyerId": "FF12345"},
+        {"frequentFlyerId": "FF12345", "rewardId": "RD678"}
+      ]
+    },
+      "difficulty":"medium"
+  },
+  {
+    "id": "avi069",
+    "question": [
+      {
+        "role": "user",
+        "content": "Find connecting flights from LAX to SYD on January 10th."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getConnectingFlights"],
+      "parameters": [
+        {"origin": "LAX", "destination": "SYD", "date": "2024-01-10"}
+      ]
+    },
+      "difficulty":"easy"
+  },
+  {
+    "id": "avi070",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to get my frequent flyer miles balance for ID FF67890 and then update my flight booking Y8F7XQ preferences to Kosher meal ."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFrequentFlyerMiles", "updateFlightPreferences"],
+      "parameters": [
+        {"frequentFlyerId": "FF67890"},
+        {"bookingId": "Y8F7XQ", "preferences": "$$$"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "avi071",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get the lounge access information for booking BK987 and provide available lounge locations at JFK."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getLoungeAccess", "getAirportLoungeLocations"],
+      "parameters": [
+        {"bookingId": "BK987"},
+        {"airportCode": "JFK"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "avi072",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you get the in-flight entertainment options for flight FL321?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getInFlightEntertainment"],
+      "parameters": [
+        {"flightNumber": "FL321"}
+      ]
+    },
+    "difficulty": "easy"
+  },
+  {
+    "id": "avi073",
+    "question": [
+      {
+        "role": "user",
+        "content": "Retrieve my boarding pass for check-in ID CI34627123 and then get the gate information."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getBoardingPass", "getFlightDetails"],
+      "parameters": [
+        {"checkInId": "CI34627123"},
+        {"flightNumber": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  },
+  {
+    "id": "avi074",
+    "question": [
+      {
+        "role": "user",
+        "content": "What's the cancellation policy for flight FL987 and can you cancel my booking CBK654?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightCancellationPolicy", "cancelFlightBooking"],
+      "parameters": [
+        {"flightNumber": "FL987"},
+        {"bookingId": "CBK654"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "avi075",
+    "question": [
+      {
+        "role": "user",
+        "content": "Get the weather information for LHR airport and find available parking options there."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getWeatherInfo", "getAirportParkingOptions"],
+      "parameters": [
+        {"airportCode": "LHR"},
+        {"airportCode": "LHR"}
+      ]
+    },
+    "difficulty": "medium"
+  },
+  {
+    "id": "avi076",
+    "question": [
+      {
+        "role": "user",
+        "content": "I need to check available flights from BOS to MIA on January 15th, economy class, book one for Sam Brown with MasterCard, and request wheelchair assistance."
+      }
+    ],
+    "ground_truth": {
+      "API": ["searchFlights", "bookFlight", "requestWheelchairAssistance"],
+      "parameters": [
+        {"origin": "BOS", "destination": "MIA", "date": "2024-01-15", "ticketClass": "economy"},
+        {"flightNumber": "$$$", "passengerName": "Sam Brown", "paymentDetails": "MASTER"},
+        {"bookingId": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  },
+  {
+    "id": "avi077",
+    "question": [
+      {
+        "role": "user",
+        "content": "Can you check the status of flight DL789 on December 24th, see if there are delays, and provide the cancellation policy?"
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightStatus", "getFlightDelayInfo", "getFlightCancellationPolicy"],
+      "parameters": [
+        {"flightNumber": "DL789", "date": "2023-12-24"},
+        {"flightNumber": "DL789", "date": "2023-12-24"},
+        {"flightNumber": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  },
+  {
+    "id": "avi078",
+    "question": [
+      {
+        "role": "user",
+        "content": "I want to check in for my flight with booking ID BK888 with my passport H9715161, select seat 7B, and get my boarding pass."
+      }
+    ],
+    "ground_truth": {
+      "API": ["checkIn", "selectSeat", "getBoardingPass"],
+      "parameters": [
+        {"bookingId": "BK888", "passengerId": "H9715161"},
+        {"bookingId": "BK888", "seatNumber": "7B"},
+        {"checkInId": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  },
+  {
+    "id": "avi079",
+    "question": [
+      {
+        "role": "user",
+        "content": "Please provide the baggage allowance for flight FL555 in premium economy, and I want to request an upgrade for my booking C8XU71."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getBaggageAllowance", "getAvailableUpgrades", "requestUpgrade"],
+      "parameters": [
+        {"flightNumber": "FL555", "ticketClass": "Premium Economy"},
+        {"bookingId": "C8XU71"},
+        {"bookingId": "C8XU71", "upgradeOptionId": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  },
+  {
+    "id": "avi080",
+    "question": [
+      {
+        "role": "user",
+        "content": "Find the flight offers from NYC to London, book a flight with my American Express card, and purchase travel insurance. My name is Daniel Wellington."
+      }
+    ],
+    "ground_truth": {
+      "API": ["getFlightOffers", "bookFlight", "getTravelInsuranceOptions", "purchaseTravelInsurance"],
+      "parameters": [
+        {"origin": "NYC", "destination": "London"},
+        {"flightNumber": "$$$", "passengerName": "Daniel Wellington", "paymentDetails": "AMEX"},
+        {"bookingId": "$$$"},
+        {"bookingId": "$$$", "insuranceOptionId": "$$$"}
+      ]
+    },
+    "difficulty": "hard"
+  }
+]
+
