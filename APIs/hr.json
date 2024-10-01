@@ -1,0 +1,237 @@
+{
+    "api_ports": [
+      {
+        "name": "getEmployeeInfo",
+        "description": "Retrieve detailed information about an employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": {
+          "EmployeeName": "string",
+          "EmployeeID": "string",
+          "DateOfBirth": "string",
+          "Department": "string",
+          "Position": "string",
+          "HireDate": "string"
+        }
+      },
+      {
+        "name": "createEmploymentContract",
+        "description": "Create a new employment contract for an employee.",
+        "parameters": {
+          "employeeID": "string",
+          "contractDetails": {
+            "startDate": "2024-01-01",
+            "endDate": "2026-12-31",
+            "salary": 60000,
+            "jobTitle": "Software Engineer"
+          }
+        },
+        "returnParameter": "ContractID"
+      },
+      {
+        "name": "getEmploymentContract",
+        "description": "Retrieve the employment contract details for an employee.",
+        "parameters": {
+          "contractID": "string"
+        },
+        "returnParameter": {
+          "EmployeeID": "string",
+          "ContractStartDate": "string",
+          "ContractEndDate": "string",
+          "Salary": "number",
+          "JobTitle": "string",
+          "ContractTerms": "string"
+        }
+      },
+      {
+        "name": "updateEmploymentContractTitle",
+        "description": "Update the details of an existing employment contract.",
+        "parameters": {
+          "contractID": "string",
+          "newTitle": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "updateEmploymentContractSalary",
+        "description": "Update the details of an existing employment contract.",
+        "parameters": {
+          "contractID": "string",
+          "newSalary": "number"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "terminateEmploymentContract",
+        "description": "Terminate the employment contract of an employee.",
+        "parameters": {
+          "contractID": "string",
+          "terminationDate": "string",
+          "terminationReason": "string"
+        },
+        "returnParameter": "TerminationStatus"
+      },
+      {
+        "name": "getEmployeeSalaryDetails",
+        "description": "Retrieve salary details for a specific employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": {
+          "BasicSalary": "number",
+          "Allowances": "number",
+          "Deductions": "number",
+          "NetSalary": "number"
+        }
+      },
+      {
+        "name": "processPayroll",
+        "description": "Process payroll for an employee for a specific period.",
+        "parameters": {
+          "employeeID": "string",
+          "payPeriod": "string"
+        },
+        "returnParameter": "PayrollStatus"
+      },
+      {
+        "name": "getPayrollHistory",
+        "description": "Retrieve payroll history for a specific employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": "PayrollHistory"
+      },
+      {
+        "name": "updateEmployeeSalary",
+        "description": "Update the salary details for an employee.",
+        "parameters": {
+          "employeeID": "string",
+          "Salary": "number"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getEmployeeLeaveBalance",
+        "description": "Retrieve leave balance details for a specific employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": {
+          "AnnualLeaveBalance": "number",
+          "SickLeaveBalance": "number",
+          "MaternityLeaveBalance": "number",
+          "OtherLeaveBalance": "number"
+        }
+      },
+      {
+        "name": "applyForLeave",
+        "description": "Submit a leave application for an employee.",
+        "parameters": {
+          "employeeID": "string",
+          "leaveType": "string",
+          "startDate": "string",
+          "endDate": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getLeaveApplicationStatus",
+        "description": "Retrieve the status of a leave application.",
+        "parameters": {
+          "applicationID": "string"
+        },
+        "returnParameter": {
+          "ApplicationID": "string",
+          "EmployeeID": "string",
+          "LeaveType": "string",
+          "StartDate": "string",
+          "EndDate": "string",
+          "ApplicationStatus": "string"
+        }
+      },
+      {
+        "name": "updateLeaveApplication",
+        "description": "Update the details of an existing leave application.",
+        "parameters": {
+          "applicationID": "string",
+          "updateData": {"startDate": "string", "endDate": "string"}
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getEmployeeBenefits",
+        "description": "Retrieve benefits information for a specific employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": {
+          "HealthInsurance": "string",
+          "RetirementPlan": "string",
+          "LifeInsurance": "string",
+          "OtherBenefits": "string"
+        }
+      },
+      {
+        "name": "enrollEmployeeInBenefit",
+        "description": "Enroll an employee in a specific benefit program.",
+        "parameters": {
+          "employeeID": "string",
+          "benefitType": "string"
+        },
+        "returnParameter": "EnrollmentStatus"
+      },
+      {
+        "name": "getPerformanceReview",
+        "description": "Retrieve the performance review for a specific employee.",
+        "parameters": {
+          "employeeID": "string",
+          "reviewPeriod": "string"
+        },
+        "returnParameter": {
+          "ReviewDate": "string",
+          "ReviewerName": "string",
+          "OverallRating": "string",
+          "Comments": "string"
+        }
+      },
+      {
+        "name": "submitPerformanceReview",
+        "description": "Submit a performance review for an employee.",
+        "parameters": {
+          "employeeID": "string",
+          "reviewData": "object"
+        },
+        "returnParameter": "SubmissionStatus"
+      },
+      {
+        "name": "getTrainingRecords",
+        "description": "Retrieve training records for a specific employee.",
+        "parameters": {
+          "employeeID": "string"
+        },
+        "returnParameter": {
+          "TrainingPrograms": "array",
+          "CompletionStatus": "string"
+        }
+      },
+      {
+        "name": "assignTrainingProgram",
+        "description": "Assign a training program to an employee.",
+        "parameters": {
+          "employeeID": "string",
+          "trainingProgramID": "string"
+        },
+        "returnParameter": "AssignmentStatus"
+      },
+      {
+        "name": "getEmployeeAttendance",
+        "description": "Retrieve attendance records for a specific employee.",
+        "parameters": {
+          "employeeID": "string",
+          "dateRange": {"startDate": "$$$", "endDate": "$$$"}
+        },
+        "returnParameter": "AttendanceRecords"
+      }
+    ]
+  }

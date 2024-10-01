@@ -1,0 +1,682 @@
+{
+    "api_ports": [
+      {
+        "name": "getItemPrice",
+        "description": "Retrieve the price of a specific item.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "ItemPrice"
+      },
+      {
+        "name": "payByVISA",
+        "description": "Process payment using VISA card.",
+        "parameters": {
+          "cardNumber": "string",
+          "expiryDate": "string",
+          "cvv": "string",
+          "amount": "number"
+        },
+        "returnParameter": "PayToken"
+      },
+      {
+        "name": "addItemToCart",
+        "description": "Add an item to the shopping cart.",
+        "parameters": {
+          "itemId": "string",
+          "quantity": "number"
+        },
+        "returnParameter": "CartStatus"
+      },
+      {
+        "name": "removeItemFromCart",
+        "description": "Remove an item from the shopping cart.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "CartStatus"
+      },
+      {
+        "name": "getCartItems",
+        "description": "Retrieve the list of items in the shopping cart.",
+        "parameters": {},
+        "returnParameter": "CartItems"
+      },
+      {
+        "name": "checkout",
+        "description": "Proceed to checkout and create an order.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "OrderId"
+      },
+      {
+        "name": "getOrderStatus",
+        "description": "Get the status of a specific order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "OrderStatus"
+      },
+      {
+        "name": "cancelOrder",
+        "description": "Cancel a specific order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "CancelConfirmation"
+      },
+      {
+        "name": "applyDiscountCode",
+        "description": "Apply a discount code to the current order.",
+        "parameters": {
+          "orderId": "string",
+          "discountCode": "string"
+        },
+        "returnParameter": "DiscountStatus"
+      },
+      {
+        "name": "getShippingOptions",
+        "description": "Retrieve available shipping options for the current order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "ShippingOptions"
+      },
+      {
+        "name": "selectShippingOption",
+        "description": "Select a shipping option for the order.",
+        "parameters": {
+          "orderId": "string",
+          "shippingOptionId": "string"
+        },
+        "returnParameter": "ShippingConfirmation"
+      },
+      {
+        "name": "getUserProfile",
+        "description": "Retrieve user profile information.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "UserProfile"
+      },
+      {
+        "name": "updateUserProfile",
+        "description": "Update user profile information.",
+        "parameters": {
+          "userId": "string",
+          "profileData": {
+            "name": "string",
+            "email": "string"
+          }
+        },
+        "returnParameter": "ProfileUpdateStatus"
+      },
+      {
+        "name": "getItemDetails",
+        "description": "Retrieve detailed information about a specific item.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "ItemDetails"
+      },
+      {
+        "name": "searchItems",
+        "description": "Search for items based on a query.",
+        "parameters": {
+          "query": "string"
+        },
+        "returnParameter": "SearchResults"
+      },
+      {
+        "name": "getRecommendations",
+        "description": "Retrieve item recommendations for the user.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "Recommendations"
+      },
+      {
+        "name": "getOrderHistory",
+        "description": "Retrieve the order history of the user.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "OrderHistory"
+      },
+      {
+        "name": "getWishlist",
+        "description": "Retrieve the user's wishlist.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "Wishlist"
+      },
+      {
+        "name": "addItemToWishlist",
+        "description": "Add an item to the user's wishlist.",
+        "parameters": {
+          "userId": "string",
+          "itemId": "string"
+        },
+        "returnParameter": "WishlistStatus"
+      },
+      {
+        "name": "removeItemFromWishlist",
+        "description": "Remove an item from the user's wishlist.",
+        "parameters": {
+          "userId": "string",
+          "itemId": "string"
+        },
+        "returnParameter": "WishlistStatus"
+      },
+      {
+        "name": "getNotifications",
+        "description": "Retrieve notifications for the user.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "Notifications"
+      },
+      {
+        "name": "markNotificationAsRead",
+        "description": "Mark a notification as read.",
+        "parameters": {
+          "userId": "string",
+          "notificationId": "string"
+        },
+        "returnParameter": "NotificationStatus"
+      },
+      {
+        "name": "subscribeToNewsletter",
+        "description": "Subscribe the user to the newsletter.",
+        "parameters": {
+          "userId": "string",
+          "email": "string"
+        },
+        "returnParameter": "SubscriptionStatus"
+      },
+      {
+        "name": "unsubscribeFromNewsletter",
+        "description": "Unsubscribe the user from the newsletter.",
+        "parameters": {
+          "userId": "string",
+          "email": "string"
+        },
+        "returnParameter": "UnsubscriptionStatus"
+      },
+      {
+        "name": "trackOrder",
+        "description": "Track the shipment status of an order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "TrackingInfo"
+      },
+      {
+        "name": "requestReturn",
+        "description": "Request a return for an order.",
+        "parameters": {
+          "orderId": "string",
+          "reason": "string"
+        },
+        "returnParameter": "ReturnRequestStatus"
+      },
+      {
+        "name": "getReturnStatus",
+        "description": "Get the status of a return request.",
+        "parameters": {
+          "returnRequestId": "string"
+        },
+        "returnParameter": "ReturnStatus"
+      },
+      {
+        "name": "submitReview",
+        "description": "Submit a review for an item.",
+        "parameters": {
+          "itemId": "string",
+          "userId": "string",
+          "rating": "number",
+          "review": "string"
+        },
+        "returnParameter": "ReviewStatus"
+      },
+      {
+        "name": "getItemReviews",
+        "description": "Retrieve reviews for a specific item.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "ItemReviews"
+      },
+      {
+        "name": "getPopularItems",
+        "description": "Retrieve a list of popular items.",
+        "parameters": {},
+        "returnParameter": "PopularItems"
+      },
+      {
+        "name": "getNewArrivals",
+        "description": "Retrieve a list of newly arrived items.",
+        "parameters": {},
+        "returnParameter": "NewArrivals"
+      },
+      {
+        "name": "getCategories",
+        "description": "Retrieve a list of available categories.",
+        "parameters": {},
+        "returnParameter": "Categories"
+      },
+      {
+        "name": "getCategoryItems",
+        "description": "Retrieve items within a specific category.",
+        "parameters": {
+          "categoryId": "string"
+        },
+        "returnParameter": "CategoryItems"
+      },
+      {
+        "name": "getUserFavorites",
+        "description": "Retrieve the user's favorite items.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "Favorites"
+      },
+      {
+        "name": "addItemToFavorites",
+        "description": "Add an item to the user's favorites.",
+        "parameters": {
+          "userId": "string",
+          "itemId": "string"
+        },
+        "returnParameter": "FavoritesStatus"
+      },
+      {
+        "name": "removeItemFromFavorites",
+        "description": "Remove an item from the user's favorites.",
+        "parameters": {
+          "userId": "string",
+          "itemId": "string"
+        },
+        "returnParameter": "FavoritesStatus"
+      },
+      {
+        "name": "getStoreLocations",
+        "description": "Retrieve a list of store locations.",
+        "parameters": {},
+        "returnParameter": "StoreLocations"
+      },
+      {
+        "name": "getStoreHours",
+        "description": "Retrieve the operating hours of a specific store.",
+        "parameters": {
+          "storeId": "string"
+        },
+        "returnParameter": "StoreHours"
+      },
+      {
+        "name": "getReturnPolicy",
+        "description": "Retrieve the return policy information.",
+        "parameters": {},
+        "returnParameter": "ReturnPolicy"
+      },
+      {
+        "name": "contactSupport",
+        "description": "Contact customer support.",
+        "parameters": {
+          "userId": "string",
+          "message": "string"
+        },
+        "returnParameter": "SupportTicket"
+      },
+      {
+        "name": "getSupportTicketStatus",
+        "description": "Retrieve the status of a customer support ticket.",
+        "parameters": {
+          "ticketId": "string"
+        },
+        "returnParameter": "TicketStatus"
+      },
+      {
+        "name": "getPaymentMethods",
+        "description": "Retrieve available payment methods for the user.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "PaymentMethods"
+      },
+      {
+        "name": "savePaymentMethod",
+        "description": "Save a payment method for future use.",
+        "parameters": {
+          "userId": "string",
+          "paymentMethod": "object"
+        },
+        "returnParameter": "PaymentMethodStatus"
+      },
+      {
+        "name": "deletePaymentMethod",
+        "description": "Delete a saved payment method.",
+        "parameters": {
+          "userId": "string",
+          "paymentMethodId": "string"
+        },
+        "returnParameter": "PaymentMethodStatus"
+      },
+      {
+        "name": "updatePaymentMethod",
+        "description": "Update a saved payment method.",
+        "parameters": {
+          "userId": "string",
+          "paymentMethod": {
+              "cardNumber": "string",
+              "expiryDate": "string",
+              "cvv": "string"
+            }
+        },
+        "returnParameter": "PaymentMethodStatus"
+      },
+      {
+        "name": "getOrderInvoice",
+        "description": "Retrieve the invoice for a specific order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "Invoice"
+      },
+      {
+        "name": "getAvailableCoupons",
+        "description": "Retrieve available coupons for the user.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "Coupons"
+      },
+      {
+        "name": "applyCoupon",
+        "description": "Apply a coupon to the current order.",
+        "parameters": {
+          "orderId": "string",
+          "couponCode": "string"
+        },
+        "returnParameter": "CouponStatus"
+      },
+      {
+        "name": "removeCoupon",
+        "description": "Remove an applied coupon from the current order.",
+        "parameters": {
+          "orderId": "string",
+          "couponCode": "string"
+        },
+        "returnParameter": "CouponStatus"
+      },
+      {
+        "name": "getItemStock",
+        "description": "Check the stock availability of a specific item.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "StockAvailability"
+      },
+      {
+        "name": "reserveItem",
+        "description": "Reserve an item for purchase.",
+        "parameters": {
+          "itemId": "string",
+          "userId": "string"
+        },
+        "returnParameter": "ReservationStatus"
+      },
+      {
+        "name": "releaseItemReservation",
+        "description": "Release a previously reserved item.",
+        "parameters": {
+          "itemId": "string",
+          "userId": "string"
+        },
+        "returnParameter": "ReleaseStatus"
+      },
+      {
+        "name": "getGiftCardBalance",
+        "description": "Check the balance of a gift card.",
+        "parameters": {
+          "giftCardCode": "string"
+        },
+        "returnParameter": "GiftCardBalance"
+      },
+      {
+        "name": "redeemGiftCard",
+        "description": "Redeem a gift card for an order.",
+        "parameters": {
+          "orderId": "string",
+          "giftCardCode": "string"
+        },
+        "returnParameter": "RedemptionStatus"
+      },
+      {
+        "name": "getDeliveryEstimate",
+        "description": "Get an estimated delivery date for an order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "DeliveryEstimate"
+      },
+      {
+        "name": "getUserPreferences",
+        "description": "Retrieve the user's shopping preferences.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "UserPreferences"
+      },
+      {
+        "name": "updateUserPreferences",
+        "description": "Update the user's shopping preferences.",
+        "parameters": {
+          "userId": "string",
+          "preferences": "object"
+        },
+        "returnParameter": "PreferencesUpdateStatus"
+      },
+      {
+        "name": "getLoyaltyPoints",
+        "description": "Retrieve the user's loyalty points balance.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "LoyaltyPoints"
+      },
+      {
+        "name": "redeemLoyaltyPoints",
+        "description": "Redeem loyalty points for an order.",
+        "parameters": {
+          "orderId": "string",
+          "points": "number"
+        },
+        "returnParameter": "RedemptionStatus"
+      },
+      {
+        "name": "getAvailableGiftWrapOptions",
+        "description": "Retrieve available gift wrap options for the order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "GiftWrapOptions"
+      },
+      {
+        "name": "selectGiftWrapOption",
+        "description": "Select a gift wrap option for the order.",
+        "parameters": {
+          "orderId": "string",
+          "giftWrapOptionId": "string"
+        },
+        "returnParameter": "GiftWrapConfirmation"
+      },
+      {
+        "name": "getItemRecommendations",
+        "description": "Retrieve item recommendations based on a specific item.",
+        "parameters": {
+          "itemId": "string"
+        },
+        "returnParameter": "ItemRecommendations"
+      },
+      {
+        "name": "getPromotions",
+        "description": "Retrieve ongoing promotions.",
+        "parameters": {},
+        "returnParameter": "Promotions"
+      },
+      {
+        "name": "applyPromotion",
+        "description": "Apply a promotion to the current order.",
+        "parameters": {
+          "orderId": "string",
+          "promotionCode": "string"
+        },
+        "returnParameter": "PromotionStatus"
+      },
+      {
+        "name": "getBillingAddress",
+        "description": "Retrieve the user's billing address.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "BillingAddress"
+      },
+      {
+        "name": "updateBillingAddress",
+        "description": "Update the user's billing address.",
+        "parameters": {
+          "userId": "string",
+          "billingAddress": "object"
+        },
+        "returnParameter": "BillingAddressStatus"
+      },
+      {
+        "name": "getShippingAddress",
+        "description": "Retrieve the user's shipping address.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "ShippingAddress"
+      },
+      {
+        "name": "updateShippingAddress",
+        "description": "Update the user's shipping address.",
+        "parameters": {
+          "userId": "string",
+          "shippingAddress": "object"
+        },
+        "returnParameter": "ShippingAddressStatus"
+      },
+      {
+        "name": "getCartTotal",
+        "description": "Retrieve the total cost of items in the cart.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "CartTotal"
+      },
+      {
+        "name": "getPaymentStatus",
+        "description": "Retrieve the payment status of an order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "PaymentStatus"
+      },
+      {
+        "name": "getUserCommunicationPreferences",
+        "description": "Retrieve the user's communication preferences.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "CommunicationPreferences"
+      },
+      {
+        "name": "updateUserCommunicationPreferences",
+        "description": "Update the user's communication preferences.",
+        "parameters": {
+          "userId": "string",
+          "preferences": "string"
+        },
+        "returnParameter": "PreferencesUpdateStatus"
+      },
+      {
+        "name": "requestOrderInvoice",
+        "description": "Request a copy of the invoice for a specific order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "InvoiceRequestStatus"
+      },
+      {
+        "name": "getTaxInformation",
+        "description": "Retrieve tax information for the current order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "TaxInformation"
+      },
+      {
+        "name": "validateCoupon",
+        "description": "Validate a coupon before applying it.",
+        "parameters": {
+          "couponCode": "string"
+        },
+        "returnParameter": "CouponValidationStatus"
+      },
+      {
+        "name": "validatePromotion",
+        "description": "Validate a promotion before applying it.",
+        "parameters": {
+          "promotionCode": "string"
+        },
+        "returnParameter": "PromotionValidationStatus"
+      },
+      {
+        "name": "getOrderSummary",
+        "description": "Retrieve a summary of the order details.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "OrderSummary"
+      },
+      {
+        "name": "reorderItems",
+        "description": "Reorder items from a previous order.",
+        "parameters": {
+          "orderId": "string"
+        },
+        "returnParameter": "ReorderStatus"
+      },
+      {
+        "name": "saveSearch",
+        "description": "Save a search query for future reference.",
+        "parameters": {
+          "userId": "string",
+          "query": "string"
+        },
+        "returnParameter": "SearchSaveStatus"
+      },
+      {
+        "name": "getSavedSearches",
+        "description": "Retrieve a list of saved search queries.",
+        "parameters": {
+          "userId": "string"
+        },
+        "returnParameter": "SavedSearches"
+      },
+      {
+        "name": "deleteSavedSearch",
+        "description": "Delete a saved search query.",
+        "parameters": {
+          "userId": "string",
+          "searchId": "string"
+        },
+        "returnParameter": "SearchDeleteStatus"
+      }
+    ]
+  }
+  

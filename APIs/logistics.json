@@ -1,0 +1,430 @@
+{
+    "api_ports": [
+      {
+        "name": "getTrackStatus",
+        "description": "Retrieve the tracking status of a shipment.",
+        "parameters": {
+          "trackingNumber": "string"
+        },
+        "returnParameter": "TrackStatus"
+      },
+      {
+        "name": "createShipment",
+        "description": "Create a new shipment order. Weight in kg and dimensions in cm.",
+        "parameters": {
+          "senderAddress": "object",
+          "recipientAddress": "object",
+          "packageDetails": {"weight": "number",
+          "dimensions": {
+            "length": "number",
+            "width": "number",
+            "height": "number"
+          }
+        }
+        },
+        "returnParameter": "ShipmentId"
+      },
+      {
+        "name": "calculateShippingCost",
+        "description": "Calculate the shipping cost for a given package. origin and destination are city names. Weight in kg and dimensions in cm.",
+        "parameters": {
+          "packageDetails": {"weight": "number",
+          "dimensions": {
+            "length": "number",
+            "width": "number",
+            "height": "number"
+          }
+        },
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "ShippingCost"
+      },
+      {
+        "name": "getDeliveryEstimate",
+        "description": "Get an estimated delivery date for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "DeliveryEstimate"
+      },
+      {
+        "name": "schedulePickup",
+        "description": "Schedule a pickup for a shipment.",
+        "parameters": {
+          "shipmentId": "string",
+          "pickupDate": "string",
+          "pickupLocation": "string"
+        },
+        "returnParameter": "PickupConfirmation"
+      },
+      {
+        "name": "cancelShipment",
+        "description": "Cancel a scheduled shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "updateShipmentDetails",
+        "description": "Update the details of an existing shipment. Weight in kg and dimensions in cm.",
+        "parameters": {
+          "shipmentId": "string",
+          "packageDetails":{"weight": "number",
+          "dimensions": {
+            "length": "number",
+            "width": "number",
+            "height": "number"
+          }
+        }
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getShipmentDetails",
+        "description": "Retrieve the details of a specific shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShipmentDetails"
+      },
+      {
+        "name": "getShippingOptions",
+        "description": "Retrieve available shipping options. origin and destination are city names. Weight in kg and dimensions in cm.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string",
+          "packageDetails": {"weight": "number",
+              "dimensions": {
+                "length": "number",
+                "width": "number",
+                "height": "number"
+              }
+            }
+        },
+        "returnParameter": "ShippingOptions"
+      },
+      {
+        "name": "getAvailableCarriers",
+        "description": "Retrieve a list of available carriers for shipping. origin and destination are city names.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "Carriers"
+      },
+      {
+        "name": "trackMultipleShipments",
+        "description": "Retrieve tracking statuses for multiple shipments.",
+        "parameters": {
+          "trackingNumbers": "array"
+        },
+        "returnParameter": "TrackStatuses"
+      },
+      {
+        "name": "validateAddress",
+        "description": "Validate the address for shipment.",
+        "parameters": {
+          "address": "object"
+        },
+        "returnParameter": "ValidationStatus"
+      },
+      {
+        "name": "getServiceAvailability",
+        "description": "Check service availability for a specific route. origin and destination are city names.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "ServiceAvailability"
+      },
+      {
+        "name": "getCustomsInformation",
+        "description": "Retrieve customs information for international shipments. origin and destination are city names.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "CustomsInfo"
+      },
+      {
+        "name": "generateShippingLabel",
+        "description": "Generate a shipping label for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShippingLabel"
+      },
+      {
+        "name": "getPickupLocations",
+        "description": "Retrieve available pickup locations for a shipment.",
+        "parameters": {
+          "postalCode": "string",
+          "countryCode": "string"
+        },
+        "returnParameter": "PickupLocations"
+      },
+      {
+        "name": "getShippingHistory",
+        "description": "Retrieve the shipping history for a specific shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShippingHistory"
+      },
+      {
+        "name": "getDeliveryStatus",
+        "description": "Retrieve the delivery status of a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "DeliveryStatus"
+      },
+      {
+        "name": "getShipmentCostBreakdown",
+        "description": "Retrieve a cost breakdown for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "CostBreakdown"
+      },
+      {
+        "name": "getShipmentInsuranceOptions",
+        "description": "Retrieve available insurance options for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "InsuranceOptions"
+      },
+      {
+        "name": "addShipmentInsurance",
+        "description": "Add insurance to a shipment.",
+        "parameters": {
+          "shipmentId": "string",
+          "insuranceOptionId": "string"
+        },
+        "returnParameter": "InsuranceStatus"
+      },
+      {
+        "name": "getShipmentWeight",
+        "description": "Retrieve the weight of a specific shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShipmentWeight"
+      },
+      {
+        "name": "estimatePackageWeight",
+        "description": "Estimate the weight of a package based on its dimensions. Dimensions in cm.",
+        "parameters": {
+          
+          "dimensions": {
+            "length": "number",
+            "width": "number",
+            "height": "number"
+          }
+        
+        },
+        "returnParameter": "EstimatedWeight"
+      },
+      {
+        "name": "getShipmentVolume",
+        "description": "Retrieve the volume of a specific shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShipmentVolume"
+      },
+      {
+        "name": "estimatePackageVolume",
+        "description": "Estimate the volume of a package based on its dimensions.  Weight in kg and dimensions in cm.",
+        "parameters": {
+          "packageDetails":{"weight": "number",
+          "dimensions": {
+            "length": "number",
+            "width": "number",
+            "height": "number"
+          }
+        }
+        },
+        "returnParameter": "EstimatedVolume"
+      },
+      {
+        "name": "createBulkShipment",
+        "description": "Create multiple shipments in bulk.",
+        "parameters": {
+          "shipmentsInfo": "string"
+        },
+        "returnParameter": "BulkShipmentStatus"
+      },
+      {
+        "name": "getBulkShipmentStatus",
+        "description": "Retrieve the status of a bulk shipment.",
+        "parameters": {
+          "bulkShipmentId": "string"
+        },
+        "returnParameter": "BulkShipmentStatus"
+      },
+      {
+        "name": "generateBulkShippingLabels",
+        "description": "Generate shipping labels for a bulk shipment.",
+        "parameters": {
+          "bulkShipmentId": "string"
+        },
+        "returnParameter": "BulkShippingLabels"
+      },
+      {
+        "name": "getCarrierServiceDetails",
+        "description": "Retrieve details about a specific carrier's service.",
+        "parameters": {
+          "carrierId": "string"
+        },
+        "returnParameter": "CarrierServiceDetails"
+      },
+      {
+        "name": "getTransitTimes",
+        "description": "Retrieve transit times for a specific route. Origin and destination are city names.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "TransitTimes"
+      },
+      {
+        "name": "getDeliveryProof",
+        "description": "Retrieve proof of delivery for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "DeliveryProof"
+      },
+      {
+        "name": "requestSignatureOnDelivery",
+        "description": "Request a signature upon delivery for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "SignatureRequestStatus"
+      },
+      {
+        "name": "getAvailableServices",
+        "description": "Retrieve a list of available logistics services.",
+        "parameters": {},
+        "returnParameter": "AvailableServices"
+      },
+      {
+        "name": "getShipmentValue",
+        "description": "Retrieve the declared value of a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ShipmentValue"
+      },
+      {
+        "name": "updateShipmentValue",
+        "description": "Update the declared value of a shipment.",
+        "parameters": {
+          "shipmentId": "string",
+          "value": "number"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getExportDocumentation",
+        "description": "Retrieve required export documentation for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ExportDocumentation"
+      },
+      {
+        "name": "submitExportDeclaration",
+        "description": "Submit export declaration for a shipment.",
+        "parameters": {
+          "shipmentId": "string",
+          "declarationDetails": "object"
+        },
+        "returnParameter": "DeclarationStatus"
+      },
+      {
+        "name": "getImportDocumentation",
+        "description": "Retrieve required import documentation for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "ImportDocumentation"
+      },
+      {
+        "name": "submitImportDeclaration",
+        "description": "Submit import declaration for a shipment.",
+        "parameters": {
+          "shipmentId": "string",
+          "declarationDetails": {
+            "description": "string",
+            "quantity": "number",
+            "value": "number"
+      }
+        },
+        "returnParameter": "DeclarationStatus"
+      },
+      {
+        "name": "getShipmentTaxes",
+        "description": "Retrieve tax information for a specific shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "Taxes"
+      },
+      {
+        "name": "getFuelSurcharge",
+        "description": "Retrieve the fuel surcharge for a shipment.",
+        "parameters": {
+          "shipmentId": "string"
+        },
+        "returnParameter": "FuelSurcharge"
+      },
+      {
+        "name": "getCurrencyConversionRate",
+        "description": "Retrieve the currency conversion rate for a shipment.",
+        "parameters": {
+          "currencyFrom": "string",
+          "currencyTo": "string"
+        },
+        "returnParameter": "ConversionRate"
+      },
+      {
+        "name": "convertShipmentCost",
+        "description": "Convert the shipment cost to a different currency.",
+        "parameters": {
+          "shipmentId": "string",
+          "currencyTo": "string"
+        },
+        "returnParameter": "ConvertedCost"
+      },
+      {
+        "name": "getWarehouseLocations",
+        "description": "Retrieve a list of warehouse locations.",
+        "parameters": {},
+        "returnParameter": "WarehouseLocations"
+      },
+      {
+        "name": "getWarehouseInventory",
+        "description": "Retrieve the inventory of a specific warehouse.",
+        "parameters": {
+          "warehouseId": "string"
+        },
+        "returnParameter": "Inventory"
+      },
+      {
+        "name": "transferInventory",
+        "description": "Transfer inventory between warehouses.",
+        "parameters": {
+          "fromWarehouseId": "string",
+          "toWarehouseId": "string",
+          "items": "array"
+        },
+        "returnParameter": "TransferStatus"
+      }
+    ]
+  }

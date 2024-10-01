@@ -1,0 +1,468 @@
+{
+    "api_ports": [
+      {
+        "name": "checkRoomAvailability",
+        "description": "Check the availability of rooms for a specified date range.",
+        "parameters": {
+          "startDate": "string",
+          "endDate": "string",
+          "roomType": "string"
+        },
+        "returnParameter": "AvailableRooms"
+      },
+      {
+        "name": "bookRoom",
+        "description": "Book a room for a guest.",
+        "parameters": {
+          "guestID": "string",
+          "roomType": "string",
+          "startDate": "string",
+          "endDate": "string",
+          "paymentDetails": {
+              "method": "Debit Card/Credit Card/Cash/Paypal",
+              "amount": "number"
+            }
+        },
+        "returnParameter": "BookingConfirmation"
+      },
+      {
+        "name": "getBookingDetails",
+        "description": "Retrieve the details of a specific booking.",
+        "parameters": {
+          "bookingID": "string"
+        },
+        "returnParameter": {
+          "GuestID": "string",
+          "RoomType": "string",
+          "StartDate": "string",
+          "EndDate": "string",
+          "BookingStatus": "string"
+        }
+      },
+      {
+        "name": "cancelBooking",
+        "description": "Cancel an existing booking.",
+        "parameters": {
+          "bookingID": "string",
+          "cancellationReason": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "updateBooking",
+        "description": "Update the details of an existing booking.",
+        "parameters": {
+          "bookingID": "string",
+          "updateData": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getRoomStatus",
+        "description": "Retrieve the current status of a specific room.",
+        "parameters": {
+          "roomNumber": "string"
+        },
+        "returnParameter": {
+          "RoomNumber": "string",
+          "RoomStatus": "string",
+          "CurrentOccupant": "string",
+          "CleaningStatus": "string"
+        }
+      },
+      {
+        "name": "checkInGuest",
+        "description": "Check in a guest to their booked room.",
+        "parameters": {
+          "bookingID": "string",
+          "guestID": "string"
+        },
+        "returnParameter": "CheckInStatus"
+      },
+      {
+        "name": "checkOutGuest",
+        "description": "Check out a guest from their room.",
+        "parameters": {
+          "bookingID": "string",
+          "guestID": "string",
+          "paymentDetails": {
+              "method": "Debit Card/Credit Card/Cash/Paypal",
+              "amount": "number"
+            }
+        },
+        "returnParameter": "CheckOutStatus"
+      },
+      {
+        "name": "getGuestInfo",
+        "description": "Retrieve detailed information about a guest.",
+        "parameters": {
+          "guestID": "string"
+        },
+        "returnParameter": {
+          "GuestName": "string",
+          "GuestID": "string",
+          "ContactInfo": "string",
+          "LoyaltyProgramID": "string"
+        }
+      },
+      {
+        "name": "updateGuestInfo",
+        "description": "Update the information of a specific guest.",
+        "parameters": {
+          "guestID": "string",
+          "updateData": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getRoomTypes",
+        "description": "Retrieve a list of available room types and their descriptions.",
+        "parameters": {},
+        "returnParameter": "RoomTypes"
+      },
+      {
+        "name": "getRoomRates",
+        "description": "Retrieve the rates for different room types.",
+        "parameters": {
+          "roomType": "string",
+          "startDate": "string",
+          "endDate": "string"
+        },
+        "returnParameter": {
+          "RoomType": "string",
+          "RatePerNight": "number"
+        }
+      },
+      {
+        "name": "addRoomServiceOrder",
+        "description": "Place a room service order for a guest.",
+        "parameters": {
+          "guestID": "string",
+          "roomNumber": "string",
+          "orderDetails": "string"
+        },
+        "returnParameter": "OrderConfirmation"
+      },
+      {
+        "name": "getRoomServiceOrder",
+        "description": "Retrieve the details of a specific room service order.",
+        "parameters": {
+          "orderID": "string"
+        },
+        "returnParameter": {
+          "OrderID": "string",
+          "RoomNumber": "string",
+          "OrderDetails": "string",
+          "OrderStatus": "string"
+        }
+      },
+      {
+        "name": "updateRoomServiceOrder",
+        "description": "Update the details of an existing room service order.",
+        "parameters": {
+          "orderID": "string",
+          "updateData": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "cancelRoomServiceOrder",
+        "description": "Cancel a room service order.",
+        "parameters": {
+          "orderID": "string",
+          "cancellationReason": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "getHousekeepingStatus",
+        "description": "Retrieve the housekeeping status for a specific room.",
+        "parameters": {
+          "roomNumber": "string"
+        },
+        "returnParameter": {
+          "RoomNumber": "string",
+          "CleaningStatus": "string",
+          "LastCleanedDate": "string"
+        }
+      },
+      {
+        "name": "updateHousekeepingStatus",
+        "description": "Update the housekeeping status of a room.",
+        "parameters": {
+          "roomNumber": "string",
+          "cleaningStatus": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "scheduleHousekeeping",
+        "description": "Schedule housekeeping for a specific room.",
+        "parameters": {
+          "roomNumber": "string",
+          "cleaningDate": "string",
+          "cleaningTime": "string"
+        },
+        "returnParameter": "SchedulingStatus"
+      },
+      {
+        "name": "getAvailableAmenities",
+        "description": "Retrieve a list of available amenities in the hotel.",
+        "parameters": {},
+        "returnParameter": "AmenitiesList"
+      },
+      {
+        "name": "reserveAmenity",
+        "description": "Reserve an amenity for a guest.",
+        "parameters": {
+          "guestID": "string",
+          "amenityID": "string",
+          "reservationDate": "string",
+          "reservationTime": "string"
+        },
+        "returnParameter": "ReservationStatus"
+      },
+      {
+        "name": "cancelAmenityReservation",
+        "description": "Cancel a reservation for an amenity.",
+        "parameters": {
+          "reservationID": "string",
+          "cancellationReason": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "getLoyaltyProgramInfo",
+        "description": "Retrieve information about a guest's loyalty program.",
+        "parameters": {
+          "loyaltyProgramID": "string"
+        },
+        "returnParameter": {
+          "ProgramName": "string",
+          "PointsBalance": "number",
+          "MembershipLevel": "string"
+        }
+      },
+      {
+        "name": "updateLoyaltyProgramPoints",
+        "description": "Update the points balance for a guest's loyalty program.",
+        "parameters": {
+          "loyaltyProgramID": "string",
+          "pointsToAdd": "number"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getEventSpaces",
+        "description": "Retrieve a list of available event spaces in the hotel.",
+        "parameters": {},
+        "returnParameter": "EventSpacesList"
+      },
+      {
+        "name": "bookEventSpace",
+        "description": "Book an event space for a specific date and time.",
+        "parameters": {
+          "guestID": "string",
+          "eventSpaceID": "string",
+          "eventDate": "string",
+          "eventTime": "string",
+          "eventDetails": "object"
+        },
+        "returnParameter": "BookingConfirmation"
+      },
+      {
+        "name": "cancelEventSpaceBooking",
+        "description": "Cancel a booking for an event space.",
+        "parameters": {
+          "bookingID": "string",
+          "cancellationReason": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "getHotelPolicies",
+        "description": "Retrieve the policies of the hotel.",
+        "parameters": {},
+        "returnParameter": "HotelPolicies"
+      },
+      {
+        "name": "getSpecialOffers",
+        "description": "Retrieve a list of current special offers available at the hotel.",
+        "parameters": {},
+        "returnParameter": "SpecialOffersList"
+      },
+      {
+        "name": "applySpecialOffer",
+        "description": "Apply a special offer to a guest's booking.",
+        "parameters": {
+          "bookingID": "string",
+          "offerID": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getBillingDetails",
+        "description": "Retrieve billing details for a specific booking.",
+        "parameters": {
+          "bookingID": "string"
+        },
+        "returnParameter": {
+          "TotalAmount": "number",
+          "Taxes": "number",
+          "Discounts": "number",
+          "FinalAmount": "number"
+        }
+      },
+      {
+        "name": "processPayment",
+        "description": "Process a payment for a booking.",
+        "parameters": {
+          "bookingID": "string",
+          "paymentDetails": {
+              "method": "Debit Card/Credit Card/Cash/Paypal",
+              "amount": "number"
+            }
+        },
+        "returnParameter": "PaymentStatus"
+      },
+      {
+        "name": "getPaymentHistory",
+        "description": "Retrieve payment history for a specific guest.",
+        "parameters": {
+          "guestID": "string"
+        },
+        "returnParameter": "PaymentHistory"
+      },
+      {
+        "name": "getStaffList",
+        "description": "Retrieve a list of hotel staff members and their roles.",
+        "parameters": {},
+        "returnParameter": "StaffList"
+      },
+      {
+        "name": "getStaffSchedule",
+        "description": "Retrieve the work schedule for a specific staff member.",
+        "parameters": {
+          "staffID": "string"
+        },
+        "returnParameter": {
+          "StaffID": "string",
+          "WorkSchedule": "array"
+        }
+      },
+      {
+        "name": "updateStaffSchedule",
+        "description": "Update the work schedule of a staff member.",
+        "parameters": {
+          "staffID": "string",
+          "scheduleDetails": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getMaintenanceRequests",
+        "description": "Retrieve a list of maintenance requests for the hotel.",
+        "parameters": {},
+        "returnParameter": "MaintenanceRequests"
+      },
+      {
+        "name": "createMaintenanceRequest",
+        "description": "Create a new maintenance request for a specific room or area.",
+        "parameters": {
+          "roomNumber": "string",
+          "issueDescription": "string",
+          "requestedBy": "string"
+        },
+        "returnParameter": "RequestID"
+      },
+      {
+        "name": "updateMaintenanceRequest",
+        "description": "Update the status of an existing maintenance request.",
+        "parameters": {
+          "requestID": "string",
+          "updateDetails": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getHotelFeedback",
+        "description": "Retrieve feedback and reviews submitted by guests.",
+        "parameters": {},
+        "returnParameter": "FeedbackList"
+      },
+      {
+        "name": "submitGuestFeedback",
+        "description": "Submit feedback or a review for a guest's stay.",
+        "parameters": {
+          "guestID": "string",
+          "feedbackDetails": "string"
+        },
+        "returnParameter": "SubmissionStatus"
+      },
+      {
+        "name": "getRoomInventory",
+        "description": "Retrieve the inventory of items in a specific room.",
+        "parameters": {
+          "roomNumber": "string"
+        },
+        "returnParameter": "RoomInventory"
+      },
+      {
+        "name": "updateRoomInventory",
+        "description": "Update the inventory of items in a specific room.",
+        "parameters": {
+          "roomNumber": "string",
+          "inventoryDetails": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getGuestPreferences",
+        "description": "Retrieve preferences and special requests for a specific guest.",
+        "parameters": {
+          "guestID": "string"
+        },
+        "returnParameter": "GuestPreferences"
+      },
+      {
+        "name": "updateGuestPreferences",
+        "description": "Update preferences and special requests for a specific guest.",
+        "parameters": {
+          "guestID": "string",
+          "preferences": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getHotelEvents",
+        "description": "Retrieve a list of events happening at the hotel.",
+        "parameters": {},
+        "returnParameter": "HotelEventsList"
+      },
+      {
+        "name": "registerForHotelEvent",
+        "description": "Register a guest for an event happening at the hotel.",
+        "parameters": {
+          "guestID": "string",
+          "eventID": "string"
+        },
+        "returnParameter": "RegistrationStatus"
+      },
+      {
+        "name": "getConciergeServices",
+        "description": "Retrieve a list of concierge services offered by the hotel.",
+        "parameters": {},
+        "returnParameter": "ConciergeServicesList"
+      },
+      {
+        "name": "requestConciergeService",
+        "description": "Submit a request for a specific concierge service.",
+        "parameters": {
+          "guestID": "string",
+          "serviceID": "string",
+          "serviceDetails": "string"
+        },
+        "returnParameter": "RequestStatus"
+      }
+    ]
+  }

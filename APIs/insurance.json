@@ -1,0 +1,483 @@
+{
+    "api_ports": [
+      {
+        "name": "getCarInsuranceQuote",
+        "description": "Retrieve a quote for car insurance based on provided details.",
+        "parameters": {
+          "carDetails": {"make":"string","model":"string","year":"int"},
+          "driverAge": "string"
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "string"
+        }
+      },
+      {
+        "name": "purchaseCarInsurancePolicy",
+        "description": "Purchase a car insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string",
+          "paymentCard": "string"
+        },
+        "returnParameter": "PolicyID"
+      },
+      {
+        "name": "getCarInsurancePolicy",
+        "description": "Retrieve details of an existing car insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "CarDetails": "string",
+          "CoverageDetails": "string",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewCarInsurancePolicy",
+        "description": "Renew an existing car insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails": {"newExpiryDate":"string"}
+        },
+        "returnParameter": {"RenewalStatus":"string"}
+      },
+      {
+        "name": "cancelCarInsurancePolicy",
+        "description": "Cancel an existing car insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "fileCarInsuranceClaim",
+        "description": "File a claim for a car insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails": {
+            "accidentDate": "string",
+            "damageDetails": "string"
+          }
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getCarInsuranceClaimStatus",
+        "description": "Retrieve the status of a car insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      },
+      {
+        "name": "getHouseInsuranceQuote",
+        "description": "Retrieve a quote for house insurance based on provided details, size on sqft.",
+        "parameters": {
+          "location": "string",
+          "size": "string"
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "object"
+        }
+      },
+      {
+        "name": "purchaseHouseInsurancePolicy",
+        "description": "Purchase a house insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string"
+        },
+        "returnParameter": "paymentInfo"
+      },
+      {
+        "name": "getHouseInsurancePolicy",
+        "description": "Retrieve details of an existing house insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "HouseDetails": "string",
+          "CoverageDetails": "string",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewHouseInsurancePolicy",
+        "description": "Renew an existing house insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails": {
+            "newExpiryDate": "string"
+          }
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "cancelHouseInsurancePolicy",
+        "description": "Cancel an existing house insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "fileHouseInsuranceClaim",
+        "description": "File a claim for a house insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails": "string"
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getHouseInsuranceClaimStatus",
+        "description": "Retrieve the status of a house insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      },
+      {
+        "name": "getHealthInsuranceQuote",
+        "description": "Retrieve a quote for health insurance based on provided details.",
+        "parameters": {
+          "personalDetails": {
+            "familySize": "int",
+            "ages": "list"
+          }
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "object"
+        }
+      },
+      {
+        "name": "purchaseHealthInsurancePolicy",
+        "description": "Purchase a health insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string"
+        },
+        "returnParameter": "paymentInfo"
+      },
+      {
+        "name": "getHealthInsurancePolicy",
+        "description": "Retrieve details of an existing health insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "CoverageDetails": "string",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewHealthInsurancePolicy",
+        "description": "Renew an existing health insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails": {
+            "newExpiryDate": "string"
+          }
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "cancelHealthInsurancePolicy",
+        "description": "Cancel an existing health insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "fileHealthInsuranceClaim",
+        "description": "File a claim for a health insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails":{
+            "hospitalName": "string",
+            "invoiceDate": "string"
+          }
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getHealthInsuranceClaimStatus",
+        "description": "Retrieve the status of a health insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      },
+      {
+        "name": "getLifeInsuranceQuote",
+        "description": "Retrieve a quote for life insurance based on provided details.",
+        "parameters": {
+          "personalDetails": {
+            "age": "number",
+            "gender": "M/F"
+          }
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "object"
+        }
+      },
+      {
+        "name": "purchaseLifeInsurancePolicy",
+        "description": "Purchase a life insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string"
+        },
+        "returnParameter": "paymentInfo"
+      },
+      {
+        "name": "getLifeInsurancePolicy",
+        "description": "Retrieve details of an existing life insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "CoverageDetails": "string",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewLifeInsurancePolicy",
+        "description": "Renew an existing life insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails":  {
+            "newExpiryDate": "string"
+          }
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "cancelLifeInsurancePolicy",
+        "description": "Cancel an existing life insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "fileLifeInsuranceClaim",
+        "description": "File a claim for a life insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails": {
+            "beneficiaryName": "string"
+          }
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getLifeInsuranceClaimStatus",
+        "description": "Retrieve the status of a life insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      },
+      {
+        "name": "getTravelInsuranceQuote",
+        "description": "Retrieve a quote for travel insurance based on provided details.",
+        "parameters": {
+          "travelDetails": {
+            "destination": "string",
+            "tripStartDate": "string",
+            "tripEndDate": "string"
+          }
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "object"
+        }
+      },
+      {
+        "name": "purchaseTravelInsurancePolicy",
+        "description": "Purchase a travel insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string"
+        },
+        "returnParameter": "paymentInfo"
+      },
+      {
+        "name": "getTravelInsurancePolicy",
+        "description": "Retrieve details of an existing travel insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "CoverageDetails": "object",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewTravelInsurancePolicy",
+        "description": "Renew an existing travel insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails":{
+            "newExpiryDate": "string"
+          }
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "cancelTravelInsurancePolicy",
+        "description": "Cancel an existing travel insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "fileTravelInsuranceClaim",
+        "description": "File a claim for a travel insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails": "string"
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getTravelInsuranceClaimStatus",
+        "description": "Retrieve the status of a travel insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      },
+      {
+        "name": "getPetInsuranceQuote",
+        "description": "Retrieve a quote for pet insurance based on provided details.",
+        "parameters": {
+              "species": "cat/dog/...",
+              "age": "number"
+        },
+        "returnParameter": {
+          "QuoteID": "string",
+          "PremiumAmount": "number",
+          "CoverageDetails": "object"
+        }
+      },
+      {
+        "name": "purchasePetInsurancePolicy",
+        "description": "Purchase a pet insurance policy using a previously obtained quote.",
+        "parameters": {
+          "quoteID": "string"
+        },
+        "returnParameter": "paymentInfo"
+      },
+      {
+        "name": "getPetInsurancePolicy",
+        "description": "Retrieve details of an existing pet insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": {
+          "PolicyID": "string",
+          "PolicyHolderName": "string",
+          "PetDetails": "string",
+          "CoverageDetails": "string",
+          "PremiumAmount": "number",
+          "PolicyStartDate": "string",
+          "PolicyEndDate": "string"
+        }
+      },
+      {
+        "name": "renewPetInsurancePolicy",
+        "description": "Renew an existing pet insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "renewalDetails": {
+            "newExpiryDate": "string"
+          }
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "cancelPetInsurancePolicy",
+        "description": "Cancel an existing pet insurance policy.",
+        "parameters": {
+          "policyID": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "filePetInsuranceClaim",
+        "description": "File a claim for a pet insurance policy.",
+        "parameters": {
+          "policyID": "string",
+          "claimDetails": "string"
+        },
+        "returnParameter": "ClaimID"
+      },
+      {
+        "name": "getPetInsuranceClaimStatus",
+        "description": "Retrieve the status of a pet insurance claim.",
+        "parameters": {
+          "claimID": "string"
+        },
+        "returnParameter": {
+          "ClaimID": "string",
+          "ClaimStatus": "string",
+          "ClaimAmount": "number",
+          "ClaimDate": "string"
+        }
+      }
+    ]
+  }

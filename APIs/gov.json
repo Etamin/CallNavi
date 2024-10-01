@@ -1,0 +1,880 @@
+{
+    "api_ports": [
+      {
+        "name": "getPersonalIDInfo",
+        "description": "Retrieve information about a specific personal ID.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "DateOfBirth": "string",
+          "Gender": "string",
+          "Nationality": "string",
+          "IDNumber": "string",
+          "LicenseList":"array"
+        }
+      },
+      {
+        "name": "updatePersonalIDInfo",
+        "description": "Update information for a specific personal ID.",
+        "parameters": {
+          "personalID": "string",
+          "updateData": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getPassportInfo",
+        "description": "Retrieve passport details for a citizen.",
+        "parameters": {
+          "passportNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "PassportNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "Nationality": "string"
+        }
+      },
+      {
+        "name": "applyForPassport",
+        "description": "Submit a passport application for a citizen.",
+        "parameters": {
+          "personalID": "string",
+          "applicationType": "new/replacement"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewPassport",
+        "description": "Renew an existing passport.",
+        "parameters": {
+          "passportNumber": "string",
+          "renewalData": {"expiryDate": "string"}
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getAddressRegister",
+        "description": "Retrieve address details from the address register.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "CurrentAddress": "string",
+          "PreviousAddresses": "array",
+          "PostalCode": "string",
+          "City": "string",
+          "Country": "string"
+        }
+      },
+      {
+        "name": "updateAddressRegister",
+        "description": "Update the registered address for a citizen.",
+        "parameters": {
+          "personalID": "string",
+          "newAddress": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getCarRegistrationInfo",
+        "description": "Retrieve car registration details.",
+        "parameters": {
+          "registrationNumber": "string"
+        },
+        "returnParameter": {
+          "OwnerName": "string",
+          "CarMake": "string",
+          "CarModel": "string",
+          "YearOfManufacture": "string",
+          "RegistrationNumber": "string"
+        }
+      },
+      {
+        "name": "registerNewCar",
+        "description": "Register a new car for a citizen.",
+        "parameters": {
+          "ownerID": "string",
+          "carDetails": {"make": "string", "model": "string", "year": "number"}
+        },
+        "returnParameter": "RegistrationStatus"
+      },
+      {
+        "name": "renewCarRegistration",
+        "description": "Renew the car registration.",
+        "parameters": {
+          "registrationNumber": "string",
+          "renewalDate": "string"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getVoterRegistrationStatus",
+        "description": "Retrieve voter registration status for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "VoterID": "string",
+          "PollingLocation": "string"
+        }
+      },
+      {
+        "name": "registerToVote",
+        "description": "Register a citizen to vote.",
+        "parameters": {
+          "personalID": "string",
+          "registrationData": "string"
+        },
+        "returnParameter": "RegistrationStatus"
+      },
+      {
+        "name": "getMarriageCertificate",
+        "description": "Retrieve the marriage certificate for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "SpouseName": "string",
+          "MarriageDate": "string",
+          "MarriageCertificateNumber": "string"
+        }
+      },
+      {
+        "name": "applyForMarriageCertificate",
+        "description": "Apply for a marriage certificate.",
+        "parameters": {
+          "personalID": "string",
+          "spouseID": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getBirthCertificate",
+        "description": "Retrieve birth certificate details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "DateOfBirth": "string",
+          "PlaceOfBirth": "string",
+          "BirthCertificateNumber": "string"
+        }
+      },
+      {
+        "name": "applyForBirthCertificate",
+        "description": "Apply for a birth certificate.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getDeathCertificate",
+        "description": "Retrieve the death certificate details for a deceased citizen.",
+        "parameters": {
+          "deceasedID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "DateOfDeath": "string",
+          "PlaceOfDeath": "string",
+          "DeathCertificateNumber": "string"
+        }
+      },
+      {
+        "name": "applyForDeathCertificate",
+        "description": "Apply for a death certificate.",
+        "parameters": {
+          "deceasedID": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getCitizenshipStatus",
+        "description": "Retrieve the citizenship status of a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "Nationality": "string",
+          "CitizenshipStatus": "string",
+          "DateOfNaturalization": "string"
+        }
+      },
+      {
+        "name": "applyForCitizenship",
+        "description": "Submit an application for citizenship.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getDrivingLicenseInfo",
+        "description": "Retrieve driving license details for a citizen.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "LicenseNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "LicenseClass": "string"
+        }
+      },
+      {
+        "name": "applyForDrivingLicense",
+        "description": "Submit an application for a driving license.",
+        "parameters": {
+          "personalID": "string",
+          "licenseClass": "A/B/C/D"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewDrivingLicense",
+        "description": "Renew an existing driving license.",
+        "parameters": {
+          "licenseNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getCriminalRecord",
+        "description": "Retrieve the criminal record for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "CriminalRecordDetails": "array"
+        }
+      },
+      {
+        "name": "applyForCriminalRecordCheck",
+        "description": "Submit a request for a criminal record check.",
+        "parameters": {
+          "personalID": "string",
+          "requestDetails": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getSocialSecurityInfo",
+        "description": "Retrieve social security information for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "SocialSecurityNumber": "string",
+          "BenefitsDetails": "array"
+        }
+      },
+      {
+        "name": "applyForSocialSecurityBenefits",
+        "description": "Submit an application for social security benefits.",
+        "parameters": {
+          "personalID": "string",
+          "StartDate": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "updateSocialSecurityInfo",
+        "description": "Update social security information for a citizen.",
+        "parameters": {
+          "personalID": "string",
+          "updateData": "object"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getPensionInfo",
+        "description": "Retrieve pension details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "PensionNumber": "string",
+          "PensionAmount": "number",
+          "DateOfFirstPension": "string"
+        }
+      },
+      {
+        "name": "applyForPension",
+        "description": "Submit an application for pension benefits.",
+        "parameters": {
+          "personalID": "string",
+          "retireDate": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getPropertyOwnershipInfo",
+        "description": "Retrieve property ownership details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "PropertyList": "array"
+        }
+      },
+      {
+        "name": "registerNewProperty",
+        "description": "Register a new property under a citizen's name.",
+        "parameters": {
+          "ownerID": "string",
+          "propertyDetails": "object"
+        },
+        "returnParameter": "RegistrationStatus"
+      },
+      {
+        "name": "updatePropertyOwnership",
+        "description": "Update property ownership information.",
+        "parameters": {
+          "propertyID": "string",
+          "ownerID": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getBusinessLicenseInfo",
+        "description": "Retrieve business license information for a business.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "BusinessName": "string",
+          "LicenseNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "LicenseStatus": "string"
+        }
+      },
+      {
+        "name": "applyForBusinessLicense",
+        "description": "Submit an application for a new business license.",
+        "parameters": {
+          "ownerID": "string",
+          "businessDetails": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewBusinessLicense",
+        "description": "Renew an existing business license.",
+        "parameters": {
+          "licenseNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getTaxInfo",
+        "description": "Retrieve tax information for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "TaxpayerID": "string",
+          "TaxDetails": "array"
+        }
+      },
+      {
+        "name": "fileTaxReturn",
+        "description": "File a tax return for a citizen.",
+        "parameters": {
+          "personalID": "string",
+          "taxData": "object"
+        },
+        "returnParameter": "FilingStatus"
+      },
+      {
+        "name": "getImmigrationStatus",
+        "description": "Retrieve immigration status for a citizen or resident.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "ImmigrationStatus": "string",
+          "VisaType": "string",
+          "DateOfEntry": "string"
+        }
+      },
+      {
+        "name": "applyForVisa",
+        "description": "Submit a visa application.",
+        "parameters": {
+          "personalID": "string",
+          "visaType": "string",
+          "applicationData": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewVisa",
+        "description": "Renew an existing visa.",
+        "parameters": {
+          "visaNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getVehicleInspectionInfo",
+        "description": "Retrieve vehicle inspection information.",
+        "parameters": {
+          "registrationNumber": "string"
+        },
+        "returnParameter": {
+          "InspectionDate": "string",
+          "InspectionResult": "string",
+          "NextInspectionDue": "string"
+        }
+      },
+      {
+        "name": "scheduleVehicleInspection",
+        "description": "Schedule a vehicle inspection.",
+        "parameters": {
+          "registrationNumber": "string",
+          "inspectionDate": "string"
+        },
+        "returnParameter": "SchedulingStatus"
+      },
+      {
+        "name": "getVotingHistory",
+        "description": "Retrieve the voting history of a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "ElectionList": "array",
+          "VotingDetails": "array"
+        }
+      },
+      {
+        "name": "getMilitaryServiceInfo",
+        "description": "Retrieve military service details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "ServiceBranch": "string",
+          "Rank": "string",
+          "ServicePeriod": "string"
+        }
+      },
+      {
+        "name": "applyForMilitaryServiceExemption",
+        "description": "Submit an application for military service exemption.",
+        "parameters": {
+          "personalID": "string",
+          "exemptionReason": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getPublicBenefitsInfo",
+        "description": "Retrieve information about public benefits a citizen is receiving.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "BenefitType": "string",
+          "BenefitAmount": "number",
+          "StartDate": "string",
+          "EndDate": "string"
+        }
+      },
+      {
+        "name": "applyForPublicBenefits",
+        "description": "Submit an application for public benefits.",
+        "parameters": {
+          "personalID": "string",
+          "benefitType": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getPublicHousingInfo",
+        "description": "Retrieve information about public housing a citizen is allocated.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "HousingAddress": "string",
+          "MoveInDate": "string",
+          "RentAmount": "number"
+        }
+      },
+      {
+        "name": "applyForPublicHousing",
+        "description": "Submit an application for public housing.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getDriverHistory",
+        "description": "Retrieve driving history for a citizen.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "DrivingRecord": "array"
+        }
+      },
+      {
+        "name": "getEmergencyContactInfo",
+        "description": "Retrieve emergency contact details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "ContactName": "string",
+          "ContactRelation": "string",
+          "ContactPhone": "string"
+        }
+      },
+      {
+        "name": "updateEmergencyContactInfo",
+        "description": "Update emergency contact details for a citizen.",
+        "parameters": {
+          "personalID": "string",
+          "contactDetails": "object"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getTaxPaymentHistory",
+        "description": "Retrieve tax payment history for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "PaymentHistory": "array"
+        }
+      },
+      {
+        "name": "applyForTaxPaymentPlan",
+        "description": "Submit an application for a tax payment plan.",
+        "parameters": {
+          "personalID": "string",
+          "taxAmount": "number",
+          "paymentPlanDetails": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getCourtRecords",
+        "description": "Retrieve court records associated with a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "CourtCases": "array"
+        }
+      },
+      {
+        "name": "getPublicTransportationPassInfo",
+        "description": "Retrieve information about public transportation passes held by a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "PassType": "string",
+          "PassNumber": "string",
+          "ValidityPeriod": "string",
+          "Status": "string"
+        }
+      },
+      {
+        "name": "applyForPublicTransportationPass",
+        "description": "Submit an application for a public transportation pass.",
+        "parameters": {
+          "personalID": "string",
+          "StartDate": "string"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getVehicleOwnershipInfo",
+        "description": "Retrieve ownership details for a vehicle registered to a citizen.",
+        "parameters": {
+          "registrationNumber": "string"
+        },
+        "returnParameter": {
+          "OwnerName": "string",
+          "RegistrationNumber": "string",
+          "VehicleDetails": "object"
+        }
+      },
+      {
+        "name": "getEnvironmentalViolationRecords",
+        "description": "Retrieve environmental violation records associated with a citizen or business.",
+        "parameters": {
+          "entityID": "string"
+        },
+        "returnParameter": {
+          "EntityName": "string",
+          "ViolationRecords": "array"
+        }
+      },
+      {
+        "name": "getConsumerProtectionComplaints",
+        "description": "Retrieve consumer protection complaints filed by or against a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "ComplaintsList": "array",
+          "ComplaintDetails": "array"
+        }
+      },
+      {
+        "name": "getAnimalOwnershipInfo",
+        "description": "Retrieve information about animals registered to a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "AnimalList": "array",
+          "RegistrationDetails": "array"
+        }
+      },
+      {
+        "name": "registerNewAnimal",
+        "description": "Register a new animal under a citizen's name.",
+        "parameters": {
+          "ownerID": "string",
+          "animalDetails": "string"
+        },
+        "returnParameter": "RegistrationStatus"
+      },
+      {
+        "name": "getResidencyInfo",
+        "description": "Retrieve residency details for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "ResidencyStatus": "string",
+          "DateOfResidency": "string"
+        }
+      },
+      {
+        "name": "applyForResidency",
+        "description": "Submit an application for residency.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewResidency",
+        "description": "Renew an existing residency permit.",
+        "parameters": {
+          "residencyNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getPublicUtilityAccountInfo",
+        "description": "Retrieve information about public utility accounts held by a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "AccountNumber": "string",
+          "UtilityType": "string",
+          "AccountStatus": "string"
+        }
+      },
+      {
+        "name": "getPublicLibraryAccountInfo",
+        "description": "Retrieve information about a citizen's public library account.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "AccountNumber": "string",
+          "BorrowingHistory": "array",
+          "AccountStatus": "string"
+        }
+      },
+      {
+        "name": "applyForPublicLibraryMembership",
+        "description": "Submit an application for public library membership.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "getFirearmLicenseInfo",
+        "description": "Retrieve information about firearm licenses held by a citizen.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "LicenseNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "LicenseType": "string"
+        }
+      },
+      {
+        "name": "applyForFirearmLicense",
+        "description": "Submit an application for a new firearm license.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewFirearmLicense",
+        "description": "Renew an existing firearm license.",
+        "parameters": {
+          "licenseNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getFishingLicenseInfo",
+        "description": "Retrieve information about fishing licenses held by a citizen.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "LicenseNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "LicenseType": "string"
+        }
+      },
+      {
+        "name": "applyForFishingLicense",
+        "description": "Submit an application for a new fishing license.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewFishingLicense",
+        "description": "Renew an existing fishing license.",
+        "parameters": {
+          "licenseNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getHuntingLicenseInfo",
+        "description": "Retrieve information about hunting licenses held by a citizen.",
+        "parameters": {
+          "licenseNumber": "string"
+        },
+        "returnParameter": {
+          "FullName": "string",
+          "LicenseNumber": "string",
+          "DateOfIssue": "string",
+          "DateOfExpiry": "string",
+          "LicenseType": "string"
+        }
+      },
+      {
+        "name": "applyForHuntingLicense",
+        "description": "Submit an application for a new hunting license.",
+        "parameters": {
+          "personalID": "string",
+          "applicationData": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      },
+      {
+        "name": "renewHuntingLicense",
+        "description": "Renew an existing hunting license.",
+        "parameters": {
+          "licenseNumber": "string",
+          "renewalData": "object"
+        },
+        "returnParameter": "RenewalStatus"
+      },
+      {
+        "name": "getPublicRecords",
+        "description": "Retrieve public records associated with a citizen or property.",
+        "parameters": {
+          "personalID": "string",
+          "recordType": "string"
+        },
+        "returnParameter": {
+          "RecordList": "array",
+          "RecordDetails": "array"
+        }
+      },
+      {
+        "name": "requestPublicRecord",
+        "description": "Submit a request to retrieve a specific public record.",
+        "parameters": {
+          "personalID": "string",
+          "recordType": "string",
+          "recordID": "string"
+        },
+        "returnParameter": "RequestStatus"
+      },
+      {
+        "name": "getCommunityServiceRecords",
+        "description": "Retrieve community service records for a citizen.",
+        "parameters": {
+          "personalID": "string"
+        },
+        "returnParameter": {
+          "ServiceList": "array",
+          "ServiceDetails": "array"
+        }
+      },
+      {
+        "name": "applyForCommunityService",
+        "description": "Submit an application for community service enrollment.",
+        "parameters": {
+          "personalID": "string",
+          "serviceDetails": "object"
+        },
+        "returnParameter": "ApplicationStatus"
+      }
+    ]
+  }

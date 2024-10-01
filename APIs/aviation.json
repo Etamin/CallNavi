@@ -1,0 +1,414 @@
+{
+    "api_ports": [
+      {
+        "name": "getFlightSchedule",
+        "description": "Retrieve the flight schedule for a specific route.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string",
+          "date": "string"
+        },
+        "returnParameter": "FlightList"
+      },
+      {
+        "name": "getFlightStatus",
+        "description": "Retrieve the status of a specific flight.",
+        "parameters": {
+          "flightNumber": "string",
+          "date": "string"
+        },
+        "returnParameter": "FlightStatus"
+      },
+      {
+        "name": "bookFlight",
+        "description": "Book a flight for a passenger.",
+        "parameters": {
+          "flightNumber": "string",
+          "passengerName": "string",
+          "paymentInfo": "VISA/MASTER/AMEX/JCB"
+        },
+        "returnParameter": ["BookingConfirmation","bookingId"]
+      },
+      {
+        "name": "cancelFlightBooking",
+        "description": "Cancel a booked flight.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "getAvailableSeats",
+        "description": "Retrieve available seats for a specific flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "SeatList"
+      },
+      {
+        "name": "selectSeat",
+        "description": "Select a seat for a booked flight.",
+        "parameters": {
+          "bookingId": "string",
+          "seatNumber": "string"
+        },
+        "returnParameter": "SeatSelectionStatus"
+      },
+      {
+        "name": "getPassengerDetails",
+        "description": "Retrieve details of a passenger for a specific booking.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "PassengerDetails"
+      },
+      {
+        "name": "updatePassengerDetails",
+        "description": "Update passenger details for a booking.",
+        "parameters": {
+          "bookingId": "string",
+          "passengerName": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getBaggageAllowance",
+        "description": "Retrieve baggage allowance for a specific flight.",
+        "parameters": {
+          "flightNumber": "string",
+          "ticketClass": "string"
+        },
+        "returnParameter": "BaggageAllowance"
+      },
+      {
+        "name": "getBaggageStatus",
+        "description": "Retrieve the status of a passenger's checked baggage.",
+        "parameters": {
+          "baggageId": "string"
+        },
+        "returnParameter": "BaggageStatus"
+      },
+      {
+        "name": "checkIn",
+        "description": "Check in a passenger for a flight.",
+        "parameters": {
+          "bookingId": "string",
+          "passengerId": "string"
+        },
+        "returnParameter": "CheckInStatus"
+      },
+      {
+        "name": "getBoardingPass",
+        "description": "Retrieve the boarding pass for a checked-in passenger.",
+        "parameters": {
+          "checkInId": "string"
+        },
+        "returnParameter": "BoardingPass"
+      },
+      {
+        "name": "getFlightDetails",
+        "description": "Retrieve detailed information about a specific flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "FlightDetails"
+      },
+      {
+        "name": "searchFlights",
+        "description": "Search for flights based on various criteria.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string",
+          "date": "string",
+          "ticketClass": "string"
+        },
+        "returnParameter": "SearchResults"
+      },
+      {
+        "name": "getAirlineInfo",
+        "description": "Retrieve information about a specific airline.",
+        "parameters": {
+          "airlineId": "string"
+        },
+        "returnParameter": "AirlineInfo"
+      },
+      {
+        "name": "getAirportInfo",
+        "description": "Retrieve information about a specific airport.",
+        "parameters": {
+          "airportCode": "string"
+        },
+        "returnParameter": "AirportInfo"
+      },
+      {
+        "name": "getLoungeAccess",
+        "description": "Retrieve lounge access information for a passenger.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "LoungeAccessInfo"
+      },
+      {
+        "name": "getFrequentFlyerMiles",
+        "description": "Retrieve frequent flyer miles balance for a passenger.",
+        "parameters": {
+          "frequentFlyerId": "string"
+        },
+        "returnParameter": "MilesBalance"
+      },
+      {
+        "name": "redeemFrequentFlyerMiles",
+        "description": "Redeem frequent flyer miles for a reward.",
+        "parameters": {
+          "frequentFlyerId": "string",
+          "rewardId": "string"
+        },
+        "returnParameter": "RedemptionStatus"
+      },
+      {
+        "name": "getAvailableRewards",
+        "description": "Retrieve available rewards for frequent flyer miles.",
+        "parameters": {
+          "frequentFlyerId": "string"
+        },
+        "returnParameter": "RewardsList"
+      },
+      {
+        "name": "updateFlightPreferences",
+        "description": "Update flight preferences for a passenger.",
+        "parameters": {
+          "bookingId": "string",
+          "preferences": "string"
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getFlightPrice",
+        "description": "Retrieve the price for a specific flight.",
+        "parameters": {
+          "flightNumber": "string",
+          "ticketClass": "string"
+        },
+        "returnParameter": "FlightPrice"
+      },
+      {
+        "name": "getFlightOffers",
+        "description": "Retrieve available flight offers and discounts.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string"
+        },
+        "returnParameter": "OffersList"
+      },
+      {
+        "name": "getFlightRoutes",
+        "description": "Retrieve available routes for a specific airline.",
+        "parameters": {
+          "airlineId": "string"
+        },
+        "returnParameter": "RoutesList"
+      },
+      {
+        "name": "getAircraftDetails",
+        "description": "Retrieve details of the aircraft used for a specific flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "AircraftDetails"
+      },
+      {
+        "name": "requestSpecialMeal",
+        "description": "Request a special meal for a passenger.",
+        "parameters": {
+          "bookingId": "string",
+          "mealType": "string"
+        },
+        "returnParameter": "MealRequestStatus"
+      },
+      {
+        "name": "requestWheelchairAssistance",
+        "description": "Request wheelchair assistance for a passenger.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "AssistanceRequestStatus"
+      },
+      {
+        "name": "getVisaRequirements",
+        "description": "Retrieve visa requirements for a specific route.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string",
+          "nationality": "string"
+        },
+        "returnParameter": "VisaRequirements"
+      },
+      {
+        "name": "getTravelAdvisories",
+        "description": "Retrieve travel advisories for a specific destination.",
+        "parameters": {
+          "destination": "string"
+        },
+        "returnParameter": "TravelAdvisories"
+      },
+      {
+        "name": "getWeatherInfo",
+        "description": "Retrieve weather information for a specific airport.",
+        "parameters": {
+          "airportCode": "string"
+        },
+        "returnParameter": "WeatherInfo"
+      },
+      {
+        "name": "getFlightDelayInfo",
+        "description": "Retrieve delay information for a specific flight.",
+        "parameters": {
+          "flightNumber": "string",
+          "date": "string"
+        },
+        "returnParameter": "DelayInfo"
+      },
+      {
+        "name": "getFlightCancellationPolicy",
+        "description": "Retrieve the cancellation policy for a specific flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "CancellationPolicy"
+      },
+      {
+        "name": "getFlightRefundStatus",
+        "description": "Retrieve the refund status for a cancelled flight.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "RefundStatus"
+      },
+      {
+        "name": "getTravelInsuranceOptions",
+        "description": "Retrieve available travel insurance options for a booking.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "InsuranceOptions"
+      },
+      {
+        "name": "purchaseTravelInsurance",
+        "description": "Purchase travel insurance for a booking.",
+        "parameters": {
+          "bookingId": "string",
+          "insuranceOptionId": "string"
+        },
+        "returnParameter": "InsurancePurchaseStatus"
+      },
+      {
+        "name": "getAirportTransferOptions",
+        "description": "Retrieve available airport transfer options for a booking.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "TransferOptions"
+      },
+      {
+        "name": "bookAirportTransfer",
+        "description": "Book an airport transfer for a passenger.",
+        "parameters": {
+          "bookingId": "string",
+          "transferOptionId": "string"
+        },
+        "returnParameter": "TransferBookingStatus"
+      },
+      {
+        "name": "getInFlightEntertainment",
+        "description": "Retrieve available in-flight entertainment options for a flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "EntertainmentOptions"
+      },
+      {
+        "name": "getInFlightMealOptions",
+        "description": "Retrieve available in-flight meal options for a flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "MealOptions"
+      },
+      {
+        "name": "getConnectingFlights",
+        "description": "Retrieve available connecting flights for a specific route.",
+        "parameters": {
+          "origin": "string",
+          "destination": "string",
+          "date": "string"
+        },
+        "returnParameter": "ConnectingFlights"
+      },
+      {
+        "name": "getCheckInOptions",
+        "description": "Retrieve available check-in options for a booking.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "CheckInOptions"
+      },
+      {
+        "name": "requestUpgrade",
+        "description": "Request an upgrade for a booked flight.",
+        "parameters": {
+          "bookingId": "string",
+          "upgradeOptionId": "string"
+        },
+        "returnParameter": "UpgradeRequestStatus"
+      },
+      {
+        "name": "getAvailableUpgrades",
+        "description": "Retrieve available upgrade options for a booking.",
+        "parameters": {
+          "bookingId": "string"
+        },
+        "returnParameter": "UpgradeOptions"
+      },
+      {
+        "name": "getAirportLoungeLocations",
+        "description": "Retrieve a list of available airport lounges.",
+        "parameters": {
+          "airportCode": "string"
+        },
+        "returnParameter": "LoungeLocations"
+      },
+      {
+        "name": "getDutyFreeCatalog",
+        "description": "Retrieve the in-flight duty-free catalog for a flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "DutyFreeCatalog"
+      },
+      {
+        "name": "getFlightCrewDetails",
+        "description": "Retrieve details of the flight crew for a specific flight.",
+        "parameters": {
+          "flightNumber": "string"
+        },
+        "returnParameter": "CrewDetails"
+      },
+      {
+        "name": "getAirportParkingOptions",
+        "description": "Retrieve available parking options at a specific airport.",
+        "parameters": {
+          "airportCode": "string"
+        },
+        "returnParameter": "ParkingOptions"
+      },
+      {
+        "name": "bookAirportParking",
+        "description": "Book parking at a specific airport.",
+        "parameters": {
+          "airportCode": "string",
+          "parkingOptionId": "string"
+        },
+        "returnParameter": "ParkingBookingStatus"
+      }
+    ]
+  }

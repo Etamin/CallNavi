@@ -1,0 +1,819 @@
+{
+    "api_ports": [
+      {
+        "name": "getAccountIdFromNumber",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the account ID associated with a given phone number.",
+        "returnParameter": {
+          "accountId": "string"
+        }
+      },
+      {
+        "name": "getNameFromNumber",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the name associated with a given phone number.",
+        "returnParameter": {
+          "Name": "string"
+        }
+      },
+      {
+        "name": "getBillForNumber",
+        "parameters": ["phoneNumber", "billingPeriod"],
+        "description": "Retrieves the billing details for a specific phone number and billing period.",
+        "returnParameter": {
+          "BillAmount": "number",
+          "BillDetails": "object"
+        }
+      },
+      {
+        "name": "getCallHistory",
+        "parameters": ["phoneNumber", "startDate", "endDate"],
+        "description": "Retrieves the call history for a given phone number within a specified date range.",
+        "returnParameter": {
+          "CallHistory": "array"
+        }
+      },
+      {
+        "name": "getTextMessageHistory",
+        "parameters": ["phoneNumber", "startDate", "endDate"],
+        "description": "Retrieves the SMS history for a given phone number within a specified date range.",
+        "returnParameter": {
+          "MessageHistory": "array"
+        }
+      },
+      {
+        "name": "getDataUsage",
+        "parameters": ["phoneNumber", "startDate", "endDate"],
+        "description": "Retrieves data usage details for a specific phone number within a given date range.",
+        "returnParameter": {
+          "DataUsage": "number"
+        }
+      },
+      {
+        "name": "activateSIMCard",
+        "parameters": ["phoneNumber"],
+        "description": "Activates a SIM card for a given phone number.",
+        "returnParameter": {
+          "ActivationStatus": "string"
+        }
+      },
+      {
+        "name": "deactivateSIMCard",
+        "parameters": ["phoneNumber"],
+        "description": "Deactivates a specific SIM card.",
+        "returnParameter": {
+          "DeactivationStatus": "string"
+        }
+      },
+      {
+        "name": "getAvailablePlans",
+        "parameters": [],
+        "description": "Retrieves a list of available mobile plans.",
+        "returnParameter": {
+          "AvailablePlans": "array"
+        }
+      },
+      {
+        "name": "getPlanDetails",
+        "parameters": ["planId"],
+        "description": "Retrieves details of a specific mobile plan.",
+        "returnParameter": {
+          "PlanDetails": "object"
+        }
+      },
+      {
+        "name": "updatePlanForNumber",
+        "parameters": ["phoneNumber", "planId"],
+        "description": "Updates the mobile plan for a specific phone number.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getVoicemailSettings",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the voicemail settings for a specific phone number.",
+        "returnParameter": {
+          "VoicemailSettings": "object"
+        }
+      },
+      {
+        "name": "updateVoicemailSettings",
+        "parameters": ["phoneNumber", "voicemailSettings"],
+        "description": "Updates the voicemail settings for a specific phone number.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getNumberStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current status (active/inactive) of a phone number.",
+        "returnParameter": {
+          "NumberStatus": "string"
+        }
+      },
+      {
+        "name": "blockNumber",
+        "parameters": ["phoneNumber", "blockNumber"],
+        "description": "Blocks a specific number from contacting the given phone number.",
+        "returnParameter": {
+          "BlockStatus": "string"
+        }
+      },
+      {
+        "name": "unblockNumber",
+        "parameters": ["phoneNumber", "unblockNumber"],
+        "description": "Unblocks a previously blocked number for a given phone number.",
+        "returnParameter": {
+          "UnblockStatus": "string"
+        }
+      },
+      {
+        "name": "getRoamingStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current roaming status for a specific phone number.",
+        "returnParameter": {
+          "RoamingStatus": "string"
+        }
+      },
+      {
+        "name": "updateRoamingStatus",
+        "parameters": ["phoneNumber", "status"],
+        "description": "Updates the roaming status for a specific phone number.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getInternationalCallRates",
+        "parameters": ["countryCode"],
+        "description": "Retrieves the international call rates for a specific country code.",
+        "returnParameter": {
+          "CallRates": "object"
+        }
+      },
+      {
+        "name": "updateCallForwarding",
+        "parameters": ["phoneNumber", "forwardingNumber", "status"],
+        "description": "Updates the call forwarding settings for a specific phone number.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getCallForwardingStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current call forwarding status for a specific phone number.",
+        "returnParameter": {
+          "ForwardingStatus": "string"
+        }
+      },
+      {
+        "name": "getVoicemailTranscripts",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves voicemail transcripts for a given phone number.",
+        "returnParameter": {
+          "Transcripts": "array"
+        }
+      },
+      {
+        "name": "getAccountDetails",
+        "parameters": ["accountId"],
+        "description": "Retrieves details about a specific telecommunications account.",
+        "returnParameter": {
+          "AccountDetails": "object"
+        }
+      },
+      {
+        "name": "updateAccountDetails",
+        "parameters": ["accountId", "accountDetails"],
+        "description": "Updates the details for a specific telecommunications account.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getNetworkStatus",
+        "parameters": [],
+        "description": "Retrieves the current status of the telecommunications network.",
+        "returnParameter": {
+          "NetworkStatus": "object"
+        }
+      },
+      {
+        "name": "getTowerLocation",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the location of the nearest cell tower for a given phone number.",
+        "returnParameter": {
+          "TowerLocation": "object"
+        }
+      },
+      {
+        "name": "getSignalStrength",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current signal strength for a specific phone number.",
+        "returnParameter": {
+          "SignalStrength": "string"
+        }
+      },
+      {
+        "name": "reportNetworkIssue",
+        "parameters": ["phoneNumber", "issueDescription"],
+        "description": "Reports a network issue for a specific phone number.",
+        "returnParameter": {
+          "IssueID": "string",
+          "ReportStatus": "string"
+        }
+      },
+      {
+        "name": "getSupportTicketStatus",
+        "parameters": ["ticketId"],
+        "description": "Retrieves the status of a support ticket.",
+        "returnParameter": {
+          "TicketStatus": "string"
+        }
+      },
+      {
+        "name": "openSupportTicket",
+        "parameters": ["phoneNumber", "issueDescription"],
+        "description": "Opens a new support ticket for a specific issue.",
+        "returnParameter": {
+          "TicketID": "string",
+          "OpeningStatus": "string"
+        }
+      },
+      {
+        "name": "closeSupportTicket",
+        "parameters": ["ticketId"],
+        "description": "Closes an existing support ticket.",
+        "returnParameter": {
+          "ClosingStatus": "string"
+        }
+      },
+      {
+        "name": "getPaymentHistory",
+        "parameters": ["accountId", "startDate", "endDate"],
+        "description": "Retrieves the payment history for a specific account within a given date range.",
+        "returnParameter": {
+          "PaymentHistory": "array"
+        }
+      },
+      {
+        "name": "makePayment",
+        "parameters": ["accountId", "amount", "paymentMethod"],
+        "description": "Makes a payment towards a specific account.",
+        "returnParameter": {
+          "PaymentID": "string",
+          "PaymentStatus": "string"
+        }
+      },
+      {
+        "name": "getPaymentStatus",
+        "parameters": ["paymentId"],
+        "description": "Retrieves the status of a specific payment.",
+        "returnParameter": {
+          "PaymentStatus": "string"
+        }
+      },
+      {
+        "name": "getPaymentMethods",
+        "parameters": ["accountId"],
+        "description": "Retrieves the available payment methods for a specific account.",
+        "returnParameter": {
+          "PaymentMethods": "array"
+        }
+      },
+      {
+        "name": "addPaymentMethod",
+        "parameters": ["accountId", "paymentMethodDetails"],
+        "description": "Adds a new payment method to a specific account.",
+        "returnParameter": {
+          "PaymentMethodID": "string",
+          "AdditionStatus": "string"
+        }
+      },
+      {
+        "name": "deletePaymentMethod",
+        "parameters": ["accountId", "paymentMethodId"],
+        "description": "Deletes a payment method from a specific account.",
+        "returnParameter": {
+          "DeletionStatus": "string"
+        }
+      },
+      {
+        "name": "getBillingAddress",
+        "parameters": ["accountId"],
+        "description": "Retrieves the billing address for a specific account.",
+        "returnParameter": {
+          "BillingAddress": "object"
+        }
+      },
+      {
+        "name": "updateBillingAddress",
+        "parameters": ["accountId", "addressDetails"],
+        "description": "Updates the billing address for a specific account.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getAutoPayStatus",
+        "parameters": ["accountId"],
+        "description": "Retrieves the auto-pay status for a specific account.",
+        "returnParameter": {
+          "AutoPayStatus": "string"
+        }
+      },
+      {
+        "name": "updateAutoPayStatus",
+        "parameters": ["accountId", "status"],
+        "description": "Updates the auto-pay status for a specific account.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getDataPlanUsage",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the data plan usage for a specific phone number.",
+        "returnParameter": {
+          "DataUsage": "number"
+        }
+      },
+      {
+        "name": "updateDataPlan",
+        "parameters": ["phoneNumber", "dataPlanId"],
+        "description": "Updates the data plan for a specific phone number.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getFamilyPlanDetails",
+        "parameters": ["accountId"],
+        "description": "Retrieves the details of a family plan associated with a specific account.",
+        "returnParameter": {
+          "FamilyPlanDetails": "object"
+        }
+      },
+      {
+        "name": "addMemberToFamilyPlan",
+        "parameters": ["accountId", "phoneNumber"],
+        "description": "Adds a new member to a family plan.",
+        "returnParameter": {
+          "AdditionStatus": "string"
+        }
+      },
+      {
+        "name": "removeMemberFromFamilyPlan",
+        "parameters": ["accountId", "phoneNumber"],
+        "description": "Removes a member from a family plan.",
+        "returnParameter": {
+          "RemovalStatus": "string"
+        }
+      },
+      {
+        "name": "getPlanComparison",
+        "parameters": ["currentPlanId"],
+        "description": "Compares the current plan with other available plans.",
+        "returnParameter": {
+          "ComparisonResult": "object"
+        }
+      },
+      {
+        "name": "getDiscountsAndPromotions",
+        "parameters": [],
+        "description": "Retrieves available discounts and promotions for telecommunication services.",
+        "returnParameter": {
+          "DiscountsAndPromotions": "array"
+        }
+      },
+      {
+        "name": "applyDiscountCode",
+        "parameters": ["accountId", "discountCode"],
+        "description": "Applies a discount code to a specific account.",
+        "returnParameter": {
+          "ApplicationStatus": "string"
+        }
+      },
+      {
+        "name": "getContractDetails",
+        "parameters": ["accountId"],
+        "description": "Retrieves the contract details for a specific account.",
+        "returnParameter": {
+          "ContractDetails": "object"
+        }
+      },
+      {
+        "name": "updateContract",
+        "parameters": ["accountId", "contractDetails"],
+        "description": "Updates the contract details for a specific account.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "terminateContract",
+        "parameters": ["accountId"],
+        "description": "Terminates the contract for a specific account.",
+        "returnParameter": {
+          "TerminationStatus": "string"
+        }
+      },
+      {
+        "name": "getDeviceDetails",
+        "parameters": ["deviceId"],
+        "description": "Retrieves details about a specific telecommunications device.",
+        "returnParameter": {
+          "DeviceDetails": "object"
+        }
+      },
+      {
+        "name": "updateDeviceSettings",
+        "parameters": ["deviceId", "settings"],
+        "description": "Updates the settings for a specific telecommunications device.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getDeviceCompatibility",
+        "parameters": ["deviceId", "networkType"],
+        "description": "Checks if a device is compatible with a specific network type.",
+        "returnParameter": {
+          "CompatibilityStatus": "string"
+        }
+      },
+      {
+        "name": "reportLostDevice",
+        "parameters": ["deviceId"],
+        "description": "Reports a device as lost.",
+        "returnParameter": {
+          "ReportStatus": "string"
+        }
+      },
+      {
+        "name": "reportStolenDevice",
+        "parameters": ["deviceId"],
+        "description": "Reports a device as stolen.",
+        "returnParameter": {
+          "ReportStatus": "string"
+        }
+      },
+      {
+        "name": "getWarrantyStatus",
+        "parameters": ["deviceId"],
+        "description": "Retrieves the warranty status for a specific device.",
+        "returnParameter": {
+          "WarrantyStatus": "string"
+        }
+      },
+      {
+        "name": "getUpgradeEligibility",
+        "parameters": ["accountId", "deviceId"],
+        "description": "Checks the upgrade eligibility for a specific device.",
+        "returnParameter": {
+          "EligibilityStatus": "string"
+        }
+      },
+      {
+        "name": "requestDeviceUpgrade",
+        "parameters": ["accountId", "deviceId"],
+        "description": "Requests an upgrade for a specific device.",
+        "returnParameter": {
+          "RequestStatus": "string"
+        }
+      },
+      {
+        "name": "getSupportCenterLocation",
+        "parameters": ["zipCode"],
+        "description": "Retrieves the location of the nearest support center based on a given zip code.",
+        "returnParameter": {
+          "SupportCenterLocation": "object"
+        }
+      },
+      {
+        "name": "scheduleSupportAppointment",
+        "parameters": ["supportCenterId", "appointmentDetails"],
+        "description": "Schedules an appointment at a support center.",
+        "returnParameter": {
+          "AppointmentID": "string",
+          "SchedulingStatus": "string"
+        }
+      },
+      {
+        "name": "cancelSupportAppointment",
+        "parameters": ["appointmentId"],
+        "description": "Cancels a previously scheduled support appointment.",
+        "returnParameter": {
+          "CancellationStatus": "string"
+        }
+      },
+      {
+        "name": "getOutageReports",
+        "parameters": ["zipCode"],
+        "description": "Retrieves reports of network outages in a specific area.",
+        "returnParameter": {
+          "OutageReports": "array"
+        }
+      },
+      {
+        "name": "getInternationalRoamingRates",
+        "parameters": ["countryCode"],
+        "description": "Retrieves the international roaming rates for a specific country.",
+        "returnParameter": {
+          "RoamingRates": "object"
+        }
+      },
+      {
+        "name": "enableInternationalRoaming",
+        "parameters": ["phoneNumber"],
+        "description": "Enables international roaming for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableInternationalRoaming",
+        "parameters": ["phoneNumber"],
+        "description": "Disables international roaming for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getWiFiCallingStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current status of WiFi calling for a specific phone number.",
+        "returnParameter": {
+          "WiFiCallingStatus": "string"
+        }
+      },
+      {
+        "name": "enableWiFiCalling",
+        "parameters": ["phoneNumber"],
+        "description": "Enables WiFi calling for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableWiFiCalling",
+        "parameters": ["phoneNumber"],
+        "description": "Disables WiFi calling for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getVoLTEStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current VoLTE (Voice over LTE) status for a specific phone number.",
+        "returnParameter": {
+          "VoLTEStatus": "string"
+        }
+      },
+      {
+        "name": "enableVoLTE",
+        "parameters": ["phoneNumber"],
+        "description": "Enables VoLTE for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableVoLTE",
+        "parameters": ["phoneNumber"],
+        "description": "Disables VoLTE for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getDeviceBlacklistStatus",
+        "parameters": ["deviceId"],
+        "description": "Checks if a specific device is blacklisted.",
+        "returnParameter": {
+          "BlacklistStatus": "string"
+        }
+      },
+      {
+        "name": "blacklistDevice",
+        "parameters": ["deviceId"],
+        "description": "Blacklists a specific device.",
+        "returnParameter": {
+          "BlacklistStatus": "string"
+        }
+      },
+      {
+        "name": "whitelistDevice",
+        "parameters": ["deviceId"],
+        "description": "Removes a device from the blacklist.",
+        "returnParameter": {
+          "WhitelistStatus": "string"
+        }
+      },
+      {
+        "name": "get911RegistrationStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the 911 emergency service registration status for a specific phone number.",
+        "returnParameter": {
+          "RegistrationStatus": "string"
+        }
+      },
+      {
+        "name": "registerFor911Service",
+        "parameters": ["phoneNumber", "addressDetails"],
+        "description": "Registers a phone number for 911 emergency services.",
+        "returnParameter": {
+          "RegistrationStatus": "string"
+        }
+      },
+      {
+        "name": "unregisterFrom911Service",
+        "parameters": ["phoneNumber"],
+        "description": "Unregisters a phone number from 911 emergency services.",
+        "returnParameter": {
+          "UnregistrationStatus": "string"
+        }
+      },
+      {
+        "name": "getEmergencyAlertsStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the status of emergency alerts for a specific phone number.",
+        "returnParameter": {
+          "AlertsStatus": "string"
+        }
+      },
+      {
+        "name": "enableEmergencyAlerts",
+        "parameters": ["phoneNumber"],
+        "description": "Enables emergency alerts for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableEmergencyAlerts",
+        "parameters": ["phoneNumber"],
+        "description": "Disables emergency alerts for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getSIMCardDetails",
+        "parameters": ["SIMCardNumber"],
+        "description": "Retrieves details of a specific SIM card.",
+        "returnParameter": {
+          "SIMCardDetails": "object"
+        }
+      },
+      {
+        "name": "updateSIMCardDetails",
+        "parameters": ["SIMCardNumber", "details"],
+        "description": "Updates the details of a specific SIM card.",
+        "returnParameter": {
+          "UpdateStatus": "string"
+        }
+      },
+      {
+        "name": "getPhoneNumberPortingStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the status of phone number porting for a specific number.",
+        "returnParameter": {
+          "PortingStatus": "string"
+        }
+      },
+      {
+        "name": "requestPhoneNumberPorting",
+        "parameters": ["oldProvider", "newProvider", "phoneNumber"],
+        "description": "Requests porting of a phone number from one provider to another.",
+        "returnParameter": {
+          "RequestStatus": "string"
+        }
+      },
+      {
+        "name": "getPhoneNumberAvailability",
+        "parameters": ["areaCode"],
+        "description": "Checks the availability of phone numbers in a specific area code.",
+        "returnParameter": {
+          "AvailabilityStatus": "string"
+        }
+      },
+      {
+        "name": "reservePhoneNumber",
+        "parameters": ["areaCode"],
+        "description": "Reserves a phone number in a specific area code.",
+        "returnParameter": {
+          "ReservationStatus": "string"
+        }
+      },
+      {
+        "name": "getSpamCallProtectionStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the current spam call protection status for a specific phone number.",
+        "returnParameter": {
+          "ProtectionStatus": "string"
+        }
+      },
+      {
+        "name": "enableSpamCallProtection",
+        "parameters": ["phoneNumber"],
+        "description": "Enables spam call protection for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableSpamCallProtection",
+        "parameters": ["phoneNumber"],
+        "description": "Disables spam call protection for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getCallRecordingStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the call recording status for a specific phone number.",
+        "returnParameter": {
+          "RecordingStatus": "string"
+        }
+      },
+      {
+        "name": "enableCallRecording",
+        "parameters": ["phoneNumber"],
+        "description": "Enables call recording for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableCallRecording",
+        "parameters": ["phoneNumber"],
+        "description": "Disables call recording for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getCallBarringStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the call barring status for a specific phone number.",
+        "returnParameter": {
+          "BarringStatus": "string"
+        }
+      },
+      {
+        "name": "enableCallBarring",
+        "parameters": ["phoneNumber"],
+        "description": "Enables call barring for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      },
+      {
+        "name": "disableCallBarring",
+        "parameters": ["phoneNumber"],
+        "description": "Disables call barring for a specific phone number.",
+        "returnParameter": {
+          "DisableStatus": "string"
+        }
+      },
+      {
+        "name": "getSimSwapStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the SIM swap status for a specific phone number.",
+        "returnParameter": {
+          "SimSwapStatus": "string"
+        }
+      },
+      {
+        "name": "requestSimSwap",
+        "parameters": ["phoneNumber", "newSIMCardNumber"],
+        "description": "Requests a SIM swap for a specific phone number.",
+        "returnParameter": {
+          "RequestStatus": "string"
+        }
+      },
+      {
+        "name": "getTetheringStatus",
+        "parameters": ["phoneNumber"],
+        "description": "Retrieves the tethering status for a specific phone number.",
+        "returnParameter": {
+          "TetheringStatus": "string"
+        }
+      },
+      {
+        "name": "enableTethering",
+        "parameters": ["phoneNumber"],
+        "description": "Enables tethering for a specific phone number.",
+        "returnParameter": {
+          "EnableStatus": "string"
+        }
+      }
+    ]
+  }
+  

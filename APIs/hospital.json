@@ -1,0 +1,239 @@
+{
+    "api_ports": [
+      {
+        "name": "getPatientInfo",
+        "description": "Retrieve information about a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": {
+          "PatientName": "string",
+          "PatientID": "string",
+          "DateOfBirth": "string",
+          "Gender": "string",
+          "InsuranceNumber": "string"
+        }
+      },
+      {
+        "name": "getAppointmentDetails",
+        "description": "Retrieve details of a specific appointment.",
+        "parameters": {
+          "appointmentId": "string"
+        },
+        "returnParameter": {
+          "PatientID":"string",
+          "AppointmentDate": "string",
+          "DoctorName": "string",
+          "Department": "string",
+          "AppointmentStatus": "string"
+        }
+      },
+      {
+        "name": "bookAppointment",
+        "description": "Book a new appointment for a patient.",
+        "parameters": {
+          "patientId": "string",
+          "doctorId": "string",
+          "department": "string",
+          "appointmentDate": "string"
+        },
+        "returnParameter": "AppointmentConfirmation"
+      },
+      {
+        "name": "cancelAppointment",
+        "description": "Cancel a booked appointment.",
+        "parameters": {
+          "appointmentId": "string"
+        },
+        "returnParameter": "CancellationStatus"
+      },
+      {
+        "name": "getDoctorIdFromName",
+        "description": "Retrieve doctor ID from doctor's name.",
+        "parameters": {
+          "name": "string"
+        },
+        "returnParameter": {
+          "DoctorID": "string"
+        }
+      },
+      {
+        "name": "getDoctorInfo",
+        "description": "Retrieve information about a specific doctor.",
+        "parameters": {
+          "doctorId": "string"
+        },
+        "returnParameter": {
+          "DoctorName": "string",
+          "DoctorID": "string",
+          "Specialization": "string",
+          "Experience": "number",
+          "ContactDetails": "string"
+        }
+      },
+      {
+        "name": "getPatientMedicalHistory",
+        "description": "Retrieve the medical history of a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": "MedicalHistory"
+      },
+      {
+        "name": "updatePatientInfo",
+        "description": "Update the information of a specific patient.",
+        "parameters": {
+          "patientId": "string",
+          "patientInfo": {
+              "insuranceNumber": "string"
+            }
+        },
+        "returnParameter": "UpdateStatus"
+      },
+      {
+        "name": "getBillingInfo",
+        "description": "Retrieve billing information for a specific patient.",
+        "parameters": {
+          "patientId": "string",
+          "billId": "string"
+        },
+        "returnParameter": {
+          "BillAmount": "number",
+          "BillingDate": "string",
+          "PaymentStatus": "string"
+        }
+      },
+      {
+        "name": "payBill",
+        "description": "Make a payment for a specific bill.",
+        "parameters": {
+          "billId": "string",
+          "paymentAmount": "string"
+        },
+        "returnParameter": "PaymentConfirmation"
+      },
+      {
+        "name": "getInsuranceDetails",
+        "description": "Retrieve insurance details of a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": {
+          "InsuranceProvider": "string",
+          "InsuranceNumber": "string",
+          "CoverageDetails": "string"
+        }
+      },
+      {
+        "name": "getLabTestResults",
+        "description": "Retrieve lab test results for a specific patient.",
+        "parameters": {
+          "patientId": "string",
+          "testId": "string"
+        },
+        "returnParameter": {
+          "TestName": "string",
+          "TestResults": "string",
+          "TestDate": "string",
+          "DoctorRemarks": "string"
+        }
+      },
+      {
+        "name": "orderLabTest",
+        "description": "Order a new lab test for a patient.",
+        "parameters": {
+          "patientId": "string",
+          "testType": "string",
+          "doctorId": "string"
+        },
+        "returnParameter": "OrderConfirmation"
+      },
+      {
+        "name": "getPrescriptionDetails",
+        "description": "Retrieve prescription details for a specific patient.",
+        "parameters": {
+          "prescriptionId": "string"
+        },
+        "returnParameter": {
+          "MedicineList": "array",
+          "DosageInstructions": "string",
+          "PrescribingDoctorId": "string",
+          "PrescriptionDate": "string",
+          "PatientID":"string",
+          "department":"string"
+        }
+      },
+      {
+        "name": "getPatientAllergies",
+        "description": "Retrieve a list of known allergies for a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": "AllergiesList"
+      },
+      {
+        "name": "getVaccinationRecords",
+        "description": "Retrieve vaccination records for a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": "VaccinationRecords"
+      },
+      {
+        "name": "getEmergencyContact",
+        "description": "Retrieve emergency contact details for a specific patient.",
+        "parameters": {
+          "patientId": "string"
+        },
+        "returnParameter": {
+          "ContactName": "string",
+          "ContactRelation": "string",
+          "ContactPhone": "string"
+        }
+      },
+      {
+        "name": "getDoctorSchedule",
+        "description": "Retrieve the schedule of a specific doctor.",
+        "parameters": {
+          "doctorId": "string"
+        },
+        "returnParameter": "DoctorSchedule"
+      },
+      {
+        "name": "admitPatient",
+        "description": "Admit a patient to the hospital.",
+        "parameters": {
+          "patientId": "string",
+          "departmentId": "string",
+          "bedId": "string",
+          "admissionReason": "string"
+        },
+        "returnParameter": "AdmissionConfirmation"
+      },
+      {
+        "name": "dischargePatient",
+        "description": "Discharge a patient from the hospital.",
+        "parameters": {
+          "patientId": "string",
+          "dischargeSummary": "string"
+        },
+        "returnParameter": "DischargeStatus"
+      },
+      {
+        "name": "getSurgeryDetails",
+        "description": "Retrieve details of a specific surgery performed on a patient.",
+        "parameters": {
+          "surgeryId": "string"
+        },
+        "returnParameter": {
+          "SurgeryName": "string",
+          "SurgeryDate": "string",
+          "SurgeonName": "string",
+          "SurgeryOutcome": "string",
+          "PatientID":"string",
+          "doctorId":"string",
+          "department":"string"
+        }
+      }
+    ]
+  }
