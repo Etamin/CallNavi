@@ -8,7 +8,7 @@ modelst=['xlam']
 from tqdm import tqdm
 from openai import OpenAI
 import os
-os.environ['OPENAI_API_KEY']='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'
+os.environ['OPENAI_API_KEY']=''
 
 client = OpenAI()
 def call_response(context):
