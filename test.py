@@ -3,14 +3,14 @@ from tqdm import tqdm
 import os
 from openai import OpenAI
 from ollama import Client
-client = Client(host='http://trux-dgx01.uni.lux:11434')
+client = Client(host='http://:11434')
 # 'command-r','llama3.1',,
 # modelst=['llama3.1', 'mistral-small','mistral-nemo', 'gemma2', 'gemma2:27b',]
 # 'phi3:14b','command-r','llama3.2',
 # modelst=[ 'llama3.1:70b','phi3.5','nemotron-mini']
 modelst=['llama3.1:70b','llama3.1', 'mistral-small','mistral-nemo', 'gemma2:27b','gemma2', 'command-r','phi3:14b','nemotron-mini','llama3.2','phi3.5',]
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
-# os.environ['OPENAI_API_KEY']='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'
+# os.environ['OPENAI_API_KEY']=''
 
 # client = OpenAI()
 # def call_response(context,model):
