@@ -23,15 +23,12 @@ def writefile(l,dct):
     file.write(str)
     file.close()
 # modelst=[ 'mistral-small','mistral-nemo', 'gemma2', 'gemma2:27b','llama3.1:70b','phi3.5','nemotron-mini']
-# ,
+
 # modelst=['gpt-4o','gpt-4o-mini','llama3.1:70b','llama3.1', 'mistral-small','mistral-nemo', 'command-r','llama3.2','gemma2', 'gemma2:27b','phi3:14b','phi3.5','nemotron-mini']
-modelst=['xlam']
-# 'nexusraven',
+
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
 # ['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
-# 'bank', 'shopping', 
 
-#'telecommunications'
 prompt_call='''
 Give the following API calling string, then an API list JSON, and make it into a JSON format. If you cannot find any information about API calling in the input string, please return an empty object JSON like { }.
 

@@ -3,14 +3,10 @@ from tqdm import tqdm
 import os
 from openai import OpenAI
 from ollama import Client
-client = Client(host='http://:11434')
-# 'command-r','llama3.1',,
-# modelst=['llama3.1', 'mistral-small','mistral-nemo', 'gemma2', 'gemma2:27b',]
-# 'phi3:14b','command-r','llama3.2',
-# modelst=[ 'llama3.1:70b','phi3.5','nemotron-mini']
-modelst=['llama3.1:70b','llama3.1', 'mistral-small','mistral-nemo', 'gemma2:27b','gemma2', 'command-r','phi3:14b','nemotron-mini','llama3.2','phi3.5',]
+client = Client(host='http://.uni.lux:11434')
+
+modelst=['llama3.1', 'mistral-small','mistral-nemo', 'gemma2', 'gemma2:27b','command-r','llama3.2']
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
-# os.environ['OPENAI_API_KEY']=''
 
 # client = OpenAI()
 # def call_response(context,model):
@@ -43,7 +39,7 @@ def writefile(l,dct):
 for model in modelst:
     for it in range(5): 
         for data in datalst:
-            
+            # Load the API prediction 
             with open("APIs/"+data+".json", 'r') as file:
                 API = json.load(file)["api_ports"]
 
@@ -65,8 +61,9 @@ for model in modelst:
             '''
             prompt_3='''\n=======Question end=======
             Given the user question, and the APIs, classify and give a correct API name and parameters to call. \n
-            Answer should be formatted includes API names and parameters in JSON style, looks like :
-            {'API': ['getCustomerDetails', 'depositFunds'], 'parameters':[{"parameter1ForCall1": "***" },{"parameter1ForCall2": "***", "parameter2ForCall2": "***"}]}
+            The output MUST strictly adhere to the following JSON format, and NO other text MUST be included.
+            The example format is as follows. Please make sure the parameter type is correct. 
+            {'API': ['APIname1', 'APIname2'], 'parameters':[{"parameter1ForAPI1": "***" },{"parameter1ForAPI2": "***", "parameter2ForAPI2": "***"}]}
 
 
             If we cannot get some parameter information from the question, set these parameters to "$$$".
@@ -83,8 +80,10 @@ for model in modelst:
                 
                 prompt=prompt_1+func+prompt_2+q['question'][0]['content']+prompt_3
                 # print(prompt)
-                result_call.append({"predit":call_response(prompt,model),"ground_truth":str(q["ground_truth"])})
-            writefile(data+"_"+str(it)+"_para_"+model,result_call)
+                resp=call_response(prompt,model)
+                result_call.append({"predit":resp,"ground_truth":str(q["ground_truth"])})
+                # print(resp)
+            writefile(data+"_1_para_"+"xlam",result_call)
 
 
     

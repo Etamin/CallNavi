@@ -2,9 +2,8 @@ import json
 
 
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
-# modelst=['gpt-4o','gpt-4o-mini','llama3.1:70b','llama3.1', 'mistral-small','mistral-nemo', 'command-r','llama3.2','gemma2', 'gemma2:27b','phi3:14b','phi3.5','nemotron-mini','nexusraven','gorilla']
-modelst=['xlam']
-# 'nexusraven','gorilla'
+modelst=['gpt-4o','gpt-4o-mini','llama3.1:70b','llama3.1', 'mistral-small','mistral-nemo', 'command-r','llama3.2','gemma2', 'gemma2:27b','phi3:14b','phi3.5','nemotron-mini','nexusraven','gorilla']
+
 from tqdm import tqdm
 from openai import OpenAI
 import os
@@ -70,7 +69,6 @@ def AST(predict, gt, difficulty):
             stru_match=False
         
     return {"order":same_order, 'structure':stru_match, 'ast':ast_match}
-# {"predict": {"API": ["getSimSwapStatus"], "parameters": [{"parameter1ForCall1": "$", "parameter2ForCall1": "889012345"}]}, "ground_truth": {"API": ["deactivateSIMCard"], "parameters": [{"phoneNumber": "889012345"}]}}
 for model in modelst:
     count_struc=0
     ast_match=0
@@ -84,10 +82,9 @@ for model in modelst:
             with open("./results_washed/"+data+"_1_washed_"+model+".json", 'r') as file:
                 result = json.load(file)
             for i in range(len(result)):
-                # print(result[i])
                 score=AST(result[i]['predict'],result[i]['ground_truth'],difficulty=question[i]['difficulty'])
-                # resp=call_response(prompt+json.dumps(result[i]['predict'])+"\n======End of predict JSON======\n======Begin of ground truth JSON======\n"+json.dumps(result[i]['ground_truth'])+"\n======End of ground truth JSON======").replace("[","").replace("]","")
-                # gptscore=float(resp)
+                resp=call_response(prompt+json.dumps(result[i]['predict'])+"\n======End of predict JSON======\n======Begin of ground truth JSON======\n"+json.dumps(result[i]['ground_truth'])+"\n======End of ground truth JSON======").replace("[","").replace("]","")
+                gptscore=float(resp)
                 if score['structure']:
                     count_struc+=1
                 if score["order"]:
@@ -96,22 +93,26 @@ for model in modelst:
                 if score["ast"]:
                     ast_match+=1
                     spa[question[i]["difficulty"]]+=1
-                # count_gpt+=gptscore
+                count_gpt+=gptscore
                 
     print(model)    
-    # print(count_gpt/729)
+    print("GPT score")
+    print(count_gpt/729)
+    print("Structure Match")
     print(count_struc/729)
-    print("Call easy:")
+    print("API Call\n easy:")
     print(scal["easy"]/456)
     print("medium:")
     print(scal["medium"]/188)
     print("hard:")
     print(scal["hard"]/85)
+    print("overall")
     print(cal_match/729)
-    print("Para easy:")
+    print("Para:\n easy:")
     print(spa["easy"]/456)
     print("medium:")
     print(spa["medium"]/188)
     print("hard:")
     print(spa["hard"]/85)
+    print("overall")
     print(ast_match/729)

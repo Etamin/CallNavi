@@ -2,7 +2,7 @@ import json
 from tqdm import tqdm
 from openai import OpenAI
 import os
-os.environ['OPENAI_API_KEY']=''
+os.environ['OPENAI_API_KEY']='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'
 
 client = OpenAI()
 def call_response(context):
@@ -37,21 +37,18 @@ prompt_2='''
 =======Question start=======
 '''
 prompt_3='''\n=======Question end=======
-Given the user question, and the APIs, classify and give a correct API name and parameters to call. 
+Given the user question, and the APIs, classify and give a correct API name to call. 
 
-Answer should be formatted includes API names and parameters in JSON style, looks like :
-{'API': ['getCustomerDetails', 'depositFunds'], 'parameters':[{"***": "***" },{"***": "***", "***": "***"}]}
+Answer should be formatted in only one line, and only API names in bracket, looks like "['getCustomerDetails','depositFunds']" or "['getCustomerDetails']".
 
-If we cannot get some parameter information from the question, set these parameters to "$$$".
-
-NO explanation/notes in answer! Only the JSON string!"
-        '''
+NO explanation and NO parameters in answer!"
+'''
 result_call=[]
 for q in tqdm(question):
     
     prompt=prompt_1+str(API)+prompt_2+q['question'][0]['content']+prompt_3
-    result_call.append({"predit":call_response(prompt),"ground_truth":str(q["ground_truth"])})
-writefile("bank_round1_para_GPT",result_call)
+    result_call.append({"predict":call_response(prompt),"ground_truth":str(q["ground_truth"]["API"])})
+writefile("bank_round1_APIonly_GPT",result_call)
 
 
     
