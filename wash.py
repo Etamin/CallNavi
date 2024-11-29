@@ -97,7 +97,7 @@ for model in modelst:
             result = json.load(file)
         
         for i in tqdm(range(len(result))):
-            predict = result[i]['predit'].replace('\'','\"').replace('```json','').replace('```','')
+            predict = result[i]['predict'].replace('\'','\"').replace('```json','').replace('```','')
             try:   
                 newp=json.loads(predict)
                 count+=1

@@ -77,7 +77,7 @@ for model in modelst:
     scal={"easy":0,"medium":0,"hard":0}
     spa={"easy":0,"medium":0,"hard":0}
     for data in datalst:
-            with open("./Questions/"+data+".json", 'r') as file:
+            with open(".Dataset/Questions/"+data+".json", 'r') as file:
                 question = json.load(file)
             with open("./results_washed/"+data+"_1_washed_"+model+".json", 'r') as file:
                 result = json.load(file)
