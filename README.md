@@ -86,7 +86,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For questions or feedback, feel free to create an issue on the repository or reach out to us at [yewei.song@uni.lu].
+For questions or feedback, feel free to create an issue on the repository or reach out to us at .
 
 ---
 
