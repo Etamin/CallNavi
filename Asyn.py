@@ -37,7 +37,6 @@ def writefile(l,dct):
     file.close()
 
 for model in modelst:
-    for it in range(5): 
         for data in datalst:
             # Load the API prediction 
             with open("APIs/"+data+".json", 'r') as file:
@@ -48,14 +47,7 @@ for model in modelst:
             func=""
             with open("results_APIonly/"+data+"_1_APIonly_GPTmini.json", 'r') as file:
                 callst = json.load(file)
-            call=json.loads(callst[i]['predit'].replace("\'","\""))
-            for c in call:
-                for a in API:
-                    if a['name']==c:
-                        func+='Function:\ndef '+a['name']+'('+str(a['parameters']).replace('[',"").replace(']',"")+')\n   \"\"\"\n   '+a['description']+'\n\n   Args:\n   '
-                        for key in a['parameters']:
-                            func+=key+' (str)'
-                        func+='\n\n   Returns:\n   '+str(a["returnParameter"]).replace('{','').replace('}','').replace('\'','')+'\n   \"\"\"\n\n'
+
 
             prompt_1='''
             Give the API list with describtion below, then give the question in chatbot, please give me the correct API that should be called. 
@@ -81,14 +73,20 @@ for model in modelst:
             # for item in API:
             #     apistr=apistr+item["name"]+", "+item["description"]+"\n"
 
-            for q in tqdm(question):
+            for i in tqdm(range(len(question))):
+                call=json.loads(callst[i]['predit'].replace("\'","\""))
                 
-                prompt=prompt_1+func+prompt_2+q['question'][0]['content']+prompt_3
+                for c in call:
+                    for a in API:
+                        if a['name']==c:
+                            func+='Function:\ndef '+a['name']+'('+str(a['parameters']).replace('[',"").replace(']',"")+')\n   \"\"\"\n   '+a['description']+'\n\n   Args:\n   '
+                            for key in a['parameters']:
+                                func+=key+' (str)'
+                            func+='\n\n   Returns:\n   '+str(a["returnParameter"]).replace('{','').replace('}','').replace('\'','')+'\n   \"\"\"\n\n'
+                prompt=prompt_1+func+prompt_2+question[i]['question'][0]['content']+prompt_3
                 # print(prompt)
+                
                 resp=call_response(prompt,model)
-                result_call.append({"predit":resp,"ground_truth":str(q["ground_truth"])})
+                result_call.append({"predit":resp,"ground_truth":str(question[i]["ground_truth"])})
                 # print(resp)
-            writefile(data+"_1_para_"+"xlam",result_call)
-
-
-    
+            writefile(data+"_1_para_"+model,result_call)
