@@ -46,11 +46,16 @@ for model in modelst:
             with open("./Questions/"+data+".json", 'r') as file:
                 question = json.load(file)
             func=""
-            for a in API:
-                func+='Function:\ndef '+a['name']+'('+str(a['parameters']).replace('[',"").replace(']',"")+')\n   \"\"\"\n   '+a['description']+'\n\n   Args:\n   '
-                for key in a['parameters']:
-                    func+=key+' (str)'
-                func+='\n\n   Returns:\n   '+str(a["returnParameter"]).replace('{','').replace('}','').replace('\'','')+'\n   \"\"\"\n\n'
+            with open("results_APIonly/"+data+"_1_APIonly_GPTmini.json", 'r') as file:
+                callst = json.load(file)
+            call=json.loads(callst[i]['predit'].replace("\'","\""))
+            for c in call:
+                for a in API:
+                    if a['name']==c:
+                        func+='Function:\ndef '+a['name']+'('+str(a['parameters']).replace('[',"").replace(']',"")+')\n   \"\"\"\n   '+a['description']+'\n\n   Args:\n   '
+                        for key in a['parameters']:
+                            func+=key+' (str)'
+                        func+='\n\n   Returns:\n   '+str(a["returnParameter"]).replace('{','').replace('}','').replace('\'','')+'\n   \"\"\"\n\n'
 
             prompt_1='''
             Give the API list with describtion below, then give the question in chatbot, please give me the correct API that should be called. 
