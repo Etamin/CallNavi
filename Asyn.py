@@ -3,7 +3,7 @@ from tqdm import tqdm
 import os
 from openai import OpenAI
 from ollama import Client
-client = Client(host='http://.uni.lux:11434')
+client = Client(host='http://:11434')
 
 modelst=['llama3.1', 'mistral-small','mistral-nemo', 'gemma2', 'gemma2:27b','command-r','llama3.2']
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
