@@ -4,7 +4,7 @@ import os
 import time
 import yaml
 from ollama import Client
-client = Client(host='http://.uni.lux:11434')
+client = Client(host='http://:11434')
 
 modelst=['gemma2:27b', 'command-r']
 datalst=['bank', 'shopping',  'logistics','aviation', 'hospital','gov', 'hr',  'hotel', 'insurance', 'telecommunications']
