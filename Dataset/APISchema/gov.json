@@ -1,0 +1,1864 @@
+[
+  {
+    "name": "getPersonalIDInfo",
+    "description": "Retrieve information about a specific personal ID.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "DateOfBirth": "string",
+      "Gender": "string",
+      "Nationality": "string",
+      "IDNumber": "string",
+      "LicenseList": "array"
+    }
+  },
+  {
+    "name": "updatePersonalIDInfo",
+    "description": "Update information for a specific personal ID.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getPassportInfo",
+    "description": "Retrieve passport details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "passportNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "passportNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "PassportNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "Nationality": "string"
+    }
+  },
+  {
+    "name": "applyForPassport",
+    "description": "Submit a passport application for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationType",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewPassport",
+    "description": "Renew an existing passport.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "passportNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "object",
+          "properties": {
+            "expiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "expiryDate"
+          ]
+        }
+      },
+      "required": [
+        "passportNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getAddressRegister",
+    "description": "Retrieve address details from the address register.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "CurrentAddress": "string",
+      "PreviousAddresses": "array",
+      "PostalCode": "string",
+      "City": "string",
+      "Country": "string"
+    }
+  },
+  {
+    "name": "updateAddressRegister",
+    "description": "Update the registered address for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "newAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "newAddress",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getCarRegistrationInfo",
+    "description": "Retrieve car registration details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "registrationNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationNumber"
+      ]
+    },
+    "returnParameter": {
+      "OwnerName": "string",
+      "CarMake": "string",
+      "CarModel": "string",
+      "YearOfManufacture": "string",
+      "RegistrationNumber": "string"
+    }
+  },
+  {
+    "name": "registerNewCar",
+    "description": "Register a new car for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "ownerID": {
+          "type": "string"
+        },
+        "carDetails": {
+          "type": "object",
+          "properties": {
+            "make": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "year": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "make",
+            "model",
+            "year"
+          ]
+        }
+      },
+      "required": [
+        "carDetails",
+        "ownerID"
+      ]
+    },
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "renewCarRegistration",
+    "description": "Renew the car registration.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "registrationNumber": {
+          "type": "string"
+        },
+        "renewalDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationNumber",
+        "renewalDate"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getVoterRegistrationStatus",
+    "description": "Retrieve voter registration status for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "VoterID": "string",
+      "PollingLocation": "string"
+    }
+  },
+  {
+    "name": "registerToVote",
+    "description": "Register a citizen to vote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "registrationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "registrationData"
+      ]
+    },
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "getMarriageCertificate",
+    "description": "Retrieve the marriage certificate for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "SpouseName": "string",
+      "MarriageDate": "string",
+      "MarriageCertificateNumber": "string"
+    }
+  },
+  {
+    "name": "applyForMarriageCertificate",
+    "description": "Apply for a marriage certificate.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "spouseID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "spouseID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getBirthCertificate",
+    "description": "Retrieve birth certificate details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "DateOfBirth": "string",
+      "PlaceOfBirth": "string",
+      "BirthCertificateNumber": "string"
+    }
+  },
+  {
+    "name": "applyForBirthCertificate",
+    "description": "Apply for a birth certificate.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getDeathCertificate",
+    "description": "Retrieve the death certificate details for a deceased citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "deceasedID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "deceasedID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "DateOfDeath": "string",
+      "PlaceOfDeath": "string",
+      "DeathCertificateNumber": "string"
+    }
+  },
+  {
+    "name": "applyForDeathCertificate",
+    "description": "Apply for a death certificate.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "deceasedID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "deceasedID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getCitizenshipStatus",
+    "description": "Retrieve the citizenship status of a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "Nationality": "string",
+      "CitizenshipStatus": "string",
+      "DateOfNaturalization": "string"
+    }
+  },
+  {
+    "name": "applyForCitizenship",
+    "description": "Submit an application for citizenship.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getDrivingLicenseInfo",
+    "description": "Retrieve driving license details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "LicenseNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "LicenseClass": "string"
+    }
+  },
+  {
+    "name": "applyForDrivingLicense",
+    "description": "Submit an application for a driving license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "licenseClass": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseClass",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewDrivingLicense",
+    "description": "Renew an existing driving license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getCriminalRecord",
+    "description": "Retrieve the criminal record for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "CriminalRecordDetails": "array"
+    }
+  },
+  {
+    "name": "applyForCriminalRecordCheck",
+    "description": "Submit a request for a criminal record check.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "requestDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "requestDetails"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getSocialSecurityInfo",
+    "description": "Retrieve social security information for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "SocialSecurityNumber": "string",
+      "BenefitsDetails": "array"
+    }
+  },
+  {
+    "name": "applyForSocialSecurityBenefits",
+    "description": "Submit an application for social security benefits.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "StartDate",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "updateSocialSecurityInfo",
+    "description": "Update social security information for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getPensionInfo",
+    "description": "Retrieve pension details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "PensionNumber": "string",
+      "PensionAmount": "number",
+      "DateOfFirstPension": "string"
+    }
+  },
+  {
+    "name": "applyForPension",
+    "description": "Submit an application for pension benefits.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "retireDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "retireDate"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getPropertyOwnershipInfo",
+    "description": "Retrieve property ownership details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "PropertyList": "array"
+    }
+  },
+  {
+    "name": "registerNewProperty",
+    "description": "Register a new property under a citizen's name.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "ownerID": {
+          "type": "string"
+        },
+        "propertyDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ownerID",
+        "propertyDetails"
+      ]
+    },
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "updatePropertyOwnership",
+    "description": "Update property ownership information.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "propertyID": {
+          "type": "string"
+        },
+        "ownerID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ownerID",
+        "propertyID"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getBusinessLicenseInfo",
+    "description": "Retrieve business license information for a business.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "BusinessName": "string",
+      "LicenseNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "LicenseStatus": "string"
+    }
+  },
+  {
+    "name": "applyForBusinessLicense",
+    "description": "Submit an application for a new business license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "ownerID": {
+          "type": "string"
+        },
+        "businessDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "businessDetails",
+        "ownerID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewBusinessLicense",
+    "description": "Renew an existing business license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getTaxInfo",
+    "description": "Retrieve tax information for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "TaxpayerID": "string",
+      "TaxDetails": "array"
+    }
+  },
+  {
+    "name": "fileTaxReturn",
+    "description": "File a tax return for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "taxData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "taxData"
+      ]
+    },
+    "returnParameter": {
+      "FilingStatus": "string"
+    }
+  },
+  {
+    "name": "getImmigrationStatus",
+    "description": "Retrieve immigration status for a citizen or resident.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "ImmigrationStatus": "string",
+      "VisaType": "string",
+      "DateOfEntry": "string"
+    }
+  },
+  {
+    "name": "applyForVisa",
+    "description": "Submit a visa application.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "visaType": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID",
+        "visaType"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewVisa",
+    "description": "Renew an existing visa.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "visaNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "renewalData",
+        "visaNumber"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getVehicleInspectionInfo",
+    "description": "Retrieve vehicle inspection information.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "registrationNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationNumber"
+      ]
+    },
+    "returnParameter": {
+      "InspectionDate": "string",
+      "InspectionResult": "string",
+      "NextInspectionDue": "string"
+    }
+  },
+  {
+    "name": "scheduleVehicleInspection",
+    "description": "Schedule a vehicle inspection.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "registrationNumber": {
+          "type": "string"
+        },
+        "inspectionDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "inspectionDate",
+        "registrationNumber"
+      ]
+    },
+    "returnParameter": {
+      "SchedulingStatus": "string"
+    }
+  },
+  {
+    "name": "getVotingHistory",
+    "description": "Retrieve the voting history of a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ElectionList": "array",
+      "VotingDetails": "array"
+    }
+  },
+  {
+    "name": "getMilitaryServiceInfo",
+    "description": "Retrieve military service details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "ServiceBranch": "string",
+      "Rank": "string",
+      "ServicePeriod": "string"
+    }
+  },
+  {
+    "name": "applyForMilitaryServiceExemption",
+    "description": "Submit an application for military service exemption.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "exemptionReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "exemptionReason",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getPublicBenefitsInfo",
+    "description": "Retrieve information about public benefits a citizen is receiving.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "BenefitType": "string",
+      "BenefitAmount": "number",
+      "StartDate": "string",
+      "EndDate": "string"
+    }
+  },
+  {
+    "name": "applyForPublicBenefits",
+    "description": "Submit an application for public benefits.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "benefitType": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "benefitType",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getPublicHousingInfo",
+    "description": "Retrieve information about public housing a citizen is allocated.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "HousingAddress": "string",
+      "MoveInDate": "string",
+      "RentAmount": "number"
+    }
+  },
+  {
+    "name": "applyForPublicHousing",
+    "description": "Submit an application for public housing.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getDriverHistory",
+    "description": "Retrieve driving history for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "DrivingRecord": "array"
+    }
+  },
+  {
+    "name": "getEmergencyContactInfo",
+    "description": "Retrieve emergency contact details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ContactName": "string",
+      "ContactRelation": "string",
+      "ContactPhone": "string"
+    }
+  },
+  {
+    "name": "updateEmergencyContactInfo",
+    "description": "Update emergency contact details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "contactDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contactDetails",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getTaxPaymentHistory",
+    "description": "Retrieve tax payment history for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "PaymentHistory": "array"
+    }
+  },
+  {
+    "name": "applyForTaxPaymentPlan",
+    "description": "Submit an application for a tax payment plan.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "taxAmount": {
+          "type": "string"
+        },
+        "paymentPlanDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paymentPlanDetails",
+        "personalID",
+        "taxAmount"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getCourtRecords",
+    "description": "Retrieve court records associated with a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "CourtCases": "array"
+    }
+  },
+  {
+    "name": "getPublicTransportationPassInfo",
+    "description": "Retrieve information about public transportation passes held by a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "PassType": "string",
+      "PassNumber": "string",
+      "ValidityPeriod": "string",
+      "Status": "string"
+    }
+  },
+  {
+    "name": "applyForPublicTransportationPass",
+    "description": "Submit an application for a public transportation pass.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "StartDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "StartDate",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getVehicleOwnershipInfo",
+    "description": "Retrieve ownership details for a vehicle registered to a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "registrationNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "registrationNumber"
+      ]
+    },
+    "returnParameter": {
+      "OwnerName": "string",
+      "RegistrationNumber": "string",
+      "VehicleDetails": "object"
+    }
+  },
+  {
+    "name": "getEnvironmentalViolationRecords",
+    "description": "Retrieve environmental violation records associated with a citizen or business.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "entityID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "entityID"
+      ]
+    },
+    "returnParameter": {
+      "EntityName": "string",
+      "ViolationRecords": "array"
+    }
+  },
+  {
+    "name": "getConsumerProtectionComplaints",
+    "description": "Retrieve consumer protection complaints filed by or against a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ComplaintsList": "array",
+      "ComplaintDetails": "array"
+    }
+  },
+  {
+    "name": "getAnimalOwnershipInfo",
+    "description": "Retrieve information about animals registered to a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "AnimalList": "array",
+      "RegistrationDetails": "array"
+    }
+  },
+  {
+    "name": "registerNewAnimal",
+    "description": "Register a new animal under a citizen's name.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "ownerID": {
+          "type": "string"
+        },
+        "animalDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "animalDetails",
+        "ownerID"
+      ]
+    },
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "getResidencyInfo",
+    "description": "Retrieve residency details for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "ResidencyStatus": "string",
+      "DateOfResidency": "string"
+    }
+  },
+  {
+    "name": "applyForResidency",
+    "description": "Submit an application for residency.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewResidency",
+    "description": "Renew an existing residency permit.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "residencyNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "renewalData",
+        "residencyNumber"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getPublicUtilityAccountInfo",
+    "description": "Retrieve information about public utility accounts held by a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "AccountNumber": "string",
+      "UtilityType": "string",
+      "AccountStatus": "string"
+    }
+  },
+  {
+    "name": "getPublicLibraryAccountInfo",
+    "description": "Retrieve information about a citizen's public library account.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "AccountNumber": "string",
+      "BorrowingHistory": "array",
+      "AccountStatus": "string"
+    }
+  },
+  {
+    "name": "applyForPublicLibraryMembership",
+    "description": "Submit an application for public library membership.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getFirearmLicenseInfo",
+    "description": "Retrieve information about firearm licenses held by a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "LicenseNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "LicenseType": "string"
+    }
+  },
+  {
+    "name": "applyForFirearmLicense",
+    "description": "Submit an application for a new firearm license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewFirearmLicense",
+    "description": "Renew an existing firearm license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getFishingLicenseInfo",
+    "description": "Retrieve information about fishing licenses held by a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "LicenseNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "LicenseType": "string"
+    }
+  },
+  {
+    "name": "applyForFishingLicense",
+    "description": "Submit an application for a new fishing license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewFishingLicense",
+    "description": "Renew an existing fishing license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getHuntingLicenseInfo",
+    "description": "Retrieve information about hunting licenses held by a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber"
+      ]
+    },
+    "returnParameter": {
+      "FullName": "string",
+      "LicenseNumber": "string",
+      "DateOfIssue": "string",
+      "DateOfExpiry": "string",
+      "LicenseType": "string"
+    }
+  },
+  {
+    "name": "applyForHuntingLicense",
+    "description": "Submit an application for a new hunting license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "applicationData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationData",
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "renewHuntingLicense",
+    "description": "Renew an existing hunting license.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "licenseNumber": {
+          "type": "string"
+        },
+        "renewalData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "licenseNumber",
+        "renewalData"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "getPublicRecords",
+    "description": "Retrieve public records associated with a citizen or property.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "recordType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "recordType"
+      ]
+    },
+    "returnParameter": {
+      "RecordList": "array",
+      "RecordDetails": "array"
+    }
+  },
+  {
+    "name": "requestPublicRecord",
+    "description": "Submit a request to retrieve a specific public record.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "recordType": {
+          "type": "string"
+        },
+        "recordID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "recordID",
+        "recordType"
+      ]
+    },
+    "returnParameter": {
+      "RequestStatus": "string"
+    }
+  },
+  {
+    "name": "getCommunityServiceRecords",
+    "description": "Retrieve community service records for a citizen.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID"
+      ]
+    },
+    "returnParameter": {
+      "ServiceList": "array",
+      "ServiceDetails": "array"
+    }
+  },
+  {
+    "name": "applyForCommunityService",
+    "description": "Submit an application for community service enrollment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalID": {
+          "type": "string"
+        },
+        "serviceDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "personalID",
+        "serviceDetails"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  }
+]

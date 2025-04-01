@@ -1,0 +1,537 @@
+[
+  {
+    "name": "getEmployeeInfo",
+    "description": "Retrieve detailed information about an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "EmployeeName": "string",
+      "EmployeeID": "string",
+      "DateOfBirth": "string",
+      "Department": "string",
+      "Position": "string",
+      "HireDate": "string"
+    }
+  },
+  {
+    "name": "createEmploymentContract",
+    "description": "Create a new employment contract for an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "contractDetails": {
+          "type": "object",
+          "properties": {
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            },
+            "salary": {
+              "type": "integer"
+            },
+            "jobTitle": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "endDate",
+            "jobTitle",
+            "salary",
+            "startDate"
+          ]
+        }
+      },
+      "required": [
+        "contractDetails",
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "ContractID": "string"
+    }
+  },
+  {
+    "name": "getEmploymentContract",
+    "description": "Retrieve the employment contract details for an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "contractID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contractID"
+      ]
+    },
+    "returnParameter": {
+      "EmployeeID": "string",
+      "ContractStartDate": "string",
+      "ContractEndDate": "string",
+      "Salary": "number",
+      "JobTitle": "string",
+      "ContractTerms": "string"
+    }
+  },
+  {
+    "name": "updateEmploymentContractTitle",
+    "description": "Update the details of an existing employment contract.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "contractID": {
+          "type": "string"
+        },
+        "newTitle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contractID",
+        "newTitle"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "updateEmploymentContractSalary",
+    "description": "Update the details of an existing employment contract.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "contractID": {
+          "type": "string"
+        },
+        "newSalary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contractID",
+        "newSalary"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "terminateEmploymentContract",
+    "description": "Terminate the employment contract of an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "contractID": {
+          "type": "string"
+        },
+        "terminationDate": {
+          "type": "string"
+        },
+        "terminationReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "contractID",
+        "terminationDate",
+        "terminationReason"
+      ]
+    },
+    "returnParameter": {
+      "TerminationStatus": "string"
+    }
+  },
+  {
+    "name": "getEmployeeSalaryDetails",
+    "description": "Retrieve salary details for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "BasicSalary": "number",
+      "Allowances": "number",
+      "Deductions": "number",
+      "NetSalary": "number"
+    }
+  },
+  {
+    "name": "processPayroll",
+    "description": "Process payroll for an employee for a specific period.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "payPeriod": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID",
+        "payPeriod"
+      ]
+    },
+    "returnParameter": {
+      "PayrollStatus": "string"
+    }
+  },
+  {
+    "name": "getPayrollHistory",
+    "description": "Retrieve payroll history for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "PayrollHistory": "string"
+    }
+  },
+  {
+    "name": "updateEmployeeSalary",
+    "description": "Update the salary details for an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "Salary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Salary",
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getEmployeeLeaveBalance",
+    "description": "Retrieve leave balance details for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "AnnualLeaveBalance": "number",
+      "SickLeaveBalance": "number",
+      "MaternityLeaveBalance": "number",
+      "OtherLeaveBalance": "number"
+    }
+  },
+  {
+    "name": "applyForLeave",
+    "description": "Submit a leave application for an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "leaveType": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID",
+        "endDate",
+        "leaveType",
+        "startDate"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getLeaveApplicationStatus",
+    "description": "Retrieve the status of a leave application.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "applicationID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationID": "string",
+      "EmployeeID": "string",
+      "LeaveType": "string",
+      "StartDate": "string",
+      "EndDate": "string",
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "updateLeaveApplication",
+    "description": "Update the details of an existing leave application.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "applicationID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "object",
+          "properties": {
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "endDate",
+            "startDate"
+          ]
+        }
+      },
+      "required": [
+        "applicationID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getEmployeeBenefits",
+    "description": "Retrieve benefits information for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "HealthInsurance": "string",
+      "RetirementPlan": "string",
+      "LifeInsurance": "string",
+      "OtherBenefits": "string"
+    }
+  },
+  {
+    "name": "enrollEmployeeInBenefit",
+    "description": "Enroll an employee in a specific benefit program.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "benefitType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "benefitType",
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "EnrollmentStatus": "string"
+    }
+  },
+  {
+    "name": "getPerformanceReview",
+    "description": "Retrieve the performance review for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "reviewPeriod": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID",
+        "reviewPeriod"
+      ]
+    },
+    "returnParameter": {
+      "ReviewDate": "string",
+      "ReviewerName": "string",
+      "OverallRating": "string",
+      "Comments": "string"
+    }
+  },
+  {
+    "name": "submitPerformanceReview",
+    "description": "Submit a performance review for an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "reviewData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID",
+        "reviewData"
+      ]
+    },
+    "returnParameter": {
+      "SubmissionStatus": "string"
+    }
+  },
+  {
+    "name": "getTrainingRecords",
+    "description": "Retrieve training records for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "TrainingPrograms": "array",
+      "CompletionStatus": "string"
+    }
+  },
+  {
+    "name": "assignTrainingProgram",
+    "description": "Assign a training program to an employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "trainingProgramID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "employeeID",
+        "trainingProgramID"
+      ]
+    },
+    "returnParameter": {
+      "AssignmentStatus": "string"
+    }
+  },
+  {
+    "name": "getEmployeeAttendance",
+    "description": "Retrieve attendance records for a specific employee.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "employeeID": {
+          "type": "string"
+        },
+        "dateRange": {
+          "type": "object",
+          "properties": {
+            "startDate": {
+              "type": "string"
+            },
+            "endDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "endDate",
+            "startDate"
+          ]
+        }
+      },
+      "required": [
+        "dateRange",
+        "employeeID"
+      ]
+    },
+    "returnParameter": {
+      "AttendanceRecords": "string"
+    }
+  }
+]

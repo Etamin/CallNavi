@@ -1,0 +1,1063 @@
+[
+  {
+    "name": "getCarInsuranceQuote",
+    "description": "Retrieve a quote for car insurance based on provided details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "carDetails": {
+          "type": "object",
+          "properties": {
+            "make": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            },
+            "year": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "make",
+            "model",
+            "year"
+          ]
+        },
+        "driverAge": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "carDetails",
+        "driverAge"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "string"
+    }
+  },
+  {
+    "name": "purchaseCarInsurancePolicy",
+    "description": "Purchase a car insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        },
+        "paymentCard": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paymentCard",
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string"
+    }
+  },
+  {
+    "name": "getCarInsurancePolicy",
+    "description": "Retrieve details of an existing car insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "CarDetails": "string",
+      "CoverageDetails": "string",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewCarInsurancePolicy",
+    "description": "Renew an existing car insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelCarInsurancePolicy",
+    "description": "Cancel an existing car insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "fileCarInsuranceClaim",
+    "description": "File a claim for a car insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "object",
+          "properties": {
+            "accidentDate": {
+              "type": "string"
+            },
+            "damageDetails": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "accidentDate",
+            "damageDetails"
+          ]
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getCarInsuranceClaimStatus",
+    "description": "Retrieve the status of a car insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  },
+  {
+    "name": "getHouseInsuranceQuote",
+    "description": "Retrieve a quote for house insurance based on provided details, size on sqft.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "size": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location",
+        "size"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "object"
+    }
+  },
+  {
+    "name": "purchaseHouseInsurancePolicy",
+    "description": "Purchase a house insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "paymentInfo": "string"
+    }
+  },
+  {
+    "name": "getHouseInsurancePolicy",
+    "description": "Retrieve details of an existing house insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "HouseDetails": "string",
+      "CoverageDetails": "string",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewHouseInsurancePolicy",
+    "description": "Renew an existing house insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelHouseInsurancePolicy",
+    "description": "Cancel an existing house insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "fileHouseInsuranceClaim",
+    "description": "File a claim for a house insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getHouseInsuranceClaimStatus",
+    "description": "Retrieve the status of a house insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  },
+  {
+    "name": "getHealthInsuranceQuote",
+    "description": "Retrieve a quote for health insurance based on provided details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalDetails": {
+          "type": "object",
+          "properties": {
+            "familySize": {
+              "type": "string"
+            },
+            "ages": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "ages",
+            "familySize"
+          ]
+        }
+      },
+      "required": [
+        "personalDetails"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "object"
+    }
+  },
+  {
+    "name": "purchaseHealthInsurancePolicy",
+    "description": "Purchase a health insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "paymentInfo": "string"
+    }
+  },
+  {
+    "name": "getHealthInsurancePolicy",
+    "description": "Retrieve details of an existing health insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "CoverageDetails": "string",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewHealthInsurancePolicy",
+    "description": "Renew an existing health insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelHealthInsurancePolicy",
+    "description": "Cancel an existing health insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "fileHealthInsuranceClaim",
+    "description": "File a claim for a health insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "object",
+          "properties": {
+            "hospitalName": {
+              "type": "string"
+            },
+            "invoiceDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "hospitalName",
+            "invoiceDate"
+          ]
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getHealthInsuranceClaimStatus",
+    "description": "Retrieve the status of a health insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  },
+  {
+    "name": "getLifeInsuranceQuote",
+    "description": "Retrieve a quote for life insurance based on provided details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "personalDetails": {
+          "type": "object",
+          "properties": {
+            "age": {
+              "type": "string"
+            },
+            "gender": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "age",
+            "gender"
+          ]
+        }
+      },
+      "required": [
+        "personalDetails"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "object"
+    }
+  },
+  {
+    "name": "purchaseLifeInsurancePolicy",
+    "description": "Purchase a life insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "paymentInfo": "string"
+    }
+  },
+  {
+    "name": "getLifeInsurancePolicy",
+    "description": "Retrieve details of an existing life insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "CoverageDetails": "string",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewLifeInsurancePolicy",
+    "description": "Renew an existing life insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelLifeInsurancePolicy",
+    "description": "Cancel an existing life insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "fileLifeInsuranceClaim",
+    "description": "File a claim for a life insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "object",
+          "properties": {
+            "beneficiaryName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "beneficiaryName"
+          ]
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getLifeInsuranceClaimStatus",
+    "description": "Retrieve the status of a life insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  },
+  {
+    "name": "getTravelInsuranceQuote",
+    "description": "Retrieve a quote for travel insurance based on provided details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "travelDetails": {
+          "type": "object",
+          "properties": {
+            "destination": {
+              "type": "string"
+            },
+            "tripStartDate": {
+              "type": "string"
+            },
+            "tripEndDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "destination",
+            "tripEndDate",
+            "tripStartDate"
+          ]
+        }
+      },
+      "required": [
+        "travelDetails"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "object"
+    }
+  },
+  {
+    "name": "purchaseTravelInsurancePolicy",
+    "description": "Purchase a travel insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "paymentInfo": "string"
+    }
+  },
+  {
+    "name": "getTravelInsurancePolicy",
+    "description": "Retrieve details of an existing travel insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "CoverageDetails": "object",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewTravelInsurancePolicy",
+    "description": "Renew an existing travel insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelTravelInsurancePolicy",
+    "description": "Cancel an existing travel insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "fileTravelInsuranceClaim",
+    "description": "File a claim for a travel insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getTravelInsuranceClaimStatus",
+    "description": "Retrieve the status of a travel insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  },
+  {
+    "name": "getPetInsuranceQuote",
+    "description": "Retrieve a quote for pet insurance based on provided details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "species": {
+          "type": "string"
+        },
+        "age": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "age",
+        "species"
+      ]
+    },
+    "returnParameter": {
+      "QuoteID": "string",
+      "PremiumAmount": "number",
+      "CoverageDetails": "object"
+    }
+  },
+  {
+    "name": "purchasePetInsurancePolicy",
+    "description": "Purchase a pet insurance policy using a previously obtained quote.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "quoteID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "quoteID"
+      ]
+    },
+    "returnParameter": {
+      "paymentInfo": "string"
+    }
+  },
+  {
+    "name": "getPetInsurancePolicy",
+    "description": "Retrieve details of an existing pet insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "PolicyID": "string",
+      "PolicyHolderName": "string",
+      "PetDetails": "string",
+      "CoverageDetails": "string",
+      "PremiumAmount": "number",
+      "PolicyStartDate": "string",
+      "PolicyEndDate": "string"
+    }
+  },
+  {
+    "name": "renewPetInsurancePolicy",
+    "description": "Renew an existing pet insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "renewalDetails": {
+          "type": "object",
+          "properties": {
+            "newExpiryDate": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "newExpiryDate"
+          ]
+        }
+      },
+      "required": [
+        "policyID",
+        "renewalDetails"
+      ]
+    },
+    "returnParameter": {
+      "RenewalStatus": "string"
+    }
+  },
+  {
+    "name": "cancelPetInsurancePolicy",
+    "description": "Cancel an existing pet insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "filePetInsuranceClaim",
+    "description": "File a claim for a pet insurance policy.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "policyID": {
+          "type": "string"
+        },
+        "claimDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimDetails",
+        "policyID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string"
+    }
+  },
+  {
+    "name": "getPetInsuranceClaimStatus",
+    "description": "Retrieve the status of a pet insurance claim.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "claimID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "claimID"
+      ]
+    },
+    "returnParameter": {
+      "ClaimID": "string",
+      "ClaimStatus": "string",
+      "ClaimAmount": "number",
+      "ClaimDate": "string"
+    }
+  }
+]

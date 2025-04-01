@@ -1,0 +1,1413 @@
+[
+  {
+    "name": "getAccountIdFromNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the account ID associated with a given phone number.",
+    "returnParameter": {
+      "accountId": "string"
+    }
+  },
+  {
+    "name": "getNameFromNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the name associated with a given phone number.",
+    "returnParameter": {
+      "Name": "string"
+    }
+  },
+  {
+    "name": "getBillForNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the billing details for a specific phone number and billing period.",
+    "returnParameter": {
+      "BillAmount": "number",
+      "BillDetails": "object"
+    }
+  },
+  {
+    "name": "getCallHistory",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the call history for a given phone number within a specified date range.",
+    "returnParameter": {
+      "CallHistory": "array"
+    }
+  },
+  {
+    "name": "getTextMessageHistory",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the SMS history for a given phone number within a specified date range.",
+    "returnParameter": {
+      "MessageHistory": "array"
+    }
+  },
+  {
+    "name": "getDataUsage",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves data usage details for a specific phone number within a given date range.",
+    "returnParameter": {
+      "DataUsage": "number"
+    }
+  },
+  {
+    "name": "activateSIMCard",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Activates a SIM card for a given phone number.",
+    "returnParameter": {
+      "ActivationStatus": "string"
+    }
+  },
+  {
+    "name": "deactivateSIMCard",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Deactivates a specific SIM card.",
+    "returnParameter": {
+      "DeactivationStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailablePlans",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array"
+    },
+    "description": "Retrieves a list of available mobile plans.",
+    "returnParameter": {
+      "AvailablePlans": "array"
+    }
+  },
+  {
+    "name": "getPlanDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves details of a specific mobile plan.",
+    "returnParameter": {
+      "PlanDetails": "object"
+    }
+  },
+  {
+    "name": "updatePlanForNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the mobile plan for a specific phone number.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getVoicemailSettings",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the voicemail settings for a specific phone number.",
+    "returnParameter": {
+      "VoicemailSettings": "object"
+    }
+  },
+  {
+    "name": "updateVoicemailSettings",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the voicemail settings for a specific phone number.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getNumberStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current status (active/inactive) of a phone number.",
+    "returnParameter": {
+      "NumberStatus": "string"
+    }
+  },
+  {
+    "name": "blockNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Blocks a specific number from contacting the given phone number.",
+    "returnParameter": {
+      "BlockStatus": "string"
+    }
+  },
+  {
+    "name": "unblockNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Unblocks a previously blocked number for a given phone number.",
+    "returnParameter": {
+      "UnblockStatus": "string"
+    }
+  },
+  {
+    "name": "getRoamingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current roaming status for a specific phone number.",
+    "returnParameter": {
+      "RoamingStatus": "string"
+    }
+  },
+  {
+    "name": "updateRoamingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the roaming status for a specific phone number.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getInternationalCallRates",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the international call rates for a specific country code.",
+    "returnParameter": {
+      "CallRates": "object"
+    }
+  },
+  {
+    "name": "updateCallForwarding",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the call forwarding settings for a specific phone number.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getCallForwardingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current call forwarding status for a specific phone number.",
+    "returnParameter": {
+      "ForwardingStatus": "string"
+    }
+  },
+  {
+    "name": "getVoicemailTranscripts",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves voicemail transcripts for a given phone number.",
+    "returnParameter": {
+      "Transcripts": "array"
+    }
+  },
+  {
+    "name": "getAccountDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves details about a specific telecommunications account.",
+    "returnParameter": {
+      "AccountDetails": "object"
+    }
+  },
+  {
+    "name": "updateAccountDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the details for a specific telecommunications account.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getNetworkStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array"
+    },
+    "description": "Retrieves the current status of the telecommunications network.",
+    "returnParameter": {
+      "NetworkStatus": "object"
+    }
+  },
+  {
+    "name": "getTowerLocation",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the location of the nearest cell tower for a given phone number.",
+    "returnParameter": {
+      "TowerLocation": "object"
+    }
+  },
+  {
+    "name": "getSignalStrength",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current signal strength for a specific phone number.",
+    "returnParameter": {
+      "SignalStrength": "string"
+    }
+  },
+  {
+    "name": "reportNetworkIssue",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Reports a network issue for a specific phone number.",
+    "returnParameter": {
+      "IssueID": "string",
+      "ReportStatus": "string"
+    }
+  },
+  {
+    "name": "getSupportTicketStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the status of a support ticket.",
+    "returnParameter": {
+      "TicketStatus": "string"
+    }
+  },
+  {
+    "name": "openSupportTicket",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Opens a new support ticket for a specific issue.",
+    "returnParameter": {
+      "TicketID": "string",
+      "OpeningStatus": "string"
+    }
+  },
+  {
+    "name": "closeSupportTicket",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Closes an existing support ticket.",
+    "returnParameter": {
+      "ClosingStatus": "string"
+    }
+  },
+  {
+    "name": "getPaymentHistory",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the payment history for a specific account within a given date range.",
+    "returnParameter": {
+      "PaymentHistory": "array"
+    }
+  },
+  {
+    "name": "makePayment",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Makes a payment towards a specific account.",
+    "returnParameter": {
+      "PaymentID": "string",
+      "PaymentStatus": "string"
+    }
+  },
+  {
+    "name": "getPaymentStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the status of a specific payment.",
+    "returnParameter": {
+      "PaymentStatus": "string"
+    }
+  },
+  {
+    "name": "getPaymentMethods",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the available payment methods for a specific account.",
+    "returnParameter": {
+      "PaymentMethods": "array"
+    }
+  },
+  {
+    "name": "addPaymentMethod",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Adds a new payment method to a specific account.",
+    "returnParameter": {
+      "PaymentMethodID": "string",
+      "AdditionStatus": "string"
+    }
+  },
+  {
+    "name": "deletePaymentMethod",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Deletes a payment method from a specific account.",
+    "returnParameter": {
+      "DeletionStatus": "string"
+    }
+  },
+  {
+    "name": "getBillingAddress",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the billing address for a specific account.",
+    "returnParameter": {
+      "BillingAddress": "object"
+    }
+  },
+  {
+    "name": "updateBillingAddress",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the billing address for a specific account.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getAutoPayStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the auto-pay status for a specific account.",
+    "returnParameter": {
+      "AutoPayStatus": "string"
+    }
+  },
+  {
+    "name": "updateAutoPayStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the auto-pay status for a specific account.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getDataPlanUsage",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the data plan usage for a specific phone number.",
+    "returnParameter": {
+      "DataUsage": "number"
+    }
+  },
+  {
+    "name": "updateDataPlan",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the data plan for a specific phone number.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getFamilyPlanDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the details of a family plan associated with a specific account.",
+    "returnParameter": {
+      "FamilyPlanDetails": "object"
+    }
+  },
+  {
+    "name": "addMemberToFamilyPlan",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Adds a new member to a family plan.",
+    "returnParameter": {
+      "AdditionStatus": "string"
+    }
+  },
+  {
+    "name": "removeMemberFromFamilyPlan",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Removes a member from a family plan.",
+    "returnParameter": {
+      "RemovalStatus": "string"
+    }
+  },
+  {
+    "name": "getPlanComparison",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Compares the current plan with other available plans.",
+    "returnParameter": {
+      "ComparisonResult": "object"
+    }
+  },
+  {
+    "name": "getDiscountsAndPromotions",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array"
+    },
+    "description": "Retrieves available discounts and promotions for telecommunication services.",
+    "returnParameter": {
+      "DiscountsAndPromotions": "array"
+    }
+  },
+  {
+    "name": "applyDiscountCode",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Applies a discount code to a specific account.",
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getContractDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the contract details for a specific account.",
+    "returnParameter": {
+      "ContractDetails": "object"
+    }
+  },
+  {
+    "name": "updateContract",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the contract details for a specific account.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "terminateContract",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Terminates the contract for a specific account.",
+    "returnParameter": {
+      "TerminationStatus": "string"
+    }
+  },
+  {
+    "name": "getDeviceDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves details about a specific telecommunications device.",
+    "returnParameter": {
+      "DeviceDetails": "object"
+    }
+  },
+  {
+    "name": "updateDeviceSettings",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the settings for a specific telecommunications device.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getDeviceCompatibility",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Checks if a device is compatible with a specific network type.",
+    "returnParameter": {
+      "CompatibilityStatus": "string"
+    }
+  },
+  {
+    "name": "reportLostDevice",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Reports a device as lost.",
+    "returnParameter": {
+      "ReportStatus": "string"
+    }
+  },
+  {
+    "name": "reportStolenDevice",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Reports a device as stolen.",
+    "returnParameter": {
+      "ReportStatus": "string"
+    }
+  },
+  {
+    "name": "getWarrantyStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the warranty status for a specific device.",
+    "returnParameter": {
+      "WarrantyStatus": "string"
+    }
+  },
+  {
+    "name": "getUpgradeEligibility",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Checks the upgrade eligibility for a specific device.",
+    "returnParameter": {
+      "EligibilityStatus": "string"
+    }
+  },
+  {
+    "name": "requestDeviceUpgrade",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Requests an upgrade for a specific device.",
+    "returnParameter": {
+      "RequestStatus": "string"
+    }
+  },
+  {
+    "name": "getSupportCenterLocation",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the location of the nearest support center based on a given zip code.",
+    "returnParameter": {
+      "SupportCenterLocation": "object"
+    }
+  },
+  {
+    "name": "scheduleSupportAppointment",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Schedules an appointment at a support center.",
+    "returnParameter": {
+      "AppointmentID": "string",
+      "SchedulingStatus": "string"
+    }
+  },
+  {
+    "name": "cancelSupportAppointment",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Cancels a previously scheduled support appointment.",
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getOutageReports",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves reports of network outages in a specific area.",
+    "returnParameter": {
+      "OutageReports": "array"
+    }
+  },
+  {
+    "name": "getInternationalRoamingRates",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the international roaming rates for a specific country.",
+    "returnParameter": {
+      "RoamingRates": "object"
+    }
+  },
+  {
+    "name": "enableInternationalRoaming",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables international roaming for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableInternationalRoaming",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables international roaming for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getWiFiCallingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current status of WiFi calling for a specific phone number.",
+    "returnParameter": {
+      "WiFiCallingStatus": "string"
+    }
+  },
+  {
+    "name": "enableWiFiCalling",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables WiFi calling for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableWiFiCalling",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables WiFi calling for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getVoLTEStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current VoLTE (Voice over LTE) status for a specific phone number.",
+    "returnParameter": {
+      "VoLTEStatus": "string"
+    }
+  },
+  {
+    "name": "enableVoLTE",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables VoLTE for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableVoLTE",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables VoLTE for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getDeviceBlacklistStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Checks if a specific device is blacklisted.",
+    "returnParameter": {
+      "BlacklistStatus": "string"
+    }
+  },
+  {
+    "name": "blacklistDevice",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Blacklists a specific device.",
+    "returnParameter": {
+      "BlacklistStatus": "string"
+    }
+  },
+  {
+    "name": "whitelistDevice",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Removes a device from the blacklist.",
+    "returnParameter": {
+      "WhitelistStatus": "string"
+    }
+  },
+  {
+    "name": "get911RegistrationStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the 911 emergency service registration status for a specific phone number.",
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "registerFor911Service",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Registers a phone number for 911 emergency services.",
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "unregisterFrom911Service",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Unregisters a phone number from 911 emergency services.",
+    "returnParameter": {
+      "UnregistrationStatus": "string"
+    }
+  },
+  {
+    "name": "getEmergencyAlertsStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the status of emergency alerts for a specific phone number.",
+    "returnParameter": {
+      "AlertsStatus": "string"
+    }
+  },
+  {
+    "name": "enableEmergencyAlerts",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables emergency alerts for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableEmergencyAlerts",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables emergency alerts for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getSIMCardDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves details of a specific SIM card.",
+    "returnParameter": {
+      "SIMCardDetails": "object"
+    }
+  },
+  {
+    "name": "updateSIMCardDetails",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Updates the details of a specific SIM card.",
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getPhoneNumberPortingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the status of phone number porting for a specific number.",
+    "returnParameter": {
+      "PortingStatus": "string"
+    }
+  },
+  {
+    "name": "requestPhoneNumberPorting",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Requests porting of a phone number from one provider to another.",
+    "returnParameter": {
+      "RequestStatus": "string"
+    }
+  },
+  {
+    "name": "getPhoneNumberAvailability",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Checks the availability of phone numbers in a specific area code.",
+    "returnParameter": {
+      "AvailabilityStatus": "string"
+    }
+  },
+  {
+    "name": "reservePhoneNumber",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Reserves a phone number in a specific area code.",
+    "returnParameter": {
+      "ReservationStatus": "string"
+    }
+  },
+  {
+    "name": "getSpamCallProtectionStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the current spam call protection status for a specific phone number.",
+    "returnParameter": {
+      "ProtectionStatus": "string"
+    }
+  },
+  {
+    "name": "enableSpamCallProtection",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables spam call protection for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableSpamCallProtection",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables spam call protection for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getCallRecordingStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the call recording status for a specific phone number.",
+    "returnParameter": {
+      "RecordingStatus": "string"
+    }
+  },
+  {
+    "name": "enableCallRecording",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables call recording for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableCallRecording",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables call recording for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getCallBarringStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the call barring status for a specific phone number.",
+    "returnParameter": {
+      "BarringStatus": "string"
+    }
+  },
+  {
+    "name": "enableCallBarring",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables call barring for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  },
+  {
+    "name": "disableCallBarring",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Disables call barring for a specific phone number.",
+    "returnParameter": {
+      "DisableStatus": "string"
+    }
+  },
+  {
+    "name": "getSimSwapStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the SIM swap status for a specific phone number.",
+    "returnParameter": {
+      "SimSwapStatus": "string"
+    }
+  },
+  {
+    "name": "requestSimSwap",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Requests a SIM swap for a specific phone number.",
+    "returnParameter": {
+      "RequestStatus": "string"
+    }
+  },
+  {
+    "name": "getTetheringStatus",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Retrieves the tethering status for a specific phone number.",
+    "returnParameter": {
+      "TetheringStatus": "string"
+    }
+  },
+  {
+    "name": "enableTethering",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "description": "Enables tethering for a specific phone number.",
+    "returnParameter": {
+      "EnableStatus": "string"
+    }
+  }
+]

@@ -1,0 +1,1083 @@
+[
+  {
+    "name": "checkRoomAvailability",
+    "description": "Check the availability of rooms for a specified date range.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "roomType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "endDate",
+        "roomType",
+        "startDate"
+      ]
+    },
+    "returnParameter": {
+      "AvailableRooms": "string"
+    }
+  },
+  {
+    "name": "bookRoom",
+    "description": "Book a room for a guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "roomType": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        },
+        "paymentDetails": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "method"
+          ]
+        }
+      },
+      "required": [
+        "endDate",
+        "guestID",
+        "paymentDetails",
+        "roomType",
+        "startDate"
+      ]
+    },
+    "returnParameter": {
+      "BookingConfirmation": "string"
+    }
+  },
+  {
+    "name": "getBookingDetails",
+    "description": "Retrieve the details of a specific booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID"
+      ]
+    },
+    "returnParameter": {
+      "GuestID": "string",
+      "RoomType": "string",
+      "StartDate": "string",
+      "EndDate": "string",
+      "BookingStatus": "string"
+    }
+  },
+  {
+    "name": "cancelBooking",
+    "description": "Cancel an existing booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "cancellationReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID",
+        "cancellationReason"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "updateBooking",
+    "description": "Update the details of an existing booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getRoomStatus",
+    "description": "Retrieve the current status of a specific room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "RoomNumber": "string",
+      "RoomStatus": "string",
+      "CurrentOccupant": "string",
+      "CleaningStatus": "string"
+    }
+  },
+  {
+    "name": "checkInGuest",
+    "description": "Check in a guest to their booked room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "guestID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID",
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "CheckInStatus": "string"
+    }
+  },
+  {
+    "name": "checkOutGuest",
+    "description": "Check out a guest from their room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "guestID": {
+          "type": "string"
+        },
+        "paymentDetails": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "method"
+          ]
+        }
+      },
+      "required": [
+        "bookingID",
+        "guestID",
+        "paymentDetails"
+      ]
+    },
+    "returnParameter": {
+      "CheckOutStatus": "string"
+    }
+  },
+  {
+    "name": "getGuestInfo",
+    "description": "Retrieve detailed information about a guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "GuestName": "string",
+      "GuestID": "string",
+      "ContactInfo": "string",
+      "LoyaltyProgramID": "string"
+    }
+  },
+  {
+    "name": "updateGuestInfo",
+    "description": "Update the information of a specific guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getRoomTypes",
+    "description": "Retrieve a list of available room types and their descriptions.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "RoomTypes": "string"
+    }
+  },
+  {
+    "name": "getRoomRates",
+    "description": "Retrieve the rates for different room types.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomType": {
+          "type": "string"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "endDate",
+        "roomType",
+        "startDate"
+      ]
+    },
+    "returnParameter": {
+      "RoomType": "string",
+      "RatePerNight": "number"
+    }
+  },
+  {
+    "name": "addRoomServiceOrder",
+    "description": "Place a room service order for a guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "roomNumber": {
+          "type": "string"
+        },
+        "orderDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID",
+        "orderDetails",
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "OrderConfirmation": "string"
+    }
+  },
+  {
+    "name": "getRoomServiceOrder",
+    "description": "Retrieve the details of a specific room service order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderID"
+      ]
+    },
+    "returnParameter": {
+      "OrderID": "string",
+      "RoomNumber": "string",
+      "OrderDetails": "string",
+      "OrderStatus": "string"
+    }
+  },
+  {
+    "name": "updateRoomServiceOrder",
+    "description": "Update the details of an existing room service order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderID": {
+          "type": "string"
+        },
+        "updateData": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderID",
+        "updateData"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "cancelRoomServiceOrder",
+    "description": "Cancel a room service order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderID": {
+          "type": "string"
+        },
+        "cancellationReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cancellationReason",
+        "orderID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getHousekeepingStatus",
+    "description": "Retrieve the housekeeping status for a specific room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "RoomNumber": "string",
+      "CleaningStatus": "string",
+      "LastCleanedDate": "string"
+    }
+  },
+  {
+    "name": "updateHousekeepingStatus",
+    "description": "Update the housekeeping status of a room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        },
+        "cleaningStatus": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cleaningStatus",
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "scheduleHousekeeping",
+    "description": "Schedule housekeeping for a specific room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        },
+        "cleaningDate": {
+          "type": "string"
+        },
+        "cleaningTime": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cleaningDate",
+        "cleaningTime",
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "SchedulingStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableAmenities",
+    "description": "Retrieve a list of available amenities in the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "AmenitiesList": "string"
+    }
+  },
+  {
+    "name": "reserveAmenity",
+    "description": "Reserve an amenity for a guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "amenityID": {
+          "type": "string"
+        },
+        "reservationDate": {
+          "type": "string"
+        },
+        "reservationTime": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "amenityID",
+        "guestID",
+        "reservationDate",
+        "reservationTime"
+      ]
+    },
+    "returnParameter": {
+      "ReservationStatus": "string"
+    }
+  },
+  {
+    "name": "cancelAmenityReservation",
+    "description": "Cancel a reservation for an amenity.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "reservationID": {
+          "type": "string"
+        },
+        "cancellationReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cancellationReason",
+        "reservationID"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getLoyaltyProgramInfo",
+    "description": "Retrieve information about a guest's loyalty program.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "loyaltyProgramID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "loyaltyProgramID"
+      ]
+    },
+    "returnParameter": {
+      "ProgramName": "string",
+      "PointsBalance": "number",
+      "MembershipLevel": "string"
+    }
+  },
+  {
+    "name": "updateLoyaltyProgramPoints",
+    "description": "Update the points balance for a guest's loyalty program.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "loyaltyProgramID": {
+          "type": "string"
+        },
+        "pointsToAdd": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "loyaltyProgramID",
+        "pointsToAdd"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getEventSpaces",
+    "description": "Retrieve a list of available event spaces in the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "EventSpacesList": "string"
+    }
+  },
+  {
+    "name": "bookEventSpace",
+    "description": "Book an event space for a specific date and time.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "eventSpaceID": {
+          "type": "string"
+        },
+        "eventDate": {
+          "type": "string"
+        },
+        "eventTime": {
+          "type": "string"
+        },
+        "eventDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eventDate",
+        "eventDetails",
+        "eventSpaceID",
+        "eventTime",
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "BookingConfirmation": "string"
+    }
+  },
+  {
+    "name": "cancelEventSpaceBooking",
+    "description": "Cancel a booking for an event space.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "cancellationReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID",
+        "cancellationReason"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getHotelPolicies",
+    "description": "Retrieve the policies of the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "HotelPolicies": "string"
+    }
+  },
+  {
+    "name": "getSpecialOffers",
+    "description": "Retrieve a list of current special offers available at the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "SpecialOffersList": "string"
+    }
+  },
+  {
+    "name": "applySpecialOffer",
+    "description": "Apply a special offer to a guest's booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "offerID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID",
+        "offerID"
+      ]
+    },
+    "returnParameter": {
+      "ApplicationStatus": "string"
+    }
+  },
+  {
+    "name": "getBillingDetails",
+    "description": "Retrieve billing details for a specific booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingID"
+      ]
+    },
+    "returnParameter": {
+      "TotalAmount": "number",
+      "Taxes": "number",
+      "Discounts": "number",
+      "FinalAmount": "number"
+    }
+  },
+  {
+    "name": "processPayment",
+    "description": "Process a payment for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingID": {
+          "type": "string"
+        },
+        "paymentDetails": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string"
+            },
+            "amount": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "amount",
+            "method"
+          ]
+        }
+      },
+      "required": [
+        "bookingID",
+        "paymentDetails"
+      ]
+    },
+    "returnParameter": {
+      "PaymentStatus": "string"
+    }
+  },
+  {
+    "name": "getPaymentHistory",
+    "description": "Retrieve payment history for a specific guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "PaymentHistory": "string"
+    }
+  },
+  {
+    "name": "getStaffList",
+    "description": "Retrieve a list of hotel staff members and their roles.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "StaffList": "string"
+    }
+  },
+  {
+    "name": "getStaffSchedule",
+    "description": "Retrieve the work schedule for a specific staff member.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "staffID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "staffID"
+      ]
+    },
+    "returnParameter": {
+      "StaffID": "string",
+      "WorkSchedule": "array"
+    }
+  },
+  {
+    "name": "updateStaffSchedule",
+    "description": "Update the work schedule of a staff member.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "staffID": {
+          "type": "string"
+        },
+        "scheduleDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "scheduleDetails",
+        "staffID"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getMaintenanceRequests",
+    "description": "Retrieve a list of maintenance requests for the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "MaintenanceRequests": "string"
+    }
+  },
+  {
+    "name": "createMaintenanceRequest",
+    "description": "Create a new maintenance request for a specific room or area.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        },
+        "issueDescription": {
+          "type": "string"
+        },
+        "requestedBy": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "issueDescription",
+        "requestedBy",
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "RequestID": "string"
+    }
+  },
+  {
+    "name": "updateMaintenanceRequest",
+    "description": "Update the status of an existing maintenance request.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "requestID": {
+          "type": "string"
+        },
+        "updateDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "requestID",
+        "updateDetails"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getHotelFeedback",
+    "description": "Retrieve feedback and reviews submitted by guests.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "FeedbackList": "string"
+    }
+  },
+  {
+    "name": "submitGuestFeedback",
+    "description": "Submit feedback or a review for a guest's stay.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "feedbackDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "feedbackDetails",
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "SubmissionStatus": "string"
+    }
+  },
+  {
+    "name": "getRoomInventory",
+    "description": "Retrieve the inventory of items in a specific room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "RoomInventory": "string"
+    }
+  },
+  {
+    "name": "updateRoomInventory",
+    "description": "Update the inventory of items in a specific room.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "roomNumber": {
+          "type": "string"
+        },
+        "inventoryDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "inventoryDetails",
+        "roomNumber"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getGuestPreferences",
+    "description": "Retrieve preferences and special requests for a specific guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "GuestPreferences": "string"
+    }
+  },
+  {
+    "name": "updateGuestPreferences",
+    "description": "Update preferences and special requests for a specific guest.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID",
+        "preferences"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getHotelEvents",
+    "description": "Retrieve a list of events happening at the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "HotelEventsList": "string"
+    }
+  },
+  {
+    "name": "registerForHotelEvent",
+    "description": "Register a guest for an event happening at the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "eventID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eventID",
+        "guestID"
+      ]
+    },
+    "returnParameter": {
+      "RegistrationStatus": "string"
+    }
+  },
+  {
+    "name": "getConciergeServices",
+    "description": "Retrieve a list of concierge services offered by the hotel.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "ConciergeServicesList": "string"
+    }
+  },
+  {
+    "name": "requestConciergeService",
+    "description": "Submit a request for a specific concierge service.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "guestID": {
+          "type": "string"
+        },
+        "serviceID": {
+          "type": "string"
+        },
+        "serviceDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "guestID",
+        "serviceDetails",
+        "serviceID"
+      ]
+    },
+    "returnParameter": {
+      "RequestStatus": "string"
+    }
+  }
+]

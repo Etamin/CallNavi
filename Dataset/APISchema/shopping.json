@@ -1,0 +1,1657 @@
+[
+  {
+    "name": "getItemPrice",
+    "description": "Retrieve the price of a specific item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "ItemPrice": "string"
+    }
+  },
+  {
+    "name": "payByVISA",
+    "description": "Process payment using VISA card.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "cardNumber": {
+          "type": "string"
+        },
+        "expiryDate": {
+          "type": "string"
+        },
+        "cvv": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "amount",
+        "cardNumber",
+        "cvv",
+        "expiryDate"
+      ]
+    },
+    "returnParameter": {
+      "PayToken": "string"
+    }
+  },
+  {
+    "name": "addItemToCart",
+    "description": "Add an item to the shopping cart.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "quantity"
+      ]
+    },
+    "returnParameter": {
+      "CartStatus": "string"
+    }
+  },
+  {
+    "name": "removeItemFromCart",
+    "description": "Remove an item from the shopping cart.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "CartStatus": "string"
+    }
+  },
+  {
+    "name": "getCartItems",
+    "description": "Retrieve the list of items in the shopping cart.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "CartItems": "string"
+    }
+  },
+  {
+    "name": "checkout",
+    "description": "Proceed to checkout and create an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "OrderId": "string"
+    }
+  },
+  {
+    "name": "getOrderStatus",
+    "description": "Get the status of a specific order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "OrderStatus": "string"
+    }
+  },
+  {
+    "name": "cancelOrder",
+    "description": "Cancel a specific order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "CancelConfirmation": "string"
+    }
+  },
+  {
+    "name": "applyDiscountCode",
+    "description": "Apply a discount code to the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "discountCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "discountCode",
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "DiscountStatus": "string"
+    }
+  },
+  {
+    "name": "getShippingOptions",
+    "description": "Retrieve available shipping options for the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingOptions": "string"
+    }
+  },
+  {
+    "name": "selectShippingOption",
+    "description": "Select a shipping option for the order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "shippingOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId",
+        "shippingOptionId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingConfirmation": "string"
+    }
+  },
+  {
+    "name": "getUserProfile",
+    "description": "Retrieve user profile information.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "UserProfile": "string"
+    }
+  },
+  {
+    "name": "updateUserProfile",
+    "description": "Update user profile information.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "profileData": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "name"
+          ]
+        }
+      },
+      "required": [
+        "profileData",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ProfileUpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getItemDetails",
+    "description": "Retrieve detailed information about a specific item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "ItemDetails": "string"
+    }
+  },
+  {
+    "name": "searchItems",
+    "description": "Search for items based on a query.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "returnParameter": {
+      "SearchResults": "string"
+    }
+  },
+  {
+    "name": "getRecommendations",
+    "description": "Retrieve item recommendations for the user.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "Recommendations": "string"
+    }
+  },
+  {
+    "name": "getOrderHistory",
+    "description": "Retrieve the order history of the user.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "OrderHistory": "string"
+    }
+  },
+  {
+    "name": "getWishlist",
+    "description": "Retrieve the user's wishlist.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "Wishlist": "string"
+    }
+  },
+  {
+    "name": "addItemToWishlist",
+    "description": "Add an item to the user's wishlist.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "WishlistStatus": "string"
+    }
+  },
+  {
+    "name": "removeItemFromWishlist",
+    "description": "Remove an item from the user's wishlist.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "WishlistStatus": "string"
+    }
+  },
+  {
+    "name": "getNotifications",
+    "description": "Retrieve notifications for the user.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "Notifications": "string"
+    }
+  },
+  {
+    "name": "markNotificationAsRead",
+    "description": "Mark a notification as read.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "notificationId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "notificationId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "NotificationStatus": "string"
+    }
+  },
+  {
+    "name": "subscribeToNewsletter",
+    "description": "Subscribe the user to the newsletter.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "SubscriptionStatus": "string"
+    }
+  },
+  {
+    "name": "unsubscribeFromNewsletter",
+    "description": "Unsubscribe the user from the newsletter.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "UnsubscriptionStatus": "string"
+    }
+  },
+  {
+    "name": "trackOrder",
+    "description": "Track the shipment status of an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "TrackingInfo": "string"
+    }
+  },
+  {
+    "name": "requestReturn",
+    "description": "Request a return for an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId",
+        "reason"
+      ]
+    },
+    "returnParameter": {
+      "ReturnRequestStatus": "string"
+    }
+  },
+  {
+    "name": "getReturnStatus",
+    "description": "Get the status of a return request.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "returnRequestId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "returnRequestId"
+      ]
+    },
+    "returnParameter": {
+      "ReturnStatus": "string"
+    }
+  },
+  {
+    "name": "submitReview",
+    "description": "Submit a review for an item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "string"
+        },
+        "review": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "rating",
+        "review",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ReviewStatus": "string"
+    }
+  },
+  {
+    "name": "getItemReviews",
+    "description": "Retrieve reviews for a specific item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "ItemReviews": "string"
+    }
+  },
+  {
+    "name": "getPopularItems",
+    "description": "Retrieve a list of popular items.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "PopularItems": "string"
+    }
+  },
+  {
+    "name": "getNewArrivals",
+    "description": "Retrieve a list of newly arrived items.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "NewArrivals": "string"
+    }
+  },
+  {
+    "name": "getCategories",
+    "description": "Retrieve a list of available categories.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "Categories": "string"
+    }
+  },
+  {
+    "name": "getCategoryItems",
+    "description": "Retrieve items within a specific category.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "categoryId"
+      ]
+    },
+    "returnParameter": {
+      "CategoryItems": "string"
+    }
+  },
+  {
+    "name": "getUserFavorites",
+    "description": "Retrieve the user's favorite items.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "Favorites": "string"
+    }
+  },
+  {
+    "name": "addItemToFavorites",
+    "description": "Add an item to the user's favorites.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "FavoritesStatus": "string"
+    }
+  },
+  {
+    "name": "removeItemFromFavorites",
+    "description": "Remove an item from the user's favorites.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "FavoritesStatus": "string"
+    }
+  },
+  {
+    "name": "getStoreLocations",
+    "description": "Retrieve a list of store locations.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "StoreLocations": "string"
+    }
+  },
+  {
+    "name": "getStoreHours",
+    "description": "Retrieve the operating hours of a specific store.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "storeId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "storeId"
+      ]
+    },
+    "returnParameter": {
+      "StoreHours": "string"
+    }
+  },
+  {
+    "name": "getReturnPolicy",
+    "description": "Retrieve the return policy information.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "ReturnPolicy": "string"
+    }
+  },
+  {
+    "name": "contactSupport",
+    "description": "Contact customer support.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "SupportTicket": "string"
+    }
+  },
+  {
+    "name": "getSupportTicketStatus",
+    "description": "Retrieve the status of a customer support ticket.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "ticketId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ticketId"
+      ]
+    },
+    "returnParameter": {
+      "TicketStatus": "string"
+    }
+  },
+  {
+    "name": "getPaymentMethods",
+    "description": "Retrieve available payment methods for the user.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PaymentMethods": "string"
+    }
+  },
+  {
+    "name": "savePaymentMethod",
+    "description": "Save a payment method for future use.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "paymentMethod": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paymentMethod",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PaymentMethodStatus": "string"
+    }
+  },
+  {
+    "name": "deletePaymentMethod",
+    "description": "Delete a saved payment method.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "paymentMethodId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "paymentMethodId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PaymentMethodStatus": "string"
+    }
+  },
+  {
+    "name": "updatePaymentMethod",
+    "description": "Update a saved payment method.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "paymentMethod": {
+          "type": "object",
+          "properties": {
+            "cardNumber": {
+              "type": "string"
+            },
+            "expiryDate": {
+              "type": "string"
+            },
+            "cvv": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "cardNumber",
+            "cvv",
+            "expiryDate"
+          ]
+        }
+      },
+      "required": [
+        "paymentMethod",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PaymentMethodStatus": "string"
+    }
+  },
+  {
+    "name": "getOrderInvoice",
+    "description": "Retrieve the invoice for a specific order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "Invoice": "string"
+    }
+  },
+  {
+    "name": "getAvailableCoupons",
+    "description": "Retrieve available coupons for the user.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "Coupons": "string"
+    }
+  },
+  {
+    "name": "applyCoupon",
+    "description": "Apply a coupon to the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "couponCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "couponCode",
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "CouponStatus": "string"
+    }
+  },
+  {
+    "name": "removeCoupon",
+    "description": "Remove an applied coupon from the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "couponCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "couponCode",
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "CouponStatus": "string"
+    }
+  },
+  {
+    "name": "getItemStock",
+    "description": "Check the stock availability of a specific item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "StockAvailability": "string"
+    }
+  },
+  {
+    "name": "reserveItem",
+    "description": "Reserve an item for purchase.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ReservationStatus": "string"
+    }
+  },
+  {
+    "name": "releaseItemReservation",
+    "description": "Release a previously reserved item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ReleaseStatus": "string"
+    }
+  },
+  {
+    "name": "getGiftCardBalance",
+    "description": "Check the balance of a gift card.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "giftCardCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "giftCardCode"
+      ]
+    },
+    "returnParameter": {
+      "GiftCardBalance": "string"
+    }
+  },
+  {
+    "name": "redeemGiftCard",
+    "description": "Redeem a gift card for an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "giftCardCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "giftCardCode",
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "RedemptionStatus": "string"
+    }
+  },
+  {
+    "name": "getDeliveryEstimate",
+    "description": "Get an estimated delivery date for an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "DeliveryEstimate": "string"
+    }
+  },
+  {
+    "name": "getUserPreferences",
+    "description": "Retrieve the user's shopping preferences.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "UserPreferences": "string"
+    }
+  },
+  {
+    "name": "updateUserPreferences",
+    "description": "Update the user's shopping preferences.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "preferences",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PreferencesUpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getLoyaltyPoints",
+    "description": "Retrieve the user's loyalty points balance.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "LoyaltyPoints": "string"
+    }
+  },
+  {
+    "name": "redeemLoyaltyPoints",
+    "description": "Redeem loyalty points for an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "points": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId",
+        "points"
+      ]
+    },
+    "returnParameter": {
+      "RedemptionStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableGiftWrapOptions",
+    "description": "Retrieve available gift wrap options for the order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "GiftWrapOptions": "string"
+    }
+  },
+  {
+    "name": "selectGiftWrapOption",
+    "description": "Select a gift wrap option for the order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "giftWrapOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "giftWrapOptionId",
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "GiftWrapConfirmation": "string"
+    }
+  },
+  {
+    "name": "getItemRecommendations",
+    "description": "Retrieve item recommendations based on a specific item.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "itemId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "itemId"
+      ]
+    },
+    "returnParameter": {
+      "ItemRecommendations": "string"
+    }
+  },
+  {
+    "name": "getPromotions",
+    "description": "Retrieve ongoing promotions.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "Promotions": "string"
+    }
+  },
+  {
+    "name": "applyPromotion",
+    "description": "Apply a promotion to the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        },
+        "promotionCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId",
+        "promotionCode"
+      ]
+    },
+    "returnParameter": {
+      "PromotionStatus": "string"
+    }
+  },
+  {
+    "name": "getBillingAddress",
+    "description": "Retrieve the user's billing address.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "BillingAddress": "string"
+    }
+  },
+  {
+    "name": "updateBillingAddress",
+    "description": "Update the user's billing address.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "billingAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "billingAddress",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "BillingAddressStatus": "string"
+    }
+  },
+  {
+    "name": "getShippingAddress",
+    "description": "Retrieve the user's shipping address.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingAddress": "string"
+    }
+  },
+  {
+    "name": "updateShippingAddress",
+    "description": "Update the user's shipping address.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "shippingAddress": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shippingAddress",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingAddressStatus": "string"
+    }
+  },
+  {
+    "name": "getCartTotal",
+    "description": "Retrieve the total cost of items in the cart.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "CartTotal": "string"
+    }
+  },
+  {
+    "name": "getPaymentStatus",
+    "description": "Retrieve the payment status of an order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "PaymentStatus": "string"
+    }
+  },
+  {
+    "name": "getUserCommunicationPreferences",
+    "description": "Retrieve the user's communication preferences.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "CommunicationPreferences": "string"
+    }
+  },
+  {
+    "name": "updateUserCommunicationPreferences",
+    "description": "Update the user's communication preferences.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "preferences",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "PreferencesUpdateStatus": "string"
+    }
+  },
+  {
+    "name": "requestOrderInvoice",
+    "description": "Request a copy of the invoice for a specific order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "InvoiceRequestStatus": "string"
+    }
+  },
+  {
+    "name": "getTaxInformation",
+    "description": "Retrieve tax information for the current order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "TaxInformation": "string"
+    }
+  },
+  {
+    "name": "validateCoupon",
+    "description": "Validate a coupon before applying it.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "couponCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "couponCode"
+      ]
+    },
+    "returnParameter": {
+      "CouponValidationStatus": "string"
+    }
+  },
+  {
+    "name": "validatePromotion",
+    "description": "Validate a promotion before applying it.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "promotionCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "promotionCode"
+      ]
+    },
+    "returnParameter": {
+      "PromotionValidationStatus": "string"
+    }
+  },
+  {
+    "name": "getOrderSummary",
+    "description": "Retrieve a summary of the order details.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "OrderSummary": "string"
+    }
+  },
+  {
+    "name": "reorderItems",
+    "description": "Reorder items from a previous order.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "orderId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId"
+      ]
+    },
+    "returnParameter": {
+      "ReorderStatus": "string"
+    }
+  },
+  {
+    "name": "saveSearch",
+    "description": "Save a search query for future reference.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "query": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "query",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "SearchSaveStatus": "string"
+    }
+  },
+  {
+    "name": "getSavedSearches",
+    "description": "Retrieve a list of saved search queries.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "SavedSearches": "string"
+    }
+  },
+  {
+    "name": "deleteSavedSearch",
+    "description": "Delete a saved search query.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "searchId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "searchId",
+        "userId"
+      ]
+    },
+    "returnParameter": {
+      "SearchDeleteStatus": "string"
+    }
+  }
+]

@@ -1,0 +1,1120 @@
+[
+  {
+    "name": "getTrackStatus",
+    "description": "Retrieve the tracking status of a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "trackingNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "trackingNumber"
+      ]
+    },
+    "returnParameter": {
+      "TrackStatus": "string"
+    }
+  },
+  {
+    "name": "createShipment",
+    "description": "Create a new shipment order. Weight in kg and dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "senderAddress": {
+          "type": "string"
+        },
+        "recipientAddress": {
+          "type": "string"
+        },
+        "packageDetails": {
+          "type": "object",
+          "properties": {
+            "weight": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "height",
+                "length",
+                "width"
+              ]
+            }
+          },
+          "required": [
+            "dimensions",
+            "weight"
+          ]
+        }
+      },
+      "required": [
+        "packageDetails",
+        "recipientAddress",
+        "senderAddress"
+      ]
+    },
+    "returnParameter": {
+      "ShipmentId": "string"
+    }
+  },
+  {
+    "name": "calculateShippingCost",
+    "description": "Calculate the shipping cost for a given package. origin and destination are city names. Weight in kg and dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "packageDetails": {
+          "type": "object",
+          "properties": {
+            "weight": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "height",
+                "length",
+                "width"
+              ]
+            }
+          },
+          "required": [
+            "dimensions",
+            "weight"
+          ]
+        },
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin",
+        "packageDetails"
+      ]
+    },
+    "returnParameter": {
+      "ShippingCost": "string"
+    }
+  },
+  {
+    "name": "getDeliveryEstimate",
+    "description": "Get an estimated delivery date for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "DeliveryEstimate": "string"
+    }
+  },
+  {
+    "name": "schedulePickup",
+    "description": "Schedule a pickup for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "pickupDate": {
+          "type": "string"
+        },
+        "pickupLocation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pickupDate",
+        "pickupLocation",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "PickupConfirmation": "string"
+    }
+  },
+  {
+    "name": "cancelShipment",
+    "description": "Cancel a scheduled shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "updateShipmentDetails",
+    "description": "Update the details of an existing shipment. Weight in kg and dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "packageDetails": {
+          "type": "object",
+          "properties": {
+            "weight": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "height",
+                "length",
+                "width"
+              ]
+            }
+          },
+          "required": [
+            "dimensions",
+            "weight"
+          ]
+        }
+      },
+      "required": [
+        "packageDetails",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getShipmentDetails",
+    "description": "Retrieve the details of a specific shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShipmentDetails": "string"
+    }
+  },
+  {
+    "name": "getShippingOptions",
+    "description": "Retrieve available shipping options. origin and destination are city names. Weight in kg and dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "packageDetails": {
+          "type": "object",
+          "properties": {
+            "weight": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "height",
+                "length",
+                "width"
+              ]
+            }
+          },
+          "required": [
+            "dimensions",
+            "weight"
+          ]
+        }
+      },
+      "required": [
+        "destination",
+        "origin",
+        "packageDetails"
+      ]
+    },
+    "returnParameter": {
+      "ShippingOptions": "string"
+    }
+  },
+  {
+    "name": "getAvailableCarriers",
+    "description": "Retrieve a list of available carriers for shipping. origin and destination are city names.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "Carriers": "string"
+    }
+  },
+  {
+    "name": "trackMultipleShipments",
+    "description": "Retrieve tracking statuses for multiple shipments.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "trackingNumbers": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "trackingNumbers"
+      ]
+    },
+    "returnParameter": {
+      "TrackStatuses": "string"
+    }
+  },
+  {
+    "name": "validateAddress",
+    "description": "Validate the address for shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "address"
+      ]
+    },
+    "returnParameter": {
+      "ValidationStatus": "string"
+    }
+  },
+  {
+    "name": "getServiceAvailability",
+    "description": "Check service availability for a specific route. origin and destination are city names.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "ServiceAvailability": "string"
+    }
+  },
+  {
+    "name": "getCustomsInformation",
+    "description": "Retrieve customs information for international shipments. origin and destination are city names.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "CustomsInfo": "string"
+    }
+  },
+  {
+    "name": "generateShippingLabel",
+    "description": "Generate a shipping label for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingLabel": "string"
+    }
+  },
+  {
+    "name": "getPickupLocations",
+    "description": "Retrieve available pickup locations for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "postalCode": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "countryCode",
+        "postalCode"
+      ]
+    },
+    "returnParameter": {
+      "PickupLocations": "string"
+    }
+  },
+  {
+    "name": "getShippingHistory",
+    "description": "Retrieve the shipping history for a specific shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShippingHistory": "string"
+    }
+  },
+  {
+    "name": "getDeliveryStatus",
+    "description": "Retrieve the delivery status of a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "DeliveryStatus": "string"
+    }
+  },
+  {
+    "name": "getShipmentCostBreakdown",
+    "description": "Retrieve a cost breakdown for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "CostBreakdown": "string"
+    }
+  },
+  {
+    "name": "getShipmentInsuranceOptions",
+    "description": "Retrieve available insurance options for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "InsuranceOptions": "string"
+    }
+  },
+  {
+    "name": "addShipmentInsurance",
+    "description": "Add insurance to a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "insuranceOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "insuranceOptionId",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "InsuranceStatus": "string"
+    }
+  },
+  {
+    "name": "getShipmentWeight",
+    "description": "Retrieve the weight of a specific shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShipmentWeight": "string"
+    }
+  },
+  {
+    "name": "estimatePackageWeight",
+    "description": "Estimate the weight of a package based on its dimensions. Dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "dimensions": {
+          "type": "object",
+          "properties": {
+            "length": {
+              "type": "string"
+            },
+            "width": {
+              "type": "string"
+            },
+            "height": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "height",
+            "length",
+            "width"
+          ]
+        }
+      },
+      "required": [
+        "dimensions"
+      ]
+    },
+    "returnParameter": {
+      "EstimatedWeight": "string"
+    }
+  },
+  {
+    "name": "getShipmentVolume",
+    "description": "Retrieve the volume of a specific shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShipmentVolume": "string"
+    }
+  },
+  {
+    "name": "estimatePackageVolume",
+    "description": "Estimate the volume of a package based on its dimensions.  Weight in kg and dimensions in cm.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "packageDetails": {
+          "type": "object",
+          "properties": {
+            "weight": {
+              "type": "string"
+            },
+            "dimensions": {
+              "type": "object",
+              "properties": {
+                "length": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "height",
+                "length",
+                "width"
+              ]
+            }
+          },
+          "required": [
+            "dimensions",
+            "weight"
+          ]
+        }
+      },
+      "required": [
+        "packageDetails"
+      ]
+    },
+    "returnParameter": {
+      "EstimatedVolume": "string"
+    }
+  },
+  {
+    "name": "createBulkShipment",
+    "description": "Create multiple shipments in bulk.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentsInfo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentsInfo"
+      ]
+    },
+    "returnParameter": {
+      "BulkShipmentStatus": "string"
+    }
+  },
+  {
+    "name": "getBulkShipmentStatus",
+    "description": "Retrieve the status of a bulk shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bulkShipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bulkShipmentId"
+      ]
+    },
+    "returnParameter": {
+      "BulkShipmentStatus": "string"
+    }
+  },
+  {
+    "name": "generateBulkShippingLabels",
+    "description": "Generate shipping labels for a bulk shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bulkShipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bulkShipmentId"
+      ]
+    },
+    "returnParameter": {
+      "BulkShippingLabels": "string"
+    }
+  },
+  {
+    "name": "getCarrierServiceDetails",
+    "description": "Retrieve details about a specific carrier's service.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "carrierId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "carrierId"
+      ]
+    },
+    "returnParameter": {
+      "CarrierServiceDetails": "string"
+    }
+  },
+  {
+    "name": "getTransitTimes",
+    "description": "Retrieve transit times for a specific route. Origin and destination are city names.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "TransitTimes": "string"
+    }
+  },
+  {
+    "name": "getDeliveryProof",
+    "description": "Retrieve proof of delivery for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "DeliveryProof": "string"
+    }
+  },
+  {
+    "name": "requestSignatureOnDelivery",
+    "description": "Request a signature upon delivery for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "SignatureRequestStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableServices",
+    "description": "Retrieve a list of available logistics services.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "AvailableServices": "string"
+    }
+  },
+  {
+    "name": "getShipmentValue",
+    "description": "Retrieve the declared value of a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ShipmentValue": "string"
+    }
+  },
+  {
+    "name": "updateShipmentValue",
+    "description": "Update the declared value of a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId",
+        "value"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getExportDocumentation",
+    "description": "Retrieve required export documentation for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ExportDocumentation": "string"
+    }
+  },
+  {
+    "name": "submitExportDeclaration",
+    "description": "Submit export declaration for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "declarationDetails": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "declarationDetails",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "DeclarationStatus": "string"
+    }
+  },
+  {
+    "name": "getImportDocumentation",
+    "description": "Retrieve required import documentation for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ImportDocumentation": "string"
+    }
+  },
+  {
+    "name": "submitImportDeclaration",
+    "description": "Submit import declaration for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "declarationDetails": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "quantity": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description",
+            "quantity",
+            "value"
+          ]
+        }
+      },
+      "required": [
+        "declarationDetails",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "DeclarationStatus": "string"
+    }
+  },
+  {
+    "name": "getShipmentTaxes",
+    "description": "Retrieve tax information for a specific shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "Taxes": "string"
+    }
+  },
+  {
+    "name": "getFuelSurcharge",
+    "description": "Retrieve the fuel surcharge for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "FuelSurcharge": "string"
+    }
+  },
+  {
+    "name": "getCurrencyConversionRate",
+    "description": "Retrieve the currency conversion rate for a shipment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "currencyFrom": {
+          "type": "string"
+        },
+        "currencyTo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "currencyFrom",
+        "currencyTo"
+      ]
+    },
+    "returnParameter": {
+      "ConversionRate": "string"
+    }
+  },
+  {
+    "name": "convertShipmentCost",
+    "description": "Convert the shipment cost to a different currency.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "shipmentId": {
+          "type": "string"
+        },
+        "currencyTo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "currencyTo",
+        "shipmentId"
+      ]
+    },
+    "returnParameter": {
+      "ConvertedCost": "string"
+    }
+  },
+  {
+    "name": "getWarehouseLocations",
+    "description": "Retrieve a list of warehouse locations.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object"
+    },
+    "returnParameter": {
+      "WarehouseLocations": "string"
+    }
+  },
+  {
+    "name": "getWarehouseInventory",
+    "description": "Retrieve the inventory of a specific warehouse.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "warehouseId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "warehouseId"
+      ]
+    },
+    "returnParameter": {
+      "Inventory": "string"
+    }
+  },
+  {
+    "name": "transferInventory",
+    "description": "Transfer inventory between warehouses.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "fromWarehouseId": {
+          "type": "string"
+        },
+        "toWarehouseId": {
+          "type": "string"
+        },
+        "items": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fromWarehouseId",
+        "items",
+        "toWarehouseId"
+      ]
+    },
+    "returnParameter": {
+      "TransferStatus": "string"
+    }
+  }
+]

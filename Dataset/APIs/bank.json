@@ -1,782 +1,1044 @@
 {
-    "api_ports": [
-      {
-        "name": "getAccountID",
-        "parameters": ["customerID"],
-        "description": "Retrieves the unique account ID associated with a given customer ID.",
-        "returnParameter": {
-          "AccountID": "string"
-        }
-      },
-      {
-        "name": "getAccountIDfromName",
-        "parameters": ["name"],
-        "description": "Retrieves the unique account ID associated with a given Name.",
-        "returnParameter": {
-          "AccountID": "string"
-        }
-      },
-      {
-        "name": "getAccountBalance",
-        "parameters": ["accountID"],
-        "description": "Retrieves the current balance for a specific account.",
-        "returnParameter": {
-          "Balance": "number"
-        }
-      },
-      {
-        "name": "getTransactionHistory",
-        "parameters": ["accountID", "startDate", "endDate"],
-        "description": "Retrieves the transaction history for a specific account within a date range.",
-        "returnParameter": {
-          "TransactionHistory": "array"
-        }
-      },
-      {
-        "name": "initiateTransfer",
-        "parameters": ["fromAccountID", "toAccountID", "amount", "currency"],
-        "description": "Initiates a transfer of funds from one account to another.",
-        "returnParameter": {
-          "TransferID": "string",
-          "TransferStatus": "string"
-        }
-      },
-      {
-        "name": "getTransferStatus",
-        "parameters": ["transferID"],
-        "description": "Retrieves the status of a specific funds transfer.",
-        "returnParameter": {
-          "TransferStatus": "string"
-        }
-      },
-      {
-        "name": "cancelTransfer",
-        "parameters": ["transferID"],
-        "description": "Cancels a pending funds transfer.",
-        "returnParameter": {
-          "CancellationStatus": "string"
-        }
-      },
-      {
-        "name": "getAccountDetails",
-        "parameters": ["accountID"],
-        "description": "Retrieves the details of a specific bank account.",
-        "returnParameter": {
-          "AccountDetails": "object"
-        }
-      },
-      {
-        "name": "updateAccountDetails",
-        "parameters": ["accountID", "accountDetails"],
-        "description": "Updates the details for a specific bank account.",
-        "returnParameter": {
-          "UpdateStatus": "string"
-        }
-      },
-      {
-        "name": "getAccountHolderDetails",
-        "parameters": ["accountID"],
-        "description": "Retrieves the details of the account holder for a specific account.",
-        "returnParameter": {
-          "HolderDetails": "object"
-        }
-      },
-      {
-        "name": "updateAccountHolderDetails",
-        "parameters": ["accountID", "holderDetails"],
-        "description": "Updates the details of the account holder for a specific account.",
-        "returnParameter": {
-          "UpdateStatus": "string"
-        }
-      },
-      {
-        "name": "getAvailableAccounts",
-        "parameters": ["customerID"],
-        "description": "Retrieves a list of all available accounts for a specific customer.",
-        "returnParameter": {
-          "AccountsList": "array"
-        }
-      },
-      {
-        "name": "getLoanDetails",
-        "parameters": ["loanID"],
-        "description": "Retrieves details of a specific loan account.",
-        "returnParameter": {
-          "LoanDetails": "object"
-        }
-      },
-      {
-        "name": "applyForLoan",
-        "parameters": ["customerID", "loanAmount", "loanType"],
-        "description": "Applies for a new loan for a customer.",
-        "returnParameter": {
-          "LoanID": "string",
-          "ApplicationStatus": "string"
-        }
-      },
-      {
-        "name": "getLoanStatus",
-        "parameters": ["loanID"],
-        "description": "Retrieves the status of a specific loan application.",
-        "returnParameter": {
-          "LoanStatus": "string"
-        }
-      },
-      {
-        "name": "makeLoanPayment",
-        "parameters": ["loanID", "paymentAmount", "paymentMethod"],
-        "description": "Makes a payment towards a specific loan.",
-        "returnParameter": {
-          "PaymentID": "string",
-          "PaymentStatus": "string"
-        }
-      },
-      {
-        "name": "getCreditCardList",
-        "parameters": ["accountID"],
-        "description": "Retrieves all number of credit cards.",
-        "returnParameter": {
-          "CreditCardList": "object"
-        }
-      },
-      {
-        "name": "getCreditCardDetails",
-        "parameters": ["creditCardNumber"],
-        "description": "Retrieves details of a specific credit card.",
-        "returnParameter": {
-          "CreditCardDetails": "object"
-        }
-      },
-      {
-        "name": "getCreditCardStatement",
-        "parameters": ["creditCardNumber", "statementPeriod"],
-        "description": "Retrieves the statement for a specific credit card for a given period.",
-        "returnParameter": {
-          "Statement": "object"
-        }
-      },
-      {
-        "name": "makeCreditCardPayment",
-        "parameters": ["creditCardNumber", "paymentAmount", "paymentMethod"],
-        "description": "Makes a payment towards a specific credit card.",
-        "returnParameter": {
-          "PaymentID": "string",
-          "PaymentStatus": "string"
-        }
-      },
-      {
-        "name": "getCreditLimit",
-        "parameters": ["creditCardNumber"],
-        "description": "Retrieves the credit limit for a specific credit card.",
-        "returnParameter": {
-          "CreditLimit": "number"
-        }
-      },
-      {
-        "name": "increaseCreditLimit",
-        "parameters": ["creditCardNumber", "newLimit"],
-        "description": "Requests an increase in the credit limit for a specific credit card.",
-        "returnParameter": {
-          "RequestStatus": "string"
-        }
-      },
-      {
-        "name": "blockCreditCard",
-        "parameters": ["creditCardNumber"],
-        "description": "Blocks a specific credit card due to loss or theft.",
-        "returnParameter": {
-          "BlockStatus": "string"
-        }
-      },
-      {
-        "name": "unblockCreditCard",
-        "parameters": ["creditCardNumber"],
-        "description": "Unblocks a previously blocked credit card.",
-        "returnParameter": {
-          "UnblockStatus": "string"
-        }
-      },
-      {
-        "name": "getFixedDepositDetails",
-        "parameters": ["fixedDepositID"],
-        "description": "Retrieves the details of a specific fixed deposit account.",
-        "returnParameter": {
-          "FixedDepositDetails": "object"
-        }
-      },
-      {
-        "name": "openFixedDeposit",
-        "parameters": ["accountID", "depositAmount", "termLength", "interestRate"],
-        "description": "Opens a new fixed deposit account.",
-        "returnParameter": {
-          "FixedDepositID": "string",
-          "OpenStatus": "string"
-        }
-      },
-      {
-        "name": "closeFixedDeposit",
-        "parameters": ["fixedDepositID"],
-        "description": "Closes a fixed deposit account and transfers the amount to the linked account.",
-        "returnParameter": {
-          "CloseStatus": "string"
-        }
-      },
-      {
-        "name": "getRecurringDepositDetails",
-        "parameters": ["recurringDepositID"],
-        "description": "Retrieves the details of a specific recurring deposit account.",
-        "returnParameter": {
-          "RecurringDepositDetails": "object"
-        }
-      },
-      {
-        "name": "openRecurringDeposit",
-        "parameters": ["accountID", "monthlyInstallment", "termLength"],
-        "description": "Opens a new recurring deposit account.",
-        "returnParameter": {
-          "RecurringDepositID": "string",
-          "OpenStatus": "string"
-        }
-      },
-      {
-        "name": "closeRecurringDeposit",
-        "parameters": ["recurringDepositID"],
-        "description": "Closes a recurring deposit account and transfers the amount to the linked account.",
-        "returnParameter": {
-          "CloseStatus": "string"
-        }
-      },
-      {
-        "name": "getLoanRepaymentSchedule",
-        "parameters": ["loanID"],
-        "description": "Retrieves the repayment schedule for a specific loan.",
-        "returnParameter": {
-          "RepaymentSchedule": "object"
-        }
-      },
-      {
-        "name": "getInvestmentPortfolio",
-        "parameters": ["customerID"],
-        "description": "Retrieves the investment portfolio details for a specific customer.",
-        "returnParameter": {
-          "InvestmentPortfolio": "object"
-        }
-      },
-      {
-        "name": "buyInvestment",
-        "parameters": ["customerID", "investmentID", "amount"],
-        "description": "Purchases an investment for a customer.",
-        "returnParameter": {
-          "InvestmentID": "string",
-          "BuyStatus": "string"
-        }
-      },
-      {
-        "name": "sellInvestment",
-        "parameters": ["customerID", "investmentID", "amount"],
-        "description": "Sells an investment for a customer.",
-        "returnParameter": {
-          "SellStatus": "string"
-        }
-      },
-      {
-        "name": "getInvestmentDetails",
-        "parameters": ["investmentID"],
-        "description": "Retrieves details of a specific investment.",
-        "returnParameter": {
-          "InvestmentDetails": "object"
-        }
-      },
-      {
-        "name": "getInsurancePolicyDetails",
-        "parameters": ["policyID"],
-        "description": "Retrieves details of a specific insurance policy.",
-        "returnParameter": {
-          "PolicyDetails": "object"
-        }
-      },
-      {
-        "name": "applyForInsurance",
-        "parameters": ["customerID", "insuranceType", "coverageAmount"],
-        "description": "Applies for a new insurance policy for a customer.",
-        "returnParameter": {
-          "PolicyID": "string",
-          "ApplicationStatus": "string"
-        }
-      },
-      {
-        "name": "getInsuranceClaimStatus",
-        "parameters": ["claimID"],
-        "description": "Retrieves the status of a specific insurance claim.",
-        "returnParameter": {
-          "ClaimStatus": "string"
-        }
-      },
-      {
-        "name": "fileInsuranceClaim",
-        "parameters": ["policyID", "claimDetails"],
-        "description": "Files a new claim against an insurance policy.",
-        "returnParameter": {
-          "ClaimID": "string",
-          "FileStatus": "string"
-        }
-      },
-      {
-        "name": "payInsurancePremium",
-        "parameters": ["policyID", "amount", "paymentMethod"],
-        "description": "Pays the premium for a specific insurance policy.",
-        "returnParameter": {
-          "PaymentID": "string",
-          "PaymentStatus": "string"
-        }
-      },
-      {
-        "name": "getMortgageDetails",
-        "parameters": ["mortgageID"],
-        "description": "Retrieves the details of a specific mortgage account.",
-        "returnParameter": {
-          "MortgageDetails": "object"
-        }
-      },
-      {
-        "name": "applyForMortgage",
-        "parameters": ["customerID", "propertyValue", "loanAmount", "termLength"],
-        "description": "Applies for a new mortgage loan for a customer.",
-        "returnParameter": {
-          "MortgageID": "string",
-          "ApplicationStatus": "string"
-        }
-      },
-      {
-        "name": "getMortgageRepaymentSchedule",
-        "parameters": ["mortgageID"],
-        "description": "Retrieves the repayment schedule for a specific mortgage.",
-        "returnParameter": {
-          "RepaymentSchedule": "object"
-        }
-      },
-      {
-        "name": "makeMortgagePayment",
-        "parameters": ["mortgageID", "paymentAmount", "paymentMethod"],
-        "description": "Makes a payment towards a specific mortgage.",
-        "returnParameter": {
-          "PaymentID": "string",
-          "PaymentStatus": "string"
-        }
-      },
-      {
-        "name": "getMortgageBalance",
-        "parameters": ["mortgageID"],
-        "description": "Retrieves the current outstanding balance for a specific mortgage.",
-        "returnParameter": {
-          "MortgageBalance": "number"
-        }
-      },
-      {
-        "name": "getOverdraftDetails",
-        "parameters": ["accountID"],
-        "description": "Retrieves the overdraft details for a specific account.",
-        "returnParameter": {
-          "OverdraftDetails": "object"
-        }
-      },
-      {
-        "name": "applyForOverdraft",
-        "parameters": ["accountID", "overdraftLimit"],
-        "description": "Applies for an overdraft facility on a specific account.",
-        "returnParameter": {
-          "ApplicationStatus": "string"
-        }
-      },
-      {
-        "name": "getOverdraftLimit",
-        "parameters": ["accountID"],
-        "description": "Retrieves the overdraft limit for a specific account.",
-        "returnParameter": {
-          "OverdraftLimit": "number"
-        }
-      },
-      {
-        "name": "increaseOverdraftLimit",
-        "parameters": ["accountID", "newLimit"],
-        "description": "Requests an increase in the overdraft limit for a specific account.",
-        "returnParameter": {
-          "RequestStatus": "string"
-        }
-      },
-      {
-        "name": "getAccountStatements",
-        "parameters": ["accountID", "startDate", "endDate"],
-        "description": "Retrieves account statements for a specific account within a date range.",
-        "returnParameter": {
-          "Statements": "array"
-        }
-      },
-      {
-        "name": "downloadStatement",
-        "parameters": ["statementID", "format"],
-        "description": "Downloads a specific account statement in the requested format.",
-        "returnParameter": {
-          "DownloadLink": "string"
-        }
-      },
-      {
-        "name": "getBranchDetails",
-        "parameters": ["branchID"],
-        "description": "Retrieves the details of a specific bank branch.",
-        "returnParameter": {
-          "BranchDetails": "object"
-        }
-      },
-      {
-        "name": "getNearestBranch",
-        "parameters": ["location"],
-        "description": "Finds the nearest branch based on the given location.",
-        "returnParameter": {
-          "NearestBranch": "object"
-        }
-      },
-      {
-        "name": "getBranchHours",
-        "parameters": ["branchID"],
-        "description": "Retrieves the operating hours for a specific branch.",
-        "returnParameter": {
-          "BranchHours": "object"
-        }
-      },
-      {
-        "name": "getATMDetails",
-        "parameters": ["atmID"],
-        "description": "Retrieves the details of a specific ATM.",
-        "returnParameter": {
-          "ATMDetails": "object"
-        }
-      },
-      {
-        "name": "getNearestATM",
-        "parameters": ["location"],
-        "description": "Finds the nearest ATM based on the given location.",
-        "returnParameter": {
-          "NearestATM": "object"
-        }
-      },
-      {
-        "name": "getATMCardList",
-        "parameters": ["accountID"],
-        "description": "Get ATM card from account ID.",
-        "returnParameter": {
-          "cardID": "string"
-        }
-      },
-      {
-        "name": "reportLostATMCard",
-        "parameters": ["accountID", "cardID"],
-        "description": "Reports a lost ATM card and blocks it.",
-        "returnParameter": {
-          "ReportStatus": "string"
-        }
-      },
-      {
-        "name": "orderNewATMCard",
-        "parameters": ["accountID"],
-        "description": "Orders a new ATM card for a specific account.",
-        "returnParameter": {
-          "OrderStatus": "string"
-        }
-      },
-      {
-        "name": "activateATMCard",
-        "parameters": ["accountID", "cardID"],
-        "description": "Activates a newly issued ATM card.",
-        "returnParameter": {
-          "ActivationStatus": "string"
-        }
-      },
-      {
-        "name": "changeATMPIN",
-        "parameters": ["accountID", "cardID", "newPIN"],
-        "description": "Changes the PIN for a specific ATM card.",
-        "returnParameter": {
-          "ChangeStatus": "string"
-        }
-      },
-      {
-        "name": "getCurrencyExchangeRates",
-        "parameters": ["currencyPair"],
-        "description": "Retrieves the current exchange rates for a specific currency pair.",
-        "returnParameter": {
-          "ExchangeRates": "object"
-        }
-      },
-      {
-        "name": "getInterestRates",
-        "parameters": ["currency", "termLength"],
-        "description": "Get interest rate of currency and term",
-        "returnParameter": {
-          "interestRate": "object"
-        }
-      },
-      {
-        "name": "convertCurrency",
-        "parameters": ["fromCurrency", "toCurrency", "amount"],
-        "description": "Converts an amount from one currency to another.",
-        "returnParameter": {
-          "ConvertedAmount": "number"
-        }
-      },
-      {
-        "name": "getWireTransferDetails",
-        "parameters": ["transferID"],
-        "description": "Retrieves the details of a specific wire transfer.",
-        "returnParameter": {
-          "WireTransferDetails": "object"
-        }
-      },
-      {
-        "name": "initiateWireTransfer",
-        "parameters": ["fromAccountID", "toBankDetails", "amount", "currency"],
-        "description": "Initiates a wire transfer to an external bank account.",
-        "returnParameter": {
-          "TransferID": "string",
-          "InitiationStatus": "string"
-        }
-      },
-      {
-        "name": "getWireTransferStatus",
-        "parameters": ["transferID"],
-        "description": "Retrieves the status of a specific wire transfer.",
-        "returnParameter": {
-          "TransferStatus": "string"
-        }
-      },
-      {
-        "name": "cancelWireTransfer",
-        "parameters": ["transferID"],
-        "description": "Cancels a pending wire transfer.",
-        "returnParameter": {
-          "CancellationStatus": "string"
-        }
-      },
-      {
-        "name": "getRecurringPaymentList",
-        "parameters": ["accountID"],
-        "description": "Retrieves the list of all recurring payment in account.",
-        "returnParameter": {
-          "RecurringPaymentList": "object"
-        }
-      },
-      {
-        "name": "getRecurringPaymentDetails",
-        "parameters": ["recurringPaymentID"],
-        "description": "Retrieves the details of a specific recurring payment.",
-        "returnParameter": {
-          "RecurringPaymentDetails": "object"
-        }
-      },
-      {
-        "name": "createRecurringPayment",
-        "parameters": ["fromAccountID", "toAccountID", "amount", "frequency"],
-        "description": "Creates a new recurring payment between accounts.",
-        "returnParameter": {
-          "RecurringPaymentID": "string",
-          "CreationStatus": "string"
-        }
-      },
-      {
-        "name": "updateRecurringPayment",
-        "parameters": ["recurringPaymentID", "newDetails"],
-        "description": "Updates the details of an existing recurring payment.",
-        "returnParameter": {
-          "UpdateStatus": "string"
-        }
-      },
-      {
-        "name": "cancelRecurringPayment",
-        "parameters": ["recurringPaymentID"],
-        "description": "Cancels a specific recurring payment.",
-        "returnParameter": {
-          "CancellationStatus": "string"
-        }
-      },
-      {
-        "name": "getCustomerDetails",
-        "parameters": ["customerID"],
-        "description": "Retrieves the details of a specific customer.",
-        "returnParameter": {
-          "CustomerDetails": "object"
-        }
-      },
-      {
-        "name": "updateCustomerDetails",
-        "parameters": ["customerID", "newDetails"],
-        "description": "Updates the personal details of a specific customer.",
-        "returnParameter": {
-          "UpdateStatus": "string"
-        }
-      },
-      {
-        "name": "getCustomerAccounts",
-        "parameters": ["customerID"],
-        "description": "Retrieves a list of all accounts associated with a specific customer.",
-        "returnParameter": {
-          "CustomerAccounts": "array"
-        }
-      },
-      {
-        "name": "linkAccountToCustomer",
-        "parameters": ["customerID", "accountID"],
-        "description": "Links an existing account to a specific customer.",
-        "returnParameter": {
-          "LinkStatus": "string"
-        }
-      },
-      {
-        "name": "unlinkAccountFromCustomer",
-        "parameters": ["customerID", "accountID"],
-        "description": "Unlinks an account from a specific customer.",
-        "returnParameter": {
-          "UnlinkStatus": "string"
-        }
-      },
-      {
-        "name": "getCustomerLoans",
-        "parameters": ["customerID"],
-        "description": "Retrieves all loans associated with a specific customer.",
-        "returnParameter": {
-          "CustomerLoans": "array"
-        }
-      },
-      {
-        "name": "getCustomerCreditCards",
-        "parameters": ["customerID"],
-        "description": "Retrieves all credit cards associated with a specific customer.",
-        "returnParameter": {
-          "CustomerCreditCards": "array"
-        }
-      },
-      {
-        "name": "getCustomerInvestments",
-        "parameters": ["customerID"],
-        "description": "Retrieves all investments associated with a specific customer.",
-        "returnParameter": {
-          "CustomerInvestments": "array"
-        }
-      },
-      {
-        "name": "getCustomerInsurancePolicies",
-        "parameters": ["customerID"],
-        "description": "Retrieves all insurance policies associated with a specific customer.",
-        "returnParameter": {
-          "CustomerInsurancePolicies": "array"
-        }
-      },
-      {
-        "name": "getCustomerMortgages",
-        "parameters": ["customerID"],
-        "description": "Retrieves all mortgages associated with a specific customer.",
-        "returnParameter": {
-          "CustomerMortgages": "array"
-        }
-      },
-      {
-        "name": "getCustomerRecurringPayments",
-        "parameters": ["customerID"],
-        "description": "Retrieves all recurring payments associated with a specific customer.",
-        "returnParameter": {
-          "CustomerRecurringPayments": "array"
-        }
-      },
-      {
-        "name": "getCustomerBeneficiaries",
-        "parameters": ["customerID"],
-        "description": "Retrieves a list of all beneficiaries linked to a specific customer.",
-        "returnParameter": {
-          "CustomerBeneficiaries": "array"
-        }
-      },
-      {
-        "name": "addBeneficiary",
-        "parameters": ["customerID", "beneficiaryDetails"],
-        "description": "Adds a new beneficiary to a customer's account.",
-        "returnParameter": {
-          "BeneficiaryID": "string",
-          "AdditionStatus": "string"
-        }
-      },
-      {
-        "name": "removeBeneficiary",
-        "parameters": ["customerID", "beneficiaryID"],
-        "description": "Removes a beneficiary from a customer's account.",
-        "returnParameter": {
-          "RemovalStatus": "string"
-        }
-      },
-      {
-        "name": "getCustomerNotifications",
-        "parameters": ["customerID"],
-        "description": "Retrieves a list of notifications for a specific customer.",
-        "returnParameter": {
-          "Notifications": "array"
-        }
-      },
-      {
-        "name": "sendNotificationToCustomer",
-        "parameters": ["customerID", "notificationDetails"],
-        "description": "Sends a notification to a specific customer.",
-        "returnParameter": {
-          "NotificationStatus": "string"
-        }
-      },
-      {
-        "name": "getAccountAlerts",
-        "parameters": ["accountID"],
-        "description": "Retrieves a list of alerts for a specific account.",
-        "returnParameter": {
-          "AccountAlerts": "array"
-        }
-      },
-      {
-        "name": "setAccountAlert",
-        "parameters": ["accountID", "alertDetails"],
-        "description": "Sets a new alert for a specific account.",
-        "returnParameter": {
-          "AlertID": "string",
-          "SetStatus": "string"
-        }
-      },
-      {
-        "name": "removeAccountAlert",
-        "parameters": ["accountID", "alertID"],
-        "description": "Removes an alert from a specific account.",
-        "returnParameter": {
-          "RemoveStatus": "string"
-        }
-      },
-      {
-        "name": "getCustomerDocuments",
-        "parameters": ["customerID"],
-        "description": "Retrieves a list of documents associated with a specific customer.",
-        "returnParameter": {
-          "Documents": "array"
-        }
-      },
-      {
-        "name": "uploadCustomerDocument",
-        "parameters": ["customerID", "documentDetails"],
-        "description": "Uploads a new document to a customer's account.",
-        "returnParameter": {
-          "DocumentID": "string",
-          "UploadStatus": "string"
-        }
-      },
-      {
-        "name": "downloadCustomerDocument",
-        "parameters": ["customerID", "documentID"],
-        "description": "Downloads a specific document from a customer's account.",
-        "returnParameter": {
-          "DownloadLink": "string"
-        }
+  "api_ports": [
+    {
+      "name": "getAccountID",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves the unique account ID associated with a given customer ID.",
+      "returnParameter": {
+        "AccountID": "string"
       }
-    ]
-  }
-  
+    },
+    {
+      "name": "getCustomerID",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves the unique Customer ID associated with a given account ID.",
+      "returnParameter": {
+        "AccountID": "string"
+      }
+    },
+    {
+      "name": "getAccountIDfromName",
+      "parameters": {
+        "name": "string"
+      },
+      "description": "Retrieves the unique account ID associated with a given Name.",
+      "returnParameter": {
+        "AccountID": "string"
+      }
+    },
+    {
+      "name": "getAccountBalance",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the current balance for a specific account.",
+      "returnParameter": {
+        "Balance": "number"
+      }
+    },
+    {
+      "name": "getTransactionHistory",
+      "parameters": {
+        "accountID": "string",
+        "startDate": "string",
+        "endDate": "string"
+      },
+      "description": "Retrieves the transaction history for a specific account within a date range.",
+      "returnParameter": {
+        "TransactionHistory": "array"
+      }
+    },
+    {
+      "name": "initiateTransfer",
+      "parameters": {
+        "fromAccountID": "string",
+        "toAccountID": "string",
+        "amount": "string",
+        "currency": "string"
+      },
+      "description": "Initiates a transfer of funds from one account to another.",
+      "returnParameter": {
+        "TransferID": "string",
+        "TransferStatus": "string"
+      }
+    },
+    {
+      "name": "getTransferStatus",
+      "parameters": {
+        "transferID": "string"
+      },
+      "description": "Retrieves the status of a specific funds transfer.",
+      "returnParameter": {
+        "TransferStatus": "string"
+      }
+    },
+    {
+      "name": "cancelTransfer",
+      "parameters": {
+        "transferID": "string"
+      },
+      "description": "Cancels a pending funds transfer.",
+      "returnParameter": {
+        "CancellationStatus": "string"
+      }
+    },
+    {
+      "name": "getAccountDetails",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the details of a specific bank account.",
+      "returnParameter": {
+        "AccountDetails": "object"
+      }
+    },
+    {
+      "name": "updateAccountDetails",
+      "parameters": {
+        "accountID": "string",
+        "accountDetails": "string"
+      },
+      "description": "Updates the details for a specific bank account.",
+      "returnParameter": {
+        "UpdateStatus": "string"
+      }
+    },
+    {
+      "name": "getAccountHolderDetails",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the details of the account holder for a specific account.",
+      "returnParameter": {
+        "HolderDetails": "object"
+      }
+    },
+    {
+      "name": "updateAccountHolderDetails",
+      "parameters": {
+        "accountID": "string",
+        "holderDetails": "string"
+      },
+      "description": "Updates the details of the account holder for a specific account.",
+      "returnParameter": {
+        "UpdateStatus": "string"
+      }
+    },
+    {
+      "name": "getAvailableAccounts",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves a list of all available accounts for a specific customer.",
+      "returnParameter": {
+        "AccountsList": "array"
+      }
+    },
+    {
+      "name": "getLoanDetails",
+      "parameters": {
+        "loanID": "string"
+      },
+      "description": "Retrieves details of a specific loan account.",
+      "returnParameter": {
+        "LoanDetails": "object"
+      }
+    },
+    {
+      "name": "applyForLoan",
+      "parameters": {
+        "customerID": "string",
+        "loanAmount": "string",
+        "loanType": "string"
+      },
+      "description": "Applies for a new loan for a customer.",
+      "returnParameter": {
+        "LoanID": "string",
+        "ApplicationStatus": "string"
+      }
+    },
+    {
+      "name": "getLoanStatus",
+      "parameters": {
+        "loanID": "string"
+      },
+      "description": "Retrieves the status of a specific loan application.",
+      "returnParameter": {
+        "LoanStatus": "string"
+      }
+    },
+    {
+      "name": "makeLoanPayment",
+      "parameters": {
+        "loanID": "string",
+        "paymentAmount": "string",
+        "paymentMethod": "string"
+      },
+      "description": "Makes a payment towards a specific loan.",
+      "returnParameter": {
+        "PaymentID": "string",
+        "PaymentStatus": "string"
+      }
+    },
+    {
+      "name": "getCreditCardList",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves all number of credit cards.",
+      "returnParameter": {
+        "CreditCardList": "object"
+      }
+    },
+    {
+      "name": "getCreditCardDetails",
+      "parameters": {
+        "creditCardNumber": "string"
+      },
+      "description": "Retrieves details of a specific credit card.",
+      "returnParameter": {
+        "CreditCardDetails": "object"
+      }
+    },
+    {
+      "name": "getCreditCardStatement",
+      "parameters": {
+        "creditCardNumber": "string",
+        "statementPeriod": "string"
+      },
+      "description": "Retrieves the statement for a specific credit card for a given period.",
+      "returnParameter": {
+        "Statement": "object"
+      }
+    },
+    {
+      "name": "makeCreditCardPayment",
+      "parameters": {
+        "creditCardNumber": "string",
+        "paymentAmount": "string",
+        "paymentMethod": "string"
+      },
+      "description": "Makes a payment towards a specific credit card.",
+      "returnParameter": {
+        "PaymentID": "string",
+        "PaymentStatus": "string"
+      }
+    },
+    {
+      "name": "getCreditLimit",
+      "parameters": {
+        "creditCardNumber": "string"
+      },
+      "description": "Retrieves the credit limit for a specific credit card.",
+      "returnParameter": {
+        "CreditLimit": "number"
+      }
+    },
+    {
+      "name": "increaseCreditLimit",
+      "parameters": {
+        "creditCardNumber": "string",
+        "newLimit": "string"
+      },
+      "description": "Requests an increase in the credit limit for a specific credit card.",
+      "returnParameter": {
+        "RequestStatus": "string"
+      }
+    },
+    {
+      "name": "blockCreditCard",
+      "parameters": {
+        "creditCardNumber": "string"
+      },
+      "description": "Blocks a specific credit card due to loss or theft.",
+      "returnParameter": {
+        "BlockStatus": "string"
+      }
+    },
+    {
+      "name": "unblockCreditCard",
+      "parameters": {
+        "creditCardNumber": "string"
+      },
+      "description": "Unblocks a previously blocked credit card.",
+      "returnParameter": {
+        "UnblockStatus": "string"
+      }
+    },
+    {
+      "name": "getFixedDepositDetails",
+      "parameters": {
+        "fixedDepositID": "string"
+      },
+      "description": "Retrieves the details of a specific fixed deposit account.",
+      "returnParameter": {
+        "FixedDepositDetails": "object"
+      }
+    },
+    {
+      "name": "openFixedDeposit",
+      "parameters": {
+        "accountID": "string",
+        "depositAmount": "string",
+        "termLength": "string",
+        "interestRate": "string"
+      },
+      "description": "Opens a new fixed deposit account.",
+      "returnParameter": {
+        "FixedDepositID": "string",
+        "OpenStatus": "string"
+      }
+    },
+    {
+      "name": "closeFixedDeposit",
+      "parameters": {
+        "fixedDepositID": "string"
+      },
+      "description": "Closes a fixed deposit account and transfers the amount to the linked account.",
+      "returnParameter": {
+        "CloseStatus": "string"
+      }
+    },
+    {
+      "name": "getRecurringDepositDetails",
+      "parameters": {
+        "recurringDepositID": "string"
+      },
+      "description": "Retrieves the details of a specific recurring deposit account.",
+      "returnParameter": {
+        "RecurringDepositDetails": "object"
+      }
+    },
+    {
+      "name": "openRecurringDeposit",
+      "parameters": {
+        "customerID": "string",
+        "monthlyInstallment": "string",
+        "termLength": "string"
+      },
+      "description": "Opens a new recurring deposit account.",
+      "returnParameter": {
+        "RecurringDepositID": "string",
+        "OpenStatus": "string"
+      }
+    },
+    {
+      "name": "closeRecurringDeposit",
+      "parameters": {
+        "recurringDepositID": "string"
+      },
+      "description": "Closes a recurring deposit account and transfers the amount to the linked account.",
+      "returnParameter": {
+        "CloseStatus": "string"
+      }
+    },
+    {
+      "name": "getLoanRepaymentSchedule",
+      "parameters": {
+        "loanID": "string"
+      },
+      "description": "Retrieves the repayment schedule for a specific loan.",
+      "returnParameter": {
+        "RepaymentSchedule": "object"
+      }
+    },
+    {
+      "name": "getInvestmentPortfolio",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves the investment portfolio details for a specific customer.",
+      "returnParameter": {
+        "InvestmentPortfolio": "object"
+      }
+    },
+    {
+      "name": "buyInvestment",
+      "parameters": {
+        "customerID": "string",
+        "investmentID": "string",
+        "amount": "string"
+      },
+      "description": "Purchases an investment for a customer.",
+      "returnParameter": {
+        "InvestmentID": "string",
+        "BuyStatus": "string"
+      }
+    },
+    {
+      "name": "sellInvestment",
+      "parameters": {
+        "customerID": "string",
+        "investmentID": "string",
+        "amount": "string"
+      },
+      "description": "Sells an investment for a customer.",
+      "returnParameter": {
+        "SellStatus": "string"
+      }
+    },
+    {
+      "name": "getInvestmentDetails",
+      "parameters": {
+        "investmentID": "string"
+      },
+      "description": "Retrieves details of a specific investment.",
+      "returnParameter": {
+        "InvestmentDetails": "object"
+      }
+    },
+    {
+      "name": "getInsurancePolicyDetails",
+      "parameters": {
+        "policyID": "string"
+      },
+      "description": "Retrieves details of a specific insurance policy.",
+      "returnParameter": {
+        "PolicyDetails": "object"
+      }
+    },
+    {
+      "name": "applyForInsurance",
+      "parameters": {
+        "customerID": "string",
+        "insuranceType": "string",
+        "coverageAmount": "string"
+      },
+      "description": "Applies for a new insurance policy for a customer.",
+      "returnParameter": {
+        "PolicyID": "string",
+        "ApplicationStatus": "string"
+      }
+    },
+    {
+      "name": "getInsuranceClaimStatus",
+      "parameters": {
+        "claimID": "string"
+      },
+      "description": "Retrieves the status of a specific insurance claim.",
+      "returnParameter": {
+        "ClaimStatus": "string"
+      }
+    },
+    {
+      "name": "fileInsuranceClaim",
+      "parameters": {
+        "policyID": "string",
+        "claimDetails": "string"
+      },
+      "description": "Files a new claim against an insurance policy.",
+      "returnParameter": {
+        "ClaimID": "string",
+        "FileStatus": "string"
+      }
+    },
+    {
+      "name": "payInsurancePremium",
+      "parameters": {
+        "policyID": "string",
+        "amount": "string",
+        "paymentMethod": "string"
+      },
+      "description": "Pays the premium for a specific insurance policy.",
+      "returnParameter": {
+        "PaymentID": "string",
+        "PaymentStatus": "string"
+      }
+    },
+    {
+      "name": "getMortgageDetails",
+      "parameters": {
+        "mortgageID": "string"
+      },
+      "description": "Retrieves the details of a specific mortgage account.",
+      "returnParameter": {
+        "MortgageDetails": "object"
+      }
+    },
+    {
+      "name": "applyForMortgage",
+      "parameters": {
+        "customerID": "string",
+        "propertyValue": "string",
+        "loanAmount": "string",
+        "termLength": "string"
+      },
+      "description": "Applies for a new mortgage loan for a customer.",
+      "returnParameter": {
+        "MortgageID": "string",
+        "ApplicationStatus": "string"
+      }
+    },
+    {
+      "name": "getMortgageRepaymentSchedule",
+      "parameters": {
+        "mortgageID": "string"
+      },
+      "description": "Retrieves the repayment schedule for a specific mortgage.",
+      "returnParameter": {
+        "RepaymentSchedule": "object"
+      }
+    },
+    {
+      "name": "makeMortgagePayment",
+      "parameters": {
+        "mortgageID": "string",
+        "paymentAmount": "string",
+        "paymentMethod": "string"
+      },
+      "description": "Makes a payment towards a specific mortgage.",
+      "returnParameter": {
+        "PaymentID": "string",
+        "PaymentStatus": "string"
+      }
+    },
+    {
+      "name": "getMortgageBalance",
+      "parameters": {
+        "mortgageID": "string"
+      },
+      "description": "Retrieves the current outstanding balance for a specific mortgage.",
+      "returnParameter": {
+        "MortgageBalance": "number"
+      }
+    },
+    {
+      "name": "getOverdraftDetails",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the overdraft details for a specific account.",
+      "returnParameter": {
+        "OverdraftDetails": "object"
+      }
+    },
+    {
+      "name": "applyForOverdraft",
+      "parameters": {
+        "accountID": "string",
+        "overdraftLimit": "string"
+      },
+      "description": "Applies for an overdraft facility on a specific account.",
+      "returnParameter": {
+        "ApplicationStatus": "string"
+      }
+    },
+    {
+      "name": "getOverdraftLimit",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the overdraft limit for a specific account.",
+      "returnParameter": {
+        "OverdraftLimit": "number"
+      }
+    },
+    {
+      "name": "increaseOverdraftLimit",
+      "parameters": {
+        "accountID": "string",
+        "newLimit": "string"
+      },
+      "description": "Requests an increase in the overdraft limit for a specific account.",
+      "returnParameter": {
+        "RequestStatus": "string"
+      }
+    },
+    {
+      "name": "getAccountStatements",
+      "parameters": {
+        "accountID": "string",
+        "startDate": "string",
+        "endDate": "string"
+      },
+      "description": "Retrieves account statements for a specific account within a date range.",
+      "returnParameter": {
+        "Statements": "array"
+      }
+    },
+    {
+      "name": "downloadStatement",
+      "parameters": {
+        "statementID": "string",
+        "format": "string"
+      },
+      "description": "Downloads a specific account statement in the requested format.",
+      "returnParameter": {
+        "DownloadLink": "string"
+      }
+    },
+    {
+      "name": "getBranchDetails",
+      "parameters": {
+        "branchID": "string"
+      },
+      "description": "Retrieves the details of a specific bank branch.",
+      "returnParameter": {
+        "BranchDetails": "object"
+      }
+    },
+    {
+      "name": "getNearestBranch",
+      "parameters": {
+        "location": "string"
+      },
+      "description": "Finds the nearest branch based on the given location.",
+      "returnParameter": {
+        "NearestBranch": "object"
+      }
+    },
+    {
+      "name": "getBranchHours",
+      "parameters": {
+        "branchID": "string"
+      },
+      "description": "Retrieves the operating hours for a specific branch.",
+      "returnParameter": {
+        "BranchHours": "object"
+      }
+    },
+    {
+      "name": "getATMDetails",
+      "parameters": {
+        "atmID": "string"
+      },
+      "description": "Retrieves the details of a specific ATM.",
+      "returnParameter": {
+        "ATMDetails": "object"
+      }
+    },
+    {
+      "name": "getNearestATM",
+      "parameters": {
+        "location": "string"
+      },
+      "description": "Finds the nearest ATM based on the given location.",
+      "returnParameter": {
+        "NearestATM": "object"
+      }
+    },
+    {
+      "name": "getATMCardList",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Get ATM card from account ID.",
+      "returnParameter": {
+        "cardID": "string"
+      }
+    },
+    {
+      "name": "reportLostATMCard",
+      "parameters": {
+        "accountID": "string",
+        "cardID": "string"
+      },
+      "description": "Reports a lost ATM card and blocks it.",
+      "returnParameter": {
+        "ReportStatus": "string"
+      }
+    },
+    {
+      "name": "orderNewATMCard",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Orders a new ATM card for a specific account.",
+      "returnParameter": {
+        "OrderStatus": "string"
+      }
+    },
+    {
+      "name": "activateATMCard",
+      "parameters": {
+        "accountID": "string",
+        "cardID": "string"
+      },
+      "description": "Activates a newly issued ATM card.",
+      "returnParameter": {
+        "ActivationStatus": "string"
+      }
+    },
+    {
+      "name": "changeATMPIN",
+      "parameters": {
+        "accountID": "string",
+        "cardID": "string",
+        "newPIN": "string"
+      },
+      "description": "Changes the PIN for a specific ATM card.",
+      "returnParameter": {
+        "ChangeStatus": "string"
+      }
+    },
+    {
+      "name": "getCurrencyExchangeRates",
+      "parameters": {
+        "currencyPair": "string"
+      },
+      "description": "Retrieves the current exchange rates for a specific currency pair.",
+      "returnParameter": {
+        "ExchangeRates": "object"
+      }
+    },
+    {
+      "name": "getInterestRates",
+      "parameters": {
+        "currency": "string",
+        "termLength": "string"
+      },
+      "description": "Get interest rate of currency and term",
+      "returnParameter": {
+        "interestRate": "object"
+      }
+    },
+    {
+      "name": "convertCurrency",
+      "parameters": {
+        "fromCurrency": "string",
+        "toCurrency": "string",
+        "amount": "string"
+      },
+      "description": "Converts an amount from one currency to another.",
+      "returnParameter": {
+        "ConvertedAmount": "number"
+      }
+    },
+    {
+      "name": "getWireTransferDetails",
+      "parameters": {
+        "transferID": "string"
+      },
+      "description": "Retrieves the details of a specific wire transfer.",
+      "returnParameter": {
+        "WireTransferDetails": "object"
+      }
+    },
+    {
+      "name": "initiateWireTransfer",
+      "parameters": {
+        "fromAccountID": "string",
+        "toBankDetails": "string",
+        "amount": "string",
+        "currency": "string"
+      },
+      "description": "Initiates a wire transfer to an external bank account.",
+      "returnParameter": {
+        "TransferID": "string",
+        "InitiationStatus": "string"
+      }
+    },
+    {
+      "name": "getWireTransferStatus",
+      "parameters": {
+        "transferID": "string"
+      },
+      "description": "Retrieves the status of a specific wire transfer.",
+      "returnParameter": {
+        "TransferStatus": "string"
+      }
+    },
+    {
+      "name": "cancelWireTransfer",
+      "parameters": {
+        "transferID": "string"
+      },
+      "description": "Cancels a pending wire transfer.",
+      "returnParameter": {
+        "CancellationStatus": "string"
+      }
+    },
+    {
+      "name": "getRecurringPaymentList",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves the list of all recurring payment in account.",
+      "returnParameter": {
+        "RecurringPaymentList": "object"
+      }
+    },
+    {
+      "name": "getRecurringPaymentDetails",
+      "parameters": {
+        "recurringPaymentID": "string"
+      },
+      "description": "Retrieves the details of a specific recurring payment.",
+      "returnParameter": {
+        "RecurringPaymentDetails": "object"
+      }
+    },
+    {
+      "name": "createRecurringPayment",
+      "parameters": {
+        "fromAccountID": "string",
+        "toAccountID": "string",
+        "amount": "string",
+        "frequency": "string"
+      },
+      "description": "Creates a new recurring payment between accounts.",
+      "returnParameter": {
+        "RecurringPaymentID": "string",
+        "CreationStatus": "string"
+      }
+    },
+    {
+      "name": "updateRecurringPayment",
+      "parameters": {
+        "recurringPaymentID": "string",
+        "newDetails": "string"
+      },
+      "description": "Updates the details of an existing recurring payment.",
+      "returnParameter": {
+        "UpdateStatus": "string"
+      }
+    },
+    {
+      "name": "cancelRecurringPayment",
+      "parameters": {
+        "recurringPaymentID": "string"
+      },
+      "description": "Cancels a specific recurring payment.",
+      "returnParameter": {
+        "CancellationStatus": "string"
+      }
+    },
+    {
+      "name": "getCustomerDetails",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves the details of a specific customer.",
+      "returnParameter": {
+        "CustomerDetails": "object"
+      }
+    },
+    {
+      "name": "updateCustomerDetails",
+      "parameters": {
+        "customerID": "string",
+        "newDetails": "string"
+      },
+      "description": "Updates the personal details of a specific customer.",
+      "returnParameter": {
+        "UpdateStatus": "string"
+      }
+    },
+    {
+      "name": "getCustomerAccounts",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves a list of all accounts associated with a specific customer.",
+      "returnParameter": {
+        "CustomerAccounts": "array"
+      }
+    },
+    {
+      "name": "linkAccountToCustomer",
+      "parameters": {
+        "customerID": "string",
+        "accountID": "string"
+      },
+      "description": "Links an existing account to a specific customer.",
+      "returnParameter": {
+        "LinkStatus": "string"
+      }
+    },
+    {
+      "name": "unlinkAccountFromCustomer",
+      "parameters": {
+        "customerID": "string",
+        "accountID": "string"
+      },
+      "description": "Unlinks an account from a specific customer.",
+      "returnParameter": {
+        "UnlinkStatus": "string"
+      }
+    },
+    {
+      "name": "getCustomerLoans",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all loans associated with a specific customer.",
+      "returnParameter": {
+        "CustomerLoans": "array"
+      }
+    },
+    {
+      "name": "getCustomerCreditCards",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all credit cards associated with a specific customer.",
+      "returnParameter": {
+        "CustomerCreditCards": "array"
+      }
+    },
+    {
+      "name": "getCustomerInvestments",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all investments associated with a specific customer.",
+      "returnParameter": {
+        "CustomerInvestments": "array"
+      }
+    },
+    {
+      "name": "getCustomerInsurancePolicies",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all insurance policies associated with a specific customer.",
+      "returnParameter": {
+        "CustomerInsurancePolicies": "array"
+      }
+    },
+    {
+      "name": "getCustomerMortgages",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all mortgages associated with a specific customer.",
+      "returnParameter": {
+        "CustomerMortgages": "array"
+      }
+    },
+    {
+      "name": "getCustomerRecurringPayments",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves all recurring payments associated with a specific customer.",
+      "returnParameter": {
+        "CustomerRecurringPayments": "array"
+      }
+    },
+    {
+      "name": "getCustomerBeneficiaries",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves a list of all beneficiaries linked to a specific customer.",
+      "returnParameter": {
+        "CustomerBeneficiaries": "array"
+      }
+    },
+    {
+      "name": "addBeneficiary",
+      "parameters": {
+        "customerID": "string",
+        "beneficiaryDetails": "string"
+      },
+      "description": "Adds a new beneficiary to a customer's account.",
+      "returnParameter": {
+        "BeneficiaryID": "string",
+        "AdditionStatus": "string"
+      }
+    },
+    {
+      "name": "removeBeneficiary",
+      "parameters": {
+        "customerID": "string",
+        "beneficiaryID": "string"
+      },
+      "description": "Removes a beneficiary from a customer's account.",
+      "returnParameter": {
+        "RemovalStatus": "string"
+      }
+    },
+    {
+      "name": "getCustomerNotifications",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves a list of notifications for a specific customer.",
+      "returnParameter": {
+        "Notifications": "array"
+      }
+    },
+    {
+      "name": "sendNotificationToCustomer",
+      "parameters": {
+        "customerID": "string",
+        "notificationDetails": "string"
+      },
+      "description": "Sends a notification to a specific customer.",
+      "returnParameter": {
+        "NotificationStatus": "string"
+      }
+    },
+    {
+      "name": "getAccountAlerts",
+      "parameters": {
+        "accountID": "string"
+      },
+      "description": "Retrieves a list of alerts for a specific account.",
+      "returnParameter": {
+        "AccountAlerts": "array"
+      }
+    },
+    {
+      "name": "setAccountAlert",
+      "parameters": {
+        "accountID": "string",
+        "alertDetails": "string"
+      },
+      "description": "Sets a new alert for a specific account.",
+      "returnParameter": {
+        "AlertID": "string",
+        "SetStatus": "string"
+      }
+    },
+    {
+      "name": "removeAccountAlert",
+      "parameters": {
+        "accountID": "string",
+        "alertID": "string"
+      },
+      "description": "Removes an alert from a specific account.",
+      "returnParameter": {
+        "RemoveStatus": "string"
+      }
+    },
+    {
+      "name": "getCustomerDocuments",
+      "parameters": {
+        "customerID": "string"
+      },
+      "description": "Retrieves a list of documents associated with a specific customer.",
+      "returnParameter": {
+        "Documents": "array"
+      }
+    },
+    {
+      "name": "uploadCustomerDocument",
+      "parameters": {
+        "customerID": "string",
+        "documentDetails": "string"
+      },
+      "description": "Uploads a new document to a customer's account.",
+      "returnParameter": {
+        "DocumentID": "string",
+        "UploadStatus": "string"
+      }
+    },
+    {
+      "name": "downloadCustomerDocument",
+      "parameters": {
+        "customerID": "string",
+        "documentID": "string"
+      },
+      "description": "Downloads a specific document from a customer's account.",
+      "returnParameter": {
+        "DownloadLink": "string"
+      }
+    }
+  ]
+}

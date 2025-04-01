@@ -1,0 +1,1019 @@
+[
+  {
+    "name": "getFlightSchedule",
+    "description": "Retrieve the flight schedule for a specific route.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "FlightList": "string"
+    }
+  },
+  {
+    "name": "getFlightStatus",
+    "description": "Retrieve the status of a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "FlightStatus": "string"
+    }
+  },
+  {
+    "name": "bookFlight",
+    "description": "Book a flight for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        },
+        "passengerName": {
+          "type": "string"
+        },
+        "paymentInfo": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber",
+        "passengerName",
+        "paymentInfo"
+      ]
+    },
+    "returnParameter": {
+      "BookingConfirmation": "string",
+      "bookingId": "string"
+    }
+  },
+  {
+    "name": "cancelFlightBooking",
+    "description": "Cancel a booked flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableSeats",
+    "description": "Retrieve available seats for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "SeatList": "string"
+    }
+  },
+  {
+    "name": "selectSeat",
+    "description": "Select a seat for a booked flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "seatNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "seatNumber"
+      ]
+    },
+    "returnParameter": {
+      "SeatSelectionStatus": "string"
+    }
+  },
+  {
+    "name": "getPassengerDetails",
+    "description": "Retrieve details of a passenger for a specific booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "PassengerDetails": "string"
+    }
+  },
+  {
+    "name": "updatePassengerDetails",
+    "description": "Update passenger details for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "passengerName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "passengerName"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getBaggageAllowance",
+    "description": "Retrieve baggage allowance for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        },
+        "ticketClass": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber",
+        "ticketClass"
+      ]
+    },
+    "returnParameter": {
+      "BaggageAllowance": "string"
+    }
+  },
+  {
+    "name": "getBaggageStatus",
+    "description": "Retrieve the status of a passenger's checked baggage.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "baggageId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "baggageId"
+      ]
+    },
+    "returnParameter": {
+      "BaggageStatus": "string"
+    }
+  },
+  {
+    "name": "checkIn",
+    "description": "Check in a passenger for a flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "passengerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "passengerId"
+      ]
+    },
+    "returnParameter": {
+      "CheckInStatus": "string"
+    }
+  },
+  {
+    "name": "getBoardingPass",
+    "description": "Retrieve the boarding pass for a checked-in passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "checkInId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "checkInId"
+      ]
+    },
+    "returnParameter": {
+      "BoardingPass": "string"
+    }
+  },
+  {
+    "name": "getFlightDetails",
+    "description": "Retrieve detailed information about a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "FlightDetails": "string"
+    }
+  },
+  {
+    "name": "searchFlights",
+    "description": "Search for flights based on various criteria.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "ticketClass": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "destination",
+        "origin",
+        "ticketClass"
+      ]
+    },
+    "returnParameter": {
+      "SearchResults": "string"
+    }
+  },
+  {
+    "name": "getAirlineInfo",
+    "description": "Retrieve information about a specific airline.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airlineId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airlineId"
+      ]
+    },
+    "returnParameter": {
+      "AirlineInfo": "string"
+    }
+  },
+  {
+    "name": "getAirportInfo",
+    "description": "Retrieve information about a specific airport.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airportCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airportCode"
+      ]
+    },
+    "returnParameter": {
+      "AirportInfo": "string"
+    }
+  },
+  {
+    "name": "getLoungeAccess",
+    "description": "Retrieve lounge access information for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "LoungeAccessInfo": "string"
+    }
+  },
+  {
+    "name": "getFrequentFlyerMiles",
+    "description": "Retrieve frequent flyer miles balance for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "frequentFlyerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "frequentFlyerId"
+      ]
+    },
+    "returnParameter": {
+      "MilesBalance": "string"
+    }
+  },
+  {
+    "name": "redeemFrequentFlyerMiles",
+    "description": "Redeem frequent flyer miles for a reward.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "frequentFlyerId": {
+          "type": "string"
+        },
+        "rewardId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "frequentFlyerId",
+        "rewardId"
+      ]
+    },
+    "returnParameter": {
+      "RedemptionStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableRewards",
+    "description": "Retrieve available rewards for frequent flyer miles.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "frequentFlyerId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "frequentFlyerId"
+      ]
+    },
+    "returnParameter": {
+      "RewardsList": "string"
+    }
+  },
+  {
+    "name": "updateFlightPreferences",
+    "description": "Update flight preferences for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "preferences": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "preferences"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getFlightPrice",
+    "description": "Retrieve the price for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        },
+        "ticketClass": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber",
+        "ticketClass"
+      ]
+    },
+    "returnParameter": {
+      "FlightPrice": "string"
+    }
+  },
+  {
+    "name": "getFlightOffers",
+    "description": "Retrieve available flight offers and discounts.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "OffersList": "string"
+    }
+  },
+  {
+    "name": "getFlightRoutes",
+    "description": "Retrieve available routes for a specific airline.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airlineId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airlineId"
+      ]
+    },
+    "returnParameter": {
+      "RoutesList": "string"
+    }
+  },
+  {
+    "name": "getAircraftDetails",
+    "description": "Retrieve details of the aircraft used for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "AircraftDetails": "string"
+    }
+  },
+  {
+    "name": "requestSpecialMeal",
+    "description": "Request a special meal for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "mealType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "mealType"
+      ]
+    },
+    "returnParameter": {
+      "MealRequestStatus": "string"
+    }
+  },
+  {
+    "name": "requestWheelchairAssistance",
+    "description": "Request wheelchair assistance for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "AssistanceRequestStatus": "string"
+    }
+  },
+  {
+    "name": "getVisaRequirements",
+    "description": "Retrieve visa requirements for a specific route.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination",
+        "nationality",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "VisaRequirements": "string"
+    }
+  },
+  {
+    "name": "getTravelAdvisories",
+    "description": "Retrieve travel advisories for a specific destination.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "destination": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "destination"
+      ]
+    },
+    "returnParameter": {
+      "TravelAdvisories": "string"
+    }
+  },
+  {
+    "name": "getWeatherInfo",
+    "description": "Retrieve weather information for a specific airport.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airportCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airportCode"
+      ]
+    },
+    "returnParameter": {
+      "WeatherInfo": "string"
+    }
+  },
+  {
+    "name": "getFlightDelayInfo",
+    "description": "Retrieve delay information for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "DelayInfo": "string"
+    }
+  },
+  {
+    "name": "getFlightCancellationPolicy",
+    "description": "Retrieve the cancellation policy for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "CancellationPolicy": "string"
+    }
+  },
+  {
+    "name": "getFlightRefundStatus",
+    "description": "Retrieve the refund status for a cancelled flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "RefundStatus": "string"
+    }
+  },
+  {
+    "name": "getTravelInsuranceOptions",
+    "description": "Retrieve available travel insurance options for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "InsuranceOptions": "string"
+    }
+  },
+  {
+    "name": "purchaseTravelInsurance",
+    "description": "Purchase travel insurance for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "insuranceOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "insuranceOptionId"
+      ]
+    },
+    "returnParameter": {
+      "InsurancePurchaseStatus": "string"
+    }
+  },
+  {
+    "name": "getAirportTransferOptions",
+    "description": "Retrieve available airport transfer options for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "TransferOptions": "string"
+    }
+  },
+  {
+    "name": "bookAirportTransfer",
+    "description": "Book an airport transfer for a passenger.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "transferOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "transferOptionId"
+      ]
+    },
+    "returnParameter": {
+      "TransferBookingStatus": "string"
+    }
+  },
+  {
+    "name": "getInFlightEntertainment",
+    "description": "Retrieve available in-flight entertainment options for a flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "EntertainmentOptions": "string"
+    }
+  },
+  {
+    "name": "getInFlightMealOptions",
+    "description": "Retrieve available in-flight meal options for a flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "MealOptions": "string"
+    }
+  },
+  {
+    "name": "getConnectingFlights",
+    "description": "Retrieve available connecting flights for a specific route.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string"
+        },
+        "destination": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "destination",
+        "origin"
+      ]
+    },
+    "returnParameter": {
+      "ConnectingFlights": "string"
+    }
+  },
+  {
+    "name": "getCheckInOptions",
+    "description": "Retrieve available check-in options for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "CheckInOptions": "string"
+    }
+  },
+  {
+    "name": "requestUpgrade",
+    "description": "Request an upgrade for a booked flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        },
+        "upgradeOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId",
+        "upgradeOptionId"
+      ]
+    },
+    "returnParameter": {
+      "UpgradeRequestStatus": "string"
+    }
+  },
+  {
+    "name": "getAvailableUpgrades",
+    "description": "Retrieve available upgrade options for a booking.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "bookingId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bookingId"
+      ]
+    },
+    "returnParameter": {
+      "UpgradeOptions": "string"
+    }
+  },
+  {
+    "name": "getAirportLoungeLocations",
+    "description": "Retrieve a list of available airport lounges.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airportCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airportCode"
+      ]
+    },
+    "returnParameter": {
+      "LoungeLocations": "string"
+    }
+  },
+  {
+    "name": "getDutyFreeCatalog",
+    "description": "Retrieve the in-flight duty-free catalog for a flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "DutyFreeCatalog": "string"
+    }
+  },
+  {
+    "name": "getFlightCrewDetails",
+    "description": "Retrieve details of the flight crew for a specific flight.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "flightNumber": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "flightNumber"
+      ]
+    },
+    "returnParameter": {
+      "CrewDetails": "string"
+    }
+  },
+  {
+    "name": "getAirportParkingOptions",
+    "description": "Retrieve available parking options at a specific airport.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airportCode": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airportCode"
+      ]
+    },
+    "returnParameter": {
+      "ParkingOptions": "string"
+    }
+  },
+  {
+    "name": "bookAirportParking",
+    "description": "Book parking at a specific airport.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "airportCode": {
+          "type": "string"
+        },
+        "parkingOptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "airportCode",
+        "parkingOptionId"
+      ]
+    },
+    "returnParameter": {
+      "ParkingBookingStatus": "string"
+    }
+  }
+]

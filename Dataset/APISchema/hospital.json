@@ -1,0 +1,493 @@
+[
+  {
+    "name": "getPatientInfo",
+    "description": "Retrieve information about a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "PatientName": "string",
+      "PatientID": "string",
+      "DateOfBirth": "string",
+      "Gender": "string",
+      "InsuranceNumber": "string"
+    }
+  },
+  {
+    "name": "getAppointmentDetails",
+    "description": "Retrieve details of a specific appointment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "appointmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "appointmentId"
+      ]
+    },
+    "returnParameter": {
+      "PatientID": "string",
+      "AppointmentDate": "string",
+      "DoctorName": "string",
+      "Department": "string",
+      "AppointmentStatus": "string"
+    }
+  },
+  {
+    "name": "bookAppointment",
+    "description": "Book a new appointment for a patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "doctorId": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "appointmentDate": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "appointmentDate",
+        "department",
+        "doctorId",
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "AppointmentConfirmation": "string"
+    }
+  },
+  {
+    "name": "cancelAppointment",
+    "description": "Cancel a booked appointment.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "appointmentId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "appointmentId"
+      ]
+    },
+    "returnParameter": {
+      "CancellationStatus": "string"
+    }
+  },
+  {
+    "name": "getDoctorIdFromName",
+    "description": "Retrieve doctor ID from doctor's name.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "returnParameter": {
+      "DoctorID": "string"
+    }
+  },
+  {
+    "name": "getDoctorInfo",
+    "description": "Retrieve information about a specific doctor.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "doctorId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "doctorId"
+      ]
+    },
+    "returnParameter": {
+      "DoctorName": "string",
+      "DoctorID": "string",
+      "Specialization": "string",
+      "Experience": "number",
+      "ContactDetails": "string"
+    }
+  },
+  {
+    "name": "getPatientMedicalHistory",
+    "description": "Retrieve the medical history of a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "MedicalHistory": "string"
+    }
+  },
+  {
+    "name": "updatePatientInfo",
+    "description": "Update the information of a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "patientInfo": {
+          "type": "object",
+          "properties": {
+            "insuranceNumber": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "insuranceNumber"
+          ]
+        }
+      },
+      "required": [
+        "patientId",
+        "patientInfo"
+      ]
+    },
+    "returnParameter": {
+      "UpdateStatus": "string"
+    }
+  },
+  {
+    "name": "getBillingInfo",
+    "description": "Retrieve billing information for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "billId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "billId",
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "BillAmount": "number",
+      "BillingDate": "string",
+      "PaymentStatus": "string"
+    }
+  },
+  {
+    "name": "payBill",
+    "description": "Make a payment for a specific bill.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "billId": {
+          "type": "string"
+        },
+        "paymentAmount": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "billId",
+        "paymentAmount"
+      ]
+    },
+    "returnParameter": {
+      "PaymentConfirmation": "string"
+    }
+  },
+  {
+    "name": "getInsuranceDetails",
+    "description": "Retrieve insurance details of a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "InsuranceProvider": "string",
+      "InsuranceNumber": "string",
+      "CoverageDetails": "string"
+    }
+  },
+  {
+    "name": "getLabTestResults",
+    "description": "Retrieve lab test results for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "testId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId",
+        "testId"
+      ]
+    },
+    "returnParameter": {
+      "TestName": "string",
+      "TestResults": "string",
+      "TestDate": "string",
+      "DoctorRemarks": "string"
+    }
+  },
+  {
+    "name": "orderLabTest",
+    "description": "Order a new lab test for a patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "testType": {
+          "type": "string"
+        },
+        "doctorId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "doctorId",
+        "patientId",
+        "testType"
+      ]
+    },
+    "returnParameter": {
+      "OrderConfirmation": "string"
+    }
+  },
+  {
+    "name": "getPrescriptionDetails",
+    "description": "Retrieve prescription details for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "prescriptionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "prescriptionId"
+      ]
+    },
+    "returnParameter": {
+      "MedicineList": "array",
+      "DosageInstructions": "string",
+      "PrescribingDoctorId": "string",
+      "PrescriptionDate": "string",
+      "PatientID": "string",
+      "department": "string"
+    }
+  },
+  {
+    "name": "getPatientAllergies",
+    "description": "Retrieve a list of known allergies for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "AllergiesList": "string"
+    }
+  },
+  {
+    "name": "getVaccinationRecords",
+    "description": "Retrieve vaccination records for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "VaccinationRecords": "string"
+    }
+  },
+  {
+    "name": "getEmergencyContact",
+    "description": "Retrieve emergency contact details for a specific patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "ContactName": "string",
+      "ContactRelation": "string",
+      "ContactPhone": "string"
+    }
+  },
+  {
+    "name": "getDoctorSchedule",
+    "description": "Retrieve the schedule of a specific doctor.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "doctorId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "doctorId"
+      ]
+    },
+    "returnParameter": {
+      "DoctorSchedule": "string"
+    }
+  },
+  {
+    "name": "admitPatient",
+    "description": "Admit a patient to the hospital.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "departmentId": {
+          "type": "string"
+        },
+        "bedId": {
+          "type": "string"
+        },
+        "admissionReason": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "admissionReason",
+        "bedId",
+        "departmentId",
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "AdmissionConfirmation": "string"
+    }
+  },
+  {
+    "name": "dischargePatient",
+    "description": "Discharge a patient from the hospital.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "patientId": {
+          "type": "string"
+        },
+        "dischargeSummary": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "dischargeSummary",
+        "patientId"
+      ]
+    },
+    "returnParameter": {
+      "DischargeStatus": "string"
+    }
+  },
+  {
+    "name": "getSurgeryDetails",
+    "description": "Retrieve details of a specific surgery performed on a patient.",
+    "parameters": {
+      "$schema": "http://json-schema.org/schema#",
+      "type": "object",
+      "properties": {
+        "surgeryId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "surgeryId"
+      ]
+    },
+    "returnParameter": {
+      "SurgeryName": "string",
+      "SurgeryDate": "string",
+      "SurgeonName": "string",
+      "SurgeryOutcome": "string",
+      "PatientID": "string",
+      "doctorId": "string",
+      "department": "string"
+    }
+  }
+]
