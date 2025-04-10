@@ -4,9 +4,9 @@
 
 ## Overview
 
-Interacting with software systems via chatbots often requires the generation of API calls with correct sequencing and parameterization. CallNavi addresses this challenge by:
+Interacting with software systems via chatbots often requires generating API calls with correct sequencing and parameterization. CallNavi addresses this challenge by:
 
-- Introducing a novel dataset tailored for evaluating API function selection, parameter generation, and nested API calls.
+- Introducing a novel dataset for evaluating API function selection, parameter generation, and nested API calls.
 - Benchmarking state-of-the-art LLMs across varying levels of complexity to assess their performance in API function generation and parameter accuracy.
 - Proposing an enhanced API routing method that combines general-purpose LLMs for API selection supplemented by prompt engineering techniques.
 
