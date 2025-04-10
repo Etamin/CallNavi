@@ -55,18 +55,19 @@ To evaluate an LLM using the CallNavi benchmark:
 
 1. **Prepare the Model**: Ensure your model is accessible and compatible with the scripts provided.
 
-2. **Run Predictions**:
+2. **Adjust parameters in the code** Ensure your model selection is correct/put OpenAI token into the script.
+
+3. **Run Predictions**:
    ```bash
-   python predict.py --model_path path_to_your_model
+   python predict.py 
    ```
 
-3. **Evaluate Results**:
+4. **Evaluate Results**:
    ```bash
-   python Judge_call.py --predictions path_to_predictions
-   python Judge_para.py --predictions path_to_predictions
+   python Judge_call.py 
+   python Judge_para.py 
    ```
 
-Replace `path_to_your_model` and `path_to_predictions` with the appropriate paths.
 
 ## Contributing
 
