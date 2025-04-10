@@ -8,7 +8,7 @@ Interacting with software systems via chatbots often requires the generation of 
 
 - Introducing a novel dataset tailored for evaluating API function selection, parameter generation, and nested API calls.
 - Benchmarking state-of-the-art LLMs across varying levels of complexity to assess their performance in API function generation and parameter accuracy.
-- Proposing an enhanced API routing method that combines general-purpose LLMs for API selection with fine-tuned models for parameter generation, supplemented by prompt engineering techniques.
+- Proposing an enhanced API routing method that combines general-purpose LLMs for API selection supplemented by prompt engineering techniques.
 
 These approaches aim to improve the handling of complex API tasks, offering practical advancements for real-world API-driven chatbot systems.
 
