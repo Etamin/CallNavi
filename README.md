@@ -1,93 +1,85 @@
-
 # CallNavi
 
-CallNavi is a dataset and tools designed to benchmark and enhance task routing and call optimization for large language models (LLMs). By utilizing advanced techniques and benchmark datasets, CallNavi enables efficient zero-shot task routing, facilitating better performance in multi-task environments.
+**CallNavi** is a benchmark suite and toolkit designed to evaluate and enhance the capabilities of Large Language Models (LLMs) in handling function calling, routing, and invocation tasks. This project focuses on assessing models' abilities to select appropriate APIs, generate accurate parameters, and manage nested API calls, particularly in complex, multi-step scenarios.
+
+## Overview
+
+Interacting with software systems via chatbots often requires generating API calls with correct sequencing and parameterization. CallNavi addresses this challenge by:
+
+- Introducing a novel dataset for evaluating API function selection, parameter generation, and nested API calls.
+- Benchmarking state-of-the-art LLMs across varying levels of complexity to assess their performance in API function generation and parameter accuracy.
+- Proposing an enhanced API routing method that combines general-purpose LLMs for API selection supplemented by prompt engineering techniques.
+
+These approaches aim to improve the handling of complex API tasks, offering practical advancements for real-world API-driven chatbot systems.
+
+For a comprehensive understanding, please refer to our [arXiv paper](https://arxiv.org/abs/2501.05255).
 
 ## Features
 
-- **Task Routing Test For LLMs**: 729 questions.
+- **Task Routing Evaluation**: A set of 729 questions designed to test LLMs' capabilities in API function selection and parameter generation.
+- **Benchmarking Tools**: Scripts and utilities to facilitate the evaluation of LLMs on the provided dataset.
 
-## Table of Contents
+## Repository Structure
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [TaskNavi Dataset](#tasknavi-dataset)
-- [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
+- `Agent_Routers_Test/`: Contains test cases for agent routing scenarios.
+- `Dataset/`: Includes the dataset used for benchmarking.
+- `YAML/`:  Files for different input/output formats.
+- `APIOnly.py`: The script focuses on API selection-only interactions.
+- `Asyn.py`: Implements asynchronous generation prompt optimization.
+- `Backward.py`: Implements backward thinking prompt optimization.
+- `Data_statistics.py`: Provides statistical analysis of the dataset.
+- `Judge_call.py`: Evaluates the correctness of API call selections.
+- `Judge_para.py`: Evaluates the correctness of API generated with parameters.
+- `predict.py`: Main script for running predictions.
+- `requirements.txt`: Lists the dependencies required for the project.
+- `wash.py`: Utility script for data preprocessing.
 
----
 
 ## Installation
 
-Clone the repository and install the required dependencies:
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Etamin/CallNavi.git
+   cd CallNavi
+   ```
 
-```bash
-git clone https://github.com/Etamin/CallNavi.git
-cd CallNavi
-pip install -r requirements.txt
-```
-
-Ensure you have Python 3.8+ and the necessary runtime environments for the LLMs.
-
----
+2. **Install Dependencies**:
+   Ensure you have Python 3 installed. Then, install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-CallNavi can be easily integrated into your workflow:
+To evaluate an LLM using the CallNavi benchmark:
 
-### Quick Start
+1. **Prepare the Model**: Ensure your model is accessible and compatible with the scripts provided.
 
-```bash
-python3 predict.py
-```
+2. **Adjust parameters in the code** Ensure your model selection is correct/put OpenAI token into the script.
 
-### Custom Configuration
+3. **Run Predictions**:
+   ```bash
+   python predict.py 
+   ```
 
-```python
-modelst=['modelNameInOllama1','modelNameInOllama2...']
-# When using OpenAI
-os.environ['OPENAI_API_KEY']=''
-# When using OLLAMA
-client = Client(host='http://:11434')
-```
-
-### Judge
-```bash
-python3 wash.py
-python3 Judge_para.py
-```
-## TaskNavi Dataset
-
-CallNavi includes the **TaskNavi** dataset, a benchmark designed for testing task-routing efficiency. The dataset covers:
+4. **Evaluate Results**:
+   ```bash
+   python Judge_call.py 
+   python Judge_para.py 
+   ```
 
 
-### Accessing the Dataset
+## Contributing
 
-The dataset is available in the `Dataset/` directory. Load it using:
-
-```python
-
-```
-
----
-
-## Examples
-
-
-
----
+Contributions are welcome! Please fork the repository and submit a pull request if you have suggestions or improvements. For significant changes, consider opening an issue first to discuss your ideas.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. 
 
 ---
 
-## Contact
+*For detailed methodologies and experimental results, please refer to our [arXiv paper](https://arxiv.org/abs/2501.05255).*
+```
 
-For questions or feedback, feel free to create an issue on the repository or reach out to us at .
-
----
-
-Let me know if you'd like to customize this further!
+Feel free to integrate this `README.md` into your repository. Let me know if you need further assistance or modifications! 
