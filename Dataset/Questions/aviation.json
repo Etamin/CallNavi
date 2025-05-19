@@ -951,13 +951,13 @@
     "question": [
       {
         "role": "user",
-        "content": "Find the flight offers from NYC to London, book a flight with my American Express card, and purchase travel insurance. My name is Daniel Wellington."
+        "content": "Find the flight offers from NYC to LHR, book a flight with my American Express card, and purchase travel insurance. My name is Daniel Wellington."
       }
     ],
     "ground_truth": {
       "API": ["getFlightOffers", "bookFlight", "getTravelInsuranceOptions", "purchaseTravelInsurance"],
       "parameters": [
-        {"origin": "NYC", "destination": "London"},
+        {"origin": "NYC", "destination": "LHR"},
         {"flightNumber": "$$$", "passengerName": "$$$", "paymentDetails": "$$$"},
         {"bookingId": "$$$"},
         {"bookingId": "$$$", "insuranceOptionId": "$$$"}
