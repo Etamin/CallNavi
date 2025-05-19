@@ -121,8 +121,8 @@
           {
             "patientId": "PATIENT001",
             "doctorId": "DOC123",
-            "department": "Cardiology",
-            "appointmentDate": "2023-10-15"
+            "department": "$$$",
+            "appointmentDate": "$$$"
           }
         ]
       },
@@ -142,8 +142,8 @@
           {
             "patientId": "PATIENT002",
             "doctorId": "DOC711",
-            "department": "Neurology",
-            "appointmentDate": "2024-09-25"
+            "department": "$$$",
+            "appointmentDate": "$$$"
           }
         ]
       },
@@ -163,8 +163,8 @@
           {
             "patientId": "PATIENT003",
             "doctorId": "DOC456",
-            "department": "Pediatrics",
-            "appointmentDate": "2023-11-01"
+            "department": "$$$",
+            "appointmentDate": "$$$"
           }
         ]
       },
@@ -347,7 +347,7 @@
             "patientId": "24680",
             "patientInfo": {
               "phone": "555-1234",
-              "address": "123 Main Street"
+              "address": "$$$"
             }
           }
         ]
@@ -466,7 +466,7 @@
         "parameters": [
           {
             "billId": "BILL004",
-            "paymentAmount": "500.00"
+            "paymentAmount": "$$$"
           }
         ]
       },
@@ -485,7 +485,7 @@
         "parameters": [
           {
             "billId": "BILL005",
-            "paymentAmount": "211.3"
+            "paymentAmount": "$$$"
           }
         ]
       },
@@ -496,7 +496,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Please process a 111.2 dollars payment for bill ID BILL006 using my insurance."
+          "content": "Please process a 111.20 dollars payment for bill ID BILL006 using my insurance."
         }
       ],
       "ground_truth": {
@@ -504,7 +504,7 @@
         "parameters": [
           {
             "billId": "BILL006",
-            "paymentAmount": "111.2"
+            "paymentAmount": "111.20"
           }
         ]
       },
@@ -576,7 +576,7 @@
       "API": ["updatePatientInfo", "bookAppointment"],
       "parameters": [
         {"patientId": "P12345", "patientInfo": {"insuranceNumber": "INS1065168"}},
-        {"patientId": "P12345", "doctorId": "D67890", "department": "Cardiology", "appointmentDate": "2024-09-13"}
+        {"patientId": "P12345", "doctorId": "D67890", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "medium"
@@ -593,7 +593,7 @@
       "API": ["getLabTestResults", "bookAppointment"],
       "parameters": [
         {"patientId": "P23456", "testId": "T9876"},
-        {"patientId": "P23456", "doctorId": "D01988", "department": "Infectiology", "appointmentDate": "2024-10-04"}
+        {"patientId": "P23456", "doctorId": "D01988", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "medium"
@@ -627,7 +627,7 @@
       "API": ["getInsuranceDetails", "bookAppointment"],
       "parameters": [
         {"patientId": "P45678"},
-        {"patientId": "P45678", "doctorId": "DM40188", "department": "Dermatology", "appointmentDate": "2024-11-23"}
+        {"patientId": "P45678", "doctorId": "DM40188", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "medium"
@@ -644,7 +644,7 @@
       "API": ["getVaccinationRecords", "bookAppointment"],
       "parameters": [
         {"patientId": "P56789"},
-        {"patientId": "P56789", "doctorId": "IM51201", "department": "Immunization", "appointmentDate": "2024-12-02"}
+        {"patientId": "P56789", "doctorId": "IM51201", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "medium"
@@ -679,7 +679,7 @@
       "parameters": [
         {"name":"Adams"},
         {"doctorId": "$$$"},
-        {"patientId": "P78901", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2024-12-15"}
+        {"patientId": "P78901", "doctorId": "$$$", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "hard"
@@ -695,7 +695,7 @@
     "ground_truth": {
       "API": ["admitPatient", "getPatientInfo"],
       "parameters": [
-        {"patientId": "P89012", "departmentId": "Cardiology", "bedId": "BE41", "admissionReason": "CHD"},
+        {"patientId": "P89012", "departmentId": "$$$", "bedId": "$$$", "admissionReason": "$$$"},
         {"patientId": "P89012"}
       ]
     },
@@ -713,7 +713,7 @@
       "API": ["getSurgeryDetails", "bookAppointment"],
       "parameters": [
         {"surgeryId": "S5678"},
-        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2024-12-11"}
+        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "hard"
@@ -730,7 +730,7 @@
       "API": ["getPrescriptionDetails", "orderLabTest"],
       "parameters": [
         {"prescriptionId": "PR1234"},
-        {"patientId": "$$$", "testType": "blood", "doctorId": "$$$"}
+        {"patientId": "$$$", "testType": "$$$", "doctorId": "$$$"}
       ]
     },
       "difficulty": "hard"
@@ -748,7 +748,7 @@
       "parameters": [
         {"appointmentId": "A5678"},
         {"appointmentId": "A5678"},
-        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2025-01-09"}
+        {"patientId": "$$$", "doctorId": "$$$", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "hard"
@@ -783,7 +783,7 @@
       "parameters": [
         {"name":"Lee"},
         {"doctorId": "$$$"},
-        {"patientId": "P34567", "doctorId": "$$$", "department": "$$$", "appointmentDate": "2025-01-05"}
+        {"patientId": "P34567", "doctorId": "$$$", "department": "$$$", "appointmentDate": "$$$"}
       ]
     },
       "difficulty": "hard"
@@ -850,7 +850,7 @@
       "API": ["getPatientInfo", "orderLabTest"],
       "parameters": [
         {"patientId": "P78901"},
-        {"patientId": "P78901", "testType": "blood", "doctorId": "TD21451"}
+        {"patientId": "P78901", "testType": "$$$", "doctorId": "TD21451"}
       ]
     },
     "difficulty": "medium"

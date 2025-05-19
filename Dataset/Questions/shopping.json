@@ -251,7 +251,7 @@
         "API": ["searchItems"],
         "parameters": [
           {
-            "query": "laptops"
+            "query": "$$$"
           }
         ]
       },
@@ -493,7 +493,7 @@
           {
             "itemId": "ITEM123",
             "userId": "USER456",
-            "rating": 5,
+            "rating": "$$$",
             "review": "$$$"
           }
         ]
@@ -572,7 +572,7 @@
         "API": ["getCategoryItems"],
         "parameters": [
           {
-            "categoryId": "electronics"
+            "categoryId": "$$$"
           }
         ]
       },
@@ -740,7 +740,7 @@
       "ground_truth": {
         "API": ["updateShippingAddress", "getOrderHistory", "getShippingOptions"],
         "parameters": [
-          {"userId": "cc0019", "profileData": "31 Baker Street, London"},
+          {"userId": "cc0019", "profileData": "$$$"},
           {"userId": "cc0019"},
           {"orderId": "$$$"}
         ]
@@ -910,7 +910,7 @@
         "API": ["getAvailableGiftWrapOptions", "selectGiftWrapOption"],
         "parameters": [
           {"orderId": "076985"},
-          {"orderId": "076985", "giftWrapOptionId": "premium"}
+          {"orderId": "076985", "giftWrapOptionId": "$$$"}
         ]
       },
         "difficulty": "medium"
@@ -971,7 +971,7 @@
         "parameters": [
           {"query": "smartphones"},
           {"itemId": "$$$"},
-          {"itemId": "$$$", "quantity": 1},
+          {"itemId": "$$$", "quantity": "$$$"},
           {"userId": "CC0001451"}
         ]
       },

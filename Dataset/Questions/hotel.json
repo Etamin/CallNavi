@@ -11,9 +11,9 @@
         "API": ["checkRoomAvailability"],
         "parameters": [
           {
-            "startDate": "2023-10-10",
-            "endDate": "2023-10-15",
-            "roomType": "Deluxe"
+            "startDate": "$$$",
+            "endDate": "$$$",
+            "roomType": "$$$"
           }
         ]
       },
@@ -31,9 +31,9 @@
         "API": ["checkRoomAvailability"],
         "parameters": [
           {
-            "startDate": "2023-09-30",
-            "endDate": "2023-10-02",
-            "roomType": "Luxury Suite"
+            "startDate": "$$$",
+            "endDate": "$$$",
+            "roomType": "$$$"
           }
         ]
       },
@@ -51,9 +51,9 @@
         "API": ["checkRoomAvailability"],
         "parameters": [
           {
-            "startDate": "2023-11-05",
-            "endDate": "2023-11-10",
-            "roomType": "Standard"
+            "startDate": "$$$",
+            "endDate": "$$$",
+            "roomType": "$$$"
           }
         ]
       },
@@ -73,10 +73,10 @@
           {
             "guestID": "GUEST001",
             "roomType": "Deluxe",
-            "startDate": "2023-09-15",
-            "endDate": "2023-09-20",
+            "startDate": "$$$",
+            "endDate": "$$$",
             "paymentDetails": {
-              "method": "Credit Card",
+              "method": "$$$",
               "amount": 1000
             }
           }
@@ -98,8 +98,8 @@
           {
             "guestID": "GUEST002",
             "roomType": "Standard",
-            "startDate": "2023-10-01",
-            "endDate": "2023-10-03",
+            "startDate": "$$$",
+            "endDate": "$$$",
             "paymentDetails": {
               "method": "Debit Card",
               "amount": 500
@@ -123,8 +123,8 @@
           {
             "guestID": "GUEST003",
             "roomType": "Suite",
-            "startDate": "2023-09-10",
-            "endDate": "2023-09-12",
+            "startDate": "$$$",
+            "endDate": "$$$",
             "paymentDetails": {
               "method": "PayPal",
               "amount": 1200
@@ -428,7 +428,7 @@
             "bookingID": "BOOKING010",
             "guestID": "GUEST007",
             "paymentDetails": {
-              "method": "Credit Card",
+              "method": "$$$",
               "amount": 500
             }
           }
@@ -451,7 +451,7 @@
             "bookingID": "BOOKING011",
             "guestID": "GUEST008",
             "paymentDetails": {
-              "method": "Debit Card",
+              "method": "$$$",
               "amount": 400
             }
           }
@@ -474,7 +474,7 @@
             "bookingID": "BOOKING012",
             "guestID": "GUEST009",
             "paymentDetails": {
-              "method": "Cash",
+              "method": "$$$",
               "amount": 300
             }
           }
@@ -590,9 +590,9 @@
         "API": ["getRoomRates"],
         "parameters": [
           {
-            "roomType": "Deluxe",
-            "startDate": "2023-10-01",
-            "endDate": "2023-10-05"
+            "roomType": "$$$",
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -610,9 +610,9 @@
         "API": ["getRoomRates"],
         "parameters": [
           {
-            "roomType": "Standard",
-            "startDate": "2023-09-15",
-            "endDate": "2023-09-17"
+            "roomType": "$$$",
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -630,9 +630,9 @@
         "API": ["getRoomRates"],
         "parameters": [
           {
-            "roomType": "Luxury Suite",
-            "startDate": "2023-10-20",
-            "endDate": "2023-10-25"
+            "roomType": "$$$",
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -652,7 +652,7 @@
           {
             "guestID": "GUEST013",
             "roomNumber": "205",
-            "orderDetails": "Pasta"
+            "orderDetails": "$$$"
             }
         ]
       },
@@ -672,7 +672,7 @@
           {
             "guestID": "GUEST014",
             "roomNumber": "307",
-            "orderDetails": "Pizza"
+            "orderDetails": "$$$"
           }
         ]
       },
@@ -781,9 +781,9 @@
         "ground_truth": {
           "API": ["checkRoomAvailability", "bookRoom"],
           "parameters": [
-            {"startDate": "2023-10-10", "endDate": "2023-10-15", "roomType": "Deluxe"},
-            {"guestID": "GST19245", "roomType": "Deluxe", "startDate": "2023-10-10", "endDate": "2023-10-15", "paymentDetails": {
-              "method": "Cash",
+            {"startDate": "$$$", "endDate": "$$$", "roomType": "$$$"},
+            {"guestID": "GST19245", "roomType": "$$$", "startDate": "$$$", "endDate": "$$$", "paymentDetails": {
+              "method": "$$$",
               "amount": 500
               }
             }
@@ -847,14 +847,14 @@
         "question": [
           {
             "role": "user",
-            "content": "Get the available amenities in the hotel and reserve the spa for me on 2024-12-12 21:00. My guest ID is agb@abc.com."
+            "content": "Get the available amenities in the hotel and reserve the spa for me on $$ 21:00. My guest ID is agb@abc.com."
           }
         ],
         "ground_truth": {
           "API": ["getAvailableAmenities", "reserveAmenity"],
           "parameters": [
             {},
-            {"guestID": "agb@abc.com", "amenityID": "$$$", "reservationDate": "2024-12-12", "reservationTime": "21:00"}
+            {"guestID": "agb@abc.com", "amenityID": "$$$", "reservationDate": "$$$", "reservationTime": "21:00"}
           ]
         },
       "difficulty":"hard"
@@ -870,9 +870,9 @@
         "ground_truth": {
           "API": ["getRoomRates", "bookRoom"],
           "parameters": [
-            {"roomType": "Suite", "startDate": "2023-11-01", "endDate": "2023-11-05"},
-            {"guestID": "agb@abc.com", "roomType": "Suite", "startDate": "2023-11-01", "endDate": "2023-11-05", "paymentDetails": {
-              "method": "Cash",
+            {"roomType": "Suite", "startDate": "$$$", "endDate": "$$$"},
+            {"guestID": "agb@abc.com", "roomType": "Suite", "startDate": "$$$", "endDate": "$$$", "paymentDetails": {
+              "method": "$$$",
               "amount": 1000
             }}
           ]
@@ -892,7 +892,7 @@
           "parameters": [
             {"bookingID": "B34567"},
             {"bookingID": "B34567", "paymentDetails": {
-              "method": "Credit Card",
+              "method": "$$$",
               "amount": 500
             }}
           ]
@@ -904,14 +904,14 @@
         "question": [
           {
             "role": "user",
-            "content": "Retrieve the housekeeping status for room 101 and schedule cleaning for 2024-11-12, 14:00."
+            "content": "Retrieve the housekeeping status for room 101 and schedule cleaning for $$, 14:00."
           }
         ],
         "ground_truth": {
           "API": ["getHousekeepingStatus", "scheduleHousekeeping"],
           "parameters": [
             {"roomNumber": "101"},
-            {"roomNumber": "101", "cleaningDate": "2024-11-12", "cleaningTime": "14:00"}
+            {"roomNumber": "101", "cleaningDate": "$$$", "cleaningTime": "14:00"}
           ]
         },
       "difficulty":"medium"
@@ -982,7 +982,7 @@
           "API": ["getRoomStatus", "updateHousekeepingStatus"],
           "parameters": [
             {"roomNumber": "202"},
-            {"roomNumber": "202", "cleaningStatus": "In Progress"}
+            {"roomNumber": "202", "cleaningStatus": "$$$"}
           ]
         },
       "difficulty":"medium"
@@ -1009,14 +1009,14 @@
         "question": [
           {
             "role": "user",
-            "content": "Can you retrieve the hotel policies and then book an conference event space for 2025-01-02 10:00 for me? My guest ID is YG352826"
+            "content": "Can you retrieve the hotel policies and then book an conference event space for $$ 10:00 for me? My guest ID is YG352826"
           }
         ],
         "ground_truth": {
           "API": ["getHotelPolicies", "bookEventSpace"],
           "parameters": [
             {},
-            {"guestID": "YG352826", "eventSpaceID": "$$$", "eventDate": "2025-01-02", "eventTime": "10:00", "eventDetails": "$$$"}
+            {"guestID": "YG352826", "eventSpaceID": "$$$", "eventDate": "$$$", "eventTime": "10:00", "eventDetails": "$$$"}
           ]
         },
       "difficulty":"medium"
@@ -1134,12 +1134,12 @@
         "ground_truth": {
           "API": ["checkRoomAvailability", "bookRoom", "reserveAmenity"],
           "parameters": [
-            {"startDate": "2023-12-20", "endDate": "2023-12-25", "roomType": "Standard"},
-            {"guestID": "acid@abc.com", "roomType": "Standard", "startDate": "2023-12-20", "endDate": "2023-12-25", "paymentDetails": {
-              "method": "Credit Card",
+            {"startDate": "$$$", "endDate": "$$$", "roomType": "$$$"},
+            {"guestID": "acid@abc.com", "roomType": "$$$", "startDate": "$$$", "endDate": "$$$", "paymentDetails": {
+              "method": "$$$",
               "amount": 500
             }},
-            {"guestID": "acid@abc.com", "amenityID": "Restaurant", "reservationDate": "2023-12-21", "reservationTime": "19:00"}
+            {"guestID": "acid@abc.com", "amenityID": "$$$", "reservationDate": "$$$", "reservationTime": "19:00"}
           ]
         },
       "difficulty":"medium"
@@ -1149,15 +1149,15 @@
         "question": [
           {
             "role": "user",
-            "content": "I need to check in for booking ID B78901 with guest ID BF398572, order room service for a Pizza delivery on 19:00, and schedule housekeeping for 2025-01-02 10:00."
+            "content": "I need to check in for booking ID B78901 with guest ID BF398572, order room service for a Pizza delivery on 19:00, and schedule housekeeping for $$ 10:00."
           }
         ],
         "ground_truth": {
           "API": ["checkInGuest", "addRoomServiceOrder", "scheduleHousekeeping"],
           "parameters": [
             {"bookingID": "B78901", "guestID": "BF398572"},
-            {"guestID": "BF398572", "roomNumber": "$$$", "orderDetails": "Pizza", "deliveryTime": "19:00"},
-            {"roomNumber": "$$$", "cleaningDate": "2025-01-02", "cleaningTime": "10:00"}
+            {"guestID": "BF398572", "roomNumber": "$$$", "orderDetails": "$$$", "deliveryTime": "19:00"},
+            {"roomNumber": "$$$", "cleaningDate": "$$$", "cleaningTime": "10:00"}
           ]
         },
       "difficulty":"hard"
@@ -1185,7 +1185,7 @@
         "question": [
           {
             "role": "user",
-            "content": "I need to check in for booking ID B01234 with guest ID BF398572 , request extra pillows via concierge service, and schedule housekeeping for an extra cleaning 2025-01-14 11:00."
+            "content": "I need to check in for booking ID B01234 with guest ID BF398572 , request extra pillows via concierge service, and schedule housekeeping for an extra cleaning $$ 11:00."
           }
         ],
         "ground_truth": {
@@ -1194,7 +1194,7 @@
             {"bookingID": "B01234", "guestID": "BF398572"},
             {},
             {"guestID": "BF398572", "serviceID": "$$$", "serviceDetails":"$$$"},
-            {"roomNumber": "$$$", "cleaningDate": "2025-01-14", "cleaningTime": "11:00"}
+            {"roomNumber": "$$$", "cleaningDate": "$$$", "cleaningTime": "11:00"}
           ]
         },
       "difficulty":"hard"
@@ -1210,9 +1210,9 @@
         "ground_truth": {
           "API": ["checkRoomAvailability", "bookRoom", "getHotelEvents","registerForHotelEvent"],
           "parameters": [
-            {"startDate": "2023-12-24", "endDate": "2023-12-28", "roomType": "Family Suite"},
-            {"guestID": "JV049257", "roomType": "Family Suite", "startDate": "2023-12-24", "endDate": "2023-12-28", "paymentDetails":{
-              "method": "Paypal",
+            {"startDate": "$$$", "endDate": "$$$", "roomType": "$$$"},
+            {"guestID": "JV049257", "roomType": "$$$", "startDate": "$$$", "endDate": "$$$", "paymentDetails":{
+              "method": "$$$",
               "amount": 1200
             } },
             {},

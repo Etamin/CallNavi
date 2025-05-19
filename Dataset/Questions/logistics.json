@@ -29,14 +29,14 @@
         "API": ["createShipment"],
         "parameters": [
           {
-            "senderAddress": "114 8th Ave, New York",
-            "recipientAddress": "44 8th Ave, Los Angeles",
+            "senderAddress": "$$$",
+            "recipientAddress": "$$$",
             "packageDetails": {
-              "weight": 5,
+              "weight": "$$$",
               "dimensions": {
-                "length": 10,
-                "width": 8,
-                "height": 6
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
               }
             }
           }
@@ -57,15 +57,15 @@
         "parameters": [
           {
             "packageDetails": {
-              "weight": 6,
+              "weight": "$$$",
               "dimensions": {
-                "length": 12,
-                "width": 10,
-                "height": 8
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
               }
             },
-            "origin": "Chicago",
-            "destination": "Miami"
+            "origin": "$$$",
+            "destination": "$$$"
           }
         ]
       },
@@ -102,8 +102,8 @@
         "parameters": [
           {
             "shipmentId": "SHIP789",
-            "pickupDate": "2024-10-15",
-            "pickupLocation": "123 Main St, New York, NY"
+            "pickupDate": "$$$",
+            "pickupLocation": "$$$"
           }
         ]
       },
@@ -141,11 +141,11 @@
           {
             "shipmentId": "SHIP123",
             "packageDetails": {
-              "weight": 45,
+              "weight": "$$$",
               "dimensions": {
-                "length": 50,
-                "width": 50,
-                "height": 30
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
               }
             }
           }
@@ -183,14 +183,14 @@
         "API": ["getShippingOptions"],
         "parameters": [
           {
-            "origin": "San Francisco",
-            "destination": "Seattle",
+            "origin": "$$$",
+            "destination": "$$$",
             "packageDetails": {
-              "weight": 8,
+              "weight": "$$$",
               "dimensions": {
-                "length": 54,
-                "width": 12,
-                "height": 30
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
               }
             }
           }
@@ -248,11 +248,11 @@
         "parameters": [
           {
             "address": {
-              "street": "456 Elm St",
+              "street": "$$$",
               "city": "Los Angeles",
               "state": "CA",
-              "postalCode": "90001",
-              "country": "USA"
+              "postalCode": "$$$",
+              "country": "$$$"
             }
           }
         ]
@@ -271,8 +271,8 @@
         "API": ["getServiceAvailability"],
         "parameters": [
           {
-            "origin": "Boston",
-            "destination": "London"
+            "origin": "$$$",
+            "destination": "$$$"
           }
         ]
       },
@@ -290,8 +290,8 @@
         "API": ["getCustomsInformation"],
         "parameters": [
           {
-            "origin": "New York",
-            "destination": "Paris"
+            "origin": "$$$",
+            "destination": "$$$"
           }
         ]
       },
@@ -455,11 +455,11 @@
         "API": ["estimatePackageWeight"],
         "parameters": [
           {
-            "packageDetails": {"weight": 1,
+            "packageDetails": {"weight":"$$$",
               "dimensions": {
-                "length": 15,
-                "width": 10,
-                "height": 8
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
               }
             }
           }
@@ -497,10 +497,10 @@
         "API": ["estimatePackageVolume"],
         "parameters": [
           {
-            "packageDetails": {"weight": 2, "dimensions":  {
-              "length": 20,
-              "width": 15,
-              "height": 10
+            "packageDetails": {"weight": "$$$", "dimensions":  {
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }}
           }
         ]
@@ -591,8 +591,8 @@
         "API": ["getTransitTimes"],
         "parameters": [
           {
-            "origin": "Houston",
-            "destination": "London"
+            "origin": "$$$",
+            "destination": "$$$"
           }
         ]
       },
@@ -719,7 +719,7 @@
           {
             "shipmentId": "SHIP789",
             "declarationDetails": {
-                  "description": "Electronics",
+                  "description": "$$$",
                   "quantity": 1,
                   "value": 1000
             }
@@ -760,7 +760,7 @@
           {
             "shipmentId": "SHIP456",
             "declarationDetails": {
-                  "description": "Clothing",
+                  "description": "$$$",
                   "quantity": 20,
                   "value": 1500
             }
@@ -800,9 +800,9 @@
         "parameters": [
           {
             "packageDetails": {"weight": 2, "dimensions":  {
-              "length": 40,
-              "width": 20,
-              "height": 10
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }},
             "origin": "New York",
             "destination": "Los Angeles"
@@ -810,11 +810,11 @@
           {
             "senderAddress": "133 5th Ave, New York",
             "recipientAddress": "19 Windsor Blvd, Los Angeles",
-            "packageDetails": {"weight": 2,
+            "packageDetails": {"weight": "$$$",
             "dimensions": {
-              "length": 40,
-              "width": 20,
-              "height": 10
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }}
           }
         ]
@@ -843,13 +843,13 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to schedule a pickup on 2024-12-12 from 15 Lamar Street, Huston for my shipment SHP78910 and generate a shipping label."
+          "content": "I need to schedule a pickup on $$ from 15 Lamar Street, Huston for my shipment SHP78910 and generate a shipping label."
         }
       ],
       "ground_truth": {
         "API": ["schedulePickup", "generateShippingLabel"],
         "parameters": [
-          {"shipmentId": "SHP78910", "pickupDate": "2024-12-12", "pickupLocation": "15 Lamar Street, Huston"},
+          {"shipmentId": "SHP78910", "pickupDate": "$$$", "pickupLocation": "$$$"},
           {"shipmentId": "SHP78910"}
         ]
       },
@@ -866,12 +866,12 @@
       "ground_truth": {
         "API": ["validateAddress", "getShippingOptions"],
         "parameters": [
-          {"address": "15 Lamar Street, Huston"},
-          {"origin": "Chicago", "destination": "Houston", "packageDetails": {"weight": 2,
+          {"address": "$$$"},
+          {"origin": "$$$", "destination": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 40,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height": "$$$"
         }}}
         ]
       },
@@ -888,8 +888,8 @@
       "ground_truth": {
         "API": ["getServiceAvailability", "getCustomsInformation"],
         "parameters": [
-          {"origin": "San Francisco", "destination": "Tokyo"},
-          {"origin": "San Francisco", "destination": "Tokyo"}
+          {"origin": "$$$", "destination": "$$$"},
+          {"origin": "$$$", "destination": "$$$"}
         ]
       },
       "difficulty":"medium"
@@ -908,11 +908,11 @@
           {"shipmentId": "SHP12345"},
           {"packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height": "$$$"
         }},
-         "origin": "London", "destination": "Tokyo"}
+         "origin": "$$$", "destination": "$$$"}
         ]
       },
       "difficulty":"hard"
@@ -928,8 +928,8 @@
       "ground_truth": {
         "API": ["getAvailableCarriers", "getTransitTimes"],
         "parameters": [
-          {"origin": "Miami", "destination": "Berlin"},
-          {"origin": "Miami", "destination": "Berlin"}
+          {"origin": "$$$", "destination": "$$$"},
+          {"origin": "$$$", "destination": "$$$"}
         ]
       },
       "difficulty":"medium"
@@ -945,11 +945,11 @@
       "ground_truth": {
         "API": ["updateShipmentDetails", "getShipmentDetails"],
         "parameters": [
-          {"shipmentId": "SHP67890", "packageDetails": {"weight": 1,
+          {"shipmentId": "SHP67890", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
           {"shipmentId": "SHP67890"}
@@ -1004,25 +1004,25 @@
         "parameters": [
           {"packageDetails": {"weight": 1,
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
           {"packageDetails": {"weight": 1,
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
           {"packageDetails": {"weight": 1,
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
-      }, "origin": "London", "destination": "Berlin"}
+      }, "origin": "$$$", "destination": "$$$"}
         ]
       },
       "difficulty":"medium"
@@ -1140,7 +1140,7 @@
       "ground_truth": {
         "API": ["getCustomsInformation", "submitExportDeclaration"],
         "parameters": [
-          {"origin": "UK", "destination": "Australia"},
+          {"origin": "$$$", "destination": "$$$"},
           {"shipmentId": "SH325223", "declarationDetails": "$$$"}
         ]
       },
@@ -1168,14 +1168,14 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to get available pickup locations near postal code 10001 and schedule a pickup for my shipment ID LU5289622S on 2024-12-15."
+          "content": "I need to get available pickup locations near postal code 10001 and schedule a pickup for my shipment ID LU5289622S on $$."
         }
       ],
       "ground_truth": {
         "API": ["getPickupLocations", "schedulePickup"],
         "parameters": [
-          {"postalCode": "10001", "countryCode": "US"},
-          {"shipmentId": "LU5289622S", "pickupDate": "2024-12-15", "pickupLocation": "$$$"}
+          {"postalCode": "10001", "countryCode": "$$$"},
+          {"shipmentId": "LU5289622S", "pickupDate": "$$$", "pickupLocation": "$$$"}
         ]
       },
       "difficulty":"hard"
@@ -1185,20 +1185,20 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to ship a package. Can you create the shipment from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 1kg 10x10x10 package, schedule a pickup on 2024-09-21 from sender address, add insurance STANDARD, and generate the shipping label?"
+          "content": "I need to ship a package. Can you create the shipment from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 1kg 10x10x10 package, schedule a pickup on $$ from sender address, add insurance STANDARD, and generate the shipping label?"
         }
       ],
       "ground_truth": {
         "API": ["createShipment", "schedulePickup", "addShipmentInsurance", "generateShippingLabel"],
         "parameters": [
-          {"senderAddress": "15 Sudbury St, Boston", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": {"weight": 1,
+          {"senderAddress": "$$$", "recipientAddress": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
-          {"shipmentId": "$$$", "pickupDate": "2024-09-21", "pickupLocation": "15 Sudbury St, Boston"},
+          {"shipmentId": "$$$", "pickupDate": "$$$", "pickupLocation": "$$$"},
           {"shipmentId": "$$$", "insuranceOptionId": "STANDARD"},
           {"shipmentId": "$$$"}
         ]
@@ -1210,27 +1210,27 @@
       "question": [
         {
           "role": "user",
-          "content": "Please provide me with shipping options from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 2kg 10x10x10 package, then create the shipment, schedule a pickup on 2024-09-21 from sender address, and let me know the tracking number."
+          "content": "Please provide me with shipping options from 15 Sudbury St, Boston to 105 18th Ave, Seattle for my 2kg 10x10x10 package, then create the shipment, schedule a pickup on $$ from sender address, and let me know the tracking number."
         }
       ],
       "ground_truth": {
         "API": ["getShippingOptions", "createShipment", "schedulePickup", "getShipmentDetails"],
         "parameters": [
-          {"origin": "Boston", "destination": "Seattle", "packageDetails": {"weight": 2,
+          {"origin": "$$$", "destination": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
-          {"senderAddress": "15 Sudbury St, Boston", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": {"weight": 2,
+          {"senderAddress": "$$$", "recipientAddress": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 10,
-            "width": 10,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
-          {"shipmentId": "$$$", "pickupDate": "2024-09-21", "pickupLocation": "$$$"},
+          {"shipmentId": "$$$", "pickupDate": "$$$", "pickupLocation": "$$$"},
           {"shipmentId": "$$$"}
         ]
       },
@@ -1265,18 +1265,18 @@
       "ground_truth": {
         "API": ["createShipment", "getCustomsInformation", "submitExportDeclaration", "getExportDocumentation"],
         "parameters": [
-          {"senderAddress": "22 Lauder Ln, Dallas, Texas, USA", "recipientAddress": "12 Schießgartenstraße, Mainz, Germany", "packageDetails": {"weight": 4,
+          {"senderAddress": "$$$", "recipientAddress": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 12,
-            "width": 26,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
-          {"origin": "USA", "destination": "Germany", "packageDetails": {"weight": 4,
+          {"origin": "$$$", "destination": "$$$", "packageDetails": {"weight": "$$$",
           "dimensions": {
-            "length": 12,
-            "width": 26,
-            "height": 10
+            "length": "$$$",
+            "width": "$$$",
+            "height":"$$$"
         }
       }},
           {"shipmentId": "$$$", "declarationDetails": "$$$"},
@@ -1297,30 +1297,30 @@
         "API": ["estimatePackageWeight", "getShippingOptions", "calculateShippingCost", "createShipment"],
         "parameters": [
             {"dimensions": {
-              "length": 15,
-              "width": 26,
-              "height": 10
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }},
-            {"origin": "Dallas", "destination": "Seattle", "packageDetails": {"weight": "$$$",
+            {"origin": "$$$", "destination": "$$$", "packageDetails": {"weight": "$$$",
             "dimensions": {
-              "length": 15,
-              "width": 26,
-              "height": 10
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }
         }},
             {"packageDetails": {"weight": "$$$",
             "dimensions": {
-              "length": 15,
-              "width": 26,
-              "height": 10
+              "length": "$$$",
+              "width": "$$$",
+              "height": "$$$"
           }
         }, "origin": "Dallas", "destination": "Seattle"},
-            {"senderAddress": "22 Lauder Ln, Dallas", "recipientAddress": "105 18th Ave, Seattle", "packageDetails": 
+            {"senderAddress": "$$$", "recipientAddress":"$$$", "packageDetails": 
               {"weight": "$$$",
               "dimensions": {
-                "length": 15,
-                "width": 26,
-                "height": 10
+                "length": "$$$",
+                "width": "$$$",
+                "height": "$$$"
             }
           }
         }

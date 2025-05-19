@@ -13,7 +13,7 @@
           {
             "carDetails": {
               "make": "Toyota",
-              "model": "Camry",
+              "model": "$$$",
               "year": 2020
             },
             "driverAge": 35
@@ -73,7 +73,7 @@
           {
             "policyID": "POLICY456",
             "renewalDetails": {
-              "newExpiryDate": "2025-12-31"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -103,7 +103,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to file a claim for my car's windshield damage with my insurance policy with ID POLICY012. Accident happends on 2024-09-01."
+          "content": "I need to file a claim for my car's windshield damage with my insurance policy with ID POLICY012. Accident happends on $$."
         }
       ],
       "ground_truth": {
@@ -112,7 +112,7 @@
           {
             "policyID": "POLICY012",
             "claimDetails": {
-              "accidentDate": "2024-09-01",
+              "accidentDate": "$$$",
               "damageDetails": "$$$"
             }
           }
@@ -150,7 +150,7 @@
         "API": ["getHouseInsuranceQuote"],
         "parameters": [
           {
-            "location": "123 Elm Street",
+            "location": "$$$",
             "size": 2500
           }
         ]
@@ -207,7 +207,7 @@
           {
             "policyID": "POLICY678",
             "renewalDetails": {
-              "newExpiryDate": "2026-05-31"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -340,7 +340,7 @@
           {
             "policyID": "POLICY112",
             "renewalDetails": {
-              "newExpiryDate": "2025-09-01"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -370,7 +370,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to file a health insurance claim with policy ID POLICY678 for a recent hospital stay. Hospital name is City Hospital and I received my invoice on 2024-03-10."
+          "content": "I need to file a health insurance claim with policy ID POLICY678 for a recent hospital stay. Hospital name is City Hospital and I received my invoice on $$."
         }
       ],
       "ground_truth": {
@@ -379,8 +379,8 @@
           {
             "policyID": "POLICY678",
             "claimDetails": {
-              "hospitalName": "City Hospital",
-              "invoiceDate": "2024-03-10"
+              "hospitalName": "$$$",
+              "invoiceDate": "$$$"
             }
           }
         ]
@@ -419,7 +419,7 @@
           {
             "personalDetails": {
               "age": 45,
-              "gender": "M"
+              "gender": "$$$"
             }
           }
         ]
@@ -476,7 +476,7 @@
           {
             "policyID": "POLICY789",
             "renewalDetails": {
-              "newExpiryDate": "2030-12-31"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -515,7 +515,7 @@
           {
             "policyID": "POLICY456",
             "claimDetails": {
-              "beneficiaryName": "John Doe"
+              "beneficiaryName": "$$$"
             }
           }
         ]
@@ -554,8 +554,8 @@
           {
             "travelDetails": {
               "destination": "France",
-              "tripStartDate": "2024-12-01",
-              "tripEndDate": "2024-12-31"
+              "tripStartDate": "$$$",
+              "tripEndDate": "$$$"
             }
           }
         ]
@@ -612,7 +612,7 @@
           {
             "policyID": "POLICY456",
             "renewalDetails": {
-              "newExpiryDate": "2025-05-01"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -686,7 +686,7 @@
         "API": ["getPetInsuranceQuote"],
         "parameters": [
           {
-              "species": "dog",
+              "species": "$$$",
               "age": 4
           }
         ]
@@ -743,7 +743,7 @@
           {
             "policyID": "POLICY654",
             "renewalDetails": {
-              "newExpiryDate": "2025-12-31"
+              "newExpiryDate": "$$$"
             }
           }
         ]
@@ -780,7 +780,7 @@
         "API": ["getCarInsuranceQuote", "purchaseCarInsurancePolicy"],
         "parameters": [
           {
-            "carDetails": {"make": "Toyota", "model": "Camry", "year": 2018},
+            "carDetails": {"make": "Toyota", "model": "$$$", "year": 2018},
             "driverAge": "51"
           },
           {
@@ -795,14 +795,14 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you get me a house insurance quote for my 3000 sqft house located on 21 Irvine Streed, and then help me purchase the policy?"
+          "content": "Can you get me a house insurance quote for my 3000 sqft house located on 21 Irvine Stree, and then help me purchase the policy?"
         }
       ],
       "ground_truth": {
         "API": ["getHouseInsuranceQuote", "purchaseHouseInsurancePolicy"],
         "parameters": [
           {
-            "location": "21 Irvine Streed",
+            "location": "$$$",
             "size": "3000"
           },
           {
@@ -862,7 +862,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I need a travel insurance quote for my trip to Europe from 2024-10-01 to 2025-01-05, and then I'd like to purchase the policy."
+          "content": "I need a travel insurance quote for my trip to Europe from $$ to $$, and then I'd like to purchase the policy."
         }
       ],
       "ground_truth": {
@@ -870,9 +870,9 @@
         "parameters": [
           {
             "travelDetails": {
-              "destination": "Europe",
-              "tripStartDate": "2024-10-01",
-              "tripEndDate": "2025-01-05"}
+              "destination": "$$$",
+              "tripStartDate": "$$$",
+              "tripEndDate": "$$$"}
           },
           {
             "quoteID": "$$$"
@@ -893,7 +893,7 @@
         "API": ["getPetInsuranceQuote", "purchasePetInsurancePolicy"],
         "parameters": [
           {
-            "species": "dog",
+            "species": "$$$",
               "age": 6
           },
           {
@@ -916,7 +916,7 @@
         "parameters": [
           {
             "policyID": "P123456",
-            "renewalDetails":{"newExpiryDate":"2025-12-31"}
+            "renewalDetails":{"newExpiryDate":"$$$"}
           },
           {
             "policyID": "P123456"
@@ -960,7 +960,7 @@
         "parameters": [
           {
             "policyID": "HI789012",
-            "renewalDetails": {"newExpiryDate":"2026-12-31"}
+            "renewalDetails": {"newExpiryDate":"$$$"}
           },
           {
             "policyID": "HI789012"
@@ -981,7 +981,7 @@
         "API": ["getPetInsuranceQuote", "purchasePetInsurancePolicy", "filePetInsuranceClaim"],
         "parameters": [
           {
-              "species": "cat",
+              "species": "$$$",
               "age": 2
           },
           {
@@ -1009,8 +1009,8 @@
           {
             "travelDetails": {
               "destination": "Japan",
-              "tripStartDate": "2025-06-01",
-              "tripEndDate": "2025-06-30"
+              "tripStartDate": "$$$",
+              "tripEndDate": "$$$"
           }
           },
           {
@@ -1137,7 +1137,7 @@
         "parameters": [
           {
             "policyID": "TI654321",
-            "renewalDetails": {"newExpiryDate": "2025-12-31"}
+            "renewalDetails": {"newExpiryDate": "$$$"}
           },
           {
             "policyID": "TI654321"
@@ -1235,7 +1235,7 @@
           {
             "policyID": "H098765",
             "renewalDetails": {
-              "newExpiryDate": "2025-12-31"
+              "newExpiryDate": "$$$"
             }
           },
           {

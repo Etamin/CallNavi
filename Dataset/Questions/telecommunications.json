@@ -49,8 +49,8 @@
         "parameters": [
           {
             "phoneNumber": "123-456-7890",
-            "startDate": "2024-08-01",
-            "endDate": "2024-08-31"
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -69,8 +69,8 @@
         "parameters": [
           {
             "phoneNumber": "123-456-7890",
-            "startDate": "2024-09-14",
-            "endDate": "2024-09-21"
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -89,8 +89,8 @@
         "parameters": [
           {
             "phoneNumber": "123-456-7890",
-            "startDate": "2024-08-01",
-            "endDate": "2024-08-31"
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -307,7 +307,7 @@
         "parameters": [
           {
             "phoneNumber": "123-456-7890",
-            "status": "enabled"
+            "status": "$$$"
           }
         ]
       },
@@ -325,7 +325,7 @@
         "API": ["getInternationalCallRates"],
         "parameters": [
           {
-            "countryCode": "UK"
+            "countryCode": "$$$"
           }
         ]
       },
@@ -345,7 +345,7 @@
           {
             "phoneNumber": "123-456-7890",
             "forwardingNumber": "777-555-1234",
-            "status": "enabled"
+            "status": "$$$"
           }
         ]
       },
@@ -374,7 +374,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you retrieve the voicemail inovice for my number?"
+          "content": "Can you retrieve the voicemail inovice for my number 123-456-7890?"
         }
       ],
       "ground_truth": {
@@ -524,7 +524,7 @@
         "parameters": [
           {
             "phoneNumber": "123-456-7890",
-            "issueDescription": "Trouble making calls."
+            "issueDescription": "$$$"
           }
         ]
       },
@@ -553,7 +553,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you check the payment history for my account from July to September?"
+          "content": "Can you check the payment history for my account 78901 from July to September?"
         }
       ],
       "ground_truth": {
@@ -561,8 +561,8 @@
         "parameters": [
           {
             "accountId": "78901",
-            "startDate": "2024-07-01",
-            "endDate": "2024-09-30"
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -573,7 +573,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I’d like to make a payment of $50 for my account. Can you help?"
+          "content": "I’d like to make a cash payment of $50 for my account 78901. Can you help?"
         }
       ],
       "ground_truth": {
@@ -581,8 +581,8 @@
         "parameters": [
           {
             "accountId": "78901",
-            "amount": 50,
-            "paymentMethod": "VISA"
+            "amount": "$$$",
+            "paymentMethod": "$$$"
           }
         ]
       },
@@ -593,7 +593,7 @@
       "question": [
         {
           "role": "user",
-          "content": "What’s the status of my recent payment for account ID 78901?"
+          "content": "What’s the status of my recent payment pay12345?"
         }
       ],
       "ground_truth": {
@@ -611,7 +611,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you show me the available payment methods for my account?"
+          "content": "Can you show me the available payment methods for my account 78901?"
         }
       ],
       "ground_truth": {
@@ -629,7 +629,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I’d like to add a new payment method to my account. How can I do that?"
+          "content": "I’d like to add a new payment method to my account 78901. Visa Card 1234-5678-9012-3456, expiry 12/26."
         }
       ],
       "ground_truth": {
@@ -638,7 +638,7 @@
           {
             "accountId": "78901",
             "paymentMethodDetails": {
-              "type": "VISA",
+              "type": "$$$",
               "number": "1234-5678-9012-3456",
               "expiryDate": "12/26"
             }
@@ -652,7 +652,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you delete the old payment method from my account?"
+          "content": "Can you delete the old payment method pm1234 from my account 78901?"
         }
       ],
       "ground_truth": {
@@ -671,7 +671,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I need to update my billing address for account ID 78901."
+          "content": "I need to update my billing address for account ID 78901 to 456 New Avenue, LA, CA with my account ID 78901."
         }
       ],
       "ground_truth": {
@@ -680,9 +680,9 @@
           {
             "accountId": "78901",
             "addressDetails": {
-              "street": "456 New Avenue",
-              "city": "Los Angeles",
-              "zip": "90001"
+              "street": "$$$",
+              "city": "$$$",
+              "zip": "$$$"
             }
           }
         ]
@@ -712,7 +712,7 @@
       "question": [
         {
           "role": "user",
-          "content": "I want to enable auto-pay for my account."
+          "content": "I want to enable auto-pay for my account 78901."
         }
       ],
       "ground_truth": {
@@ -720,7 +720,7 @@
         "parameters": [
           {
             "accountId": "78901",
-            "status": "enabled"
+            "status": "$$$"
           }
         ]
       },
@@ -731,7 +731,7 @@
       "question": [
         {
           "role": "user",
-          "content": "How much data have I used so far this month?"
+          "content": "How much data have I used so far this month for number 123-456-7890?"
         }
       ],
       "ground_truth": {
@@ -931,7 +931,7 @@
       "ground_truth": {
         "API": ["getDataUsage", "getAvailablePlans", "updateDataPlan"],
         "parameters": [
-          {"phoneNumber": "6668415999", "startDate": "2024-08-01", "endDate": "2024-08-31"},
+          {"phoneNumber": "6668415999", "startDate": "$$$", "endDate": "$$$"},
           {},
           {"phoneNumber": "6668415999", "dataPlanId": "$$$"}
         ]
@@ -944,7 +944,7 @@
       "ground_truth": {
         "API": ["getCallHistory", "blockNumber"],
         "parameters": [
-          {"phoneNumber": "6668415999", "startDate": "2023-06-01", "endDate": "2023-06-30"},
+          {"phoneNumber": "6668415999", "startDate": "$$$", "endDate": "$$$"},
           {"phoneNumber": "6668415999", "blockNumber": "$$$"}
         ]
       },
@@ -992,7 +992,7 @@
       "ground_truth": {
         "API": ["getPaymentHistory", "updateBillingAddress"],
         "parameters": [
-          {"accountId": "TR235211", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {"accountId": "TR235211", "startDate": "$$$", "endDate": "$$$"},
           {"accountId": "TR235211", "addressDetails": "$$$"}
         ]
       },
@@ -1076,7 +1076,7 @@
       "ground_truth": {
         "API": ["updateCallForwarding", "getCallForwardingStatus"],
         "parameters": [
-          {"phoneNumber": "555-999-1512", "forwardingNumber": "987654321", "status": "enabled"},
+          {"phoneNumber": "555-999-1512", "forwardingNumber": "987654321", "status": "$$$"},
           {"phoneNumber": "555-999-1512"}
         ]
       },
@@ -1233,7 +1233,7 @@
       "ground_truth": {
         "API": ["getDataUsage", "getAvailablePlans", "updateDataPlan", "getDataPlanUsage"],
         "parameters": [
-          {"phoneNumber": "528467188", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {"phoneNumber": "528467188", "startDate": "$$$", "endDate": "$$$"},
           {},
           {"phoneNumber": "528467188", "dataPlanId": "$$$"},
           {"phoneNumber": "528467188"}
@@ -1247,7 +1247,7 @@
       "ground_truth": {
         "API": ["getCallHistory", "blockNumber", "getCallBarringStatus"],
         "parameters": [
-          {"phoneNumber": "528467188", "startDate": "2024-01-01", "endDate": "2024-01-31"},
+          {"phoneNumber": "528467188", "startDate": "$$$", "endDate": "$$$"},
           {"phoneNumber": "528467188", "blockNumber": "$$$"},
           {"phoneNumber": "528467188"}
         ]
@@ -1275,7 +1275,7 @@
         "parameters": [
           {"countryCode": "49"},
           {"phoneNumber": "333-444-7888"},
-          {"phoneNumber": "333-444-7888", "status": "enabled"}
+          {"phoneNumber": "333-444-7888", "status": "$$$"}
         ]
       },
       "difficulty":"medium"
@@ -1288,7 +1288,7 @@
         "parameters": [
           {"accountId": "MV615150"},
           {"accountId": "MV615150", "discountCode": "SAVE50"},
-          {"accountId": "MV615150", "amount": 50, "paymentMethod": "VISA"}
+          {"accountId": "MV615150", "amount": "$$$", "paymentMethod": "VISA"}
         ]
       },
       "difficulty":"medium"
@@ -1302,7 +1302,7 @@
           {"accountId": "dso120871"},
           {"accountId": "dso120871", "paymentMethodId": "$$$"},
           {"accountId": "dso120871", "paymentMethodDetails": "4865940131121553"},
-          {"accountId": "dso120871", "amount": 100, "paymentMethod": "VISA"}
+          {"accountId": "dso120871", "amount": "$$$", "paymentMethod": "VISA"}
         ]
       },
         "difficulty":"hard"
@@ -1326,7 +1326,7 @@
       "question": [{"role": "user", "content": "I'd like to upgrade my data plan to the new unlimited plan, my number is 555-666-7777"}],
       "ground_truth": {
         "API": ["updateDataPlan"],
-        "parameters": [{"phoneNumber": "555-666-7777", "dataPlanId": "unlimited"}]
+        "parameters": [{"phoneNumber": "555-666-7777", "dataPlanId": "$$$"}]
       },
       "difficulty": "easy"
     },
@@ -1434,7 +1434,7 @@
       "question": [{"role": "user", "content": "Is my device with ID DEV12345 compatible with your 5G network?"}],
       "ground_truth": {
         "API": ["getDeviceCompatibility"],
-        "parameters": [{"deviceId": "DEV12345", "networkType": "5G"}]
+        "parameters": [{"deviceId": "DEV12345", "networkType": "$$$"}]
       },
       "difficulty": "easy"
     },

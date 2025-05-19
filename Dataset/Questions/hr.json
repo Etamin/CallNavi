@@ -40,7 +40,7 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you create a new employment contract for employee ID EMP003? His title is 'Software Engineer', start from 2024-01-01 until 2026-12-31, salary is 60000."
+          "content": "Can you create a new employment contract for employee ID EMP003? His title is 'Software Engineer', start from $$ until $$, salary is 60000."
         }
       ],
       "ground_truth": {
@@ -49,10 +49,10 @@
           {
             "employeeID": "EMP003",
             "contractDetails": {
-              "startDate": "2024-01-01",
-              "endDate": "2026-12-31",
+              "startDate": "$$$",
+              "endDate": "$$$",
               "salary": 60000,
-              "jobTitle": "Software Engineer"
+              "jobTitle": "$$$"
             }
           }
         ]
@@ -109,8 +109,8 @@
         "parameters": [
           {
             "contractID": "CONTRACT003",
-            "terminationDate": "2024-10-31",
-            "terminationReason": "Company downsizing"
+            "terminationDate": "$$$",
+            "terminationReason": "$$$"
           }
         ]
       },
@@ -147,7 +147,7 @@
         "parameters": [
           {
             "employeeID": "EMP005",
-            "payPeriod": "2024-09"
+            "payPeriod": "$$$"
           }
         ]
       },
@@ -221,9 +221,9 @@
         "parameters": [
           {
             "employeeID": "EMP009",
-            "leaveType": "Maternity",
-            "startDate": "2024-11-01",
-            "endDate": "2025-01-31"
+            "leaveType": "$$$",
+            "startDate": "$$$",
+            "endDate": "$$$"
           }
         ]
       },
@@ -261,8 +261,8 @@
           {
             "applicationID": "LEAVE002",
             "updateData": {
-              "startDate": "2024-12-01",
-              "endDate":"2024-12-15"
+              "startDate": "$$$",
+              "endDate":"$$$"
             }
           }
         ]
@@ -300,7 +300,7 @@
         "parameters": [
           {
             "employeeID": "EMP011",
-            "benefitType": "Health Insurance"
+            "benefitType": "$$$"
           }
         ]
       },
@@ -319,7 +319,7 @@
         "parameters": [
           {
             "employeeID": "EMP012",
-            "reviewPeriod": "Q3-2024"
+            "reviewPeriod": "$$$"
           }
         ]
       },
@@ -339,7 +339,7 @@
           {
             "employeeID": "E67890",
             "reviewer": "E84630",
-            "overallRating": "A+",
+            "overallRating": "$$$",
             "comments": "$$$"
           }
         ]
@@ -412,7 +412,7 @@
         "API": ["getEmploymentContract", "processPayroll"],
         "parameters": [
           {"contractID": "12311"},
-          {"employeeID": "$$$", "payPeriod": "2023-10"}
+          {"employeeID": "$$$", "payPeriod": "$$$"}
         ]
       },
       "difficulty": "hard"
@@ -422,14 +422,14 @@
       "question": [
         {
           "role": "user",
-          "content": "Can you get my leave balance and help me apply for annual leave from 2023-10-09 to 2023-10-13?"
+          "content": "Can you get my leave balance and help me apply for annual leave from $$ to $$?"
         }
       ],
       "ground_truth": {
         "API": ["getEmployeeLeaveBalance", "applyForLeave"],
         "parameters": [
           {"employeeID": "E23456"},
-          {"employeeID": "E23456", "leaveType": "Annual", "startDate": "2023-10-09", "endDate": "2023-10-13"}
+          {"employeeID": "E23456", "leaveType": "$$$", "startDate": "$$$", "endDate": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -445,7 +445,7 @@
       "ground_truth": {
         "API": ["getPerformanceReview", "assignTrainingProgram"],
         "parameters": [
-          {"employeeID": "E34567", "reviewPeriod": "Q3-2023"},
+          {"employeeID": "E34567", "reviewPeriod": "$$$"},
           {"employeeID": "E34567", "trainingProgramID": "TP789"}
         ]
       },
@@ -463,7 +463,7 @@
         "API": ["getEmployeeBenefits", "enrollEmployeeInBenefit"],
         "parameters": [
           {"employeeID": "E45678"},
-          {"employeeID": "E45678", "benefitType": "Health Insurance"}
+          {"employeeID": "E45678", "benefitType": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -479,7 +479,7 @@
       "ground_truth": {
         "API": ["getEmployeeAttendance", "processPayroll"],
         "parameters": [
-          {"employeeID": "E56789", "dateRange": {"startDate": "2023-09-01", "endDate": "2023-09-30"}},
+          {"employeeID": "E56789", "dateRange": {"startDate": "$$$", "endDate": "$$$"}},
           {"employeeID": "E56789", "payPeriod": "2023-09"}
         ]
       },
@@ -497,7 +497,7 @@
         "API": ["getEmploymentContract", "updateEmploymentContractTitle"],
         "parameters": [
           {"contractID": "11928"},
-          {"contractID": "11928", "newTitle": "Senior Developer"}
+          {"contractID": "11928", "newTitle": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -517,7 +517,7 @@
           "reviewer": "E84630",
           "overallRating": "A",
           "comments": "$$$"},
-          {"employeeID": "E67890", "reviewPeriod": "Q2-2024"}
+          {"employeeID": "E67890", "reviewPeriod": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -527,14 +527,14 @@
       "question": [
         {
           "role": "user",
-          "content": "Get my leave application status for application ID LA123 and update dates from 2023-10-15 to 2023-10-20."
+          "content": "Get my leave application status for application ID LA123 and update dates from $$ to $$."
         }
       ],
       "ground_truth": {
         "API": ["getLeaveApplicationStatus", "updateLeaveApplication"],
         "parameters": [
           {"applicationID": "LA123"},
-          {"applicationID": "LA123", "updateData": {"startDate": "2023-10-15", "endDate": "2023-10-20"}}
+          {"applicationID": "LA123", "updateData": {"startDate": "$$$", "endDate": "$$$"}}
         ]
       },
       "difficulty": "medium"
@@ -567,7 +567,7 @@
       "ground_truth": {
         "API": ["terminateEmploymentContract"],
         "parameters": [
-          {"contractID": "12351", "terminationDate": "2023-10-31", "terminationReason": "$$$"}
+          {"contractID": "12351", "terminationDate": "$$$", "terminationReason": "$$$"}
         ]
       },
       "difficulty": "easy"
@@ -584,7 +584,7 @@
         "API": ["getEmployeeSalaryDetails", "processPayroll"],
         "parameters": [
           {"employeeID": "E89012"},
-          {"employeeID": "E89012", "payPeriod": "2023-09"}
+          {"employeeID": "E89012", "payPeriod": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -594,14 +594,14 @@
       "question": [
         {
           "role": "user",
-          "content": "Please retrieve my attendance records December 2023 with employee ID E89012 and apply for sick leave for 2024-01-13."
+          "content": "Please retrieve my attendance records December 2023 with employee ID E89012 and apply for sick leave for $$."
         }
       ],
       "ground_truth": {
         "API": ["getEmployeeAttendance", "applyForLeave"],
         "parameters": [
-          {"employeeID": "E90123", "dateRange": {"startDate": "2023-12-01", "endDate": "2023-12-31"}},
-          {"employeeID": "E90123", "leaveType": "Sick", "startDate": "2024-01-13", "endDate": "2024-01-13"}
+          {"employeeID": "E90123", "dateRange": {"startDate": "$$$", "endDate": "$$$"}},
+          {"employeeID": "E90123", "leaveType": "Sick", "startDate": "$$$", "endDate": "$$$"}
         ]
       },
       "difficulty": "medium"
@@ -618,7 +618,7 @@
         "API": ["getEmployeeBenefits", "enrollEmployeeInBenefit"],
         "parameters": [
           {"employeeID": "E01234"},
-          {"employeeID": "E01234", "benefitType": "Retirement Plan"}
+          {"employeeID": "E01234", "benefitType": "$$$"}
         ]
       },
       "difficulty": "medium"
